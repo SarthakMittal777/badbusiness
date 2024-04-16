@@ -1,0 +1,13 @@
+{
+  "name": "badbusiness",
+  "version": "1.0.0",
+  "description": "Website for Bad Business",
+  "repository": "https://github.com/arpankumarde/badbusiness",
+  "author": "arpankumarde <134305585+arpankumarde@users.noreply.github.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "cd client && npm run dev",
+    "build": "cd client && npm run build"
+  }
+}
