@@ -6,6 +6,7 @@ import { Services } from "./pages/Services/Services";
 import { Partners } from "./pages/Partners";
 import { ServicesAll } from "./pages/Services/ServicesAll";
 import { ServiceDetails } from "./pages/Services/ServiceDetails";
+import { Footer } from "./components/Footer";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/services/:slug" element={<ServiceDetails />} />
         <Route path="/services/:slug/all" element={<ServicesAll />} />
         <Route path="/partners" element={<Partners />} />
+        <Route path="/footer" element={<Footer />} />
       </Routes>
     </BrowserRouter>
   );
