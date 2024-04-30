@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 export const ServiceDetails = () => {
   const { slug } = useParams();
   const amount = "$983";
@@ -15,12 +15,16 @@ export const ServiceDetails = () => {
     <div className="mb-12">
       {" "}
       <div className="w-full h-20 text-base flex items-center ">
-        <p className="mx-16"> Home / Services / {slug} </p>
+        <p className="mx-16 text-gray-500">
+          <Link to="/">Home</Link> /
+          <Link to="/Services"> Services</Link> /{" "}
+          <span className="text-[black]">{slug} </span>
+        </p>
       </div>
-      <div className="flex px-16 gap-8">
-        <div className="w-[60%] flex flex-col">
+      <div className="flex px-16 gap-8 flex-col md:flex-row">
+        <div className="md:w-[60%]  w-full flex flex-col">
           <div className="text-4xl font-semibold mb-8 ">{slug}</div>
-          <div className="flex gap-8" >
+          <div className="flex gap-8 sm:flex-row flex-col">
             {" "}
             <div className="flex  justify-between items-center max-w-full mb-5 gap-3">
               <img
@@ -33,7 +37,7 @@ export const ServiceDetails = () => {
               </div>
             </div>
             <div>⭐{ratings}</div>
-            <div>{views} views</div>
+            <div className="mb-5">{views} views</div>
           </div>
           <div className="w-full">
             <img
@@ -76,8 +80,8 @@ export const ServiceDetails = () => {
             quibusdam est.
           </div>
         </div>
-        <div className="flex flex-col w-[40%] items-center">
-          <div className="shadow w-full h-[40%] bg-gray-200 flex justify-center items-center">
+        <div className="flex flex-col md:w-[40%] w-full items-center">
+          <div className="shadow w-full md:h-[40%] h-48 bg-gray-200 flex justify-center items-center">
             Writup
           </div>
           <div className="bg-green-300 w-full h-16 rounded text-center m-8 flex justify-center font-bold items-center">

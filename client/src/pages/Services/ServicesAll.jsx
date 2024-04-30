@@ -7,7 +7,11 @@ export const ServicesAll = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center mx-auto">
       <div className="w-full h-20 text-base flex items-center ">
-        <p className="mx-24"> Home / {slug} / All</p>
+        <p className="mx-24">
+          <Link to="/" className="text-gray-500"> Home</Link> /
+          <Link to="/Services" className="text-gray-500"> Services</Link> /
+           {slug}{" "}
+        </p>
       </div>
       <div
         className="w-full h-44  items-center flex mb-12"

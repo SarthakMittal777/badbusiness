@@ -1,9 +1,15 @@
 import Card from "../../components/Card";
+import { Link } from "react-router-dom";
 export const Services = () => {
   return (
-    <div className="w-full flex flex-col  items-center justify-center ">
+    <div className="w-full flex flex-col  items-center justify-center bg-gray-200">
       <div className="w-full h-20 text-base flex items-center ">
-        <p className="mx-24"> Home / Categories</p>
+        <p className="mx-24">
+          <Link to="/" className="text-gray-500">
+            Home
+          </Link>{" "}
+          / Categories
+        </p>
       </div>
       <div
         className="w-full h-44  items-center flex"
@@ -17,14 +23,22 @@ export const Services = () => {
           <p>This is the content for categories.</p>
         </div>
       </div>
-      <div className="w-full h-20 text-base flex items-center justify-between mb-24 flex-col md:flex-row md:mb-6">
-        <p className="mx-24 text-center"> Showing results for 3 categoeries</p>
-        <p className="mx-24 border rounded px-7 py-2 border-black flex gap-4">
-          Sort by (Default)
-          <img src="/images/sort.png" alt="sort icon" width={20} height="2rem"/>
+      <div className="w-full  text-base flex items-center justify-between my-16 md:mb-24 flex-col md:flex-row ">
+        <p className="mx-24 text-center">
+          {" "}
+          Showing results for <b>3</b> categories
         </p>
+        {/* <p className="mx-24 border rounded px-7 py-2 border-black flex gap-4">
+          Sort by (Default)
+          <img
+            src="/images/sort.png"
+            alt="sort icon"
+            width={20}
+            height="2rem"
+          />
+        </p> */}
       </div>
-      <div className="flex w-full justify-around gap-12 mb-32 flex-wrap">
+      <div className="flex w-full xl:justify-around gap-12 mb-32 flex-wrap justify-center sm:justify-normal">
         <Card
           image="https://via.placeholder.com/150"
           category="   Web and App design"
@@ -41,7 +55,7 @@ export const Services = () => {
         />
         <Card button="View all Tech products" slug="Technology" />
       </div>
-      <div className="flex w-full justify-around gap-12 mb-32  flex-wrap">
+      <div className="flex w-full xl:justify-around gap-12 mb-32 flex-wrap justify-center sm:justify-normal">
         <Card
           image="https://via.placeholder.com/150"
           category="   Web and App design"
@@ -58,7 +72,7 @@ export const Services = () => {
         />
         <Card button="View all Design products" slug="Design" />
       </div>
-      <div className="flex w-full justify-around gap-12 mb-32  flex-wrap">
+      <div className="flex w-full xl:justify-around gap-12 mb-32 flex-wrap justify-center sm:justify-normal">
         <Card
           image="https://via.placeholder.com/150"
           category="   Web and App design"
