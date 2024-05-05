@@ -39,13 +39,13 @@ const Navbar = () => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <nav className="w-full h-20 sticky top-0 z-50 container mx-auto max-w-screen-xl">
-      <div className="flex justify-between items-center h-full px-5 2xl:px-16 text-black">
+    <nav className="w-full h-20 sticky top-0 z-50 container lg:max-w-screen-tbLandscape max-w-screen-2xl mx-auto">
+      <div className="flex justify-between items-center h-full px-5 2xl:px-16 text-white">
         <div className="flex items-center">
           <Link to="home">
-            <img src="/images/badbusiness1.jpg" alt="Logo" className="h-10" />
+            <img src="/images/badbusiness1.jpg" alt="Logo" className="h-16" />
           </Link>
-          <a href="#" className="ml-24 md:hidden text-black">
+          <a href="#" className="ml-24 md:hidden lg:text-black">
             Join
           </a>
         </div>
@@ -60,7 +60,7 @@ const Navbar = () => {
               duration={500}
             >
               <li
-                className="hover:scale-110 duration-300 hover:text-black capitalize px-3 cursor-pointer"
+                className="hover:scale-110 duration-300 text-white hover:text-white capitalize cursor-pointer font-semibold"
                 onClick={() => setOpenMenu(false)}
               >
                 Home
@@ -74,18 +74,18 @@ const Navbar = () => {
               duration={500}
             >
               <li
-                className="hover:scale-110 duration-300 hover:text-black capitalize px-3 cursor-pointer"
+                className="hover:scale-110 duration-300text-white hover:text-white capitalize px-3 cursor-pointer font-semibold"
                 onClick={() => setOpenMenu(false)}
               >
                 About
               </li>
             </Link>
             <li
-              className="relative group hover:scale-110 duration-300 hover:text-black capitalize px-3 cursor-pointer"
+              className="relative group hover:scale-110 duration-300 text-white hover:text-white capitalize px-3 cursor-pointer "
               onMouseEnter={handleDropdown}
               onMouseLeave={handleDropdown}
             >
-              <span className="flex items-center">
+              <span className="flex items-center font-semibold">
                 Pages
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -182,7 +182,6 @@ const Navbar = () => {
                 </Link>
               </ul>
             </li>
-            {/* End of Pages link with dropdown menus */}
             <Link
               to="contact"
               spy={true}
@@ -191,7 +190,7 @@ const Navbar = () => {
               duration={500}
             >
               <li
-                className="hover:scale-110 duration-300 hover:text-black capitalize px-3 cursor-pointer"
+                className="hover:scale-110 duration-300 text-white hover:text-white capitalize cursor-pointer font-semibold"
                 onClick={() => setOpenMenu(false)}
               >
                 BAD Blog
@@ -205,7 +204,7 @@ const Navbar = () => {
               duration={500}
             >
               <li
-                className="hover:scale-110 duration-300 hover:text-black capitalize px-3 cursor-pointer"
+                className="hover:scale-110 duration-300 text-white hover:text-white capitalize px-3 cursor-pointer font-semibold"
                 onClick={() => setOpenMenu(false)}
               >
                 BAD Events
@@ -219,7 +218,7 @@ const Navbar = () => {
               duration={500}
             >
               <li
-                className="hover:scale-110 duration-300 hover:text-black capitalize px-3 cursor-pointer"
+                className="hover:scale-110 duration-300 text-white hover:text-white capitalize cursor-pointer font-semibold"
                 onClick={() => setOpenMenu(false)}
               >
                 Services
@@ -233,7 +232,7 @@ const Navbar = () => {
               duration={500}
             >
               <li
-                className="hover:scale-110 duration-300 hover:text-black capitalize px-3 cursor-pointer"
+                className="hover:scale-110 duration-300 text-white hover:text-white capitalize px-3 cursor-pointer font-semibold"
                 onClick={() => setOpenMenu(false)}
               >
                 People
@@ -242,7 +241,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="relative">
-          <div className="flex justify-between items-center h-full w-full px-5 2xl:px-16 text-black overflow-x-hidden">
+          <div className="flex justify-between items-center h-full w-full px-5 2xl:px-16 text-white overflow-x-hidden">
             {openMenu ? (
               <div onClick={handleClick} className="md:hidden cursor-pointer ">
                 <AiOutlineClose size={25} />
@@ -260,7 +259,6 @@ const Navbar = () => {
                   <h1 className="font-semibold flex justify-center bg-green-50 items-center text-lg pt-5">
                     Menu
                   </h1>
-                  <div className="border-b border-gray-10 w-full mt-4"></div>
                 </div>
                 <ul>
                   {items.map((item, index) => (
