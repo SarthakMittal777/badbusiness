@@ -39,13 +39,13 @@ const Navbar = () => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <nav className="w-full h-20 sticky top-0 z-50 container lg:max-w-screen-tbLandscape max-w-screen-2xl mx-auto">
+    <nav className="w-full h-20 sticky top-0 z-50 container lg:max-w-screen-tbLandscape max-w-screen-2xl mx-auto bg-white lg:bg-transparent">
       <div className="flex justify-between items-center h-full px-5 2xl:px-16 text-white">
-        <div className="flex items-center">
+        <div className="flex items-center ">
           <Link to="home">
             <img src="/images/badbusiness1.jpg" alt="Logo" className="h-16" />
           </Link>
-          <a href="#" className="ml-24 md:hidden lg:text-black">
+          <a href="#" className="ml-24 md:hidden text-black font-semibold">
             Join
           </a>
         </div>
@@ -241,7 +241,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="relative">
-          <div className="flex justify-between items-center h-full w-full px-5 2xl:px-16 text-white overflow-x-hidden">
+          <div className="flex justify-between items-center h-full w-full px-2 2xl:px-16 text-black overflow-x-hidden">
             {openMenu ? (
               <div onClick={handleClick} className="md:hidden cursor-pointer ">
                 <AiOutlineClose size={25} />

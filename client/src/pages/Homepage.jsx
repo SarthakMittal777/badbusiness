@@ -25,21 +25,20 @@ export const Homepage = () => {
     <div className="contain-content mx-auto animate-fade-in">
       {/* Whole Section*/}
       <div
-        className="bg-auto"
-        style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "105%" }}
+        className="space bg-scroll"
+        style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "101%" }}
       >
         <Navbar />
         {/* Hero Section*/}
         <section className="mt-8 lg:mt-12">
-          <div className="container mx-auto lg:max-w-screen-smDesktop max-w-screen-2xl flex flex-col lg:flex-row items-center relative">
-            <div className="flex-1 p-16 lg:px-48 lg:pt-12">
-              <h1 className="text-5xl font-semibold mb-6 text-white">
-                Full Solution for Your <br /> Business Development
+          <div className="container mx-auto px-4 lg:max-w-screen-smDesktop max-w-screen-2xl flex flex-col lg:flex-row items-center relative">
+            <div className="flex-1 lg:p-16 lg:px-48 lg:pt-12">
+              <h1 className="text-2xl lg:text-5xl font-semibold mb-6 text-white text-start lg:text-balance mt-4">
+                Full Solution for Your Business Development
               </h1>
-              <p className="mb-8 text-mb text-white">
+              <p className="mb-8 text-mb text-white text-justify">
                 Find talented people to work with at the most affordable price
-                to get the most
-                <br /> out of your time and cost
+                to get the most out of your time and cost
               </p>
               <div className="space-x-4 mb-6 ">
                 <button className="bg-teal-900 hover:bg-green-600 hover:text-white text-emerald-300 font-bold py-4 px-8 rounded-full">
@@ -76,7 +75,7 @@ export const Homepage = () => {
                 alt="Image 3"
                 className="w-2/3 mb-4"
               />
-              <div className="text-start flex shadow-lg animate-bounce bg-blue-600 p-4 rounded-full absolute left-4">
+              <div className="text-start flex shadow-lg animate-bounce bg-blue-600 p-4 rounded-full absolute left-4 lg:left-auto">
                 <span className="rounded-full p-3 bg-blue-500 hover:bg-green-900 duration-300">
                   <img
                     src="/images/hero/medal.png"
@@ -97,40 +96,32 @@ export const Homepage = () => {
       </div>
 
       {/* Partners */}
-      <div className="container mx-auto mt-72">
+      <div className="container mx-auto lg:mt-72">
         <div className="flex justify-center items-center mt-8">
-          <h1 className="text-md mr-4 mb-8">
+          <h1 className="text-md lg:mr-4 mb-8">
             Trusted by the world's best Corporations
           </h1>
         </div>
-        <div className="flex justify-evenly items-center mt-6">
-          <img
-            src="/images/partners/1.png"
-            alt="1"
-            className="h-30 w-30 mx-4"
-          />
-          <img
-            src="/images/partners/2.png"
-            alt="2"
-            className="h-30 w-30 mx-4"
-          />
-          <img
-            src="/images/partners/3.png"
-            alt="3"
-            className="h-30 w-30 mx-4"
-          />
-          <img
-            src="/images/partners/4.png"
-            alt="4"
-            className="h-30 w-30 mx-4"
-          />
+        <div className="flex flex-wrap justify-around mt-6 lg:justify-evenly">
+          <div className="flex justify-center items-center mx-4 mb-4 ">
+            <img src="/images/partners/1.png" alt="1" className="h-30 w-30" />
+          </div>
+          <div className="flex justify-center items-center mx-4 mb-4">
+            <img src="/images/partners/2.png" alt="2" className="h-30 w-30" />
+          </div>
+          <div className="flex justify-center items-center mx-4 mb-4">
+            <img src="/images/partners/3.png" alt="3" className="h-30 w-30" />
+          </div>
+          <div className="flex justify-center items-center mx-4 mb-4">
+            <img src="/images/partners/4.png" alt="4" className="h-30 w-30" />
+          </div>
         </div>
       </div>
 
       {/* Learn About BAD */}
       <div className="container mx-auto">
         <div className="flex flex-col items-center mt-24">
-          <h1 className="text-3xl font-bold mb-2 text-neutral-800">
+          <h1 className="lg:text-3xl text-xl font-bold mb-2 text-neutral-800">
             Need something done?
           </h1>
           <div className="text-center mt-2">
@@ -147,7 +138,7 @@ export const Homepage = () => {
               />
             </div>
             <h4 class="text-lg font-semibold mb-3">Breakdown</h4>
-            <p class="text-gray-600 items-center">
+            <p class="text-gray-600 text-balance">
               Identifying and analyzing the root causes of a problem or <br />
               inefficiency within a business process or system.
             </p>
@@ -191,54 +182,39 @@ export const Homepage = () => {
       <div className="container mx-auto">
         <section className="pt-24">
           <div className="container mx-auto">
-            <div className="flex justify-start items-start mb-8 lg:ml-48">
+            <div className="flex justify-start items-start md:text-start text-center mb-8 lg:ml-48">
               <div>
-                <h2 className="text-3xl font-bold">Why choose BAD?</h2>
+                <h2 className="lg:text-3xl text-xl font-bold">
+                  Why choose BAD?
+                </h2>
                 <p className="text-gray-600 mt-4">
                   Most viewed and all-time top-selling services
                 </p>
               </div>
             </div>
             {/* Tab Content */}
-            <ul
-              className="flex justify-center mb-4"
-              id="nav-tab-2"
-              role="tablist"
-            >
-              <li className="mr-6 rounded-2xl p-3 bg-sky-200 text-blue-700  hover:bg-blue-700 hover:text-white">
-                <a
-                  className=""
-                  href="#tab-2-1"
-                  data-bs-toggle="tab"
-                  data-bs-target="#tab-2-1"
-                  role="tab"
-                  aria-selected="true"
-                >
+            <ul className="flex justify-center mb-4" role="tablist">
+              <li className="mr-6 rounded-3xl p-3 bg-sky-200 text-blue-700  hover:bg-blue-700 hover:text-white">
+                <a className="" href="#tab-2-1" role="tab" aria-selected="true">
                   Development
                 </a>
               </li>
-              <li className="mr-6 border rounded-2xl p-3 bg-sky-200 text-blue-700  hover:bg-blue-700 hover:text-white">
+              <li className="mr-6 border rounded-3xl p-3 bg-sky-200 text-blue-700  hover:bg-blue-700 hover:text-white">
                 <a
                   className=""
                   href="#tab-2-2"
-                  data-bs-toggle="tab"
-                  data-bs-target="#tab-2-2"
                   role="tab"
                   aria-selected="false"
-                  tabIndex="-1"
                 >
                   Marketing
                 </a>
               </li>
-              <li className="border rounded-2xl p-3 bg-sky-200 text-blue-700  hover:bg-blue-700 hover:text-white">
+              <li className="border rounded-3xl p-3 bg-sky-200 text-blue-700  hover:bg-blue-700 hover:text-white">
                 <a
                   className=""
                   href="#tab-2-3"
-                  data-bs-toggle="tab"
-                  data-bs-target="#tab-2-3"
                   role="tab"
                   aria-selected="false"
-                  tabIndex="-1"
                 >
                   Designing
                 </a>
@@ -251,9 +227,9 @@ export const Homepage = () => {
                 id="tab-2-1"
                 role="tabpanel"
               >
-                <div className="grid grid-cols-3 gap-50 row-gap-50 col-gap-50 px-96 justify-center my-50">
+                <div className="lg:grid grid-cols-3 gap-50 row-gap-50 col-gap-50 lg:px-96 justify-center lg:my-50 mt-6">
                   <div
-                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 mb-16"
+                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
                     style={{ gridColumn: "span 1" }}
                   >
                     <img
@@ -270,7 +246,7 @@ export const Homepage = () => {
                     </div>
                   </div>
                   <div
-                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 mb-16"
+                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
                     style={{ gridColumn: "span 1" }}
                   >
                     <img
@@ -287,7 +263,7 @@ export const Homepage = () => {
                     </div>
                   </div>
                   <div
-                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 mb-16"
+                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
                     style={{ gridColumn: "span 1" }}
                   >
                     <img
@@ -302,7 +278,7 @@ export const Homepage = () => {
                     </div>
                   </div>
                   <div
-                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 mb-16"
+                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
                     style={{ gridColumn: "span 1" }}
                   >
                     <img
@@ -319,7 +295,7 @@ export const Homepage = () => {
                     </div>
                   </div>
                   <div
-                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 mb-16"
+                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
                     style={{ gridColumn: "span 1" }}
                   >
                     <img
@@ -343,9 +319,9 @@ export const Homepage = () => {
                 id="tab-2-2"
                 role="tabpanel"
               >
-                <div className="grid grid-cols-3 gap-50 row-gap-50 col-gap-50 px-96 justify-center my-50">
+                <div className="lg:grid grid-cols-3 gap-50 row-gap-50 col-gap-50 lg:px-96 justify-center lg:my-50 mt-6">
                   <div
-                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 mb-16"
+                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
                     style={{ gridColumn: "span 1" }}
                   >
                     <img
@@ -363,7 +339,7 @@ export const Homepage = () => {
                   </div>
 
                   <div
-                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 mb-16"
+                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
                     style={{ gridColumn: "span 1" }}
                   >
                     <img
@@ -381,7 +357,7 @@ export const Homepage = () => {
                   </div>
 
                   <div
-                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 mb-16"
+                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
                     style={{ gridColumn: "span 1" }}
                   >
                     <img
@@ -399,7 +375,7 @@ export const Homepage = () => {
                   </div>
 
                   <div
-                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 mb-16"
+                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
                     style={{ gridColumn: "span 1" }}
                   >
                     <img
@@ -415,7 +391,7 @@ export const Homepage = () => {
                   </div>
 
                   <div
-                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 mb-16"
+                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
                     style={{ gridColumn: "span 1" }}
                   >
                     <img
@@ -440,9 +416,9 @@ export const Homepage = () => {
                 id="tab-2-3"
                 role="tabpanel"
               >
-                <div className="grid grid-cols-3 gap-50 row-gap-50 col-gap-50 px-96 justify-center my-50">
+                <div className="lg:grid grid-cols-3 gap-50 row-gap-50 col-gap-50 lg:px-96 justify-center lg:my-50 mt-6">
                   <div
-                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 mb-16"
+                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
                     style={{ gridColumn: "span 1" }}
                   >
                     <img
@@ -460,7 +436,7 @@ export const Homepage = () => {
                   </div>
 
                   <div
-                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 mb-16"
+                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
                     style={{ gridColumn: "span 1" }}
                   >
                     <img
@@ -476,7 +452,7 @@ export const Homepage = () => {
                   </div>
 
                   <div
-                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 mb-16"
+                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
                     style={{ gridColumn: "span 1" }}
                   >
                     <img
@@ -494,7 +470,7 @@ export const Homepage = () => {
                   </div>
 
                   <div
-                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 mb-16"
+                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
                     style={{ gridColumn: "span 1" }}
                   >
                     <img
@@ -512,7 +488,7 @@ export const Homepage = () => {
                   </div>
 
                   <div
-                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 mb-16"
+                    className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
                     style={{ gridColumn: "span 1" }}
                   >
                     <img
@@ -534,7 +510,7 @@ export const Homepage = () => {
       </div>
 
       {/* Experience */}
-      <div className="conatiner mt-24 flex justify-center items-center flex-wrap w-full mb-24">
+      <div className="container row mt-24 flex justify-center items-center w-full mb-24 mx-auto">
         <div className="w-full sm:w-1/2 md:w-1/4 px-4 mb-8">
           <div className="text-center">
             <ul className="ps-0 flex justify-center">
