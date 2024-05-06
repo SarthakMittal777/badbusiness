@@ -43,3 +43,7 @@
 .animate-fade-in {
   animation: fadeIn 1s ease-in;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
