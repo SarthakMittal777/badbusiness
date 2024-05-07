@@ -48,19 +48,12 @@ export const Homepage = () => {
     <div className="contain-content mx-auto animate-fade-in">
       {/* Whole Section*/}
       <div
-        className="bg-scroll"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: "cover",
-          "@media (max-width: 767.98px)": {
-            backgroundSize: "auto 100%",
-            backgroundPosition: "center",
-          },
-        }}
+        className="lg:h-screen bg-center lg:bg-cover sm:bg-auto sm:bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${bgImage})` }}
       >
         <Navbar />
         {/* Hero Section*/}
-        <section className="mt-8 lg:mt-12">
+        <section className="">
           <div className="container mx-auto px-4 lg:max-w-screen-smDesktop max-w-screen-2xl flex flex-col lg:flex-row items-center relative">
             <div className="flex-1 lg:p-16 lg:px-48 lg:pt-12 animate-fade-in">
               <h1 className="text-2xl lg:text-5xl font-bold mb-6 text-white text-start lg:text-balance mt-8 lg:leading-snug">
@@ -133,23 +126,23 @@ export const Homepage = () => {
       </div>
 
       {/* Partners */}
-      <div className="container mx-auto lg:mt-72">
-        <div className="flex justify-center items-center mt-8">
-          <h1 className="text-md lg:mr-4 mb-8">
+      <div className="container mx-auto mt-8">
+        <div className="flex justify-center items-center">
+          <h1 className="text-md lg:mr-4">
             Trusted by the world's best Corporations
           </h1>
         </div>
-        <div className="flex flex-wrap justify-around mt-6 lg:justify-evenly">
-          <div className="flex justify-center items-center mx-4 mb-4 ">
+        <div className="flex flex-wrap justify-around mt-6 lg:justify-evenly gap-x-6 lg:gap-x-8 gap-y-6 lg:gap-y-8">
+          <div className="flex justify-center items-center">
             <img src="/images/partners/1.png" alt="1" className="h-30 w-30" />
           </div>
-          <div className="flex justify-center items-center mx-4 mb-4">
+          <div className="flex justify-center items-center">
             <img src="/images/partners/2.png" alt="2" className="h-30 w-30" />
           </div>
-          <div className="flex justify-center items-center mx-4 mb-4">
+          <div className="flex justify-center items-center">
             <img src="/images/partners/3.png" alt="3" className="h-30 w-30" />
           </div>
-          <div className="flex justify-center items-center mx-4 mb-4">
+          <div className="flex justify-center items-center">
             <img src="/images/partners/4.png" alt="4" className="h-30 w-30" />
           </div>
         </div>
@@ -165,47 +158,47 @@ export const Homepage = () => {
             <p className="text-md">Learn about BAD</p>
           </div>
         </div>
-        <div class="flex flex-wrap justify-around mt-6">
-          <div class="p-6 flex flex-col items-center text-center mr-4 mb-4">
-            <div class="rounded-full p-8 mb-3 border border-gray-300 transition-colors hover:bg-gray-200 hover:invert">
+        <div className="flex flex-wrap justify-evenly gap-2 py-4">
+          <div className="flex flex-col items-center text-center w-72">
+            <div className="rounded-full p-8 mb-3 border border-gray-300 transition-colors hover:bg-gray-200 hover:invert">
               <img
                 src="/images/bad/cv.png"
                 alt="Breakdown icon"
-                class="h-10 w-10"
+                className="h-10 w-10"
               />
             </div>
-            <h4 class="text-lg font-semibold mb-3">Breakdown</h4>
-            <p class="text-gray-600 text-balance">
+            <h4 className="text-lg font-semibold mb-3">Breakdown</h4>
+            <p className="text-gray-600 text-balance">
               Identifying and analyzing the root causes of a problem or <br />
               inefficiency within a business process or system.
             </p>
           </div>
 
-          <div class="p-6 rounded-lg flex flex-col items-center text-center mr-4 mb-4 border-gray-300">
-            <div class="rounded-full p-8 mb-3 border border-gray-300 transition-colors hover:bg-gray-200 hover:invert">
+          <div className="rounded-lg flex flex-col items-center text-center w-72">
+            <div className="rounded-full p-8 mb-3 border border-gray-300 transition-colors hover:bg-gray-200 hover:invert">
               <img
                 src="/images/bad/web-design.png"
                 alt="Analysis icon"
-                class="h-10 w-10"
+                className="h-10 w-10"
               />
             </div>
-            <h4 class="text-lg font-semibold mb-3">Analysis</h4>
-            <p class="text-gray-600 items-center">
+            <h4 className="text-lg font-semibold mb-3">Analysis</h4>
+            <p className="text-gray-600 items-center">
               Thoroughly examine the problem, gather data,
               <br /> and identify potential solutions of companies.
             </p>
           </div>
 
-          <div class="p-6 rounded-lg flex flex-col items-center text-center mb-4">
-            <div class="rounded-full p-8 mb-3 border border-gray-300 transition-colors hover:bg-gray-200 hover:invert">
+          <div className="rounded-lg flex flex-col items-center text-center w-72">
+            <div className="rounded-full p-8 mb-3 border border-gray-300 transition-colors hover:bg-gray-200 hover:invert">
               <img
                 src="/images/bad/secure-payment.png"
                 alt="Decision icon"
-                class="h-10 w-10"
+                className="h-10 w-10"
               />
             </div>
-            <h4 class="text-lg font-semibold mb-3">Decision</h4>
-            <p class="text-gray-600 items-center">
+            <h4 className="text-lg font-semibold mb-3">Decision</h4>
+            <p className="text-gray-600 items-center">
               Selecting the most suitable solution based on analysis and
               <br /> criteria such as feasibility,
               <br /> cost-effectiveness, and alignment with organizational
@@ -219,7 +212,7 @@ export const Homepage = () => {
       <div className="container mx-auto">
         <section className="pt-24">
           <div className="container mx-auto">
-            <div className="flex justify-start items-start md:text-start text-center mb-8 lg:ml-48">
+            <div className="flex justify-start items-start md:text-start text-center gap-2 lg:ml-48">
               <div>
                 <h2 className="lg:text-3xl text-xl font-bold">
                   Why choose BAD?
@@ -230,7 +223,7 @@ export const Homepage = () => {
               </div>
             </div>
             {/* Tab Content */}
-            <ul className="flex justify-center mb-4" role="tablist">
+            <ul className="flex justify-center" role="tablist">
               <li
                 className={`mr-6 rounded-3xl p-3 cursor-pointer ${
                   activeTab === "Development"
@@ -272,7 +265,7 @@ export const Homepage = () => {
                 >
                   <div className="lg:grid grid-cols-3 gap-50 row-gap-50 col-gap-50 lg:px-96 justify-center lg:my-50 mt-6">
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
@@ -289,7 +282,7 @@ export const Homepage = () => {
                       </div>
                     </div>
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
@@ -306,7 +299,7 @@ export const Homepage = () => {
                       </div>
                     </div>
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
@@ -323,7 +316,7 @@ export const Homepage = () => {
                       </div>
                     </div>
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
@@ -340,7 +333,7 @@ export const Homepage = () => {
                       </div>
                     </div>
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
@@ -368,7 +361,7 @@ export const Homepage = () => {
                 >
                   <div className="lg:grid grid-cols-3 gap-50 row-gap-50 col-gap-50 lg:px-96 justify-center lg:my-50 mt-6">
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
@@ -386,7 +379,7 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
@@ -404,7 +397,7 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
@@ -422,7 +415,7 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
@@ -440,7 +433,7 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
@@ -469,7 +462,7 @@ export const Homepage = () => {
                 >
                   <div className="lg:grid grid-cols-3 gap-50 row-gap-50 col-gap-50 lg:px-96 justify-center lg:my-50 mt-6">
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
@@ -487,7 +480,7 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
@@ -503,7 +496,7 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
@@ -521,7 +514,7 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
@@ -539,7 +532,7 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
