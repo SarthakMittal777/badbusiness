@@ -272,13 +272,13 @@ export const Homepage = () => {
                 >
                   <div className="lg:grid grid-cols-3 gap-50 row-gap-50 col-gap-50 lg:px-96 justify-center lg:my-50 mt-6">
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
                         src="/images/services/g-1.jpg"
                         alt="Analysis icon"
-                        className="w-96"
+                        className="w-96 hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -289,13 +289,13 @@ export const Homepage = () => {
                       </div>
                     </div>
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
                         src="/images/services/g-2.jpg"
                         alt="Analysis icon"
-                        className="w-96"
+                        className="w-96 hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -306,13 +306,13 @@ export const Homepage = () => {
                       </div>
                     </div>
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
                         src="/images/services/g-3.jpg"
                         alt="Analysis icon"
-                        className="w-96"
+                        className="w-96 hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -323,13 +323,13 @@ export const Homepage = () => {
                       </div>
                     </div>
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
                         src="/images/services/g-4.jpg"
                         alt="Analysis icon"
-                        className="w-96"
+                        className="w-96 hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -340,13 +340,13 @@ export const Homepage = () => {
                       </div>
                     </div>
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
                         src="/images/services/g-5.jpg"
                         alt="Analysis icon"
-                        className="w-96"
+                        className="w-96 hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -368,13 +368,13 @@ export const Homepage = () => {
                 >
                   <div className="lg:grid grid-cols-3 gap-50 row-gap-50 col-gap-50 lg:px-96 justify-center lg:my-50 mt-6">
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
                         src="/images/services/g-2.jpg"
                         alt="Analysis icon"
-                        className="w-96"
+                        className="w-96 hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -386,13 +386,13 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
                         src="/images/services/g-2.jpg"
                         alt="Analysis icon"
-                        className="w-96"
+                        className="w-96 hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -404,13 +404,13 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
                         src="/images/services/g-2.jpg"
                         alt="Analysis icon"
-                        className="w-96"
+                        className="w-96 hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -422,13 +422,13 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
                         src="/images/services/g-2.jpg"
                         alt="Analysis icon"
-                        className="w-96"
+                        className="w-96 hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -440,13 +440,13 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
                         src="/images/services/g-2.jpg"
                         alt="Analysis icon"
-                        className="w-96"
+                        className="w-96 hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -469,13 +469,13 @@ export const Homepage = () => {
                 >
                   <div className="lg:grid grid-cols-3 gap-50 row-gap-50 col-gap-50 lg:px-96 justify-center lg:my-50 mt-6">
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
                         src="/images/services/g-3.jpg"
                         alt="Analysis icon"
-                        className="w-96"
+                        className="w-96 hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -487,13 +487,13 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
                         src="/images/services/g-3.jpg"
                         alt="Analysis icon"
-                        className="w-96"
+                        className="w-96 hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -503,13 +503,13 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
                         src="/images/services/g-3.jpg"
                         alt="Analysis icon"
-                        className="w-96"
+                        className="w-96 hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -521,13 +521,13 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
                         src="/images/services/g-3.jpg"
                         alt="Analysis icon"
-                        className="w-96"
+                        className="w-96 hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -539,13 +539,13 @@ export const Homepage = () => {
                     </div>
 
                     <div
-                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-16 mb-8"
+                      className="hover:shadow-lg hover-box-shadow rounded-2xl overflow-hidden border mr-8 lg:mb-4 mb-8"
                       style={{ gridColumn: "span 1" }}
                     >
                       <img
                         src="/images/services/g-3.jpg"
                         alt="Analysis icon"
-                        className="w-96"
+                        className="w-96 hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -568,7 +568,7 @@ export const Homepage = () => {
             <ul className="ps-0 flex justify-center">
               <li>
                 <div className="font-semibold text-4xl mb-1">
-                  {currentNumber}
+                  {currentNumber}+
                 </div>
               </li>
             </ul>
@@ -579,7 +579,7 @@ export const Homepage = () => {
           <div className="text-center">
             <ul className="ps-0 flex justify-center">
               <li>
-                <div className="font-semibold text-4xl mb-1">20</div>
+                <div className="font-semibold text-4xl mb-1">20+</div>
               </li>
             </ul>
             <p className="text">Total Companies</p>
@@ -589,7 +589,7 @@ export const Homepage = () => {
           <div className="text-center">
             <ul className="ps-0 flex justify-center">
               <li>
-                <div className="font-semibold text-4xl mb-1">30</div>
+                <div className="font-semibold text-4xl mb-1">30+</div>
               </li>
             </ul>
             <p className="text">Total Startups</p>
@@ -599,7 +599,7 @@ export const Homepage = () => {
           <div className="text-center">
             <ul className="ps-0 flex justify-center">
               <li>
-                <div className="font-semibold text-4xl mb-1">35</div>
+                <div className="font-semibold text-4xl mb-1">35+</div>
               </li>
             </ul>
             <p className="text">Total Consultants</p>
@@ -628,7 +628,7 @@ export const Homepage = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className={`w-50 md:w-1/4 mb-8 md:mb-0 mr-4 relative transition-transform duration-300 ${
+                className={`w-50 md:w-1/4 mb-8 md:mb-0 mr-4 relative transition-transform duration-300 hover:scale-105 ${
                   index === currentIndex ? "" : "hidden md:block"
                 }`}
               >
