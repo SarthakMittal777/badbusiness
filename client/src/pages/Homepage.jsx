@@ -1,6 +1,8 @@
 import Navbar from "../components/Navbar";
 const bgImage = "/images/hero/hero-bg.png";
 import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 export const Homepage = () => {
   const [currentNumber, setCurrentNumber] = useState(1);
@@ -35,20 +37,20 @@ export const Homepage = () => {
     { name: "Shuvam Raj", position: "MD", image: "/images/team/md.jpg" },
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === teamMembers.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentIndex((prevIndex) =>
+  //       prevIndex === teamMembers.length - 1 ? 0 : prevIndex + 1
+  //     );
+  //   }, 3000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <div className="contain-content mx-auto animate-fade-in">
       {/* Whole Section*/}
       <div
-        className="lg:h-screen bg-center lg:bg-cover sm:bg-auto sm:bg-center bg-no-repeat"
+        className="lg:h-dvh bg-center lg:bg-cover sm:bg-auto sm:bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         <Navbar />
@@ -81,16 +83,16 @@ export const Homepage = () => {
 
             {/* Hero Images*/}
             <div className="flex-1 p-8 relative animate-fade-in">
-              <div className="flex mb-4">
+              <div className="flex mb-4 gap-6">
                 <img
                   src="/images/hero/hero-1.png"
                   alt="Image 1"
-                  className="w-1/3 mr-6 sm:block hidden"
+                  className="w-1/3 sm:block hidden"
                 />
                 <img
                   src="/images/hero/client.png"
                   alt="Image 1"
-                  className="w-auto absolute top-64 left-10 animate-moveLeftRight sm:block hidden"
+                  className="w-auto absolute top-[40%] left-10 animate-moveLeftRight sm:block hidden"
                 />
                 <img
                   src="/images/hero/hero-2.png"
@@ -109,7 +111,7 @@ export const Homepage = () => {
                     <img
                       src="/images/hero/medal.png"
                       className="w-6 h-6 invert "
-                      alt=""
+                      alt="Medal"
                     />
                   </span>
                   <div className="pl-2">
@@ -134,16 +136,16 @@ export const Homepage = () => {
         </div>
         <div className="flex flex-wrap justify-around mt-6 lg:justify-evenly gap-x-6 lg:gap-x-8 gap-y-6 lg:gap-y-8">
           <div className="flex justify-center items-center">
-            <img src="/images/partners/1.png" alt="1" className="h-30 w-30" />
+            <img src="/images/partners/1.png" alt="1" className="h-24" />
           </div>
           <div className="flex justify-center items-center">
-            <img src="/images/partners/2.png" alt="2" className="h-30 w-30" />
+            <img src="/images/partners/2.png" alt="2" className="h-24" />
           </div>
           <div className="flex justify-center items-center">
-            <img src="/images/partners/3.png" alt="3" className="h-30 w-30" />
+            <img src="/images/partners/3.png" alt="3" className="h-24" />
           </div>
           <div className="flex justify-center items-center">
-            <img src="/images/partners/4.png" alt="4" className="h-30 w-30" />
+            <img src="/images/partners/4.png" alt="4" className="h-24" />
           </div>
         </div>
       </div>
@@ -212,7 +214,7 @@ export const Homepage = () => {
       <div className="container mx-auto">
         <section className="pt-24">
           <div className="container mx-auto">
-            <div className="flex justify-start items-start md:text-start text-center gap-2 lg:ml-48">
+            <div className="flex justify-center text-center gap-2">
               <div>
                 <h2 className="lg:text-3xl text-xl font-bold">
                   Why choose BAD?
@@ -223,39 +225,42 @@ export const Homepage = () => {
               </div>
             </div>
             {/* Tab Content */}
-            <ul className="flex justify-center" role="tablist">
+            <ul
+              className="flex justify-center gap-4 md:gap-6 lg:gap-8 mt-4 lg:mt-6 xl:mt-8"
+              role="tablist"
+            >
               <li
-                className={`mr-6 rounded-3xl p-3 cursor-pointer ${
+                className={`rounded-3xl px-4 py-2 cursor-pointer ${
                   activeTab === "Development"
-                    ? "bg-blue-700 text-white"
-                    : "bg-sky-200 text-blue-700 hover:bg-blue-700 hover:text-white"
+                    ? "bg-[#212A32] text-white border-black border"
+                    : "text-black border-black border hover:bg-gray-200"
                 }`}
                 onClick={() => handleTabClick("Development")}
               >
                 Development
               </li>
               <li
-                className={`mr-6 border rounded-3xl p-3 cursor-pointer ${
+                className={`border rounded-3xl px-4 py-2 cursor-pointer ${
                   activeTab === "Marketing"
-                    ? "bg-blue-700 text-white"
-                    : "bg-sky-200 text-blue-700 hover:bg-blue-700 hover:text-white"
+                    ? "bg-[#212A32] text-white border-black border"
+                    : "text-black border-black border hover:bg-gray-200"
                 }`}
                 onClick={() => handleTabClick("Marketing")}
               >
                 Marketing
               </li>
               <li
-                className={`border rounded-3xl p-3 cursor-pointer ${
+                className={`border rounded-3xl px-4 py-2 cursor-pointer ${
                   activeTab === "Designing"
-                    ? "bg-blue-700 text-white"
-                    : "bg-sky-200 text-blue-700 hover:bg-blue-700 hover:text-white"
+                    ? "bg-[#212A32] text-white border-black border"
+                    : "text-black border-black border hover:bg-gray-200"
                 }`}
                 onClick={() => handleTabClick("Designing")}
               >
                 Designing
               </li>
             </ul>
-            <div className="tab-content lg:mt-16 md:mt-4">
+            <div className="tab-content lg:mt-16 md:mt-4 mx-auto w-4/5">
               {/* <!-- Development service items here --> */}
               {activeTab === "Development" && (
                 <div
@@ -263,15 +268,12 @@ export const Homepage = () => {
                   id="tab-2-1"
                   role="tabpanel"
                 >
-                  <div className="lg:grid grid-cols-3 gap-50 row-gap-50 col-gap-50 lg:px-96 justify-center lg:my-50 mt-6">
-                    <div
-                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
-                      style={{ gridColumn: "span 1" }}
-                    >
+                  <div className="flex flex-col flex-wrap md:flex-row gap-16 md:gap-8 justify-center lg:my-50 mt-6">
+                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
                       <img
                         src="/images/services/g-1.jpg"
                         alt="Analysis icon"
-                        className="w-96 hover:scale-110 duration-300"
+                        className="w-full hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -281,14 +283,11 @@ export const Homepage = () => {
                         </h5>
                       </div>
                     </div>
-                    <div
-                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
-                      style={{ gridColumn: "span 1" }}
-                    >
+                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
                       <img
                         src="/images/services/g-2.jpg"
                         alt="Analysis icon"
-                        className="w-96 hover:scale-110 duration-300"
+                        className="w-full hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -298,14 +297,11 @@ export const Homepage = () => {
                         </h5>
                       </div>
                     </div>
-                    <div
-                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
-                      style={{ gridColumn: "span 1" }}
-                    >
+                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
                       <img
                         src="/images/services/g-3.jpg"
                         alt="Analysis icon"
-                        className="w-96 hover:scale-110 duration-300"
+                        className="w-full hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -315,14 +311,11 @@ export const Homepage = () => {
                         </h5>
                       </div>
                     </div>
-                    <div
-                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
-                      style={{ gridColumn: "span 1" }}
-                    >
+                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
                       <img
                         src="/images/services/g-4.jpg"
                         alt="Analysis icon"
-                        className="w-96 hover:scale-110 duration-300"
+                        className="w-full hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -332,14 +325,11 @@ export const Homepage = () => {
                         </h5>
                       </div>
                     </div>
-                    <div
-                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
-                      style={{ gridColumn: "span 1" }}
-                    >
+                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
                       <img
                         src="/images/services/g-5.jpg"
                         alt="Analysis icon"
-                        className="w-96 hover:scale-110 duration-300"
+                        className="w-full hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -359,15 +349,12 @@ export const Homepage = () => {
                   id="tab-2-2"
                   role="tabpanel"
                 >
-                  <div className="lg:grid grid-cols-3 gap-50 row-gap-50 col-gap-50 lg:px-96 justify-center lg:my-50 mt-6">
-                    <div
-                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
-                      style={{ gridColumn: "span 1" }}
-                    >
+                  <div className="flex flex-col flex-wrap md:flex-row gap-16 md:gap-8 justify-center lg:my-50 mt-6">
+                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
                       <img
                         src="/images/services/g-2.jpg"
                         alt="Analysis icon"
-                        className="w-96 hover:scale-110 duration-300"
+                        className="w-full hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -378,14 +365,11 @@ export const Homepage = () => {
                       </div>
                     </div>
 
-                    <div
-                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
-                      style={{ gridColumn: "span 1" }}
-                    >
+                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
                       <img
                         src="/images/services/g-2.jpg"
                         alt="Analysis icon"
-                        className="w-96 hover:scale-110 duration-300"
+                        className="w-full hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -396,14 +380,11 @@ export const Homepage = () => {
                       </div>
                     </div>
 
-                    <div
-                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
-                      style={{ gridColumn: "span 1" }}
-                    >
+                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
                       <img
                         src="/images/services/g-2.jpg"
                         alt="Analysis icon"
-                        className="w-96 hover:scale-110 duration-300"
+                        className="w-full hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -414,14 +395,11 @@ export const Homepage = () => {
                       </div>
                     </div>
 
-                    <div
-                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
-                      style={{ gridColumn: "span 1" }}
-                    >
+                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
                       <img
                         src="/images/services/g-2.jpg"
                         alt="Analysis icon"
-                        className="w-96 hover:scale-110 duration-300"
+                        className="w-full hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -432,14 +410,11 @@ export const Homepage = () => {
                       </div>
                     </div>
 
-                    <div
-                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
-                      style={{ gridColumn: "span 1" }}
-                    >
+                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
                       <img
                         src="/images/services/g-2.jpg"
                         alt="Analysis icon"
-                        className="w-96 hover:scale-110 duration-300"
+                        className="w-full hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -460,15 +435,12 @@ export const Homepage = () => {
                   id="tab-2-3"
                   role="tabpanel"
                 >
-                  <div className="lg:grid grid-cols-3 gap-50 row-gap-50 col-gap-50 lg:px-96 justify-center lg:my-50 mt-6">
-                    <div
-                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
-                      style={{ gridColumn: "span 1" }}
-                    >
+                  <div className="flex flex-col flex-wrap md:flex-row gap-16 md:gap-8 justify-center lg:my-50 mt-6">
+                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
                       <img
                         src="/images/services/g-3.jpg"
                         alt="Analysis icon"
-                        className="w-96 hover:scale-110 duration-300"
+                        className="w-full hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -479,14 +451,11 @@ export const Homepage = () => {
                       </div>
                     </div>
 
-                    <div
-                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
-                      style={{ gridColumn: "span 1" }}
-                    >
+                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
                       <img
                         src="/images/services/g-3.jpg"
                         alt="Analysis icon"
-                        className="w-96 hover:scale-110 duration-300"
+                        className="w-full hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -495,14 +464,11 @@ export const Homepage = () => {
                       </div>
                     </div>
 
-                    <div
-                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
-                      style={{ gridColumn: "span 1" }}
-                    >
+                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
                       <img
                         src="/images/services/g-3.jpg"
                         alt="Analysis icon"
-                        className="w-96 hover:scale-110 duration-300"
+                        className="w-full hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -513,14 +479,11 @@ export const Homepage = () => {
                       </div>
                     </div>
 
-                    <div
-                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
-                      style={{ gridColumn: "span 1" }}
-                    >
+                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
                       <img
                         src="/images/services/g-3.jpg"
                         alt="Analysis icon"
-                        className="w-96 hover:scale-110 duration-300"
+                        className="w-full hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -531,14 +494,11 @@ export const Homepage = () => {
                       </div>
                     </div>
 
-                    <div
-                      className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border mr-8 lg:mb-4 mb-8"
-                      style={{ gridColumn: "span 1" }}
-                    >
+                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
                       <img
                         src="/images/services/g-3.jpg"
                         alt="Analysis icon"
-                        className="w-96 hover:scale-110 duration-300"
+                        className="w-full hover:scale-110 duration-300"
                       />
                       <div className="p-4">
                         <h5 className="font-semibold mb-2">
@@ -617,8 +577,47 @@ export const Homepage = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-center items-center my-12">
-            {teamMembers.map((member, index) => (
+
+          <div className="flex justify-center items-center">
+            <Swiper
+              spaceBetween={50}
+              slidesPerView={4}
+              loop={true}
+              onSlideChange={() => console.log("slide change")}
+              onSwiper={(swiper) => console.log(swiper)}
+            >
+              {teamMembers.map((member, index) => (
+                <SwiperSlide key={index}>
+                  <div className="rounded-md transition-transform duration-300 hover:scale-105">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full rounded-xl"
+                    />
+                    <div className="absolute top-7 left-7 px-2 py-1 rounded-md z-10">
+                      <p className="text-sm">{member.name}</p>
+                      <p className="text-sm">{member.position}</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+              {teamMembers.map((member, index) => (
+                <SwiperSlide key={index}>
+                  <div className="rounded-md transition-transform duration-300 hover:scale-105">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full rounded-xl"
+                    />
+                    <div className="absolute top-7 left-7 px-2 py-1 rounded-md z-10">
+                      <p className="text-sm">{member.name}</p>
+                      <p className="text-sm">{member.position}</p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            {/* {teamMembers.map((member, index) => (
               <div
                 key={index}
                 className={`w-50 md:w-1/4 mb-8 md:mb-0 mr-4 relative transition-transform duration-300 hover:scale-105 ${
@@ -635,7 +634,7 @@ export const Homepage = () => {
                   alt={member.name}
                 />
               </div>
-            ))}
+            ))} */}
           </div>
           <hr className="my-8" />
         </div>
