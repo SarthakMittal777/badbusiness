@@ -1,35 +1,40 @@
 import Navbar from "../components/Navbar";
+import NumberCounterSection from "../components/NumberCounterSection";
+import ServiceSection from "../components/ServiceSection";
+import Tabs from "../components/Tabs";
 const bgImage = "/images/hero/hero-bg.png";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 export const Homepage = () => {
-  const [currentNumber, setCurrentNumber] = useState(1);
-  const finalNumber = 10;
-  const duration = 2000;
-
-  useEffect(() => {
-    const interval = duration / finalNumber;
-
-    const increaseNumber = () => {
-      if (currentNumber < finalNumber) {
-        setCurrentNumber((prevNumber) => prevNumber + 1);
-      }
-    };
-
-    const timeout = setTimeout(increaseNumber, interval);
-
-    return () => clearTimeout(timeout);
-  }, [currentNumber, finalNumber, duration]);
-
   const [activeTab, setActiveTab] = useState("Development");
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
   };
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const services = [
+    {
+      title: "Breakdown",
+      icon: "/images/bad/cv.png",
+      description:
+        "Identifying and analyzing the root causes of a problem or inefficiency within a business process or system.",
+    },
+    {
+      title: "Analysis",
+      icon: "/images/bad/web-design.png",
+      description:
+        "Thoroughly examine the problem, gather data, and identify potential solutions of companies.",
+    },
+    {
+      title: "Decision",
+      icon: "/images/bad/secure-payment.png",
+      description:
+        "Selecting the most suitable solution based on analysis and criteria such as feasibility, cost-effectiveness, and alignment with organizational goals.",
+    },
+  ];
+
   const teamMembers = [
     { name: "Sarthak Mittal", position: "CEO", image: "/images/team/ceo.jpg" },
     { name: "Pratham Sahu", position: "COO", image: "/images/team/coo.jpg" },
@@ -37,14 +42,21 @@ export const Homepage = () => {
     { name: "Shuvam Raj", position: "MD", image: "/images/team/md.jpg" },
   ];
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentIndex((prevIndex) =>
-  //       prevIndex === teamMembers.length - 1 ? 0 : prevIndex + 1
-  //     );
-  //   }, 3000);
-  //   return () => clearInterval(interval);
-  // }, []);
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className="contain-content mx-auto animate-fade-in">
@@ -126,7 +138,6 @@ export const Homepage = () => {
           </div>
         </section>
       </div>
-
       {/* Partners */}
       <div className="container mx-auto mt-8">
         <div className="flex justify-center items-center">
@@ -149,417 +160,12 @@ export const Homepage = () => {
           </div>
         </div>
       </div>
-
-      {/* Learn About BAD */}
-      <div className="container mx-auto">
-        <div className="flex flex-col items-center mt-24">
-          <h1 className="lg:text-3xl text-xl font-bold mb-2 text-neutral-800">
-            Need something done?
-          </h1>
-          <div className="text-center mt-2">
-            <p className="text-md">Learn about BAD</p>
-          </div>
-        </div>
-        <div className="flex flex-wrap justify-evenly gap-2 py-4">
-          <div className="flex flex-col items-center text-center w-72">
-            <div className="rounded-full p-8 mb-3 border border-gray-300 transition-colors hover:bg-gray-200 hover:invert">
-              <img
-                src="/images/bad/cv.png"
-                alt="Breakdown icon"
-                className="h-10 w-10"
-              />
-            </div>
-            <h4 className="text-lg font-semibold mb-3">Breakdown</h4>
-            <p className="text-gray-600 text-balance">
-              Identifying and analyzing the root causes of a problem or <br />
-              inefficiency within a business process or system.
-            </p>
-          </div>
-
-          <div className="rounded-lg flex flex-col items-center text-center w-72">
-            <div className="rounded-full p-8 mb-3 border border-gray-300 transition-colors hover:bg-gray-200 hover:invert">
-              <img
-                src="/images/bad/web-design.png"
-                alt="Analysis icon"
-                className="h-10 w-10"
-              />
-            </div>
-            <h4 className="text-lg font-semibold mb-3">Analysis</h4>
-            <p className="text-gray-600 items-center">
-              Thoroughly examine the problem, gather data,
-              <br /> and identify potential solutions of companies.
-            </p>
-          </div>
-
-          <div className="rounded-lg flex flex-col items-center text-center w-72">
-            <div className="rounded-full p-8 mb-3 border border-gray-300 transition-colors hover:bg-gray-200 hover:invert">
-              <img
-                src="/images/bad/secure-payment.png"
-                alt="Decision icon"
-                className="h-10 w-10"
-              />
-            </div>
-            <h4 className="text-lg font-semibold mb-3">Decision</h4>
-            <p className="text-gray-600 items-center">
-              Selecting the most suitable solution based on analysis and
-              <br /> criteria such as feasibility,
-              <br /> cost-effectiveness, and alignment with organizational
-              goals.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Why Choose Bad? */}
-      <div className="container mx-auto">
-        <section className="pt-24">
-          <div className="container mx-auto">
-            <div className="flex justify-center text-center gap-2">
-              <div>
-                <h2 className="lg:text-3xl text-xl font-bold">
-                  Why choose BAD?
-                </h2>
-                <p className="text-gray-600 mt-4">
-                  Most viewed and all-time top-selling services
-                </p>
-              </div>
-            </div>
-            {/* Tab Content */}
-            <ul
-              className="flex justify-center gap-4 md:gap-6 lg:gap-8 mt-4 lg:mt-6 xl:mt-8"
-              role="tablist"
-            >
-              <li
-                className={`rounded-3xl px-4 py-2 cursor-pointer ${
-                  activeTab === "Development"
-                    ? "bg-[#212A32] text-white border-black border"
-                    : "text-black border-black border hover:bg-gray-200"
-                }`}
-                onClick={() => handleTabClick("Development")}
-              >
-                Development
-              </li>
-              <li
-                className={`border rounded-3xl px-4 py-2 cursor-pointer ${
-                  activeTab === "Marketing"
-                    ? "bg-[#212A32] text-white border-black border"
-                    : "text-black border-black border hover:bg-gray-200"
-                }`}
-                onClick={() => handleTabClick("Marketing")}
-              >
-                Marketing
-              </li>
-              <li
-                className={`border rounded-3xl px-4 py-2 cursor-pointer ${
-                  activeTab === "Designing"
-                    ? "bg-[#212A32] text-white border-black border"
-                    : "text-black border-black border hover:bg-gray-200"
-                }`}
-                onClick={() => handleTabClick("Designing")}
-              >
-                Designing
-              </li>
-            </ul>
-            <div className="tab-content lg:mt-16 md:mt-4 mx-auto w-4/5">
-              {/* <!-- Development service items here --> */}
-              {activeTab === "Development" && (
-                <div
-                  className="tab-pane fade show active"
-                  id="tab-2-1"
-                  role="tabpanel"
-                >
-                  <div className="flex flex-col flex-wrap md:flex-row gap-16 md:gap-8 justify-center lg:my-50 mt-6">
-                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
-                      <img
-                        src="/images/services/g-1.jpg"
-                        alt="Analysis icon"
-                        className="w-full hover:scale-110 duration-300"
-                      />
-                      <div className="p-4">
-                        <h5 className="font-semibold mb-2">
-                          <a href="page-services-single.html">
-                            Website Development
-                          </a>
-                        </h5>
-                      </div>
-                    </div>
-                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
-                      <img
-                        src="/images/services/g-2.jpg"
-                        alt="Analysis icon"
-                        className="w-full hover:scale-110 duration-300"
-                      />
-                      <div className="p-4">
-                        <h5 className="font-semibold mb-2">
-                          <a href="page-services-single.html">
-                            Android Development
-                          </a>
-                        </h5>
-                      </div>
-                    </div>
-                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
-                      <img
-                        src="/images/services/g-3.jpg"
-                        alt="Analysis icon"
-                        className="w-full hover:scale-110 duration-300"
-                      />
-                      <div className="p-4">
-                        <h5 className="font-semibold mb-2">
-                          <a href="page-services-single.html">
-                            iOS Development
-                          </a>
-                        </h5>
-                      </div>
-                    </div>
-                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
-                      <img
-                        src="/images/services/g-4.jpg"
-                        alt="Analysis icon"
-                        className="w-full hover:scale-110 duration-300"
-                      />
-                      <div className="p-4">
-                        <h5 className="font-semibold mb-2">
-                          <a href="page-services-single.html">
-                            Software Development
-                          </a>
-                        </h5>
-                      </div>
-                    </div>
-                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
-                      <img
-                        src="/images/services/g-5.jpg"
-                        alt="Analysis icon"
-                        className="w-full hover:scale-110 duration-300"
-                      />
-                      <div className="p-4">
-                        <h5 className="font-semibold mb-2">
-                          <a href="page-services-single.html">
-                            Wordpress Development
-                          </a>
-                        </h5>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {/* <!-- Marketing service items here --> */}
-              {activeTab === "Marketing" && (
-                <div
-                  className="tab-pane fade show active"
-                  id="tab-2-2"
-                  role="tabpanel"
-                >
-                  <div className="flex flex-col flex-wrap md:flex-row gap-16 md:gap-8 justify-center lg:my-50 mt-6">
-                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
-                      <img
-                        src="/images/services/g-2.jpg"
-                        alt="Analysis icon"
-                        className="w-full hover:scale-110 duration-300"
-                      />
-                      <div className="p-4">
-                        <h5 className="font-semibold mb-2">
-                          <a href="page-services-single.html">
-                            SEO ( Search Engine Optimization )
-                          </a>
-                        </h5>
-                      </div>
-                    </div>
-
-                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
-                      <img
-                        src="/images/services/g-2.jpg"
-                        alt="Analysis icon"
-                        className="w-full hover:scale-110 duration-300"
-                      />
-                      <div className="p-4">
-                        <h5 className="font-semibold mb-2">
-                          <a href="page-services-single.html">
-                            Social Media Management and Marketing
-                          </a>
-                        </h5>
-                      </div>
-                    </div>
-
-                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
-                      <img
-                        src="/images/services/g-2.jpg"
-                        alt="Analysis icon"
-                        className="w-full hover:scale-110 duration-300"
-                      />
-                      <div className="p-4">
-                        <h5 className="font-semibold mb-2">
-                          <a href="page-services-single.html">
-                            Google Ads Words & Ad Campaigning
-                          </a>
-                        </h5>
-                      </div>
-                    </div>
-
-                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
-                      <img
-                        src="/images/services/g-2.jpg"
-                        alt="Analysis icon"
-                        className="w-full hover:scale-110 duration-300"
-                      />
-                      <div className="p-4">
-                        <h5 className="font-semibold mb-2">
-                          <a href="page-services-single.html">
-                            Video Marketing
-                          </a>
-                        </h5>
-                      </div>
-                    </div>
-
-                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
-                      <img
-                        src="/images/services/g-2.jpg"
-                        alt="Analysis icon"
-                        className="w-full hover:scale-110 duration-300"
-                      />
-                      <div className="p-4">
-                        <h5 className="font-semibold mb-2">
-                          <a href="page-services-single.html">
-                            Search Engine Marketing (SEM)
-                            <br /> and Pay-Per-Click (PPC) Advertising
-                          </a>
-                        </h5>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-              {/* <!-- Designing service items here --> */}
-              {activeTab === "Designing" && (
-                <div
-                  className="tab-pane fade show active"
-                  id="tab-2-3"
-                  role="tabpanel"
-                >
-                  <div className="flex flex-col flex-wrap md:flex-row gap-16 md:gap-8 justify-center lg:my-50 mt-6">
-                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
-                      <img
-                        src="/images/services/g-3.jpg"
-                        alt="Analysis icon"
-                        className="w-full hover:scale-110 duration-300"
-                      />
-                      <div className="p-4">
-                        <h5 className="font-semibold mb-2">
-                          <a href="page-services-single.html">
-                            Website Designing
-                          </a>
-                        </h5>
-                      </div>
-                    </div>
-
-                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
-                      <img
-                        src="/images/services/g-3.jpg"
-                        alt="Analysis icon"
-                        className="w-full hover:scale-110 duration-300"
-                      />
-                      <div className="p-4">
-                        <h5 className="font-semibold mb-2">
-                          <a href="page-services-single.html">Network Design</a>
-                        </h5>
-                      </div>
-                    </div>
-
-                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
-                      <img
-                        src="/images/services/g-3.jpg"
-                        alt="Analysis icon"
-                        className="w-full hover:scale-110 duration-300"
-                      />
-                      <div className="p-4">
-                        <h5 className="font-semibold mb-2">
-                          <a href="page-services-single.html">
-                            Graphic Design and Branding Services
-                          </a>
-                        </h5>
-                      </div>
-                    </div>
-
-                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
-                      <img
-                        src="/images/services/g-3.jpg"
-                        alt="Analysis icon"
-                        className="w-full hover:scale-110 duration-300"
-                      />
-                      <div className="p-4">
-                        <h5 className="font-semibold mb-2">
-                          <a href="page-services-single.html">
-                            Video Production and Animation
-                          </a>
-                        </h5>
-                      </div>
-                    </div>
-
-                    <div className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96">
-                      <img
-                        src="/images/services/g-3.jpg"
-                        alt="Analysis icon"
-                        className="w-full hover:scale-110 duration-300"
-                      />
-                      <div className="p-4">
-                        <h5 className="font-semibold mb-2">
-                          <a href="page-services-single.html">BAD Placements</a>
-                        </h5>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
-      </div>
-
-      {/* Experience */}
-      <div className="container row mt-24 flex justify-center items-center w-full mb-24 mx-auto">
-        <div className="w-full sm:w-1/2 md:w-1/4 px-4 mb-8">
-          <div className="text-center">
-            <ul className="ps-0 flex justify-center">
-              <li>
-                <div className="font-semibold text-4xl mb-1">
-                  {currentNumber}+
-                </div>
-              </li>
-            </ul>
-            <p className="text">Total Communites</p>
-          </div>
-        </div>
-        <div className="w-full sm:w-1/2 md:w-1/4 px-4 mb-8">
-          <div className="text-center">
-            <ul className="ps-0 flex justify-center">
-              <li>
-                <div className="font-semibold text-4xl mb-1">20+</div>
-              </li>
-            </ul>
-            <p className="text">Total Companies</p>
-          </div>
-        </div>
-        <div className="w-full sm:w-1/2 md:w-1/4 px-4 mb-8">
-          <div className="text-center">
-            <ul className="ps-0 flex justify-center">
-              <li>
-                <div className="font-semibold text-4xl mb-1">30+</div>
-              </li>
-            </ul>
-            <p className="text">Total Startups</p>
-          </div>
-        </div>
-        <div className="w-full sm:w-1/2 md:w-1/4 px-4 mb-8">
-          <div className="text-center">
-            <ul className="ps-0 flex justify-center">
-              <li>
-                <div className="font-semibold text-4xl mb-1">35+</div>
-              </li>
-            </ul>
-            <p className="text">Total Consultants</p>
-          </div>
-        </div>
-      </div>
-
+      {/* Service Section  */}
+      <ServiceSection services={services} />;
+      {/* Tabs Section  */}
+      <Tabs activeTab={activeTab} handleTabClick={handleTabClick} />
+      {/* NumberCounter Section  */}
+      <NumberCounterSection />
       {/* Team */}
       <div className="bg-zinc-800 text-white py-8">
         <div className="container mx-auto max-w-screen-xl">
@@ -577,64 +183,60 @@ export const Homepage = () => {
               </div>
             </div>
           </div>
-
+          {/* Swiper */}
           <div className="flex justify-center items-center">
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={4}
-              loop={true}
-              onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
-            >
-              {teamMembers.map((member, index) => (
-                <SwiperSlide key={index}>
-                  <div className="rounded-md transition-transform duration-300 hover:scale-105">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full rounded-xl"
-                    />
-                    <div className="absolute top-7 left-7 px-2 py-1 rounded-md z-10">
-                      <p className="text-sm">{member.name}</p>
-                      <p className="text-sm">{member.position}</p>
+            {isMobileView ? (
+              <Swiper spaceBetween={50} slidesPerView={1} loop={true}>
+                {teamMembers.map((member, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="rounded-md transition-transform duration-300 hover:scale-105 px-10">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-50 h-full rounded-xl"
+                      />
+                      <div className="absolute top-8 left-8 px-5 py-1 rounded-md z-10">
+                        <p className="text-sm">{member.name}</p>
+                        <p className="text-sm">{member.position}</p>
+                      </div>
                     </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-              {teamMembers.map((member, index) => (
-                <SwiperSlide key={index}>
-                  <div className="rounded-md transition-transform duration-300 hover:scale-105">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full rounded-xl"
-                    />
-                    <div className="absolute top-7 left-7 px-2 py-1 rounded-md z-10">
-                      <p className="text-sm">{member.name}</p>
-                      <p className="text-sm">{member.position}</p>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            ) : (
+              <Swiper spaceBetween={50} slidesPerView={4} loop={true}>
+                {teamMembers.map((member, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="rounded-md transition-transform duration-300 hover:scale-105">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full rounded-xl"
+                      />
+                      <div className="absolute top-7 left-7 px-2 py-1 rounded-md z-10">
+                        <p className="text-sm">{member.name}</p>
+                        <p className="text-sm">{member.position}</p>
+                      </div>
                     </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-            {/* {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className={`w-50 md:w-1/4 mb-8 md:mb-0 mr-4 relative transition-transform duration-300 hover:scale-105 ${
-                  index === currentIndex ? "" : "hidden md:block"
-                }`}
-              >
-                <div className="absolute top-7 left-7 px-2 py-1 rounded-md z-10">
-                  <p className="font-semibold">{member.name}</p>
-                  <p className="text-sm">{member.position}</p>
-                </div>
-                <img
-                  src={member.image}
-                  className="w-full rounded-xl"
-                  alt={member.name}
-                />
-              </div>
-            ))} */}
+                  </SwiperSlide>
+                ))}
+                {teamMembers.map((member, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="rounded-md transition-transform duration-300 hover:scale-105">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full rounded-xl"
+                      />
+                      <div className="absolute top-7 left-7 px-2 py-1 rounded-md z-10">
+                        <p className="text-sm">{member.name}</p>
+                        <p className="text-sm">{member.position}</p>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            )}
           </div>
           <hr className="my-8" />
         </div>

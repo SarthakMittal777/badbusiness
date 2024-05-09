@@ -3,12 +3,12 @@ import { Homepage } from "./pages/Homepage";
 import { Signin } from "./pages/Signin";
 import { Signup } from "./pages/Signup";
 import { Services } from "./pages/Services/Services";
-import { Partners } from "./pages/Partners";
 import { ServicesAll } from "./pages/Services/ServicesAll";
 import { ServiceDetails } from "./pages/Services/ServiceDetails";
 import { Footer } from "./components/Footer";
 import { Portal } from "./pages/Portal";
 import { Teams } from "./pages/Teams";
+import { Partners } from "./pages/Partners.jsx";
 const App = () => {
   return (
     <BrowserRouter>
@@ -19,11 +19,10 @@ const App = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/services/:slug" element={<ServiceDetails />} />
         <Route path="/services/:slug/all" element={<ServicesAll />} />
-        <Route path="/partners" element={<Partners />} />
         <Route path="/footer" element={<Footer />} />
         <Route path="/portal" element={<Portal />} />
         <Route path="/teams" element={<Teams />} />
-
+        <Route path="/partners" element={<Partners />} />
       </Routes>
     </BrowserRouter>
   );
