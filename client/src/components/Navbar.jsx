@@ -43,7 +43,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center h-full px-5 2xl:px-16 text-white">
         <div className="flex items-center ">
           <Link to="home">
-            <img src="/images/badbusiness1.jpg" alt="Logo" className="h-16" />
+            <img src="/images/logo1.png" alt="Logo" className="h-16" />
           </Link>
           <a href="#" className="ml-24 md:hidden text-black font-semibold">
             Join
