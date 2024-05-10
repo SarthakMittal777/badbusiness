@@ -104,16 +104,32 @@ export const Homepage = () => {
         </div>
         <div className="flex flex-wrap justify-around mt-6 lg:justify-evenly">
           <div className="flex justify-center items-center mx-4 mb-4 ">
-            <img src="/images/partners/1.png" alt="1" className="h-30 w-30" />
+            <img
+              src="/images/partners/1.png"
+              alt="1"
+              className="h-30 w-30"
+            />
           </div>
           <div className="flex justify-center items-center mx-4 mb-4">
-            <img src="/images/partners/2.png" alt="2" className="h-30 w-30" />
+            <img
+              src="/images/partners/2.png"
+              alt="2"
+              className="h-30 w-30"
+            />
           </div>
           <div className="flex justify-center items-center mx-4 mb-4">
-            <img src="/images/partners/3.png" alt="3" className="h-30 w-30" />
+            <img
+              src="/images/partners/3.png"
+              alt="3"
+              className="h-30 w-30"
+            />
           </div>
           <div className="flex justify-center items-center mx-4 mb-4">
-            <img src="/images/partners/4.png" alt="4" className="h-30 w-30" />
+            <img
+              src="/images/partners/4.png"
+              alt="4"
+              className="h-30 w-30"
+            />
           </div>
         </div>
       </div>
@@ -128,47 +144,47 @@ export const Homepage = () => {
             <p className="text-md">Learn about BAD</p>
           </div>
         </div>
-        <div class="flex flex-wrap justify-evenly mt-6">
-          <div class="p-6 flex flex-col items-center text-center mr-4 mb-4">
-            <div class="rounded-full p-8 mb-3 border border-gray-300 transition-colors hover:bg-gray-200 hover:invert">
+        <div className="flex flex-wrap justify-evenly mt-6">
+          <div className="p-6 flex flex-col items-center text-center mr-4 mb-4">
+            <div className="rounded-full p-8 mb-3 border border-gray-300 transition-colors hover:bg-gray-200 hover:invert">
               <img
                 src="/images/bad/cv.png"
                 alt="Breakdown icon"
-                class="h-10 w-10"
+                className="h-10 w-10"
               />
             </div>
-            <h4 class="text-lg font-semibold mb-3">Breakdown</h4>
-            <p class="text-gray-600 text-balance">
+            <h4 className="text-lg font-semibold mb-3">Breakdown</h4>
+            <p className="text-gray-600 text-balance">
               Identifying and analyzing the root causes of a problem or <br />
               inefficiency within a business process or system.
             </p>
           </div>
 
-          <div class="p-6 rounded-lg flex flex-col items-center text-center mr-4 mb-4 border-gray-300">
-            <div class="rounded-full p-8 mb-3 border border-gray-300 transition-colors hover:bg-gray-200 hover:invert">
+          <div className="p-6 rounded-lg flex flex-col items-center text-center mr-4 mb-4 border-gray-300">
+            <div className="rounded-full p-8 mb-3 border border-gray-300 transition-colors hover:bg-gray-200 hover:invert">
               <img
                 src="/images/bad/web-design.png"
                 alt="Analysis icon"
-                class="h-10 w-10"
+                className="h-10 w-10"
               />
             </div>
-            <h4 class="text-lg font-semibold mb-3">Analysis</h4>
-            <p class="text-gray-600 items-center">
+            <h4 className="text-lg font-semibold mb-3">Analysis</h4>
+            <p className="text-gray-600 items-center">
               Thoroughly examine the problem, gather data,
               <br /> and identify potential solutions of companies.
             </p>
           </div>
 
-          <div class="p-6 rounded-lg flex flex-col items-center text-center mb-4">
-            <div class="rounded-full p-8 mb-3 border border-gray-300 transition-colors hover:bg-gray-200 hover:invert">
+          <div className="p-6 rounded-lg flex flex-col items-center text-center mb-4">
+            <div className="rounded-full p-8 mb-3 border border-gray-300 transition-colors hover:bg-gray-200 hover:invert">
               <img
                 src="/images/bad/secure-payment.png"
                 alt="Decision icon"
-                class="h-10 w-10"
+                className="h-10 w-10"
               />
             </div>
-            <h4 class="text-lg font-semibold mb-3">Decision</h4>
-            <p class="text-gray-600 items-center">
+            <h4 className="text-lg font-semibold mb-3">Decision</h4>
+            <p className="text-gray-600 items-center">
               Selecting the most suitable solution based on analysis and
               <br /> criteria such as feasibility,
               <br /> cost-effectiveness, and alignment with organizational
@@ -195,7 +211,12 @@ export const Homepage = () => {
             {/* Tab Content */}
             <ul className="flex justify-center mb-4" role="tablist">
               <li className="mr-6 rounded-3xl p-3 bg-sky-200 text-blue-700  hover:bg-blue-700 hover:text-white">
-                <a className="" href="#tab-2-1" role="tab" aria-selected="true">
+                <a
+                  className=""
+                  href="#tab-2-1"
+                  role="tab"
+                  aria-selected="true"
+                >
                   Development
                 </a>
               </li>

@@ -1,6 +1,7 @@
 import Card from "../../components/Card";
 import { Link } from "react-router-dom";
 export const Services = () => {
+
   return (
     <div className="w-full flex flex-col  items-center justify-center bg-gray-200">
       <div className="w-full h-20 text-base flex items-center ">

@@ -9,7 +9,10 @@ import { ServiceDetails } from "./pages/Services/ServiceDetails";
 import { Footer } from "./components/Footer";
 import { Portal } from "./pages/Portal";
 import { Teams } from "./pages/Teams";
+import { PortalAddMember } from "./pages/PortalAddMember";
+import { PortalEditMember } from "./pages/PortalEditMember";
 const App = () => {
+  localStorage.setItem("accesstoken", import.meta.env.VITE_ACCESS_TOKEN);
   return (
     <BrowserRouter>
       <Routes>
@@ -21,9 +24,10 @@ const App = () => {
         <Route path="/services/:slug/all" element={<ServicesAll />} />
         <Route path="/partners" element={<Partners />} />
         <Route path="/footer" element={<Footer />} />
-        <Route path="/portal" element={<Portal />} />
+        <Route path="/portal/team" element={<Portal />} />
+        <Route path="/portal/team/edit/:id" element={<PortalEditMember />} />
+        <Route path="/portal/team/add" element={<PortalAddMember />} />
         <Route path="/teams" element={<Teams />} />
-
       </Routes>
     </BrowserRouter>
   );

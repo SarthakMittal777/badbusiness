@@ -25,7 +25,7 @@ export const ServicesAll = () => {
           <p>This is the content with {slug} content.</p>
         </div>
       </div>
-      <div className="flex flex-wrap gap-12 justify-center md:justify-start mx-4">
+      <div className="flex flex-wrap gap-4 justify-center md:justify-start mx-4">
         {Data.map((item, index) => (
           <Link key={index} to={`/services/${item.title}`}>
             {" "}
