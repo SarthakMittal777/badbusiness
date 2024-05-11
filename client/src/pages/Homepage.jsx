@@ -142,7 +142,7 @@ export const Homepage = () => {
       <div className="container mx-auto mt-8">
         <div className="flex justify-center items-center">
           <h1 className="text-md lg:mr-4">
-            Trusted by the world's best Corporations
+            Trusted by the world&apos; best Corporations
           </h1>
         </div>
         <div className="flex flex-wrap justify-around mt-6 lg:justify-evenly gap-x-6 lg:gap-x-8 gap-y-6 lg:gap-y-8">
@@ -161,8 +161,7 @@ export const Homepage = () => {
         </div>
       </div>
       {/* Service Section  */}
-      <ServiceSection services={services} />;
-      {/* Tabs Section  */}
+      <ServiceSection services={services} />;{/* Tabs Section  */}
       <Tabs activeTab={activeTab} handleTabClick={handleTabClick} />
       {/* NumberCounter Section  */}
       <NumberCounterSection />

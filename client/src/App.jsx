@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import { Homepage } from "./pages/Homepage";
 import { Signin } from "./pages/Signin";
 import { Signup } from "./pages/Signup";
@@ -11,7 +11,7 @@ import { Teams } from "./pages/Teams";
 import { PortalAddMember } from "./pages/PortalAddMember";
 import { PortalEditMember } from "./pages/PortalEditMember";
 const App = () => {
-  localStorage.setItem("accesstoken", import.meta.env.VITE_ACCESS_TOKEN);
+ 
   return (
     <BrowserRouter>
       <Routes>

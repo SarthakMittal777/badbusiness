@@ -7,6 +7,7 @@ import LoginVia from "../components/LoginVia";
 import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";
+import { login } from "../api/user";
 export const Signin = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [type, setType] = useState("company");
@@ -19,10 +20,12 @@ export const Signin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const email = e.target.elements.email.value;
-    // const password = e.target.elements.password.value;
-
+    const email = e.target.elements.email.value;
+    const password = e.target.elements.password.value;
+    console.log(email, password);
+    login({ email, password })
   };
+
   return (
     <div className="w-full flex flex-col items-center justify-center py-24 min-h-screen overflow-x-hidden bg-[#fff0e9] ">
       <h3 className="text-center text-3xl font-bold mt-12">SignIn</h3>

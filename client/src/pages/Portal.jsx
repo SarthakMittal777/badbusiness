@@ -112,7 +112,7 @@ export const Portal = () => {
                 </tr>
               </thead>
               <tbody>
-                {TeamData.teams.map((team, index) => (
+                {TeamData && TeamData.teams.map((team, index) => (
                   <tr key={index}>
                     <td className="border px-4 py-2 rounded-full">
                       {team.photo === "" ? (
