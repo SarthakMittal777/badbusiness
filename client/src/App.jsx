@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Homepage } from "./pages/Homepage";
 import { Signin } from "./pages/Signin";
 import { Signup } from "./pages/Signup";
@@ -10,8 +10,11 @@ import { Portal } from "./pages/Portal";
 import { Teams } from "./pages/Teams";
 import { PortalAddMember } from "./pages/PortalAddMember";
 import { PortalEditMember } from "./pages/PortalEditMember";
+import ServicesPortal from "./pages/Services/ServicesPortal";
+import { PortalEditService } from "./pages/Services/PortalEditService";
+import { PortalAddService } from "./pages/Services/PortalAddService";
+import PartnersPortal from "./pages/PartnersPortal";
 const App = () => {
- 
   return (
     <BrowserRouter>
       <Routes>
@@ -26,6 +29,15 @@ const App = () => {
         <Route path="/portal/team/edit/:id" element={<PortalEditMember />} />
         <Route path="/portal/team/add" element={<PortalAddMember />} />
         <Route path="/teams" element={<Teams />} />
+        <Route path="/portal/services" element={<ServicesPortal />} />
+        <Route path="/portal/partners" element={<PartnersPortal />} />
+        <Route
+          path="/portal/service/edit/:id"
+          element={<PortalEditService />}
+        />
+        <Route path="/portal/service/add" element={<PortalAddService />} />
+        <Route path="/portal/partner/edit/:id" element={<PortalEditMember />} />
+        <Route path="/portal/partner/add" element={<PortalAddMember />} />
       </Routes>
     </BrowserRouter>
   );

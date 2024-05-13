@@ -45,6 +45,7 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
     };
     if (functionality === "Add a new Team Member") {
       createData(memberData)
+      // eslint-disable-next-line no-unused-vars
         .then((res) => {
           window.alert("Data added successfully");
           navigate("/portal/team");
@@ -55,6 +56,7 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
     }
     if (functionality === "Edit a team member details") {
       editTeamData(fetchMemberData.team._id, memberData)
+      // eslint-disable-next-line no-unused-vars
         .then((res) => {
           window.alert("Data edited successfully");
           navigate("/portal/team");
