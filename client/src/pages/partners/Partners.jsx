@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { server } from "../../api";
+import { Footer } from "../../components/Footer";
 const bgImage = "/images/hero/hero-bg.png";
 
 export const Partners = () => {
@@ -67,6 +68,7 @@ export const Partners = () => {
             </div>
           ))}
       </div>
+      <Footer />
     </div>
   );
 };

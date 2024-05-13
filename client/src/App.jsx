@@ -14,6 +14,7 @@ import { PortalEditService } from "./pages/Services/PortalEditService";
 import { PortalAddService } from "./pages/Services/PortalAddService";
 import ServicesPortal from "./pages/Services/ServicesPortal";
 import PartnersPortal from "./pages/partners/PartnersPortal";
+import { Partners } from "./pages/partners/Partners";
 const App = () => {
   return (
     <BrowserRouter>
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/teams" element={<Teams />} />
         <Route path="/portal/services" element={<ServicesPortal />} />
         <Route path="/portal/partners" element={<PartnersPortal />} />
+        <Route path="/partners" element={<Partners />} />
         <Route
           path="/portal/service/edit/:id"
           element={<PortalEditService />}

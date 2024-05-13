@@ -9,9 +9,11 @@ export const items = [
         menuList: [
             {
                 lable: "Home V1",
+                to: "/"
             },
             {
-              lable: "New Page" 
+              lable: "New Page",
+              to: "/home" 
             },
           ]
     },
@@ -20,13 +22,16 @@ export const items = [
         title:"BROWSE JOBS",
         menuList:[
             {
-                lable:"Serices"
+                lable:"Services",
+                to: "/services"
             },
             {
-                lable:"Projects"
+                lable:"Projects",
+                to: "/projects"
             },
             {
-                lable:"Job View"
+                lable:"Job View",
+                to: "/jobview"
             },
         ]
     },
@@ -35,16 +40,20 @@ export const items = [
         title:"USERS",
         menuList:[
             {
-                lable:"DashBoard"
+                lable:"DashBoard",
+                to: "/"
             },
             {
-                lable:"Employee"
+                lable:"Employee",
+                to: "/"
             },
             {
-                lable:"Freelancer"
+                lable:"Freelancer",
+                to: "/"
             },
             {
-                lable:"Become Seller"
+                lable:"Become Seller",
+                to: "/"
             },
 
         ]
@@ -54,59 +63,75 @@ export const items = [
         title:"PAGES",
         menuList:[
             {
-                lable:"About"
+                lable:"About",
+                to: "/"
             },
             {
-                lable:"Shop"
+                lable:"Shop",
+                to: "/"
             },
             {
-                lable:"Contact"
+                lable:"Contact",
+                to: "/"
             },
             {
-                lable:"404"
+                lable:"404",
+                to: "/"
             },
             {
-                lable:"FAQ"
+                lable:"FAQ",
+                to: "/"
             },
             {
-                lable:"Help"
+                lable:"Help",
+                to: "/"
             },
             {
-                lable:"Inovices"
+                lable:"Inovices",
+                to: "/"
             },
             {
-                lable:"Login"
+                lable:"Login",
+                to: "/signin"
             },
             {
-                lable:"Pricing"
+                lable:"Pricing",
+                to: "/"
             },
             {
-                lable:"Register"
+                lable:"Register",
+                to: "/signup"
             },
             {
-                lable:"Terms"
+                lable:"Terms",
+                to: "/"
             },
             {
-                lable:"UI Elements"
+                lable:"UI Elements",
+                to: "/"
             },
         ]
     },
-    {   
-        id:"5",
-        title:"BLOG",
-        menuList:[
-            {
-                lable:"List V1"
-            },
-            {
-                lable:"List V2"
-            },
-            {
-                lable:"List V3"
-            },
-            {
-                lable:"Single"
-            },
-        ]
-    },
+    // {   
+    //     id:"5",
+    //     title:"BLOG",
+    //     menuList:[
+    //         {
+    //             lable:"List V1",
+    //             to: "/"
+    //         },
+    //         {
+    //             lable:"List V2",
+    //             to: "/"
+    //         },
+    //         {
+    //             lable:"List V3",
+    //             to: "/"
+    //         },
+    //         {
+    //             lable:"Single",
+    //             to: "/"
+    //         },
+    //     ]
+    // },
 ]

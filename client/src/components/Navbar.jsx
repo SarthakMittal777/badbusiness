@@ -23,8 +23,19 @@ const Navbar = () => {
       }
     };
 
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setOpenMenu(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const handleClick = () => {
@@ -39,36 +50,30 @@ const Navbar = () => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <nav className="w-full h-20 sticky top-0 z-50 container lg:max-w-screen-tbLandscape max-w-screen-2xl mx-auto bg-white lg:bg-transparent">
+    <nav className="w-full h-20 sticky top-0 z-50 mx-auto bg-white">
       <div className="flex justify-between items-center h-full px-5 2xl:px-16 text-white">
         <div className="flex items-center ">
           <Link to="home">
             <img src="/images/logo1.png" alt="Logo" className="h-16" />
           </Link>
-          <a href="#" className="ml-24 md:hidden text-black font-semibold">
+          <a href="/" className="ml-24 md:hidden text-black font-semibold">
             Join
           </a>
         </div>
 
         <div className="hidden md:flex flex-grow items-center">
           <ul className="flex flex-row ml-auto">
-            <Link
-              to="home"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
+            <Link to="/" spy={true} smooth={true} offset={-70} duration={500}>
               <li
-                className="hover:scale-110 duration-300 text-white hover:text-white capitalize cursor-pointer font-semibold"
+                className="hover:scale-110 duration-300 text-black hover:text-black capitalize cursor-pointer font-semibold"
                 onClick={() => setOpenMenu(false)}
               >
                 Home
               </li>
             </Link>
-            <Link
+            {/* <Link
               to="about"
-              spy={true}
+              spy={true}  
               smooth={true}
               offset={-70}
               duration={500}
@@ -79,9 +84,9 @@ const Navbar = () => {
               >
                 About
               </li>
-            </Link>
+            </Link> */}
             <li
-              className="relative group hover:scale-110 duration-300 text-white hover:text-white capitalize px-3 cursor-pointer "
+              className="relative group hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer "
               onMouseEnter={handleDropdown}
               onMouseLeave={handleDropdown}
             >
@@ -104,7 +109,7 @@ const Navbar = () => {
               </span>
               <ul className="dropdown-menu hidden absolute top-full left-[10px] bg-white text-black border rounded-md">
                 <Link
-                  to="page1"
+                  to="/services"
                   spy={true}
                   smooth={true}
                   offset={-70}
@@ -115,7 +120,7 @@ const Navbar = () => {
                   </li>
                 </Link>
                 <Link
-                  to="page2"
+                  to="https://events.badbusiness.in/"
                   spy={true}
                   smooth={true}
                   offset={-70}
@@ -134,7 +139,7 @@ const Navbar = () => {
                     />
                     <ul className="dropdown-menu w-30 h-auto hidden absolute top-0 left-[170px] bg-white text-black shadow-md duration-300 border rounded-md">
                       <Link
-                        to="project1"
+                        to="/"
                         spy={true}
                         smooth={true}
                         offset={-70}
@@ -145,7 +150,7 @@ const Navbar = () => {
                         </li>
                       </Link>
                       <Link
-                        to="project2"
+                        to="/"
                         spy={true}
                         smooth={true}
                         offset={-70}
@@ -170,7 +175,7 @@ const Navbar = () => {
                   </li>
                 </Link>
                 <Link
-                  to="page3"
+                  to="/"
                   spy={true}
                   smooth={true}
                   offset={-70}
@@ -182,49 +187,49 @@ const Navbar = () => {
                 </Link>
               </ul>
             </li>
-            <Link
-              to="contact"
+            {/* <Link
+              to="blogs"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
             >
               <li
-                className="hover:scale-110 duration-300 text-white hover:text-white capitalize cursor-pointer font-semibold"
+                className="hover:scale-110 duration-300 text-black hover:text-black capitalize cursor-pointer font-semibold"
                 onClick={() => setOpenMenu(false)}
               >
                 BAD Blog
               </li>
-            </Link>
+            </Link> */}
             <Link
-              to="contact"
+              to="https://events.badbusiness.in/"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
             >
               <li
-                className="hover:scale-110 duration-300 text-white hover:text-white capitalize px-3 cursor-pointer font-semibold"
+                className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
                 onClick={() => setOpenMenu(false)}
               >
                 BAD Events
               </li>
             </Link>
             <Link
-              to="contact"
+              to="/services"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
             >
               <li
-                className="hover:scale-110 duration-300 text-white hover:text-white capitalize cursor-pointer font-semibold"
+                className="hover:scale-110 duration-300 text-black hover:text-black capitalize cursor-pointer font-semibold"
                 onClick={() => setOpenMenu(false)}
               >
                 Services
               </li>
             </Link>
-            <Link
+            {/* <Link
               to="contact"
               spy={true}
               smooth={true}
@@ -232,14 +237,29 @@ const Navbar = () => {
               duration={500}
             >
               <li
-                className="hover:scale-110 duration-300 text-white hover:text-white capitalize px-3 cursor-pointer font-semibold"
+                className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
                 onClick={() => setOpenMenu(false)}
               >
                 People
               </li>
+            </Link> */}
+            <Link
+              to="/teams"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              <li
+                className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
+                onClick={() => setOpenMenu(false)}
+              >
+                Teams
+              </li>
             </Link>
           </ul>
         </div>
+        {/* Mobile View  */}
         <div className="relative">
           <div className="flex justify-between items-center h-full w-full px-2 2xl:px-16 text-black overflow-x-hidden">
             {openMenu ? (
@@ -252,6 +272,7 @@ const Navbar = () => {
               </div>
             )}
           </div>
+
           {openMenu && (
             <div className="fixed top-0 left-0 h-full w-[80%] bg-white z-50 duration-500 ease-in-out">
               <div className="flex flex-col py-6 text-black">
@@ -262,30 +283,40 @@ const Navbar = () => {
                 </div>
                 <ul>
                   {items.map((item, index) => (
-                    <div className="font-semibold text-sm">
-                      <div
-                        className="m-7"
-                        key={index}
-                        onClick={() => handleSubmenuClick(index)}
-                      >
-                        <div className="flex justify-between items-center">
+                    <div className="font-semibold text-sm" key={index}>
+                      <div className="m-7">
+                        <div
+                          className="flex justify-between items-center"
+                          onClick={() => handleSubmenuClick(index)}
+                        >
                           <div className="flex items-start justify-start">
-                            {item.title}
+                            {item.to ? (
+                              <Link to={item.to}>{item.title}</Link>
+                            ) : (
+                              <span>{item.title}</span>
+                            )}
                           </div>
                           <img
                             src="/images/right.png"
-                            className="w-3 h-3"
+                            className={`w-3 h-3 transition-transform duration-300 transform ${
+                              openSubmenu === index ? "rotate-180" : ""
+                            }`}
                             alt=""
                           />
                         </div>
-
-                        {openSubmenu === index &&
-                          item.menuList &&
-                          item.menuList.map((it, idx) => (
-                            <div className=" h-full w-full m-5" key={idx}>
-                              {it.lable}
-                            </div>
-                          ))}
+                        {openSubmenu === index && item.menuList && (
+                          <div className=" h-full w-full m-5">
+                            {item.menuList.map((it, idx) => (
+                              <div className=" h-full w-full m-5" key={idx}>
+                                {it.to ? (
+                                  <Link to={it.to}>{it.lable}</Link>
+                                ) : (
+                                  <span>{it.lable}</span>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
                   ))}
