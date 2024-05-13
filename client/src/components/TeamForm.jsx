@@ -43,12 +43,13 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
       photo: data.url,
       links: links,
     };
+
     if (functionality === "Add a new Team Member") {
       createData(memberData)
-      // eslint-disable-next-line no-unused-vars
+        // eslint-disable-next-line no-unused-vars
         .then((res) => {
           window.alert("Data added successfully");
-          navigate("/portal/team");
+          navigate("/portal/teams");
         })
         .catch((error) => {
           console.log(error);
@@ -56,10 +57,10 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
     }
     if (functionality === "Edit a team member details") {
       editTeamData(fetchMemberData.team._id, memberData)
-      // eslint-disable-next-line no-unused-vars
+        // eslint-disable-next-line no-unused-vars
         .then((res) => {
           window.alert("Data edited successfully");
-          navigate("/portal/team");
+          navigate("/portal/teams");
         })
         .catch((error) => {
           console.log(error);

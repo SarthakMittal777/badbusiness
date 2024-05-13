@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import PartnerForm from "./partners/PartnerForm";
+import TeamForm from "../components/TeamForm";
 import { useParams } from "react-router-dom";
-import { getPartnerDataById } from "../api/partner";
+import { getTeamDataById } from "../api/teams";
 export const PortalEditMember = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
     async function fetchData() {
-      const res = await getPartnerDataById(id);
+      const res = await getTeamDataById(id);
       setData(res);
     }
     fetchData();
@@ -16,9 +16,9 @@ export const PortalEditMember = () => {
   return (
     data &&
     data.success && (
-      <PartnerForm
-        fetchPartnerData={data}
-        functionality="Edit the partner's details"
+      <TeamForm
+        fetchMemberData={data}
+        functionality="Edit a team member details"
       />
     )
   );

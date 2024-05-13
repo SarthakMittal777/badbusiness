@@ -1,4 +1,4 @@
-import PartnerForm from "./partners/PartnerForm";
+import TeamForm from "../components/TeamForm";
 export const PortalAddMember = () => {
-  return <PartnerForm functionality="Add a new Partner" />;
+  return <TeamForm functionality="Add a new Team Member" />;
 };
