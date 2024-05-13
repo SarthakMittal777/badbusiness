@@ -61,11 +61,13 @@ export const Homepage = () => {
   return (
     <div className="contain-content mx-auto animate-fade-in">
       {/* Whole Section*/}
+      <div className="sticky top-0 z-50 shadow-md">
+        <Navbar />
+      </div>
       <div
         className="lg:h-dvh bg-center lg:bg-cover sm:bg-auto sm:bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${bgImage})` }}
       >
-        <Navbar />
         {/* Hero Section*/}
         <section className="">
           <div className="container mx-auto px-4 lg:max-w-screen-smDesktop max-w-screen-2xl flex flex-col lg:flex-row items-center relative">
@@ -84,10 +86,11 @@ export const Homepage = () => {
                 to get the most out of your time and cost
               </p>
               <div className="space-x-4 mb-6 ">
-                <button className="bg-teal-900 hover:bg-green-600 hover:text-white text-emerald-300 font-bold py-4 px-8 rounded-full">
+                <button className="relative bg-teal-900 text-emerald-300 font-bold py-4 px-8 rounded-full transition-all duration-300 ease-in-out hover:text-white hover:bg-green-600">
                   Get Started
                 </button>
-                <button className="bg-emerald-200 hover:bg-green-600 text-black font-medium py-4 px-8 rounded-full ml-4 border">
+
+                <button className="relative bg-emerald-200 text-black font-medium py-4 px-8 rounded-full ml-4 border border-transparent transition-all duration-300 ease-in-out hover:bg-green-600 hover:border-green-600 hover:text-white">
                   Book a Meeting
                 </button>
               </div>

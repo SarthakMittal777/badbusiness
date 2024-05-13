@@ -18,6 +18,7 @@ import AuthProvider from "./auth/auth";
 import PrivateRoute from "./auth/privateRoute";
 import ServicesPortal from "./pages/Services/ServicesPortal";
 import PartnersPortal from "./pages/partners/PartnersPortal";
+import { Partners } from "./pages/partners/Partners";
 const App = () => {
   return (
     <BrowserRouter>
