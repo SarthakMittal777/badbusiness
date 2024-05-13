@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { server } from "../api";
+import { server } from "../../api";
 const bgImage = "/images/hero/hero-bg.png";
 
 export const Partners = () => {

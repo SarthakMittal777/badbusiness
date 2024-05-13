@@ -10,10 +10,10 @@ import { Portal } from "./pages/Portal";
 import { Teams } from "./pages/Teams";
 import { PortalAddMember } from "./pages/PortalAddMember";
 import { PortalEditMember } from "./pages/PortalEditMember";
-import ServicesPortal from "./pages/Services/ServicesPortal";
 import { PortalEditService } from "./pages/Services/PortalEditService";
 import { PortalAddService } from "./pages/Services/PortalAddService";
-import PartnersPortal from "./pages/PartnersPortal";
+import ServicesPortal from "./pages/Services/ServicesPortal";
+import PartnersPortal from "./pages/partners/PartnersPortal";
 const App = () => {
   return (
     <BrowserRouter>
@@ -25,7 +25,7 @@ const App = () => {
         <Route path="/services/:slug" element={<ServiceDetails />} />
         <Route path="/services/:slug/all" element={<ServicesAll />} />
         <Route path="/footer" element={<Footer />} />
-        <Route path="/portal/team" element={<Portal />} />
+        <Route path="/portal/teams" element={<Portal />} />
         <Route path="/portal/team/edit/:id" element={<PortalEditMember />} />
         <Route path="/portal/team/add" element={<PortalAddMember />} />
         <Route path="/teams" element={<Teams />} />

@@ -4,13 +4,13 @@ import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import { MdOutlineMenu } from "react-icons/md";
 import { IoCloseSharp } from "react-icons/io5";
-import Button from "../components/Button";
+import Button from "../../components/Button";
 import { Link } from "react-router-dom";
-import { deleteTeamData, getTeamData } from "../api/teams";
-export const Portal = () => {
+import { deletePartnerData, getPartnerData } from "../../api/partner";
+const PortalPortal = () => {
   const [showLinks, setShowLinks] = useState(null);
   const [menu, setMenu] = useState(false);
-  const [TeamData, setTeamData] = useState({ teams: [] });
+  const [partnerData, setPartnerData] = useState({ partners: [] });
   const [functionality, setFunctionality] = useState(null);
   const toggleLinks = (teamId) => {
     if (showLinks === teamId) {
@@ -20,14 +20,14 @@ export const Portal = () => {
     }
   };
 
-  const deleteTeamMember = async (id) => {
+  const deletePartner = async (id) => {
     const confirmation = window.confirm(
       "Are you sure you want to delete this team member?"
     );
 
     if (confirmation) {
       try {
-        const res = await deleteTeamData(id);
+        const res = await deletePartnerData(id);
         window.alert(res.data.message);
         window.location.reload();
       } catch (error) {
@@ -40,8 +40,8 @@ export const Portal = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await getTeamData();
-      setTeamData(res);
+      const res = await getPartnerData();
+      setPartnerData(res);
     }
     fetchData();
   }, []);
@@ -68,8 +68,15 @@ export const Portal = () => {
           className="w-full h-12 hover:bg-[#848d8c] border-t border-[#3c3c3c] rounded flex items-center gap-3 px-2  font-semibold"
           onClick={() => setFunctionality(null)}
         >
-          <RiTeamFill /> Team
+          <RiTeamFill /> Partners
         </div>
+
+        {/* <div
+          className="w-full h-12 hover:bg-[#848d8c] border-t  border-[#3c3c3c] rounded flex items-center gap-3 px-2 font-semibold"
+          onClick={() => setFunctionality("Add a new Team Member ")}
+        >
+          <IoIosAddCircle /> Add New Team
+        </div> */}
 
         <Button
           type=""
@@ -82,12 +89,12 @@ export const Portal = () => {
         <section className="w-[95vw] h-screen overflow-y-auto">
           <div className="w-full p-12">
             <div className="w-[96%] flex justify-end mx-12 mb-3">
-              <Link to={`/portal/team/add`}>
+              <Link to={`/portal/partner/add`}>
                 <Button
                   type=""
                   className="bg-[#5BBB7B] w-36 my-4 hover:bg-green-800 py-3 text-white font-semibold mx-2 "
                 >
-                  Add New Member
+                  Add New Partner
                 </Button>
               </Link>
             </div>
@@ -97,7 +104,6 @@ export const Portal = () => {
                   <th className="px-4 py-2">Image</th>
                   <th className="px-4 py-2">Name</th>
                   <th className="px-4 py-2">Headline</th>
-                  <th className="px-4 py-2">Domain</th>
                   <th className="px-4 py-2">Is MVP</th>
                   <th className="px-4 py-2">Links</th>
                   <th className="px-4 py-2">Edit</th>
@@ -105,41 +111,38 @@ export const Portal = () => {
                 </tr>
               </thead>
               <tbody>
-                {TeamData &&
-                  TeamData.teams != "undefined" &&
-                  TeamData.teams.map((team, index) => (
+                {partnerData &&
+                  partnerData.partners &&
+                  partnerData.partners.map((partner, index) => (
                     <tr key={index}>
                       <td className="border px-4 py-2 rounded-full">
-                        {team.photo === "" ? (
+                        {partner.photo === "" ? (
                           <div className="w-16 h-16 rounded-full flex items-center justify-center bg-[#c7b0ff] mx-auto"></div>
                         ) : (
                           <img
-                            src={team.photo}
-                            alt={team.name}
+                            src={partner.photo}
+                            alt={partner.name}
                             className="w-16 h-16 rounded-full mx-auto"
                           />
                         )}
                       </td>
                       <td className="border px-4 py-2 mx-auto text-center">
-                        {team.name}
+                        {partner.name}
                       </td>
                       <td className="border px-4 py-2 mx-auto text-center">
-                        {team.headline}
-                      </td>
-                      <td className="border px-4 py-2 mx-auto text-center">
-                        {team.domain}
+                        {partner.headline}
                       </td>
                       <td className="border px-4 py-2 text-center">
-                        {team.isMVP ? "Yes" : "No"}
+                        {partner.isMVP ? "Yes" : "No"}
                       </td>
                       <td className="border px-4 py-2 relative">
                         <button
-                          onClick={() => toggleLinks(team._id)}
+                          onClick={() => toggleLinks(partner._id)}
                           className="inline-flex justify-center w-full rounded-md border border-gray-300 bg-white px-4 py-2 shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
                         >
                           Links
                         </button>
-                        {showLinks === team._id && (
+                        {showLinks === partner._id && (
                           <div className="origin-top-right z-10 absolute left-10 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                             <div
                               className="py-1"
@@ -147,7 +150,7 @@ export const Portal = () => {
                               aria-orientation="vertical"
                               aria-labelledby="options-menu"
                             >
-                              {team.links.map((link) => (
+                              {partner.links.map((link) => (
                                 <Link
                                   key={link._id}
                                   to={link.url}
@@ -164,7 +167,7 @@ export const Portal = () => {
                         )}
                       </td>
                       <td className="border px-4 py-2 ">
-                        <Link to={`/portal/team/edit/${team._id}`}>
+                        <Link to={`/portal/partner/edit/${partner._id}`}>
                           <MdEdit size={25} className="mx-auto" />
                         </Link>
                       </td>
@@ -172,7 +175,7 @@ export const Portal = () => {
                         <MdDelete
                           size={25}
                           className="mx-auto"
-                          onClick={() => deleteTeamMember(team._id)}
+                          onClick={() => deletePartner(partner._id)}
                         />
                       </td>
                     </tr>
@@ -185,3 +188,5 @@ export const Portal = () => {
     </div>
   );
 };
+
+export default PortalPortal;
