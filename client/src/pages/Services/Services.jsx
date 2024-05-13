@@ -1,9 +1,11 @@
 import Card from "../../components/Card";
 import { Link } from "react-router-dom";
+import Navbar from "../../components/Navbar";
+import { Footer } from "../../components/Footer";
 export const Services = () => {
-
   return (
     <div className="w-full flex flex-col  items-center justify-center bg-gray-200">
+      <Navbar />
       <div className="w-full h-20 text-base flex items-center ">
         <p className="mx-24">
           <Link to="/" className="text-gray-500">
@@ -90,6 +92,7 @@ export const Services = () => {
         />
         <Card button="View all Services products" slug="Services" />
       </div>
+      <Footer />
     </div>
   );
 };

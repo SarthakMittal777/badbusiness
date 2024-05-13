@@ -4,7 +4,7 @@ export const login = async ({ email, password }) => {
     .post("/user/login", { email, password })
     .then((res) => {
       localStorage.setItem("accesstoken", res.data.accessToken);
-      localStorage.setItem("user", res.data.email);
+      localStorage.setItem("isAdmin", res.data.isAdmin);
       window.location.href = "/";
       return res;
     })

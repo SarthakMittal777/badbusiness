@@ -53,7 +53,7 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
           console.log(error);
         });
     }
-    if (functionality === "Edit the partner's details") {
+    if (functionality === "Edit a partner's details") {
       editPartnerData(fetchPartnerData.partner._id, partnerData)
         // eslint-disable-next-line no-unused-vars
         .then((res) => {

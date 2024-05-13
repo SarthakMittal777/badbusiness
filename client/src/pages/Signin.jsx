@@ -7,8 +7,9 @@ import LoginVia from "../components/LoginVia";
 import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";
-import { login } from "../api/user";
+import { useAuth } from "../auth/auth";
 export const Signin = () => {
+  const { login } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [type, setType] = useState("company");
   const accountChange = (account) => {
@@ -22,8 +23,8 @@ export const Signin = () => {
     e.preventDefault();
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
-    console.log(email, password);
-    login({ email, password })
+
+    login({ email, password });
   };
 
   return (

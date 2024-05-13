@@ -1,6 +1,7 @@
 import MemberCard from "../components/MemberCard";
 import { useEffect, useState } from "react";
 import { getTeamData } from "../api/teams";
+import Navbar from "../components/Navbar";
 import { Footer } from "../components/Footer";
 export const Teams = () => {
   const [teamData, setTeamData] = useState({ teams: [] });
@@ -13,6 +14,7 @@ export const Teams = () => {
   }, []);
   return (
     <div className="w-full h-full">
+      <Navbar/>
       <div
         className="w-full h-96  items-center flex justify-center flex-col text-[white] text-center"
         style={{

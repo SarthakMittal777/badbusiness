@@ -262,7 +262,7 @@ const Navbar = () => {
                 </div>
                 <ul>
                   {items.map((item, index) => (
-                    <div className="font-semibold text-sm">
+                    <div className="font-semibold text-sm" key={index}>
                       <div
                         className="m-7"
                         key={index}

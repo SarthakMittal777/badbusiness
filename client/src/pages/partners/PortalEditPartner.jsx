@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import ServiceForm from "./ServiceForm";
+import { getPartnerDataById } from "../../api/partner";
+import PartnerForm from "./PartnerForm";
 import { useParams } from "react-router-dom";
-import { getServiceDataById } from "../../api/service";
-export const PortalEditService = () => {
+export const PortalEditPartner = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
     async function fetchData() {
-      const res = await getServiceDataById(id);
+      const res = await getPartnerDataById(id);
       setData(res);
     }
     fetchData();
@@ -16,9 +16,9 @@ export const PortalEditService = () => {
   return (
     data &&
     data.success && (
-      <ServiceForm
-        fetchServiceData={data}
-        functionality="Edit a service's details"
+      <PartnerForm
+        fetchPartnerData={data}
+        functionality="Edit a partner's details"
       />
     )
   );

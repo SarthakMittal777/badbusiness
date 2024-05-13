@@ -1,4 +1,6 @@
 import { Link, useParams } from "react-router-dom";
+import Navbar from "../../components/Navbar";
+import { Footer } from "../../components/Footer";
 export const ServiceDetails = () => {
   const { slug } = useParams();
   const amount = "$983";
@@ -12,16 +14,15 @@ export const ServiceDetails = () => {
   // },[]);
 
   return (
-    <div className="mb-12">
-      {" "}
+    <div >
+      <Navbar />
       <div className="w-full h-20 text-base flex items-center ">
         <p className="mx-16 text-gray-500">
-          <Link to="/">Home</Link> /
-          <Link to="/Services"> Services</Link> /{" "}
+          <Link to="/">Home</Link> /<Link to="/Services"> Services</Link> /{" "}
           <span className="text-[black]">{slug} </span>
         </p>
       </div>
-      <div className="flex px-16 gap-8 flex-col md:flex-row">
+      <div className="flex px-16 gap-8 flex-col md:flex-row mb-12">
         <div className="md:w-[60%]  w-full flex flex-col">
           <div className="text-4xl font-semibold mb-8 ">{slug}</div>
           <div className="flex gap-8 sm:flex-row flex-col">
@@ -94,6 +95,7 @@ export const ServiceDetails = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

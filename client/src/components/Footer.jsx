@@ -9,7 +9,7 @@ export const Footer = () => {
   const languageDropdownRef = useRef(null);
 
   return (
-    <footer className="bg-zinc-800 text-gray-300 py-8">
+    <footer className="bg-zinc-800 text-gray-300 py-8 w-full">
       <div className="container mx-auto max-w-screen-xl">
         <div className="mb-8 flex flex-col md:flex-row items-center justify-between">
           <div className="flex flex-wrap space-x-4 font-bold mb-4 md:mb-0 md:ml-4">

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const Card = ({ image, title, category, profile, amount, button, slug }) => {
   return (
-    <div className="flex flex-col w-80 shadow-xl gap-5 justify-center items-center h-96 hover:shadow-[#393948] hover:shadow-lg">
+    <div className="flex flex-col w-80 shadow-xl gap-5 justify-center items-center h-96 hover:shadow-[#393948] hover:shadow-lg m-8 ">
       {!button && (
         <div className="h-[50%] w-full">
           <img src={image} alt="placeholder" className="h-full w-full" />
