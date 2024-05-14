@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { server } from "../../api";
 import { Footer } from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 const bgImage = "/images/hero/hero-bg.png";
 
 export const Partners = () => {
@@ -19,7 +20,8 @@ export const Partners = () => {
   }, []);
 
   return (
-    <div className="">
+    <div className="w-full h-full">
+      <Navbar />
       <div
         className="lg:h-full bg-center lg:bg-cover sm:bg-auto sm:bg-center bg-no-repeat text-white py-6"
         style={{ backgroundImage: `url(${bgImage})` }}

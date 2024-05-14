@@ -1,6 +1,7 @@
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import { items } from "../items";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -52,15 +53,15 @@ const Navbar = () => {
     <nav className="w-full h-20 sticky top-0 z-50 mx-auto bg-white">
       <div className="flex justify-between items-center h-full px-5 2xl:px-16 text-white">
         <div className="flex items-center ">
-          <a href="/">
+          <Link to="/">
             <img src="/images/logo1.png" alt="Logo" className="h-16" />
-          </a>
-          <a
-            href="/signup"
+          </Link>
+          <Link
+            to="/signup"
             className="ml-24 md:hidden text-black font-semibold"
           >
             Join
-          </a>
+          </Link>
         </div>
 
         <div className="hidden md:flex flex-grow items-center">
@@ -71,7 +72,7 @@ const Navbar = () => {
                 setOpenMenu(false);
               }}
             >
-              <a href="/">Home</a>
+              <Link to="/">Home</Link>
             </li>
             {/* <Link
               to="about"
@@ -147,9 +148,9 @@ const Navbar = () => {
                 setOpenMenu(false);
               }}
             >
-              <a href="https://events.badbusiness.in/" target="_blank">
+              <Link to="https://events.badbusiness.in/" target="_blank">
                 BAD Events
-              </a>
+              </Link>
             </li>
 
             <li
@@ -158,7 +159,7 @@ const Navbar = () => {
                 setOpenMenu(false);
               }}
             >
-              <a href="/services">Services</a>
+              <Link to="/services">Services</Link>
             </li>
 
             <li
@@ -167,7 +168,7 @@ const Navbar = () => {
                 setOpenMenu(false);
               }}
             >
-              <a href="/teams">Teams</a>
+              <Link to="/teams">Teams</Link>
             </li>
 
             <li
@@ -176,7 +177,7 @@ const Navbar = () => {
                 setOpenMenu(false);
               }}
             >
-              <a href="/partners">Partners</a>
+              <Link to="/partners">Partners</Link>
             </li>
 
             <li
@@ -185,7 +186,7 @@ const Navbar = () => {
                 setOpenMenu(false);
               }}
             >
-              <a href="/signin">Login</a>
+              <Link to="/signin">Login</Link>
             </li>
 
             <li
@@ -194,7 +195,7 @@ const Navbar = () => {
                 setOpenMenu(false);
               }}
             >
-              <a href="/signup">SignUp</a>
+              <Link to="/signup">SignUp</Link>
             </li>
           </ul>
         </div>
@@ -230,7 +231,7 @@ const Navbar = () => {
                         >
                           <div className="flex items-start justify-start">
                             {item.to ? (
-                              <a href={item.to}>{item.title}</a>
+                              <Link to={item.to}>{item.title}</Link>
                             ) : (
                               <span>{item.title}</span>
                             )}
@@ -248,7 +249,7 @@ const Navbar = () => {
                             {item.menuList.map((it, idx) => (
                               <div className=" h-full w-full m-5" key={idx}>
                                 {it.to ? (
-                                  <a href={it.to}>{it.lable}</a>
+                                  <Link to={it.to}>{it.lable}</Link>
                                 ) : (
                                   <span>{it.lable}</span>
                                 )}

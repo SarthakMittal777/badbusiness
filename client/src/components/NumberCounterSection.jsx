@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const NumberCounter = ({ finalNumber, duration }) => {
+export const NumberCounter = ({ finalNumber, duration }) => {
   const [currentNumber, setCurrentNumber] = useState(0);
   const ref = useRef(null);
 
@@ -25,10 +25,14 @@ const NumberCounter = ({ finalNumber, duration }) => {
       });
     });
 
-    observer.observe(ref.current);
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
 
     return () => {
-      observer.unobserve(ref.current);
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
     };
   }, [finalNumber, duration]);
 
