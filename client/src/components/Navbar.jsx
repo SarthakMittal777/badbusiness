@@ -1,6 +1,5 @@
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { items } from "../items";
 
 const Navbar = () => {
