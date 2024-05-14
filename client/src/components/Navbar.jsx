@@ -53,24 +53,27 @@ const Navbar = () => {
     <nav className="w-full h-20 sticky top-0 z-50 mx-auto bg-white">
       <div className="flex justify-between items-center h-full px-5 2xl:px-16 text-white">
         <div className="flex items-center ">
-          <Link to="home">
+          <a href="/">
             <img src="/images/logo1.png" alt="Logo" className="h-16" />
-          </Link>
-          <a href="/" className="ml-24 md:hidden text-black font-semibold">
+          </a>
+          <a
+            href="/signup"
+            className="ml-24 md:hidden text-black font-semibold"
+          >
             Join
           </a>
         </div>
 
         <div className="hidden md:flex flex-grow items-center">
           <ul className="flex flex-row ml-auto">
-            <Link to="/" spy={true} smooth={true} offset={-70} duration={500}>
-              <li
-                className="hover:scale-110 duration-300 text-black hover:text-black capitalize cursor-pointer font-semibold"
-                onClick={() => setOpenMenu(false)}
-              >
-                Home
-              </li>
-            </Link>
+            <li
+              className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <a href="/">Home</a>
+            </li>
             {/* <Link
               to="about"
               spy={true}  
@@ -108,24 +111,10 @@ const Navbar = () => {
                 </svg>
               </span>
               <ul className="dropdown-menu hidden absolute top-full left-[10px] bg-white text-black border rounded-md">
-                <Link
-                  to="/services"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                >
-                  <li className="py-3 px-6 pr-14 hover:bg-gray-200">
-                    Services
-                  </li>
-                </Link>
-                <Link
-                  to="https://events.badbusiness.in/"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                >
+                <li className="py-3 px-6 pr-14 hover:bg-gray-200">
+                  <a href="/services">Services</a>
+                </li>
+                <a href="https://events.badbusiness.in/">
                   <li
                     className="flex items-center justify-between py-2 px-6 pr-14 hover:bg-gray-200 relative"
                     onMouseEnter={handleDropdown}
@@ -137,126 +126,77 @@ const Navbar = () => {
                       className="w-2 h-2 ml-8"
                       alt="next"
                     />
-                    <ul className="dropdown-menu w-30 h-auto hidden absolute top-0 left-[170px] bg-white text-black shadow-md duration-300 border rounded-md">
-                      <Link
-                        to="/"
-                        spy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration={500}
-                      >
-                        <li className="block py-2 px-6 hover:bg-gray-200">
-                          Project V1
-                        </li>
-                      </Link>
-                      <Link
-                        to="/"
-                        spy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration={500}
-                      >
-                        <li className="block py-2 px-6 pr-14 hover:bg-gray-200">
-                          Project
-                        </li>
-                      </Link>
-                      {/* <Link
-                        to="project3"
-                        spy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration={500}
-                      >
-                        <li className="py-4 px-6 pr-14 hover:bg-gray-200">
-                          Project 3
-                        </li>
-                      </Link> */}
+                    <ul className="dropdown-menu w-30 h-auto hidden absolute top-0 left-[168px] bg-white text-black shadow-md duration-300 border rounded-md">
+                      <li className="block py-2 px-6  hover:bg-gray-200">
+                        <a href="/">Project V1</a>
+                      </li>
+                      <li className="block py-2 px-6 pr-14 hover:bg-gray-200">
+                        <a href="/">Project</a>
+                      </li>
                     </ul>
                   </li>
-                </Link>
-                <Link
-                  to="/"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                >
-                  <li className="py-2 px-6 pr-14 hover:bg-gray-200">
-                    Job Lists
-                  </li>
-                </Link>
+                </a>
+                <li className="block py-2 px-6 pr-14 hover:bg-gray-200">
+                  <a href="/">Job List</a>
+                </li>
               </ul>
             </li>
-            {/* <Link
-              to="blogs"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
+
+            <li
+              className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
             >
-              <li
-                className="hover:scale-110 duration-300 text-black hover:text-black capitalize cursor-pointer font-semibold"
-                onClick={() => setOpenMenu(false)}
-              >
-                BAD Blog
-              </li>
-            </Link> */}
-            <Link
-              to="https://events.badbusiness.in/"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              <li
-                className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
-                onClick={() => setOpenMenu(false)}
-              >
+              <a href="https://events.badbusiness.in/" target="_blank">
                 BAD Events
-              </li>
-            </Link>
-            <Link
-              to="/services"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
+              </a>
+            </li>
+
+            <li
+              className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
             >
-              <li
-                className="hover:scale-110 duration-300 text-black hover:text-black capitalize cursor-pointer font-semibold"
-                onClick={() => setOpenMenu(false)}
-              >
-                Services
-              </li>
-            </Link>
-            {/* <Link
-              to="contact"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
+              <a href="/services">Services</a>
+            </li>
+
+            <li
+              className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
             >
-              <li
-                className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
-                onClick={() => setOpenMenu(false)}
-              >
-                People
-              </li>
-            </Link> */}
-            <Link
-              to="/teams"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
+              <a href="/teams">Teams</a>
+            </li>
+
+            <li
+              className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
             >
-              <li
-                className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
-                onClick={() => setOpenMenu(false)}
-              >
-                Teams
-              </li>
-            </Link>
+              <a href="/partners">Partners</a>
+            </li>
+
+            <li
+              className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <a href="/signin">Login</a>
+            </li>
+
+            <li
+              className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <a href="/signup">SignUp</a>
+            </li>
           </ul>
         </div>
         {/* Mobile View  */}
@@ -291,7 +231,7 @@ const Navbar = () => {
                         >
                           <div className="flex items-start justify-start">
                             {item.to ? (
-                              <Link to={item.to}>{item.title}</Link>
+                              <a href={item.to}>{item.title}</a>
                             ) : (
                               <span>{item.title}</span>
                             )}
@@ -309,7 +249,7 @@ const Navbar = () => {
                             {item.menuList.map((it, idx) => (
                               <div className=" h-full w-full m-5" key={idx}>
                                 {it.to ? (
-                                  <Link to={it.to}>{it.lable}</Link>
+                                  <a href={it.to}>{it.lable}</a>
                                 ) : (
                                   <span>{it.lable}</span>
                                 )}

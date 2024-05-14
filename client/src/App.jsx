@@ -32,6 +32,7 @@ const App = () => {
           <Route path="/services/:slug/all" element={<ServicesAll />} />
           <Route path="/teams" element={<Teams />} />
           <Route path="/footer" element={<Footer />} />
+          <Route path="/partners" element={<Partners />} />
           <Route element={<PrivateRoute />}>
             <Route path="/portal/teams" element={<Portal />} />
             <Route
