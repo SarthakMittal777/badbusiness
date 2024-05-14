@@ -3,6 +3,7 @@ import ImageUploader from "./ImageUpload";
 import { createData, editTeamData } from "../api/teams";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SidebarPortal from "./SidebarPortal";
 const TeamForm = ({ functionality, fetchMemberData }) => {
   const navigate = useNavigate();
   const [data, setData] = useState({
@@ -68,8 +69,9 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
     }
   };
   return (
-    <div className="w-full h-full  flex justify-center items-center ">
-      <div className="w-[60vw] p-8 flex flex-col shadow-xl  justify-center gap-8 items-center md:items-start ">
+    <div className="w-full h-full  flex  ">
+      <SidebarPortal />
+      <div className="w-[60vw] p-8 flex flex-col shadow-xl  h-full justify-center gap-8 items-center md:items-start  ">
         <p className="text-xl font-semibold mb-3 "> {functionality}</p>
         <form
           method="POST"

@@ -12,10 +12,8 @@ export const PortalEditService = () => {
     }
     fetchData();
   }, [id]);
-
   return (
-    data &&
-    data.success && (
+    data && (
       <ServiceForm
         fetchServiceData={data}
         functionality="Edit a service's details"

@@ -7,9 +7,9 @@ const SidebarPortal = ({ menu, setMenu, setFunctionality }) => {
   const user = useAuth();
   return (
     <div
-      className={` w-[20rem] h-screen z-10 md:relative sm:flex flex-col gap-2 py-12 bg-gray-300 cursor-pointer ${
+      className={` w-[20rem]  z-10 md:relative sm:flex flex-col gap-2 py-12 bg-gray-300 cursor-pointer min-h-screen ${
         menu ? "block w-[70vw] absolute top-0 right-0 " : "hidden"
-      }  border h-screen shadow`}
+      }  border shadow h-full`}
     >
       {menu && (
         <IoCloseSharp
