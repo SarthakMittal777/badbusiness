@@ -19,20 +19,24 @@ import PrivateRoute from "./auth/privateRoute";
 import ServicesPortal from "./pages/Services/ServicesPortal";
 import PartnersPortal from "./pages/partners/PartnersPortal";
 import { Partners } from "./pages/partners/Partners";
+import WebsiteAuth from "./auth/websiteAuth";
 const App = () => {
   return (
     <BrowserRouter>
       <AuthProvider>
         <Routes>
-          <Route path="/" element={<Homepage />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:slug" element={<ServiceDetails />} />
-          <Route path="/services/:slug/all" element={<ServicesAll />} />
-          <Route path="/teams" element={<Teams />} />
-          <Route path="/footer" element={<Footer />} />
-          <Route path="/partners" element={<Partners />} />
+          <Route element={<WebsiteAuth />}>
+            <Route path="/" element={<Homepage />} />
+
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:slug" element={<ServiceDetails />} />
+            <Route path="/services/:slug/all" element={<ServicesAll />} />
+            <Route path="/teams" element={<Teams />} />
+            <Route path="/footer" element={<Footer />} />
+            <Route path="/partners" element={<Partners />} />
+          </Route>
           <Route element={<PrivateRoute />}>
             <Route path="/portal/teams" element={<Portal />} />
             <Route

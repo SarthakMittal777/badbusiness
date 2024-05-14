@@ -8,9 +8,9 @@ const AuthProvider = ({ children }) => {
   const [isAdmin, setIsAdmin] = useState(
     localStorage.getItem("isAdmin") === "true"
   );
-  const login = async ({ email, password }) => {
+  const login = async ({ name, email, password }) => {
     serverInstance
-      .post("/user/login", { email, password })
+      .post("/user/login", { name, email, password })
       .then((res) => {
         localStorage.setItem("accesstoken", res.data.accessToken);
         setToken(res.data.accessToken);
@@ -18,19 +18,20 @@ const AuthProvider = ({ children }) => {
           console.log("Admin logged in");
           localStorage.setItem("isAdmin", res.data.isAdmin);
           setIsAdmin(res.data.isAdmin);
-        }
-        window.location.href = "/";
+          navigate("/portal/teams");
+        } else navigate("/");
         return res;
       })
       .catch((error) => {
         console.log(error);
       });
   };
-  const signup = async ({ email, password }) => {
+  const signup = async ({ username, email, password }) => {
     serverInstance
-      .post("/user/signup", { email, password })
+      .post("/user/register", { username, email, password })
       .then((res) => {
         console.log(res.data);
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);

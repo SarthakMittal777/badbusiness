@@ -4,12 +4,16 @@ import { FaBuilding } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import LoginForm from "../components/LoginForm";
 import LoginVia from "../components/LoginVia";
+
 export const Signup = () => {
+  
   const [type, setType] = useState("company");
+
   const accountChange = (account) => {
     console.log(account);
     setType(account);
   };
+
 
   return (
     <div className="w-full flex flex-col items-center justify-center py-24 min-h-screen overflow-x-hidden bg-[#fff0e9] ">
@@ -21,7 +25,9 @@ export const Signup = () => {
         <section className="w-full items-center flex px-28 my-6 cursor-pointer xsSmall:h-[2.5em] justify-center xsSmall:gap-12  flex-col mbXSmall:flex-row">
           <div
             className={`${
-              type == "individual" ? " text-green-600 shadow-lg" : "border-none "
+              type == "individual"
+                ? " text-green-600 shadow-lg"
+                : "border-none "
             }  transition-all duration-300 ease-in-out flex justify-center   items-center h-[3em] w-[10rem] gap-2 px-6 rounded-full font-semibold`}
             onClick={() => accountChange("individual")}
           >
@@ -32,7 +38,9 @@ export const Signup = () => {
           </div>
           <div
             className={`${
-              type == "company" ? "border-2 text-green-600 shadow-lg" : "border-none "
+              type == "company"
+                ? "border-2 text-green-600 shadow-lg"
+                : "border-none "
             }   flex justify-center items-center h-[3em]  py-3 w-[10rem] px-6 rounded-full gap-2 font-semibold`}
             onClick={() => accountChange("company")}
           >

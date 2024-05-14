@@ -3,8 +3,10 @@ import Button from "./Button";
 import { MdArrowOutward } from "react-icons/md";
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";
+import { useAuth } from "../auth/auth";
 // eslint-disable-next-line react/prop-types
 const LoginForm = ({ type }) => {
+  const { signup } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const handleShowPassword = (type) => {
@@ -14,14 +16,16 @@ const LoginForm = ({ type }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const name = e.target.elements.name.value;
-    // const email = e.target.elements.email.value;
+    const username = e.target.elements.name.value;
+    const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
     const confirmPassword = e.target.elements.confirmPassword.value;
+
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
+    signup({ username, email, password });
   };
 
   return (
