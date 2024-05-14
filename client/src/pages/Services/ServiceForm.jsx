@@ -3,6 +3,7 @@ import ImageUploader from "../../components/ImageUpload";
 import { createServiceData, editServiceData } from "../../api/service";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import SidebarPortal from "../../components/SidebarPortal";
 const ServiceForm = ({ functionality, fetchServiceData }) => {
 
   const navigate = useNavigate();
@@ -52,7 +53,8 @@ const ServiceForm = ({ functionality, fetchServiceData }) => {
     }
   };
   return (
-    <div className="w-full h-full  flex justify-center items-center ">
+    <div className="w-full h-full  flex ">
+      <SidebarPortal/>
       <div className="w-[60vw] p-8 flex flex-col shadow-xl  justify-center gap-8 items-center md:items-start ">
         <p className="text-xl font-semibold mb-3 "> {functionality}</p>
         <form

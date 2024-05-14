@@ -1,6 +1,7 @@
 import Button from "../../components/Button";
 import ImageUploader from "../../components/ImageUpload";
 import { createPartnerData, editPartnerData } from "../../api/partner";
+import SidebarPortal from "../../components/SidebarPortal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const PartnerForm = ({ functionality, fetchPartnerData }) => {
@@ -66,7 +67,8 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
     }
   };
   return (
-    <div className="w-full h-full  flex justify-center items-center ">
+    <div className="w-full h-full  flex  ">
+      <SidebarPortal />
       <div className="w-[60vw] p-8 flex flex-col shadow-xl  justify-center gap-8 items-center md:items-start ">
         <p className="text-xl font-semibold mb-3 "> {functionality}</p>
         <form
