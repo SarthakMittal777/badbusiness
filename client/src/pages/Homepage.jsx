@@ -6,6 +6,8 @@ const bgImage = "/images/hero/hero-bg.png";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
 export const Homepage = () => {
   const [activeTab, setActiveTab] = useState("Development");
@@ -73,26 +75,23 @@ export const Homepage = () => {
           <div className="container mx-auto px-4 lg:max-w-screen-smDesktop max-w-screen-2xl flex flex-col lg:flex-row items-center relative">
             <div className="flex-1 lg:p-16 lg:px-48 lg:pt-12 animate-fade-in">
               <h1 className="text-2xl lg:text-5xl font-bold mb-6 text-white text-start lg:text-balance mt-8 lg:leading-snug">
-                Full Solution for Your Business Development
+                Are you facing a Business Problem?
               </h1>
 
               <p className="mb-8 text-mb text-white text-justify font-normal sm:block hidden">
-                Find talented people to work with at the most affordable price
-                to get the most
-                <br /> out of your time and cost
+                We solve your Business Problem using BAD Framework
               </p>
               <p className="mb-8 text-white text-justify font-normal leading-7 md:hidden tracking-tighter">
                 Find talented people to work with at the most affordable price
                 to get the most out of your time and cost
               </p>
-              <div className="space-x-4 mb-6 ">
-                <button className="relative bg-teal-900 text-emerald-300 font-bold py-4 px-8 rounded-full transition-all duration-300 ease-in-out hover:text-white hover:bg-green-600">
-                  Get Started
-                </button>
-
-                <button className="relative bg-emerald-200 text-black font-medium py-4 px-8 rounded-full ml-4 border border-transparent transition-all duration-300 ease-in-out hover:bg-green-600 hover:border-green-600 hover:text-white">
-                  Book a Meeting
-                </button>
+              <div className="flex gap-4">
+                <Button className="relative bg-teal-900 hover:bg-green-800 text-green-200 font-bold py-4 px-5 rounded-full">
+                  Share your Business Problem
+                </Button>
+                <Button className="relative bg-emerald-200 hover:bg-green-800 text-black font-medium py-4 px-5 rounded-full">
+                  Partner with us
+                </Button>
               </div>
             </div>
 
@@ -161,6 +160,9 @@ export const Homepage = () => {
           <div className="flex justify-center items-center">
             <img src="/images/partners/4.png" alt="4" className="h-24" />
           </div>
+        </div>
+        <div className="flex justify-center items-center text-center underline text-[#212A32] mt-6 italic">
+          <Link to="/partners">View all of our JVC</Link>
         </div>
       </div>
       {/* Service Section  */}

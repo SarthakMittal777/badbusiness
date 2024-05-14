@@ -20,6 +20,7 @@ import ServicesPortal from "./pages/Services/ServicesPortal";
 import PartnersPortal from "./pages/partners/PartnersPortal";
 import { Partners } from "./pages/partners/Partners";
 import WebsiteAuth from "./auth/websiteAuth";
+import { Merchandise } from "./pages/Merchandise";
 const App = () => {
   return (
     <BrowserRouter>
@@ -36,6 +37,7 @@ const App = () => {
             <Route path="/teams" element={<Teams />} />
             <Route path="/footer" element={<Footer />} />
             <Route path="/partners" element={<Partners />} />
+            <Route path="/merchandise" element={<Merchandise />} />
           </Route>
           <Route element={<PrivateRoute />}>
             <Route path="/portal/teams" element={<Portal />} />

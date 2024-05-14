@@ -52,9 +52,9 @@ const Navbar = () => {
   return (
     <nav className="w-full h-20 sticky top-0 z-50 mx-auto bg-white">
       <div className="flex justify-between items-center h-full px-5 2xl:px-16 text-white">
-        <div className="flex items-center ">
+        <div className="flex items-center">
           <Link to="/">
-            <img src="/images/logo1.png" alt="Logo" className="h-16" />
+            <img src="/images/logo1.png" alt="Logo" className="md:h-16" />
           </Link>
           <Link
             to="/signup"
@@ -89,7 +89,7 @@ const Navbar = () => {
               </li>
             </Link> */}
             <li
-              className="relative group hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer "
+              className="relative group hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer"
               onMouseEnter={handleDropdown}
               onMouseLeave={handleDropdown}
             >
@@ -111,10 +111,10 @@ const Navbar = () => {
                 </svg>
               </span>
               <ul className="dropdown-menu hidden absolute top-full left-[10px] bg-white text-black border rounded-md">
-                <li className="py-3 px-6 pr-14 hover:bg-gray-200">
-                  <a href="/services">Services</a>
+                <li className="py-3 px-6 pr-14 hover:bg-gray-200 font-medium">
+                  <Link to="/services">Services</Link>
                 </li>
-                <a href="https://events.badbusiness.in/">
+                {/* <Link to="https://events.badbusiness.in/">
                   <li
                     className="flex items-center justify-between py-2 px-6 pr-14 hover:bg-gray-200 relative"
                     onMouseEnter={handleDropdown}
@@ -128,17 +128,20 @@ const Navbar = () => {
                     />
                     <ul className="dropdown-menu w-30 h-auto hidden absolute top-0 left-[168px] bg-white text-black shadow-md duration-300 border rounded-md">
                       <li className="block py-2 px-6  hover:bg-gray-200">
-                        <a href="/">Project V1</a>
+                        <Link to="/">Project V1</Link>
                       </li>
                       <li className="block py-2 px-6 pr-14 hover:bg-gray-200">
-                        <a href="/">Project</a>
+                        <Link to="/">Project</Link>
                       </li>
                     </ul>
                   </li>
-                </a>
-                <li className="block py-2 px-6 pr-14 hover:bg-gray-200">
-                  <a href="/">Job List</a>
+                </a> */}
+                <li className="block py-2 px-6 pr-14 hover:bg-gray-200 font-medium">
+                  <Link to="/merchandise">BAD Merchandise</Link>
                 </li>
+                {/* <li className="block py-2 px-6 pr-14 hover:bg-gray-200">
+                  <Link to="/">Job List</Link>
+                </li> */}
               </ul>
             </li>
 
@@ -180,7 +183,7 @@ const Navbar = () => {
               <Link to="/partners">Partners</Link>
             </li>
 
-            <li
+            {/* <li
               className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
               onClick={() => {
                 setOpenMenu(false);
@@ -196,14 +199,14 @@ const Navbar = () => {
               }}
             >
               <Link to="/signup">SignUp</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
         {/* Mobile View  */}
         <div className="relative">
           <div className="flex justify-between items-center h-full w-full px-2 2xl:px-16 text-black overflow-x-hidden">
             {openMenu ? (
-              <div onClick={handleClick} className="md:hidden cursor-pointer ">
+              <div onClick={handleClick} className="md:hidden cursor-pointer">
                 <AiOutlineClose size={25} />
               </div>
             ) : (
@@ -214,7 +217,7 @@ const Navbar = () => {
           </div>
 
           {openMenu && (
-            <div className="fixed top-0 left-0 h-full w-[80%] bg-white z-50 duration-500 ease-in-out">
+            <div className="fixed top-0 left-0 h-full w-[80%] bg-white z-50 duration-500 ease-in-out overflow-y-auto">
               <div className="flex flex-col py-6 text-black">
                 <div className="bg-green-50">
                   <h1 className="font-semibold flex justify-center bg-green-50 items-center text-lg pt-5">
