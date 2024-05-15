@@ -24,14 +24,17 @@ export const Partners = () => {
       <Navbar />
       <div
         className="lg:h-full bg-center lg:bg-cover sm:bg-auto sm:bg-center bg-no-repeat text-white py-6"
-        style={{ backgroundImage: `url(${bgImage})` }}
+        style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}
       >
-        <div className="flex flex-wrap justify-center items-center">
-          <h1 className="text-3xl font-semibold mb-4">PARTNERS</h1>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-24">
+          <h1 className="flex items-center justify-center font-bold text-2xl">
+            PARTNERS
+          </h1>
+          <br />
+          <h2 className="flex items-center justify-center font-semibold text-xl">
+            Joint Venture Companies
+          </h2>
         </div>
-        <h2 className="text-xl font-medium mb-8 text-center">
-          Joint Venture Companies
-        </h2>
       </div>
       {/* Card  */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

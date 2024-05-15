@@ -71,19 +71,14 @@ export const Homepage = () => {
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         {/* Hero Section*/}
-        <section className="">
+        <section className="w-full lg:pt-32">
           <div className="container mx-auto px-4 lg:max-w-screen-smDesktop max-w-screen-2xl flex flex-col lg:flex-row items-center relative">
             <div className="flex-1 lg:p-16 lg:px-48 lg:pt-12 animate-fade-in">
               <h1 className="text-2xl lg:text-5xl font-bold mb-6 text-white text-start lg:text-balance mt-8 lg:leading-snug">
                 Are you facing a Business Problem?
               </h1>
-
-              <p className="mb-8 text-mb text-white text-justify font-normal sm:block hidden">
+              <p className="mb-8 text-mb text-white text-justify font-normal">
                 We solve your Business Problem using BAD Framework
-              </p>
-              <p className="mb-8 text-white text-justify font-normal leading-7 md:hidden tracking-tighter">
-                Find talented people to work with at the most affordable price
-                to get the most out of your time and cost
               </p>
               <div className="flex gap-4">
                 <Button className="relative bg-teal-900 hover:bg-green-800 text-green-200 font-bold py-4 px-5 rounded-full">
@@ -98,35 +93,35 @@ export const Homepage = () => {
             </div>
 
             {/* Hero Images*/}
-            <div className="flex-1 p-8 relative animate-fade-in">
+            <div className="flex-1 p-8 relative animate-fade-in lg:block hidden">
               <div className="flex mb-4 gap-6">
                 <img
                   src="/images/hero/hero-1.png"
                   alt="Image 1"
-                  className="w-1/3 sm:block hidden"
+                  className="w-1/3"
                 />
                 <img
                   src="/images/hero/client.png"
                   alt="Image 1"
-                  className="w-auto absolute top-[40%] left-10 animate-moveLeftRight sm:block hidden"
+                  className="w-auto absolute top-[40%] left-10 animate-moveLeftRight"
                 />
                 <img
                   src="/images/hero/hero-2.png"
                   alt="Image 2"
-                  className="w-1/3 sm:block hidden"
+                  className="w-1/3"
                 />
               </div>
               <img
                 src="/images/hero/hero-3.png"
                 alt="Image 3"
-                className="w-2/3 mb-4 sm:block hidden"
+                className="w-2/3 mb-4"
               />
-              <div className="sm:block hidden">
+              <div className="">
                 <div className="text-start flex shadow-lg animate-bounce bg-blue-600 p-4 rounded-full absolute left-4 lg:left-auto">
                   <span className="rounded-full p-3 bg-blue-500 hover:bg-green-900 duration-300">
                     <img
                       src="/images/hero/medal.png"
-                      className="w-6 h-6 invert "
+                      className="w-6 h-6 invert"
                       alt="Medal"
                     />
                   </span>

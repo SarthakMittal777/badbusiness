@@ -58,7 +58,7 @@ const Navbar = () => {
           </Link>
           <Link
             to="/signup"
-            className="ml-24 md:hidden text-black font-semibold"
+            className="ml-24 md:hidden text-gray-800 font-semibold"
           >
             Join
           </Link>
@@ -67,7 +67,7 @@ const Navbar = () => {
         <div className="hidden md:flex flex-grow items-center">
           <ul className="flex flex-row ml-auto">
             <li
-              className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
               onClick={() => {
                 setOpenMenu(false);
               }}
@@ -82,7 +82,7 @@ const Navbar = () => {
               duration={500}
             >
               <li
-                className="hover:scale-110 duration-300text-white hover:text-white capitalize px-3 cursor-pointer font-semibold"
+                className="duration-300text-white hover:text-white capitalize px-3 cursor-pointer font-semibold"
                 onClick={() => setOpenMenu(false)}
               >
                 About
@@ -90,7 +90,7 @@ const Navbar = () => {
             </Link> */}
 
             {/* <li
-              className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              className="duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
               onClick={() => {
                 setOpenMenu(false);
               }}
@@ -101,34 +101,7 @@ const Navbar = () => {
             </li> */}
 
             <li
-              className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
-              onClick={() => {
-                setOpenMenu(false);
-              }}
-            >
-              <Link to="/services">Services</Link>
-            </li>
-
-            <li
-              className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
-              onClick={() => {
-                setOpenMenu(false);
-              }}
-            >
-              <Link to="/teams">Teams</Link>
-            </li>
-
-            <li
-              className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
-              onClick={() => {
-                setOpenMenu(false);
-              }}
-            >
-              <Link to="/partners">Partners</Link>
-            </li>
-
-            <li
-              className="relative group hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer"
+              className="relative group duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer"
               onMouseEnter={handleDropdown}
               onMouseLeave={handleDropdown}
             >
@@ -150,12 +123,18 @@ const Navbar = () => {
                 </svg>
               </span>
               <ul className="dropdown-menu hidden absolute top-full left-[10px] bg-white text-black border rounded-md">
-                <li className="block py-2 px-6 pr-14 hover:bg-gray-200 font-medium">
-                  <Link to="https://events.badbusiness.in/">BAD Events</Link>
-                </li>
-                <li className="py-3 px-6 pr-14 hover:bg-gray-200 font-medium">
-                  <Link to="/courses">BAD Courses</Link>
-                </li>
+                <Link to="https://events.badbusiness.in/">
+                  <li className="py-3 px-6 pr-14 hover:bg-gray-200 font-medium">
+                    BAD Events
+                  </li>
+                </Link>
+
+                <Link to="/courses">
+                  <li className="py-3 px-6 pr-14 hover:bg-gray-200 font-medium">
+                    BAD Courses
+                  </li>
+                </Link>
+
                 {/* <Link to="https://events.badbusiness.in/">
                   <li
                     className="flex items-center justify-between py-2 px-6 pr-14 hover:bg-gray-200 relative"
@@ -177,18 +156,49 @@ const Navbar = () => {
                       </li>
                     </ul>
                   </li>
-                </a> */}
-                <li className="block py-2 px-6 pr-14 hover:bg-gray-200 font-medium">
-                  <Link to="/merchandise">BAD Merchandise</Link>
-                </li>
+                </Link> */}
+
+                <Link to="/merchandise">
+                  <li className="block py-2 px-6 pr-14 hover:bg-gray-200 font-medium">
+                    BAD Merchandise
+                  </li>
+                </Link>
 
                 {/* <li className="block py-2 px-6 pr-14 hover:bg-gray-200">
                   <Link to="/">Job List</Link>
                 </li> */}
               </ul>
             </li>
+
+            <li
+              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <Link to="/services">Services</Link>
+            </li>
+
+            <li
+              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <Link to="/teams">Teams</Link>
+            </li>
+
+            <li
+              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <Link to="/partners">Partners</Link>
+            </li>
+
             {/* <li
-              className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              className="duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
               onClick={() => {
                 setOpenMenu(false);
               }}
@@ -197,7 +207,7 @@ const Navbar = () => {
             </li>
 
             <li
-              className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              className="duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
               onClick={() => {
                 setOpenMenu(false);
               }}
