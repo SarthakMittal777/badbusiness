@@ -21,6 +21,7 @@ import PartnersPortal from "./pages/partners/PartnersPortal";
 import { Partners } from "./pages/partners/Partners";
 import WebsiteAuth from "./auth/websiteAuth";
 import { Merchandise } from "./pages/Merchandise";
+import { Courses } from "./pages/Courses";
 const App = () => {
   return (
     <BrowserRouter>
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="/footer" element={<Footer />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/merchandise" element={<Merchandise />} />
+            <Route path="/courses" element={<Courses />} />
           </Route>
           <Route element={<PrivateRoute />}>
             <Route path="/portal/teams" element={<Portal />} />

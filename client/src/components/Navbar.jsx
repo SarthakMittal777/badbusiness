@@ -88,64 +88,8 @@ const Navbar = () => {
                 About
               </li>
             </Link> */}
-            <li
-              className="relative group hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer"
-              onMouseEnter={handleDropdown}
-              onMouseLeave={handleDropdown}
-            >
-              <span className="flex items-center font-semibold">
-                Pages
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`ml-1 h-4 w-4 transition-transform duration-300 transform pt-1 ${
-                    hovered ? "rotate-180" : ""
-                  }`}
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 12a1 1 0 0 1-.707-.293l-4-4a1 1 0 1 1 1.414-1.414L10 9.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4A1 1 0 0 1 10 12z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </span>
-              <ul className="dropdown-menu hidden absolute top-full left-[10px] bg-white text-black border rounded-md">
-                <li className="py-3 px-6 pr-14 hover:bg-gray-200 font-medium">
-                  <Link to="/services">Services</Link>
-                </li>
-                {/* <Link to="https://events.badbusiness.in/">
-                  <li
-                    className="flex items-center justify-between py-2 px-6 pr-14 hover:bg-gray-200 relative"
-                    onMouseEnter={handleDropdown}
-                    onMouseLeave={handleDropdown}
-                  >
-                    Projects{" "}
-                    <img
-                      src="/images/right.png"
-                      className="w-2 h-2 ml-8"
-                      alt="next"
-                    />
-                    <ul className="dropdown-menu w-30 h-auto hidden absolute top-0 left-[168px] bg-white text-black shadow-md duration-300 border rounded-md">
-                      <li className="block py-2 px-6  hover:bg-gray-200">
-                        <Link to="/">Project V1</Link>
-                      </li>
-                      <li className="block py-2 px-6 pr-14 hover:bg-gray-200">
-                        <Link to="/">Project</Link>
-                      </li>
-                    </ul>
-                  </li>
-                </a> */}
-                <li className="block py-2 px-6 pr-14 hover:bg-gray-200 font-medium">
-                  <Link to="/merchandise">BAD Merchandise</Link>
-                </li>
-                {/* <li className="block py-2 px-6 pr-14 hover:bg-gray-200">
-                  <Link to="/">Job List</Link>
-                </li> */}
-              </ul>
-            </li>
 
-            <li
+            {/* <li
               className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
               onClick={() => {
                 setOpenMenu(false);
@@ -154,7 +98,7 @@ const Navbar = () => {
               <Link to="https://events.badbusiness.in/" target="_blank">
                 BAD Events
               </Link>
-            </li>
+            </li> */}
 
             <li
               className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
@@ -183,6 +127,66 @@ const Navbar = () => {
               <Link to="/partners">Partners</Link>
             </li>
 
+            <li
+              className="relative group hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer"
+              onMouseEnter={handleDropdown}
+              onMouseLeave={handleDropdown}
+            >
+              <span className="flex items-center font-semibold">
+                More
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`ml-1 h-4 w-4 transition-transform duration-300 transform pt-1 ${
+                    hovered ? "rotate-180" : ""
+                  }`}
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 12a1 1 0 0 1-.707-.293l-4-4a1 1 0 1 1 1.414-1.414L10 9.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4A1 1 0 0 1 10 12z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </span>
+              <ul className="dropdown-menu hidden absolute top-full left-[10px] bg-white text-black border rounded-md">
+                <li className="block py-2 px-6 pr-14 hover:bg-gray-200 font-medium">
+                  <Link to="https://events.badbusiness.in/">BAD Events</Link>
+                </li>
+                <li className="py-3 px-6 pr-14 hover:bg-gray-200 font-medium">
+                  <Link to="/courses">BAD Courses</Link>
+                </li>
+                {/* <Link to="https://events.badbusiness.in/">
+                  <li
+                    className="flex items-center justify-between py-2 px-6 pr-14 hover:bg-gray-200 relative"
+                    onMouseEnter={handleDropdown}
+                    onMouseLeave={handleDropdown}
+                  >
+                    Projects{" "}
+                    <img
+                      src="/images/right.png"
+                      className="w-2 h-2 ml-8"
+                      alt="next"
+                    />
+                    <ul className="dropdown-menu w-30 h-auto hidden absolute top-0 left-[168px] bg-white text-black shadow-md duration-300 border rounded-md">
+                      <li className="block py-2 px-6  hover:bg-gray-200">
+                        <Link to="/">Project V1</Link>
+                      </li>
+                      <li className="block py-2 px-6 pr-14 hover:bg-gray-200">
+                        <Link to="/">Project</Link>
+                      </li>
+                    </ul>
+                  </li>
+                </a> */}
+                <li className="block py-2 px-6 pr-14 hover:bg-gray-200 font-medium">
+                  <Link to="/merchandise">BAD Merchandise</Link>
+                </li>
+
+                {/* <li className="block py-2 px-6 pr-14 hover:bg-gray-200">
+                  <Link to="/">Job List</Link>
+                </li> */}
+              </ul>
+            </li>
             {/* <li
               className="hover:scale-110 duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
               onClick={() => {
@@ -239,27 +243,30 @@ const Navbar = () => {
                               <span>{item.title}</span>
                             )}
                           </div>
-                          <img
-                            src="/images/right.png"
-                            className={`w-3 h-3 transition-transform duration-300 transform ${
-                              openSubmenu === index ? "rotate-180" : ""
-                            }`}
-                            alt=""
-                          />
+                          {item.menuList && ( // Only render arrow if menuList is present
+                            <img
+                              src="/images/right.png"
+                              className={`w-3 h-3 transition-transform duration-300 transform ${
+                                openSubmenu === index ? "rotate-180" : ""
+                              }`}
+                              alt=""
+                            />
+                          )}
                         </div>
-                        {openSubmenu === index && item.menuList && (
-                          <div className=" h-full w-full m-5">
-                            {item.menuList.map((it, idx) => (
-                              <div className=" h-full w-full m-5" key={idx}>
-                                {it.to ? (
-                                  <Link to={it.to}>{it.lable}</Link>
-                                ) : (
-                                  <span>{it.lable}</span>
-                                )}
-                              </div>
-                            ))}
-                          </div>
-                        )}
+                        {openSubmenu === index &&
+                          item.menuList && ( // Only render submenu if menuList is present
+                            <div className=" h-full w-full m-5">
+                              {item.menuList.map((it, idx) => (
+                                <div className=" h-full w-full m-5" key={idx}>
+                                  {it.to ? (
+                                    <Link to={it.to}>{it.lable}</Link>
+                                  ) : (
+                                    <span>{it.lable}</span>
+                                  )}
+                                </div>
+                              ))}
+                            </div>
+                          )}
                       </div>
                     </div>
                   ))}

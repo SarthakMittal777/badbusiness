@@ -10,7 +10,7 @@ export const Partners = () => {
   useEffect(() => {
     const fetchPartners = async () => {
       try {
-        const response = await server.get("/api/v1/partner");
+        const response = await server.get("/partner");
         setPartners(response.data.partners);
       } catch (error) {
         console.error("Error fetching partners:", error);
