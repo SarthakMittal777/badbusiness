@@ -62,69 +62,84 @@ export const ServicesPortal = () => {
                 </Button>
               </Link>
             </div>
-            <table className="table-auto min-w-full">
-              <thead>
-                <tr className="bg-gray-200">
-                  <th className="px-4 py-2">Profile</th>
-                  <th className="px-4 py-2">Image</th>
-                  <th className="px-4 py-2">Category</th>
-                  <th className="px-4 py-2">Title</th>
+            <div className="h-[33rem] overflow-y-scroll relative portal w-full ">
+              <table className="table-auto min-w-full">
+                <thead className="relative">
+                  <tr className="bg-gray-200 sticky top-0 z-[100] ">
+                    <th className="px-4 py-2 sticky top-0 z-[100]">#</th>
+                    <th className="px-4 py-2 sticky top-0 z-[100] ">Profile</th>
+                    <th className="px-4 py-2 sticky top-0 z-[100] ">Image</th>
+                    <th className="px-4 py-2 sticky top-0 z-[100] ">
+                      Category
+                    </th>
+                    <th className="px-4 py-2 sticky top-0 z-[100] ">Title</th>
 
-                  <th className="px-4 py-2">Edit</th>
-                  <th className="px-4 py-2">Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                {serviceData &&
+                    <th className="px-4 py-2 sticky top-0 z-[100] ">Edit</th>
+                    <th className="px-4 py-2 sticky top-0 z-[100] ">Delete</th>
+                  </tr>
+                </thead>
+                <tbody className="w-full ">
+                  {serviceData &&
                   serviceData.services &&
-                  serviceData.services.length > 0 &&
-                  serviceData.services.map((service, index) => (
-                    <tr key={index}>
-                      <td className="border px-4 py-2 rounded-full">
-                        {service.profile === "" ? (
-                          <div className="w-16 h-16 rounded-full flex items-center justify-center bg-[#c7b0ff] mx-auto"></div>
-                        ) : (
-                          <img
-                            src={service.profile}
-                            alt={service.category}
-                            className="w-16 h-16 rounded-full mx-auto"
-                          />
-                        )}
-                      </td>
-                      <td className="border px-4 py-2 rounded-full">
-                        {service.image === "" ? (
-                          <div className="w-16 h-16 rounded-full flex items-center justify-center bg-[#c7b0ff] mx-auto"></div>
-                        ) : (
-                          <img
-                            src={service.image}
-                            alt={service.category}
-                            className="w-16 h-16 rounded-full mx-auto"
-                          />
-                        )}
-                      </td>
-                      <td className="border px-4 py-2 mx-auto text-center">
-                        {service.category}
-                      </td>
-                      <td className="border px-4 py-2 mx-auto text-center">
-                        {service.title}
-                      </td>
+                  serviceData.services.length > 0 ? (
+                    serviceData.services.map((service, index) => (
+                      <tr key={index} className="hover:bg-gray-100">
+                        <td className=" hover:underline border px-4 py-1 mx-auto text-center">
+                          {index + 1}
+                        </td>
+                        <td className="border px-4 py-2 rounded-full">
+                          {service.profile === "" ? (
+                            <div className="w-16 h-16 rounded-full flex items-center justify-center bg-[#c7b0ff] mx-auto"></div>
+                          ) : (
+                            <img
+                              src={service.profile}
+                              alt={service.category}
+                              className="w-16 h-16 rounded-full mx-auto object-cover object-center"
+                            />
+                          )}
+                        </td>
+                        <td className="border px-4 py-2 rounded-full">
+                          {service.image === "" ? (
+                            <div className="w-16 h-16 rounded-full flex items-center justify-center bg-[#c7b0ff] mx-auto"></div>
+                          ) : (
+                            <img
+                              src={service.image}
+                              alt={service.category}
+                              className="w-16 h-16 rounded-full mx-auto"
+                            />
+                          )}
+                        </td>
+                        <td className="border  hover:underline  px-4 py-2 mx-auto text-center">
+                          {service.category}
+                        </td>
+                        <td className="border px-4  hover:underline py-2 mx-auto text-center">
+                          {service.title}
+                        </td>
 
-                      <td className="border px-4 py-2 ">
-                        <Link to={`/portal/service/edit/${service._id}`}>
-                          <MdEdit size={25} className="mx-auto" />
-                        </Link>
-                      </td>
-                      <td className="border px-4 py-2">
-                        <MdDelete
-                          size={25}
-                          className="mx-auto"
-                          onClick={() => deleteService(service._id)}
-                        />
-                      </td>
-                    </tr>
-                  ))}
-              </tbody>
-            </table>
+                        <td className="border px-4 py-2 ">
+                          <Link to={`/portal/service/edit/${service._id}`}>
+                            <MdEdit size={25} className="mx-auto" />
+                          </Link>
+                        </td>
+                        <td className="border px-4 py-2">
+                          <MdDelete
+                            size={25}
+                            className="mx-auto"
+                            onClick={() => deleteService(service._id)}
+                          />
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                    <td colSpan="9" className="text-center border py-4 text-gray-700">
+                      No data available
+                    </td>
+                  </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
       )}

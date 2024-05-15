@@ -1,5 +1,5 @@
 import serverInstance from "./server";
-const token = localStorage.getItem("accesstoken");
+
 export const getServiceData = async () => {
   try {
     const response = await serverInstance.get("/service");
@@ -31,6 +31,7 @@ export const createServiceData = async (data) => {
 };
 export const editServiceData = async (id, data) => {
   try {
+    const token = localStorage.getItem("accesstoken");
     const response = await serverInstance.put(`/service/update/${id}`, data, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -44,6 +45,7 @@ export const editServiceData = async (id, data) => {
 
 export const deleteServiceData = async (id) => {
   try {
+    const token = localStorage.getItem("accesstoken");
     const response = await serverInstance.delete(`/service/delete/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,

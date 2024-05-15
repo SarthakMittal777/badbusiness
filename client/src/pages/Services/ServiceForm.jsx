@@ -1,5 +1,4 @@
 import Button from "../../components/Button";
-import ImageUploader from "../../components/ImageUpload";
 import { createServiceData, editServiceData } from "../../api/service";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -63,7 +62,6 @@ const ServiceForm = ({ functionality, fetchServiceData }) => {
           onSubmit={(e) => handleSubmit(e)}
         >
           <div className="w-full flex flex-col gap-4">
-            <ImageUploader />
             <p className="text-base font-semibold mb-3 ">Category :</p>
             <input
               id="category"

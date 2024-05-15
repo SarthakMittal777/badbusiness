@@ -7,13 +7,15 @@ const SidebarPortal = ({ menu, setMenu, setFunctionality }) => {
   const user = useAuth();
   return (
     <div
-      className={` w-[20rem]  z-10 md:relative sm:flex flex-col gap-2 py-12 bg-gray-300 cursor-pointer min-h-screen ${
-        menu ? "block w-[70vw] absolute top-0 right-0 " : "hidden"
-      }  border shadow h-full`}
+      className={` min-w-[20rem] hidden md:flex relative  flex-col gap-2 py-12 bg-gray-300 cursor-pointer min-h-screen ${
+        menu
+          ? "block w-[70vw] absolute top-0 right-0 md:min-w-[20rem] md:relative"
+          : "hidden"
+      }  border shadow h-full `}
     >
       {menu && (
         <IoCloseSharp
-          className="absolute top-3 "
+          className="absolute top-3 md:hidden"
           size={25}
           onClick={() => setMenu(false)}
         />
@@ -51,7 +53,7 @@ const SidebarPortal = ({ menu, setMenu, setFunctionality }) => {
       <div onClick={() => user.logOutFromPortal()}>
         <Button
           type=""
-          className="bg-[#5BBB7B] w-[80%] my-4 hover:bg-green-800 py-3 text-white font-semibold mx-6 absolute bottom-0 "
+          className="bg-[#5BBB7B] w-[80%] my-4 hover:bg-green-800 py-3 text-white font-semibold mx-6 absolute bottom-0"
         >
           Log Out
         </Button>

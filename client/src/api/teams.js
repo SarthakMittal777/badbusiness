@@ -1,5 +1,5 @@
 import serverInstance from "./server";
-const token = localStorage.getItem("accesstoken");
+
 export const getTeamData = async () => {
   try {
     const response = await serverInstance.get("/team");
@@ -31,6 +31,7 @@ export const createData = async (data) => {
 };
 export const editTeamData = async (id, data) => {
   try {
+    const token = localStorage.getItem("accesstoken");
     const response = await serverInstance.put(`/team/update/${id}`, data, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -44,6 +45,7 @@ export const editTeamData = async (id, data) => {
 
 export const deleteTeamData = async (id) => {
   try {
+    const token = localStorage.getItem("accesstoken");
     const response = await serverInstance.delete(`/team/delete/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,

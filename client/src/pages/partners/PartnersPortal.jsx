@@ -57,7 +57,7 @@ const PortalPortal = () => {
         setFunctionality={setFunctionality}
       />
       {functionality == null && (
-        <section className="w-[95vw] h-screen overflow-y-auto">
+        <section className="w-[95vw] h-screen ">
           <div className="w-full p-12">
             <div className="w-[96%] flex justify-end mx-12 mb-3">
               <Link to={`/portal/partner/add`}>
@@ -69,90 +69,107 @@ const PortalPortal = () => {
                 </Button>
               </Link>
             </div>
-            <table className="table-auto min-w-full">
-              <thead>
-                <tr className="bg-gray-200">
-                  <th className="px-4 py-2">Image</th>
-                  <th className="px-4 py-2">Name</th>
-                  <th className="px-4 py-2">Headline</th>
-                  <th className="px-4 py-2">Is MVP</th>
-                  <th className="px-4 py-2">Links</th>
-                  <th className="px-4 py-2">Edit</th>
-                  <th className="px-4 py-2">Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                {partnerData &&
-                  partnerData.partners &&
-                  partnerData.partners.map((partner, index) => (
-                    <tr key={index}>
-                      <td className="border px-4 py-2 rounded-full">
-                        {partner.photo === "" ? (
-                          <div className="w-16 h-16 rounded-full flex items-center justify-center bg-[#c7b0ff] mx-auto"></div>
-                        ) : (
-                          <img
-                            src={partner.photo}
-                            alt={partner.name}
-                            className="w-16 h-16 rounded-full mx-auto"
-                          />
-                        )}
-                      </td>
-                      <td className="border px-4 py-2 mx-auto text-center">
-                        {partner.name}
-                      </td>
-                      <td className="border px-4 py-2 mx-auto text-center">
-                        {partner.headline}
-                      </td>
-                      <td className="border px-4 py-2 text-center">
-                        {partner.isMVP ? "Yes" : "No"}
-                      </td>
-                      <td className="border px-4 py-2 relative">
-                        <button
-                          onClick={() => toggleLinks(partner._id)}
-                          className="inline-flex justify-center w-full rounded-md border border-gray-300 bg-white px-4 py-2 shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
-                        >
-                          Links
-                        </button>
-                        {showLinks === partner._id && (
-                          <div className="origin-top-right z-10 absolute left-10 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                            <div
-                              className="py-1"
-                              role="menu"
-                              aria-orientation="vertical"
-                              aria-labelledby="options-menu"
-                            >
-                              {partner.links.map((link) => (
-                                <Link
-                                  key={link._id}
-                                  to={link.url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                  role="menuitem"
-                                >
-                                  {link.name} : {link.url}
-                                </Link>
-                              ))}
+            <div className="h-[33rem] overflow-y-scroll relative ">
+              <table className="table-auto min-w-full">
+                <thead className="relative">
+                  <tr className="bg-gray-200  sticky top-0 z-[100]">
+                    <th className="px-4 py-2  sticky top-0 z-[100]">#</th>
+                    <th className="px-4 py-2  sticky top-0 z-[100]">Image</th>
+                    <th className="px-4 py-2  sticky top-0 z-[100]">Name</th>
+                    <th className="px-4 py-2  sticky top-0 z-[100]">
+                      Headline
+                    </th>
+                    <th className="px-4 py-2  sticky top-0 z-[100]">Is MVP</th>
+                    <th className="px-4 py-2   sticky top-0 z-[100]">Links</th>
+                    <th className="px-4 py-2  sticky top-0 z-[100]">Edit</th>
+                    <th className="px-4 py-2  sticky top-0 z-[100]">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {partnerData && partnerData.partners && partnerData.partners.length>0 ? (
+                    partnerData.partners.map((partner, index) => (
+                      <tr key={index} className="hover:bg-gray-100">
+                        <td className="border px-4 py-1 mx-auto text-center hover:underline">
+                          {index + 1}
+                        </td>
+                        <td className="border px-4 py-2 rounded-full">
+                          {partner.photo === "" ? (
+                            <div className="w-16 h-16 rounded-full flex items-center justify-center bg-[#c7b0ff] mx-auto"></div>
+                          ) : (
+                            <img
+                              src={partner.photo}
+                              alt={partner.name}
+                              className="w-16 h-16 rounded-full mx-auto object-cover object-center" 
+                            />
+                          )}
+                        </td>
+                        <td className="border px-4 py-2 mx-auto text-center hover:underline">
+                          {partner.name}
+                        </td>
+                        <td className="border px-4 py-2 mx-auto text-center hover:underline">
+                          {partner.headline}
+                        </td>
+                        <td className="border px-4 py-2 text-center hover:underline">
+                          {partner.isMVP ? "Yes" : "No"}
+                        </td>
+                        <td className="border px-4 py-2 relative hover:underline">
+                          <button
+                            onClick={() => toggleLinks(partner._id)}
+                            className="justify-center w-full relative z-0 rounded-md border border-gray-900 px-4 py-2 shadow-sm text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
+                          >
+                            Links
+                          </button>
+                          {showLinks === partner._id && (
+                            <div className="origin-top-right z-[10] absolute left-10 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                              <div
+                                className="py-1"
+                                role="menu"
+                                aria-orientation="vertical"
+                                aria-labelledby="options-menu"
+                              >
+                                {partner.links.map((link) => (
+                                  <Link
+                                    key={link._id}
+                                    to={link.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem"
+                                  >
+                                    {link.name} : {link.url}
+                                  </Link>
+                                ))}
+                              </div>
                             </div>
-                          </div>
-                        )}
-                      </td>
-                      <td className="border px-4 py-2 ">
-                        <Link to={`/portal/partner/edit/${partner._id}`}>
-                          <MdEdit size={25} className="mx-auto" />
-                        </Link>
-                      </td>
-                      <td className="border px-4 py-2">
-                        <MdDelete
-                          size={25}
-                          className="mx-auto"
-                          onClick={() => deletePartner(partner._id)}
-                        />
+                          )}
+                        </td>
+                        <td className="border px-4 py-2 ">
+                          <Link to={`/portal/partner/edit/${partner._id}`}>
+                            <MdEdit size={25} className="mx-auto" />
+                          </Link>
+                        </td>
+                        <td className="border px-4 py-2">
+                          <MdDelete
+                            size={25}
+                            className="mx-auto"
+                            onClick={() => deletePartner(partner._id)}
+                          />
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td
+                        colSpan="9"
+                        className="text-center border py-4 text-gray-700"
+                      >
+                        No data available
                       </td>
                     </tr>
-                  ))}
-              </tbody>
-            </table>
+                  )}
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
       )}

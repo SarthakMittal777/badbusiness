@@ -1,10 +1,11 @@
 import Button from "./Button";
-import ImageUploader from "./ImageUpload";
 import { createData, editTeamData } from "../api/teams";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SidebarPortal from "./SidebarPortal";
+import { MdOutlineMenu } from "react-icons/md";
 const TeamForm = ({ functionality, fetchMemberData }) => {
+  const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
   const [data, setData] = useState({
     name: fetchMemberData?.team.name,
@@ -70,16 +71,21 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
   };
   return (
     <div className="w-full h-full  flex  ">
-      <SidebarPortal />
-      <div className="w-[60vw] p-8 flex flex-col shadow-xl  h-full justify-center gap-8 items-center md:items-start  ">
+      <MdOutlineMenu
+        className="md:hidden block absolute top-9 right-9"
+        size={25}
+        onClick={() => setMenu(!menu)}
+      />
+      <SidebarPortal menu={menu} setMenu={setMenu} />
+
+      <div className="w-[60vw] p-8 flex flex-col shadow-xl  justify-center gap-8 items-center md:items-start py-12 h-screen overflow-scroll">
         <p className="text-xl font-semibold mb-3 "> {functionality}</p>
         <form
           method="POST"
-          className="w-full"
+          className="w-full overflow-y-auto"
           onSubmit={(e) => handleSubmit(e)}
         >
           <div className="w-full flex flex-col gap-4">
-            <ImageUploader />
             <input
               id="name"
               type="text"
@@ -182,25 +188,20 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
                 placeholder="Others"
                 value={data.others}
                 className="outline-none w-full"
-                onChange={(e) => setData({ ...data, behance: e.target.value })}
+                onChange={(e) => setData({ ...data, others: e.target.value })}
               />
             </div>
             <p className="font-semibold text-sm">Is MVP?</p>
             <div className="border rounded-xl py-3 w-full px-4 flex flex-col items-center justify-between">
-              <select className="outline-none border-none w-full">
+              <select
+                className="outline-none border-none w-full"
+                onChange={(e) =>
+                  setData({ ...data, isMVP: e.target.value === "true" })
+                }
+              >
                 <option value="false">Select</option>
-                <option
-                  value="true"
-                  onClick={() => setData({ ...data, isMVP: true })}
-                >
-                  Yes
-                </option>
-                <option
-                  value="false"
-                  onClick={() => setData({ ...data, isMVP: false })}
-                >
-                  No
-                </option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
               </select>
             </div>
             <Button

@@ -23,7 +23,6 @@ export const Signin = () => {
     e.preventDefault();
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
-
     login({ email, password });
   };
 

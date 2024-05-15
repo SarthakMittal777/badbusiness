@@ -8,11 +8,12 @@ const AuthProvider = ({ children }) => {
   const [isAdmin, setIsAdmin] = useState(
     localStorage.getItem("isAdmin") === "true"
   );
-  const login = async ({ name, email, password }) => {
+  const login = async ({ email, password }) => {
     serverInstance
-      .post("/user/login", { name, email, password })
+      .post("/user/login", { email, password })
       .then((res) => {
         localStorage.setItem("accesstoken", res.data.accessToken);
+        console.log(res.data);
         setToken(res.data.accessToken);
         if (res.data.isAdmin === true) {
           console.log("Admin logged in");
@@ -39,6 +40,7 @@ const AuthProvider = ({ children }) => {
   };
   const logOutFromPortal = () => {
     localStorage.removeItem("isAdmin");
+    localStorage.removeItem("accesstoken");
     setIsAdmin(false);
     navigate("/signin");
   };

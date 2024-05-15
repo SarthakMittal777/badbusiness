@@ -1,5 +1,5 @@
 import serverInstance from "./server";
-const token = localStorage.getItem("accesstoken");
+
 export const getPartnerData = async () => {
   try {
     const response = await serverInstance.get("/partner");
@@ -31,6 +31,7 @@ export const createPartnerData = async (data) => {
 };
 export const editPartnerData = async (id, data) => {
   try {
+    const token = localStorage.getItem("accesstoken");
     const response = await serverInstance.put(`/partner/update/${id}`, data, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -44,6 +45,7 @@ export const editPartnerData = async (id, data) => {
 
 export const deletePartnerData = async (id) => {
   try {
+    const token = localStorage.getItem("accesstoken");
     const response = await serverInstance.delete(`/partner/delete/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
