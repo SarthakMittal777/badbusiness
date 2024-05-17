@@ -67,8 +67,6 @@ export const ServicesPortal = () => {
                 <thead className="relative">
                   <tr className="bg-gray-200 sticky top-0 z-[100] ">
                     <th className="px-4 py-2 sticky top-0 z-[100]">#</th>
-                    <th className="px-4 py-2 sticky top-0 z-[100] ">Profile</th>
-                    <th className="px-4 py-2 sticky top-0 z-[100] ">Image</th>
                     <th className="px-4 py-2 sticky top-0 z-[100] ">
                       Category
                     </th>
@@ -88,19 +86,19 @@ export const ServicesPortal = () => {
                           {index + 1}
                         </td>
 
-                        <td className="border  hover:underline  px-4 py-2 mx-auto text-center">
+                        <td className="border  hover:underline  px-4 py-1 mx-auto text-center">
                           {service.category}
                         </td>
-                        <td className="border px-4  hover:underline py-2 mx-auto text-center">
+                        <td className="border px-4  hover:underline py-1 mx-auto text-center">
                           {service.title}
                         </td>
 
-                        <td className="border px-4 py-2 ">
+                        <td className="border px-4 py-1 ">
                           <Link to={`/portal/service/edit/${service._id}`}>
                             <MdEdit size={25} className="mx-auto" />
                           </Link>
                         </td>
-                        <td className="border px-4 py-2">
+                        <td className="border px-4 py-1">
                           <MdDelete
                             size={25}
                             className="mx-auto"
@@ -113,7 +111,7 @@ export const ServicesPortal = () => {
                     <tr>
                       <td
                         colSpan="9"
-                        className="text-center border py-4 text-gray-700"
+                        className="text-center border py-2 text-gray-700"
                       >
                         No data available
                       </td>

@@ -2,6 +2,8 @@ import { RiTeamFill } from "react-icons/ri";
 import { IoCloseSharp } from "react-icons/io5";
 import { useAuth } from "../auth/auth";
 import { Link } from "react-router-dom";
+import { FaHandshake } from "react-icons/fa";
+import { MdHomeRepairService } from "react-icons/md";
 import Button from "./Button";
 const SidebarPortal = ({ menu, setMenu, setFunctionality }) => {
   const user = useAuth();
@@ -38,7 +40,7 @@ const SidebarPortal = ({ menu, setMenu, setFunctionality }) => {
             setFunctionality(null);
           }}
         >
-          <RiTeamFill /> Partners
+          <FaHandshake/> Partners
         </div>
       </Link>
       <Link to="/portal/services">
@@ -48,7 +50,7 @@ const SidebarPortal = ({ menu, setMenu, setFunctionality }) => {
             setFunctionality(null);
           }}
         >
-          <RiTeamFill /> Services
+         <MdHomeRepairService/>Services
         </div>
       </Link>
       <div onClick={() => user.logOutFromPortal()}>

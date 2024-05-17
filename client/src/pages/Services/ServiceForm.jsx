@@ -4,20 +4,17 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SidebarPortal from "../../components/SidebarPortal";
 const ServiceForm = ({ functionality, fetchServiceData }) => {
-
   const navigate = useNavigate();
   const [data, setData] = useState({
     image: fetchServiceData?.image,
     category: fetchServiceData?.category,
     title: fetchServiceData?.title,
-    profile: fetchServiceData?.profile,
   });
   useEffect(() => {
     setData({
       image: fetchServiceData?.image,
       category: fetchServiceData?.category,
       title: fetchServiceData?.title,
-      profile: fetchServiceData?.profile,
     });
   }, [fetchServiceData]);
   const handleSubmit = (e) => {
@@ -53,7 +50,7 @@ const ServiceForm = ({ functionality, fetchServiceData }) => {
   };
   return (
     <div className="w-full h-full  flex ">
-      <SidebarPortal/>
+      <SidebarPortal />
       <div className="w-[60vw] p-8 flex flex-col shadow-xl  justify-center gap-8 items-center md:items-start ">
         <p className="text-xl font-semibold mb-3 "> {functionality}</p>
         <form
@@ -94,19 +91,6 @@ const ServiceForm = ({ functionality, fetchServiceData }) => {
                 onChange={(e) => setData({ ...data, title: e.target.value })}
               />
             </div>
-            <p className="text-base font-semibold mb-3 ">Profile :</p>
-            <div className="border rounded-xl py-3 w-full px-4 flex items-center justify-between">
-              <input
-                id="profile"
-                type="text"
-                value={data.profile}
-                required
-                placeholder="Domain"
-                className="outline-none w-full"
-                onChange={(e) => setData({ ...data, profile: e.target.value })}
-              />
-            </div>
-
             <Button
               type="submit"
               className="bg-[#5BBB7B]  hover:bg-green-800 py-3 text-white font-semibold "

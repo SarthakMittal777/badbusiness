@@ -99,20 +99,20 @@ const PortalPortal = () => {
                             <img
                               src={partner.photo}
                               alt={partner.name}
-                              className="w-16 h-16 rounded-full mx-auto object-cover object-center" 
+                              className="w-8 h-8 rounded-full mx-auto object-cover object-center" 
                             />
                           )}
                         </td>
-                        <td className="border px-4 py-2 mx-auto text-center hover:underline">
+                        <td className="border px-4 py-1 mx-auto text-center hover:underline">
                           {partner.name}
                         </td>
-                        <td className="border px-4 py-2 mx-auto text-center hover:underline">
+                        <td className="border px-4 py-1 mx-auto text-center hover:underline">
                           {partner.headline}
                         </td>
-                        <td className="border px-4 py-2 text-center hover:underline">
+                        <td className="border px-4 py-1 text-center hover:underline">
                           {partner.isMVP ? "Yes" : "No"}
                         </td>
-                        <td className="border px-4 py-2 relative hover:underline">
+                        <td className="border px-4 py-1 relative hover:underline">
                           <button
                             onClick={() => toggleLinks(partner._id)}
                             className="justify-center w-full relative z-0 rounded-md border border-gray-900 px-4 py-2 shadow-sm text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100"
@@ -143,12 +143,12 @@ const PortalPortal = () => {
                             </div>
                           )}
                         </td>
-                        <td className="border px-4 py-2 ">
+                        <td className="border px-4 py-1 ">
                           <Link to={`/portal/partner/edit/${partner._id}`}>
                             <MdEdit size={25} className="mx-auto" />
                           </Link>
                         </td>
-                        <td className="border px-4 py-2">
+                        <td className="border px-4 py-1">
                           <MdDelete
                             size={25}
                             className="mx-auto"
