@@ -48,7 +48,7 @@ export const Partners = () => {
               <img
                 src={partner.photo}
                 alt={partner.name}
-                className="w-full h-40 object-cover object-center"
+                className="w-full h-40 object-cover object-center  hover:scale-110 duration-300"
               />
               <div className="p-4">
                 <h3 className="text-xl font-semibold mb-2">{partner.name}</h3>
