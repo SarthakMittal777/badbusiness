@@ -14,7 +14,7 @@ export const Teams = () => {
   }, []);
   return (
     <div className="w-full h-full">
-      <Navbar/>
+      <Navbar />
       <div
         className="w-full h-96  items-center flex justify-center flex-col text-[white] text-center"
         style={{
@@ -26,7 +26,7 @@ export const Teams = () => {
         <h1 className="lg:text-4xl sm:text-3xl mbMedSmall:text-xl text-lg font-bold mb-4 ">
           Meet the Badbusiness Team
         </h1>
-        <p>Emphasizing a commitment to excellence and empowermen</p>
+        <p>Emphasizing a commitment to excellence and empowerment</p>
       </div>
       <p className="w-screen text-center font-semibold italic my-12 text-lg">
         ~ Core Team ~

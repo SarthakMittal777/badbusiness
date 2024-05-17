@@ -71,7 +71,7 @@ export const Homepage = () => {
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         {/* Hero Section*/}
-        <section className="w-full lg:pt-32">
+        <section className="w-full lg:pt-32 py-3">
           <div className="container mx-auto px-4 lg:max-w-screen-smDesktop max-w-screen-2xl flex flex-col lg:flex-row items-center relative">
             <div className="flex-1 lg:p-16 lg:px-48 lg:pt-12 animate-fade-in">
               <h1 className="text-2xl lg:text-5xl font-bold mb-6 text-white text-start lg:text-balance mt-8 lg:leading-snug">
