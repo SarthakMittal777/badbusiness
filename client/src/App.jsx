@@ -23,10 +23,12 @@ import { Merchandise } from "./pages/Merchandise";
 import { Courses } from "./pages/Courses";
 import { Form } from "./pages/Form";
 import { Careers } from "./pages/Careers";
+
 const App = () => {
   return (
     <BrowserRouter>
       <AuthProvider>
+    
         <Routes>
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
