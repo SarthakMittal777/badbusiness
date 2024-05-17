@@ -47,7 +47,7 @@ export const Portal = () => {
     fetchData();
   }, []);
   return (
-    <div className="flex w-full h-full ">
+    <div className="flex w-full min-h-screen ">
       <MdOutlineMenu
         className="md:hidden block absolute top-9 right-9"
         size={25}
@@ -80,7 +80,7 @@ export const Portal = () => {
                     <th className="px-4 py-2 sticky top-0 z-[100]">Name</th>
                     <th className="px-4 py-2 sticky top-0 z-[100]">Headline</th>
                     <th className="px-4 py-2 sticky top-0 z-[100]">Domain</th>
-                    <th className="px-4 py-2 sticky top-0 z-[100]">Is MVP</th>
+                    <th className="px-4 py-2 sticky top-0 z-[100]">MVP</th>
                     <th className="px-4 py-2 sticky top-0 z-[100]">Links</th>
                     <th className="px-4 py-2 sticky top-0 z-[100]">Edit</th>
                     <th className="px-4 py-2 sticky top-0 z-[100]">Delete</th>
@@ -102,7 +102,7 @@ export const Portal = () => {
                             <img
                               src={team.photo}
                               alt={team.name}
-                              className="w-16 h-16 rounded-full mx-auto object-cover object-center"
+                              className="w-8 h-8 rounded-full mx-auto object-cover object-center"
                             />
                           )}
                         </td>
@@ -126,7 +126,7 @@ export const Portal = () => {
                             Links
                           </button>
                           {showLinks === team._id && (
-                            <div className="origin-top-right z-[10] absolute left-10 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                            <div className="origin-top-right z-[10] absolute left-10 mt-2 w-fit rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                               <div
                                 className="py-1 text-center"
                                 role="menu"

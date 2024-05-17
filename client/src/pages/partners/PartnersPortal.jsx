@@ -94,7 +94,7 @@ const PortalPortal = () => {
                         </td>
                         <td className="border px-4 py-2 rounded-full">
                           {partner.photo === "" ? (
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center bg-[#c7b0ff] mx-auto"></div>
+                            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#c7b0ff] mx-auto"></div>
                           ) : (
                             <img
                               src={partner.photo}

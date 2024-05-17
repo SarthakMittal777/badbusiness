@@ -69,7 +69,7 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
   return (
     <div className="w-full h-full  flex  ">
       <SidebarPortal />
-      <div className="w-[60vw] p-8 flex flex-col shadow-xl  justify-center gap-8 items-center md:items-start py-12 h-screen overflow-scroll">
+      <div className=" p-8 flex flex-col w-full justify-center gap-8 items-center md:items-start py-12 h-screen overflow-scroll">
         <p className="text-xl font-semibold mb-3 "> {functionality}</p>
         <form
           method="POST"

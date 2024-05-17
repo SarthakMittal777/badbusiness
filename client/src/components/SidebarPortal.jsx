@@ -7,9 +7,9 @@ const SidebarPortal = ({ menu, setMenu, setFunctionality }) => {
   const user = useAuth();
   return (
     <div
-      className={` min-w-[20rem] hidden md:flex relative  flex-col gap-2 py-12 bg-gray-300 cursor-pointer min-h-screen ${
+      className={` min-w-[15rem] md:flex relative  flex-col gap-2 py-12 bg-gray-300 cursor-pointer min-h-screen ${
         menu
-          ? "block w-[70vw] absolute top-0 right-0 md:min-w-[20rem] md:relative"
+          ? "block w-[70vw] absolute top-0 right-0 md:min-w-[15rem] md:relative"
           : "hidden"
       }  border shadow h-full `}
     >
@@ -20,9 +20,10 @@ const SidebarPortal = ({ menu, setMenu, setFunctionality }) => {
           onClick={() => setMenu(false)}
         />
       )}
+
       <Link to="/portal/teams">
         <div
-          className="w-full h-12 hover:bg-[#848d8c] border-t border-[#3c3c3c] rounded flex items-center gap-3 px-2  font-semibold"
+          className="w-full h-8 hover:bg-[#848d8c]  border-[#3c3c3c] rounded flex items-center gap-3 px-2  font-semibold"
           onClick={() => {
             setFunctionality(null);
           }}
@@ -32,7 +33,7 @@ const SidebarPortal = ({ menu, setMenu, setFunctionality }) => {
       </Link>
       <Link to="/portal/partners">
         <div
-          className="w-full h-12 hover:bg-[#848d8c] border-t border-[#3c3c3c] rounded flex items-center gap-3 px-2  font-semibold"
+          className="w-full h-8 hover:bg-[#848d8c]  border-[#3c3c3c] rounded flex items-center gap-3 px-2  font-semibold"
           onClick={() => {
             setFunctionality(null);
           }}
@@ -42,7 +43,7 @@ const SidebarPortal = ({ menu, setMenu, setFunctionality }) => {
       </Link>
       <Link to="/portal/services">
         <div
-          className="w-full h-12 hover:bg-[#848d8c] border-t border-[#3c3c3c] rounded flex items-center gap-3 px-2  font-semibold"
+          className="w-full h-8 hover:bg-[#848d8c]  border-[#3c3c3c] rounded flex items-center gap-3 px-2  font-semibold"
           onClick={() => {
             setFunctionality(null);
           }}

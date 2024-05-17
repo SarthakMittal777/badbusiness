@@ -5,7 +5,6 @@ import { Signup } from "./pages/Signup";
 import { Services } from "./pages/Services/Services";
 import { ServicesAll } from "./pages/Services/ServicesAll";
 import { ServiceDetails } from "./pages/Services/ServiceDetails";
-import { Footer } from "./components/Footer";
 import { Portal } from "./pages/Portal";
 import { Teams } from "./pages/Teams";
 import { PortalAddMember } from "./pages/PortalAddMember";
@@ -22,6 +21,7 @@ import { Partners } from "./pages/partners/Partners";
 import WebsiteAuth from "./auth/websiteAuth";
 import { Merchandise } from "./pages/Merchandise";
 import { Courses } from "./pages/Courses";
+import { Careers } from "./pages/Careers";
 const App = () => {
   return (
     <BrowserRouter>
@@ -31,18 +31,20 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route element={<WebsiteAuth />}>
             <Route path="/" element={<Homepage />} />
+            <Route path="/careers" element={<Careers />} />
 
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<ServiceDetails />} />
             <Route path="/services/:slug/all" element={<ServicesAll />} />
             <Route path="/teams" element={<Teams />} />
-            <Route path="/footer" element={<Footer />} />
             <Route path="/partners" element={<Partners />} />
             <Route path="/merchandise" element={<Merchandise />} />
             <Route path="/courses" element={<Courses />} />
           </Route>
           <Route element={<PrivateRoute />}>
+            <Route path="/portal" element={<Portal />} />
             <Route path="/portal/teams" element={<Portal />} />
+
             <Route
               path="/portal/team/edit/:id"
               element={<PortalEditMember />}

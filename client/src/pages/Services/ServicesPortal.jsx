@@ -87,28 +87,7 @@ export const ServicesPortal = () => {
                         <td className=" hover:underline border px-4 py-1 mx-auto text-center">
                           {index + 1}
                         </td>
-                        <td className="border px-4 py-2 rounded-full">
-                          {service.profile === "" ? (
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center bg-[#c7b0ff] mx-auto"></div>
-                          ) : (
-                            <img
-                              src={service.profile}
-                              alt={service.category}
-                              className="w-16 h-16 rounded-full mx-auto object-cover object-center"
-                            />
-                          )}
-                        </td>
-                        <td className="border px-4 py-2 rounded-full">
-                          {service.image === "" ? (
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center bg-[#c7b0ff] mx-auto"></div>
-                          ) : (
-                            <img
-                              src={service.image}
-                              alt={service.category}
-                              className="w-16 h-16 rounded-full mx-auto"
-                            />
-                          )}
-                        </td>
+
                         <td className="border  hover:underline  px-4 py-2 mx-auto text-center">
                           {service.category}
                         </td>
@@ -132,10 +111,13 @@ export const ServicesPortal = () => {
                     ))
                   ) : (
                     <tr>
-                    <td colSpan="9" className="text-center border py-4 text-gray-700">
-                      No data available
-                    </td>
-                  </tr>
+                      <td
+                        colSpan="9"
+                        className="text-center border py-4 text-gray-700"
+                      >
+                        No data available
+                      </td>
+                    </tr>
                   )}
                 </tbody>
               </table>
