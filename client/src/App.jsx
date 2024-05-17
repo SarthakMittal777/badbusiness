@@ -28,21 +28,24 @@ const App = () => {
   return (
     <BrowserRouter>
       <AuthProvider>
-    
         <Routes>
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
-          <Route element={<WebsiteAuth />}>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/careers" element={<Careers />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/careers" element={<Careers />} />
 
-            <Route path="/services" element={<Services />} />
-            <Route path="/services/:slug" element={<ServiceDetails />} />
-            <Route path="/services/:slug/all" element={<ServicesAll />} />
-            <Route path="/teams" element={<Teams />} />
-            <Route path="/partners" element={<Partners />} />
-            <Route path="/merchandise" element={<Merchandise />} />
-            <Route path="/courses" element={<Courses />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/careers" element={<Careers />} />
+
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:slug" element={<ServiceDetails />} />
+          <Route path="/services/:slug/all" element={<ServicesAll />} />
+          <Route path="/teams" element={<Teams />} />
+          <Route path="/partners" element={<Partners />} />
+          <Route path="/merchandise" element={<Merchandise />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route element={<WebsiteAuth />}>
             <Route path="/form" element={<Form />} />
           </Route>
           <Route element={<PrivateRoute />}>
