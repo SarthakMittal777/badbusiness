@@ -128,9 +128,16 @@ const Navbar = () => {
                     BAD Events
                   </li>
                 </Link>
+
+                <Link to="/success-stories">
+                  <li className="py-3 px-6 pr-14 hover:bg-gray-200 font-medium">
+                    Success Stories
+                  </li>
+                </Link>
+
                 <Link to="/hall-of-fame">
                   <li className="py-3 px-6 pr-14 hover:bg-gray-200 font-medium">
-                   Hall of Fame
+                    Hall of Fame
                   </li>
                 </Link>
 
@@ -202,16 +209,7 @@ const Navbar = () => {
               <Link to="/partners">Partners</Link>
             </li>
 
-            {/* <li
-              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
-              onClick={() => {
-                setOpenMenu(false);
-              }}
-            >
-              <Link to="/success">Success Stories</Link>
-            </li> */}
-
-            {/* <li
+            <li
               className="duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
               onClick={() => {
                 setOpenMenu(false);
@@ -227,7 +225,7 @@ const Navbar = () => {
               }}
             >
               <Link to="/signup">SignUp</Link>
-            </li> */}
+            </li>
           </ul>
         </div>
         {/* Mobile View  */}

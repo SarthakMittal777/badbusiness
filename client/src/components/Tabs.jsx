@@ -76,12 +76,12 @@ const Tabs = () => {
                           key={service._id}
                           className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96"
                         >
-                          <img
+                          {/* <img
                             src={service.image}
                             alt={`${service.title} icon`}
                             className="w-full hover:scale-110 duration-300"
-                          />
-                          <div className="p-4">
+                          /> */}
+                          <div className="p-4 flex justify-center">
                             <h5 className="font-semibold mb-2">
                               <a href={service.profile}>{service.title}</a>
                             </h5>
