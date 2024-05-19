@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { Footer } from "../components/Footer";
-import { YouTubeEmbed } from "react-social-media-embed";
 import InstagramEmbed from "react-instagram-embed";
 import { EmbeddedPost } from "react-facebook";
-import { XEmbed } from "react-social-media-embed";
-import { LinkedInEmbed } from "react-social-media-embed";
+import { LinkedInEmbed, YouTubeEmbed, XEmbed } from "react-social-media-embed";
 import { getStoriesData } from "../api/ss";
 
 const bgImage = "/images/hero/hero-bg.png";

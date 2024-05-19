@@ -39,7 +39,7 @@ export const items = [
     },
     {   
         id:"3",
-        title:"TEAMS",
+        title:"TEAM",
         to: "/teams"
         // menuList:[
         //     {

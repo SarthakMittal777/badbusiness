@@ -4,7 +4,7 @@ import { getServiceData } from "../api/service";
 const Tabs = () => {
   const [services, setServices] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [activeTab, setActiveTab] = useState("Management Consultancy");
+  const [activeTab, setActiveTab] = useState("");
 
   useEffect(() => {
     const fetchServiceData = async () => {
@@ -15,6 +15,7 @@ const Tabs = () => {
           ...new Set(data.services.map((service) => service.category.trim())),
         ];
         setCategories(uniqueCategories);
+        setActiveTab(uniqueCategories[0] || "");
       } catch (error) {
         console.error("Error fetching services data:", error);
       }
