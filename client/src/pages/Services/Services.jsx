@@ -1,8 +1,33 @@
 import Card from "../../components/Card";
+import { useEffect, useState } from "react";
+import { getServiceData } from "../../api/service";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 export const Services = () => {
+  // eslint-disable-next-line 
+  const [categorizedData, setCategorizedData] = useState({});
+  useEffect(() => {
+    async function fetchData() {
+      const res = await getServiceData();
+      const services = res.services;
+
+      // Categorize services
+      const categories = services.reduce((acc, service) => {
+        const category = service.category.trim();
+        if (!acc[category]) {
+          acc[category] = [];
+        }
+        acc[category].push(service);
+        return acc;
+      }, {});
+
+      setCategorizedData(categories);
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <div className="w-full flex flex-col  items-center justify-center bg-gray-200">
       <Navbar />
@@ -27,19 +52,7 @@ export const Services = () => {
         </div>
       </div>
       <div className="w-full  text-base flex items-center justify-between my-16 md:mb-24 flex-col md:flex-row ">
-        <p className="mx-24 text-center">
-          {" "}
-          Showing results for <b>3</b> categories
-        </p>
-        {/* <p className="mx-24 border rounded px-7 py-2 border-black flex gap-4">
-          Sort by (Default)
-          <img
-            src="/images/sort.png"
-            alt="sort icon"
-            width={20}
-            height="2rem"
-          />
-        </p> */}
+        <p className="mx-24 text-center"> Showing results for {} categories</p>
       </div>
       <div className="flex w-full xl:justify-around gap-12 mb-32 flex-wrap justify-center sm:justify-normal">
         <Card
@@ -58,40 +71,7 @@ export const Services = () => {
         />
         <Card button="View all Tech products" slug="Technology" />
       </div>
-      <div className="flex w-full xl:justify-around gap-12 mb-32 flex-wrap justify-center sm:justify-normal">
-        <Card
-          image="https://via.placeholder.com/150"
-          category="   Web and App design"
-          title=" I will create modern flat design illustration"
-          profile="https://via.placeholder.com/50"
-          amount="$983"
-        />
-        <Card
-          image="https://via.placeholder.com/150"
-          category="   Web and App design"
-          title=" I will create modern flat design illustration"
-          profile="https://via.placeholder.com/50"
-          amount="$983"
-        />
-        <Card button="View all Design products" slug="Design" />
-      </div>
-      <div className="flex w-full xl:justify-around gap-12 mb-32 flex-wrap justify-center sm:justify-normal">
-        <Card
-          image="https://via.placeholder.com/150"
-          category="   Web and App design"
-          title=" I will create modern flat design illustration"
-          profile="https://via.placeholder.com/50"
-          amount="$983"
-        />
-        <Card
-          image="https://via.placeholder.com/150"
-          category="   Web and App design"
-          title=" I will create modern flat design illustration"
-          profile="https://via.placeholder.com/50"
-          amount="$983"
-        />
-        <Card button="View all Services products" slug="Services" />
-      </div>
+
       <Footer />
     </div>
   );

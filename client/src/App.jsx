@@ -23,6 +23,7 @@ import { Merchandise } from "./pages/Merchandise";
 import { Courses } from "./pages/Courses";
 import { Form } from "./pages/Form";
 import { Careers } from "./pages/Careers";
+import HallofFame from "./pages/HallofFame";
 
 const App = () => {
   return (
@@ -37,7 +38,7 @@ const App = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/" element={<Homepage />} />
           <Route path="/careers" element={<Careers />} />
-
+          <Route path="/halloffame" element={<HallofFame />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetails />} />
           <Route path="/services/:slug/all" element={<ServicesAll />} />
