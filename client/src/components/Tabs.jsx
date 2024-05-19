@@ -83,7 +83,8 @@ const Tabs = () => {
                           /> */}
                           <div className="p-4 flex justify-center">
                             <h5 className="font-semibold mb-2">
-                              <a href={service.profile}>{service.title}</a>
+                              <h2>{service.title}</h2>
+                              {/* <a href={service.profile}>{service.title}</a> */}
                             </h5>
                           </div>
                         </div>
