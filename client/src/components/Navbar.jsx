@@ -128,6 +128,11 @@ const Navbar = () => {
                     BAD Events
                   </li>
                 </Link>
+                <Link to="/hall-of-fame">
+                  <li className="py-3 px-6 pr-14 hover:bg-gray-200 font-medium">
+                   Hall of Fame
+                  </li>
+                </Link>
 
                 <Link to="/courses">
                   <li className="py-3 px-6 pr-14 hover:bg-gray-200 font-medium">
