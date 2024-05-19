@@ -116,11 +116,6 @@ export const items = [
         //     },
         // ]
     },
-    // {
-    //     id:"5",
-    //     title: "SUCCESS STORIES",
-    //     to: "/success",
-    // },
     {   
         id:"5",
         title:"MORE",
@@ -130,6 +125,14 @@ export const items = [
                 to: "https://events.badbusiness.in/"
             },
             {
+                lable:"Success Stories",
+                to: "/success-stories"
+            },
+            {
+                lable:"Hall of Fame",
+                to: "/hall-of-fame"
+            },
+            {
                 lable:"BAD Courses",
                 to: "/courses"
             },
@@ -137,6 +140,18 @@ export const items = [
                 lable:"BAD Merchandise",
                 to: "/merchandise"
             },
+           
+            
         ]
+    },
+    {   
+        id:"6",
+        title:"LOGIN",
+        to: "/signin"
+    },
+    {   
+        id:"7",
+        title:"SIGN UP",
+        to: "/signup"
     },
 ]
