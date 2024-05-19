@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { YouTubeEmbed } from "react-social-media-embed";
 import InstagramEmbed from "react-instagram-embed";
-import { FacebookProvider, EmbeddedPost } from "react-facebook";
+import { EmbeddedPost } from "react-facebook";
 import { XEmbed } from "react-social-media-embed";
 import { LinkedInEmbed } from "react-social-media-embed";
 import { getStoriesData } from "../api/ss";
