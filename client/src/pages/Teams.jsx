@@ -37,11 +37,11 @@ export const Teams = () => {
             member.isMVP ? <MemberCard member={member} key={member.id} /> : null
           )}
       </div>
-      <p className="w-screen text-center font-semibold italic my-12 text-lg">
+      {/* <p className="w-screen text-center font-semibold italic my-12 text-lg">
         ~ Extended Team ~
-      </p>
+      </p> */}
       <div className="w-full flex flex-wrap justify-center items-center">
-        <div className="flex flex-wrap mx-auto w-[90%]">
+        <div className="flex flex-wrap mx-auto w-[90%] ">
           {teamData &&
             teamData.teams.map((member) =>
               !member.isMVP ? (

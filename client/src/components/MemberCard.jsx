@@ -9,7 +9,7 @@ const MemberCard = ({ member }) => {
   const [hover, setHover] = useState(false);
   return (
     <div
-      className="w-[20rem]  h-[36rem] p-4 relative rounded-lg"
+      className="w-[20rem]  h-[28rem] p-4 relative rounded-lg"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
