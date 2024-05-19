@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { Footer } from "../components/Footer";
-import InstagramEmbed from "react-instagram-embed";
-import { EmbeddedPost } from "react-facebook";
-import { LinkedInEmbed, YouTubeEmbed, XEmbed } from "react-social-media-embed";
+// import { FacebookProvider, EmbeddedPost } from "react-facebook";
+import { YouTubeEmbed, XEmbed, InstagramEmbed } from "react-social-media-embed";
 import { getStoriesData } from "../api/ss";
 
 const bgImage = "/images/hero/hero-bg.png";
@@ -14,14 +13,18 @@ const SocialMediaEmbed = ({ story }) => {
     case "youtube":
       return <YouTubeEmbed url={story.url} width={240} height={426} />;
     case "instagram":
-      return <InstagramEmbed url={story.url} width={240} height={426} />;
-    case "facebook":
-      return <EmbeddedPost href={story.url} width={240} height={426} />;
+      return <InstagramEmbed url={story.url} width={325} height={570} />;
+    // case "facebook":
+    //   return (
+    //     <FacebookProvider appId="YOUR_FACEBOOK_APP_ID">
+    //       <EmbeddedPost href={story.url} width={240} height={426} />
+    //     </FacebookProvider>
+    //   );
     case "twitter":
     case "x":
       return <XEmbed url={story.url} width={240} height={426} />;
-    case "linkedin":
-      return <LinkedInEmbed url={story.url} width={240} height={426} />;
+    // case "linkedin":
+    //   return <LinkedInEmbed url={story.url} width={240} height={426} />;
     default:
       return null;
   }
