@@ -24,6 +24,7 @@ import { Courses } from "./pages/Courses";
 import { Form } from "./pages/Form";
 import { Careers } from "./pages/Careers";
 import HallofFame from "./pages/HallofFame";
+import { Success } from "./pages/Success";
 
 const App = () => {
   return (
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/partners" element={<Partners />} />
           <Route path="/merchandise" element={<Merchandise />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/success" element={<Success />} />
           <Route element={<WebsiteAuth />}>
             <Route path="/form" element={<Form />} />
           </Route>

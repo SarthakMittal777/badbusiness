@@ -198,6 +198,15 @@ const Navbar = () => {
             </li>
 
             {/* <li
+              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <Link to="/success">Success Stories</Link>
+            </li> */}
+
+            {/* <li
               className="duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
               onClick={() => {
                 setOpenMenu(false);
