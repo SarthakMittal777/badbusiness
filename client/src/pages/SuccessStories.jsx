@@ -21,7 +21,7 @@ const SocialMediaEmbed = ({ story }) => {
     //     </FacebookProvider>
     //   );
     case "twitter":
-    case "x":
+      // case "x":
       return <XEmbed url={story.url} width={240} height={426} />;
     // case "linkedin":
     //   return <LinkedInEmbed url={story.url} width={240} height={426} />;

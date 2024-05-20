@@ -69,7 +69,7 @@ const Tabs = () => {
                   id={`tab-${category}`}
                   role="tabpanel"
                 >
-                  <div className="flex flex-col flex-wrap md:flex-row gap-16 md:gap-8 justify-center lg:my-50 mt-6">
+                  <div className="flex flex-col flex-wrap md:flex-row gap-8 md:gap-8 justify-center lg:my-50 mt-6">
                     {services
                       .filter((service) => service.category.trim() === category)
                       .map((service) => (
