@@ -24,7 +24,7 @@ import { Courses } from "./pages/Courses";
 import { Form } from "./pages/Form";
 import { Careers } from "./pages/Careers";
 import HallofFame from "./pages/HallofFame";
-import { Success } from "./pages/SuccessStories";
+import Success from "./pages/SuccessStories";
 
 const App = () => {
   return (
