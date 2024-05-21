@@ -137,6 +137,10 @@ export const items = [
                 to: "/courses"
             },
             {
+                lable:"BAD Blogs",
+                to: "/blogs"
+            },
+            {
                 lable:"BAD Merchandise",
                 to: "/merchandise"
             },

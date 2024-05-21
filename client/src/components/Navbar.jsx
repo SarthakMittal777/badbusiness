@@ -147,6 +147,12 @@ const Navbar = () => {
                   </li>
                 </Link>
 
+                <Link to="/blogs">
+                  <li className="py-3 px-6 pr-14 hover:bg-gray-200 font-medium">
+                    BAD Blogs
+                  </li>
+                </Link>
+
                 {/* <Link to="https://events.badbusiness.in/">
                   <li
                     className="flex items-center justify-between py-2 px-6 pr-14 hover:bg-gray-200 relative"

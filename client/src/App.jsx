@@ -28,6 +28,8 @@ import Success from "./pages/SuccessStories";
 import { PortalAddStory } from "./pages/story/PortalAddStory";
 import { PortalEditStory } from "./pages/story/PortalEditStory";
 import { StoryPortal } from "./pages/story/portal";
+import { Blogs } from "./pages/Blogs";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -50,6 +52,8 @@ const App = () => {
           <Route path="/merchandise" element={<Merchandise />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/success-stories" element={<Success />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:slug" element={<Blogs />} />
           <Route element={<WebsiteAuth />}>
             <Route path="/form" element={<Form />} />
           </Route>
@@ -66,7 +70,10 @@ const App = () => {
             <Route path="/portal/partners" element={<PartnersPortal />} />
             <Route path="/portal/story" element={<StoryPortal />} />
             <Route path="/portal/story/:id" element={<StoryPortal />} />
-            <Route path="/portal/story/edit/:id" element={<PortalEditStory />} />
+            <Route
+              path="/portal/story/edit/:id"
+              element={<PortalEditStory />}
+            />
             <Route path="/portal/story/add" element={<PortalAddStory />} />
             <Route
               path="/portal/service/edit/:id"
