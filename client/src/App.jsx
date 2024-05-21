@@ -28,7 +28,8 @@ import Success from "./pages/SuccessStories";
 import { PortalAddStory } from "./pages/story/PortalAddStory";
 import { PortalEditStory } from "./pages/story/PortalEditStory";
 import { StoryPortal } from "./pages/story/portal";
-import { Blogs } from "./pages/Blogs";
+import { Blogs } from "./pages/Blogs/Blogs";
+import { BlogPost } from "./pages/Blogs/BlogPost";
 
 const App = () => {
   return (
@@ -53,7 +54,7 @@ const App = () => {
           <Route path="/courses" element={<Courses />} />
           <Route path="/success-stories" element={<Success />} />
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/blogs/:slug" element={<Blogs />} />
+          <Route path="/blogs/:slug" element={<BlogPost />} />
           <Route element={<WebsiteAuth />}>
             <Route path="/form" element={<Form />} />
           </Route>
