@@ -75,10 +75,10 @@ export const Homepage = () => {
           <div className="container mx-auto px-4 lg:max-w-screen-smDesktop max-w-screen-2xl flex flex-col lg:flex-row items-center relative">
             <div className="flex-1 lg:p-16 lg:px-48 lg:pt-12 animate-fade-in">
               <h1 className="text-2xl lg:text-5xl font-bold mb-6 text-white text-start lg:text-balance mt-8 lg:leading-snug">
-                Are you facing a Business Problem?
+                Are You Facing A Business Problem?
               </h1>
               <p className="mb-8 text-mb text-white text-justify font-normal">
-                We solve your Business Problem using BAD Framework
+                We Solve Your Business Problem Using BAD Framework
               </p>
               <div className="flex gap-4">
                 <Button className="relative bg-teal-900 hover:bg-green-800 text-green-200 font-bold py-4 px-5 rounded-full">
