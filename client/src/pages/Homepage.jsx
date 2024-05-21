@@ -82,11 +82,11 @@ export const Homepage = () => {
               </p>
               <div className="flex gap-4">
                 <Button className="relative bg-teal-900 hover:bg-green-800 text-green-200 font-bold py-4 px-5 rounded-full">
-                  <Link to="">Share your Business Problem</Link>
+                  <Link to="">Share Your Business Problem</Link>
                 </Button>
                 <Button className="relative bg-emerald-200 hover:bg-green-800 text-black font-medium py-4 px-5 rounded-full">
                   <Link to="https://calendly.com/infobadbusiness">
-                    Partner with us
+                    Partner With Us
                   </Link>
                 </Button>
               </div>
