@@ -91,7 +91,7 @@ export const StoryPortal = () => {
                           {story.headline}
                         </td>
                         <td className="border px-4  hover:underline py-1 mx-auto text-center">
-                          {story.url}
+                          <Link to={story.url} target="_blank"> {story.url}</Link>
                         </td>
                         <td className="border px-4  hover:underline py-1 mx-auto text-center">
                           {story.type}
