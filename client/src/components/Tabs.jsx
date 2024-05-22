@@ -30,7 +30,7 @@ const Tabs = () => {
 
   return (
     <section className="pt-24">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <div className="flex justify-center text-center gap-2">
           <div>
             <h2 className="lg:text-3xl text-xl font-bold">Why choose BAD?</h2>
@@ -41,7 +41,7 @@ const Tabs = () => {
         </div>
         {/* Tab Content */}
         <ul
-          className="flex justify-center gap-4 md:gap-6 lg:gap-8 mt-4 lg:mt-6 xl:mt-8"
+          className="flex justify-center flex-wrap gap-2 md:gap-6 lg:gap-8 mt-4 lg:mt-6 xl:mt-8"
           role="tablist"
         >
           {categories.map((category) => (
@@ -59,7 +59,7 @@ const Tabs = () => {
           ))}
         </ul>
 
-        <div className="tab-content lg:mt-16 md:mt-4 mx-auto w-4/5">
+        <div className="tab-content lg:mt-16 md:mt-4 mx-auto w-full md:w-4/5">
           {categories.map(
             (category) =>
               activeTab === category && (
@@ -69,23 +69,17 @@ const Tabs = () => {
                   id={`tab-${category}`}
                   role="tabpanel"
                 >
-                  <div className="flex flex-col flex-wrap md:flex-row gap-8 md:gap-8 justify-center lg:my-50 mt-6">
+                  <div className="flex flex-col flex-wrap md:flex-row gap-8 justify-center lg:my-12 mt-6">
                     {services
                       .filter((service) => service.category.trim() === category)
                       .map((service) => (
                         <div
                           key={service._id}
-                          className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border md:w-80 lg:w-96"
+                          className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border w-full sm:w-80 lg:w-96"
                         >
-                          {/* <img
-                            src={service.image}
-                            alt={`${service.title} icon`}
-                            className="w-full hover:scale-110 duration-300"
-                          /> */}
                           <div className="p-4 flex justify-center">
                             <h5 className="font-semibold mb-2">
                               <h2>{service.title}</h2>
-                              {/* <a href={service.profile}>{service.title}</a> */}
                             </h5>
                           </div>
                         </div>

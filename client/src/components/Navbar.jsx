@@ -141,11 +141,11 @@ const Navbar = () => {
                   </li>
                 </Link>
 
-                <Link to="/courses">
+                {/* <Link to="/courses">
                   <li className="py-3 px-6 pr-14 hover:bg-gray-200 font-medium">
                     BAD Courses
                   </li>
-                </Link>
+                </Link> */}
 
                 <Link to="/blogs">
                   <li className="py-3 px-6 pr-14 hover:bg-gray-200 font-medium">
@@ -176,11 +176,11 @@ const Navbar = () => {
                   </li>
                 </Link> */}
 
-                <Link to="/merchandise">
+                {/* <Link to="/merchandise">
                   <li className="block py-2 px-6 pr-14 hover:bg-gray-200 font-medium">
                     BAD Merchandise
                   </li>
-                </Link>
+                </Link> */}
 
                 {/* <li className="block py-2 px-6 pr-14 hover:bg-gray-200">
                   <Link to="/">Job List</Link>
