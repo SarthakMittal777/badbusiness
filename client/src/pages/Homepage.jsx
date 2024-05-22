@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
+import { getTeamData } from "../api/team";
 
 export const Homepage = () => {
   const [activeTab, setActiveTab] = useState("Development");
@@ -37,14 +38,31 @@ export const Homepage = () => {
     },
   ];
 
-  const teamMembers = [
-    { name: "Sarthak Mittal", position: "CEO", image: "/images/team/ceo.jpg" },
-    { name: "Pratham Sahu", position: "COO", image: "/images/team/coo.jpg" },
-    { name: "Baqer Ali", position: "CMO", image: "/images/team/cmo.jpg" },
-    { name: "Shuvam Raj", position: "MD", image: "/images/team/md.jpg" },
-  ];
-
+  const [teamMembers, setTeamMembers] = useState([]);
   const [isMobileView, setIsMobileView] = useState(false);
+
+  useEffect(() => {
+    const fetchTeamData = async () => {
+      const data = await getTeamData();
+      if (data.success) {
+        const filteredMembers = data.teams.filter((member) => member.isMVP);
+        setTeamMembers(filteredMembers);
+      }
+    };
+
+    fetchTeamData();
+
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -184,54 +202,46 @@ export const Homepage = () => {
               </div>
             </div>
           </div>
-          {/* Swiper */}
           <div className="flex justify-center items-center">
             {isMobileView ? (
-              <Swiper spaceBetween={50} slidesPerView={1} loop={true}>
+              <Swiper
+                spaceBetween={50}
+                slidesPerView={1}
+                loop={teamMembers.length > 1}
+              >
                 {teamMembers.map((member, index) => (
                   <SwiperSlide key={index}>
                     <div className="rounded-md transition-transform duration-300 hover:scale-105 px-10">
                       <img
-                        src={member.image}
+                        src={member.photo}
                         alt={member.name}
-                        className="w-50 h-full rounded-xl"
+                        className="w-full h-64 object-cover rounded-xl"
                       />
                       <div className="absolute top-8 left-8 px-5 py-1 rounded-md z-10">
                         <p className="text-sm">{member.name}</p>
-                        <p className="text-sm">{member.position}</p>
+                        <p className="text-sm">{member.headline}</p>
                       </div>
                     </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
             ) : (
-              <Swiper spaceBetween={50} slidesPerView={4} loop={true}>
+              <Swiper
+                spaceBetween={50}
+                slidesPerView={Math.min(teamMembers.length, 4)}
+                loop={teamMembers.length > 4}
+              >
                 {teamMembers.map((member, index) => (
                   <SwiperSlide key={index}>
                     <div className="rounded-md transition-transform duration-300 hover:scale-105">
                       <img
-                        src={member.image}
+                        src={member.photo}
                         alt={member.name}
-                        className="w-full h-full rounded-xl"
+                        className="w-full h-64 object-cover rounded-xl"
                       />
                       <div className="absolute top-7 left-7 px-2 py-1 rounded-md z-10">
                         <p className="text-sm">{member.name}</p>
-                        <p className="text-sm">{member.position}</p>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                ))}
-                {teamMembers.map((member, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="rounded-md transition-transform duration-300 hover:scale-105">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full rounded-xl"
-                      />
-                      <div className="absolute top-7 left-7 px-2 py-1 rounded-md z-10">
-                        <p className="text-sm">{member.name}</p>
-                        <p className="text-sm">{member.position}</p>
+                        <p className="text-sm">{member.headline}</p>
                       </div>
                     </div>
                   </SwiperSlide>
