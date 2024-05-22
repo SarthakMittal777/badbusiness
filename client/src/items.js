@@ -40,7 +40,7 @@ export const items = [
     {   
         id:"3",
         title:"TEAM",
-        to: "/teams"
+        to: "/team"
         // menuList:[
         //     {
         //         lable:"DashBoard",

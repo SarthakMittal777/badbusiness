@@ -1,9 +1,9 @@
 import MemberCard from "../components/MemberCard";
 import { useEffect, useState } from "react";
-import { getTeamData } from "../api/teams";
+import { getTeamData } from "../api/team";
 import Navbar from "../components/Navbar";
 import { Footer } from "../components/Footer";
-export const Teams = () => {
+export const Team = () => {
   const [teamData, setTeamData] = useState({ teams: [] });
   useEffect(() => {
     async function fetchData() {

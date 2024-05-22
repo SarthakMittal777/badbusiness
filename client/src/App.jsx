@@ -6,7 +6,7 @@ import { Services } from "./pages/Services/Services";
 import { ServicesAll } from "./pages/Services/ServicesAll";
 import { ServiceDetails } from "./pages/Services/ServiceDetails";
 import { Portal } from "./pages/Portal";
-import { Teams } from "./pages/Teams";
+import { Team } from "./pages/Team";
 import { PortalAddMember } from "./pages/PortalAddMember";
 import { PortalEditMember } from "./pages/PortalEditMember";
 import { PortalEditService } from "./pages/Services/PortalEditService";
@@ -48,7 +48,7 @@ const App = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetails />} />
           <Route path="/services/:slug/all" element={<ServicesAll />} />
-          <Route path="/teams" element={<Teams />} />
+          <Route path="/team" element={<Team />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/merchandise" element={<Merchandise />} />
           <Route path="/courses" element={<Courses />} />

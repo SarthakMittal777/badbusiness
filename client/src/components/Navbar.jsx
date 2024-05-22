@@ -203,7 +203,7 @@ const Navbar = () => {
                 setOpenMenu(false);
               }}
             >
-              <Link to="/teams">Team</Link>
+              <Link to="/team">Team</Link>
             </li>
 
             <li
