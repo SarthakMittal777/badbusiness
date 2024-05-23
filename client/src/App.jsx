@@ -35,6 +35,7 @@ import { Blogs } from "./pages/Blogs/Blogs";
 import { BlogPost } from "./pages/Blogs/BlogPost";
 
 const App = () => {
+
   return (
     <BrowserRouter>
       <AuthProvider>
@@ -74,7 +75,10 @@ const App = () => {
             <Route path="/portal/partners" element={<PartnersPortal />} />
             <Route path="/portal/halloffame" element={<HofPortal />} />
             <Route path="/portal/halloffame/add" element={<PortalAddHof />} />
-            <Route path="/portal/halloffame/edit/:id" element={<PortalEditHof />} />
+            <Route
+              path="/portal/halloffame/edit/:id"
+              element={<PortalEditHof />}
+            />
             <Route path="/portal/story" element={<StoryPortal />} />
             <Route path="/portal/story/:id" element={<StoryPortal />} />
             <Route
