@@ -1,5 +1,5 @@
 import Button from "./Button";
-import { createData, editTeamData } from "../api/teams";
+import { createData, editTeamData } from "../api/team";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SidebarPortal from "./SidebarPortal";

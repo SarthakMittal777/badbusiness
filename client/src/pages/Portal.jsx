@@ -6,7 +6,7 @@ import { MdOutlineMenu } from "react-icons/md";
 import SidebarPortal from "../components/SidebarPortal";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
-import { deleteTeamData, getTeamData } from "../api/teams";
+import { deleteTeamData, getTeamData } from "../api/team";
 
 export const Portal = () => {
   const [showLinks, setShowLinks] = useState(null);

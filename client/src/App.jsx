@@ -6,7 +6,7 @@ import { Services } from "./pages/Services/Services";
 import { ServicesAll } from "./pages/Services/ServicesAll";
 import { ServiceDetails } from "./pages/Services/ServiceDetails";
 import { Portal } from "./pages/Portal";
-import { Teams } from "./pages/Teams";
+import { Team } from "./pages/Team";
 import { PortalAddMember } from "./pages/PortalAddMember";
 import { PortalEditMember } from "./pages/PortalEditMember";
 import { PortalEditService } from "./pages/Services/PortalEditService";
@@ -31,6 +31,9 @@ import { StoryPortal } from "./pages/story/portal";
 import { PortalAddHof } from "./pages/HallOfFame/PortalAddHof";
 import { PortalEditHof } from "./pages/HallOfFame/PortalEditHof";
 import HofPortal from "./pages/HallOfFame/portal";
+import { Blogs } from "./pages/Blogs/Blogs";
+import { BlogPost } from "./pages/Blogs/BlogPost";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -48,11 +51,13 @@ const App = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetails />} />
           <Route path="/services/:slug/all" element={<ServicesAll />} />
-          <Route path="/teams" element={<Teams />} />
+          <Route path="/team" element={<Team />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/merchandise" element={<Merchandise />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/success-stories" element={<Success />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:slug" element={<BlogPost />} />
           <Route element={<WebsiteAuth />}>
             <Route path="/form" element={<Form />} />
           </Route>
@@ -72,6 +77,10 @@ const App = () => {
             <Route path="/portal/halloffame/edit/:id" element={<PortalEditHof />} />
             <Route path="/portal/story" element={<StoryPortal />} />
             <Route path="/portal/story/:id" element={<StoryPortal />} />
+            <Route
+              path="/portal/story/edit/:id"
+              element={<PortalEditStory />}
+            />
             <Route
               path="/portal/story/edit/:id"
               element={<PortalEditStory />}

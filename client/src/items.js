@@ -40,7 +40,7 @@ export const items = [
     {   
         id:"3",
         title:"TEAM",
-        to: "/teams"
+        to: "/team"
         // menuList:[
         //     {
         //         lable:"DashBoard",
@@ -132,14 +132,18 @@ export const items = [
                 lable:"Hall of Fame",
                 to: "/hall-of-fame"
             },
+            // {
+            //     lable:"BAD Courses",
+            //     to: "/courses"
+            // },
             {
-                lable:"BAD Courses",
-                to: "/courses"
+                lable:"BAD Blogs",
+                to: "/blogs"
             },
-            {
-                lable:"BAD Merchandise",
-                to: "/merchandise"
-            },
+            // {
+            //     lable:"BAD Merchandise",
+            //     to: "/merchandise"
+            // },
            
             
         ]

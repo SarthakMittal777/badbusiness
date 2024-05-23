@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
+import { getTeamData } from "../api/team";
 
 export const Homepage = () => {
   const [activeTab, setActiveTab] = useState("Development");
@@ -37,14 +38,31 @@ export const Homepage = () => {
     },
   ];
 
-  const teamMembers = [
-    { name: "Sarthak Mittal", position: "CEO", image: "/images/team/ceo.jpg" },
-    { name: "Pratham Sahu", position: "COO", image: "/images/team/coo.jpg" },
-    { name: "Baqer Ali", position: "CMO", image: "/images/team/cmo.jpg" },
-    { name: "Shuvam Raj", position: "MD", image: "/images/team/md.jpg" },
-  ];
-
+  const [teamMembers, setTeamMembers] = useState([]);
   const [isMobileView, setIsMobileView] = useState(false);
+
+  useEffect(() => {
+    const fetchTeamData = async () => {
+      const data = await getTeamData();
+      if (data.success) {
+        const filteredMembers = data.teams.filter((member) => member.isMVP);
+        setTeamMembers(filteredMembers);
+      }
+    };
+
+    fetchTeamData();
+
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -75,18 +93,18 @@ export const Homepage = () => {
           <div className="container mx-auto px-4 lg:max-w-screen-smDesktop max-w-screen-2xl flex flex-col lg:flex-row items-center relative">
             <div className="flex-1 lg:p-16 lg:px-48 lg:pt-12 animate-fade-in">
               <h1 className="text-2xl lg:text-5xl font-bold mb-6 text-white text-start lg:text-balance mt-8 lg:leading-snug">
-                Are you facing a Business Problem?
+                Are You Facing A Business Problem?
               </h1>
               <p className="mb-8 text-mb text-white text-justify font-normal">
-                We solve your Business Problem using BAD Framework
+                We Solve Your Business Problem Using BAD Framework
               </p>
               <div className="flex gap-4">
                 <Button className="relative bg-teal-900 hover:bg-green-800 text-green-200 font-bold py-4 px-5 rounded-full">
-                  <Link to="">Share your Business Problem</Link>
+                  <Link to="">Share Your Business Problem</Link>
                 </Button>
                 <Button className="relative bg-emerald-200 hover:bg-green-800 text-black font-medium py-4 px-5 rounded-full">
                   <Link to="https://calendly.com/infobadbusiness">
-                    Partner with us
+                    Partner With Us
                   </Link>
                 </Button>
               </div>
@@ -184,54 +202,46 @@ export const Homepage = () => {
               </div>
             </div>
           </div>
-          {/* Swiper */}
           <div className="flex justify-center items-center">
             {isMobileView ? (
-              <Swiper spaceBetween={50} slidesPerView={1} loop={true}>
+              <Swiper
+                spaceBetween={50}
+                slidesPerView={1}
+                loop={teamMembers.length > 1}
+              >
                 {teamMembers.map((member, index) => (
                   <SwiperSlide key={index}>
                     <div className="rounded-md transition-transform duration-300 hover:scale-105 px-10">
                       <img
-                        src={member.image}
+                        src={member.photo}
                         alt={member.name}
-                        className="w-50 h-full rounded-xl"
+                        className="w-full h-64 object-cover rounded-xl"
                       />
                       <div className="absolute top-8 left-8 px-5 py-1 rounded-md z-10">
                         <p className="text-sm">{member.name}</p>
-                        <p className="text-sm">{member.position}</p>
+                        <p className="text-sm">{member.headline}</p>
                       </div>
                     </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
             ) : (
-              <Swiper spaceBetween={50} slidesPerView={4} loop={true}>
+              <Swiper
+                spaceBetween={50}
+                slidesPerView={Math.min(teamMembers.length, 4)}
+                loop={teamMembers.length > 4}
+              >
                 {teamMembers.map((member, index) => (
                   <SwiperSlide key={index}>
                     <div className="rounded-md transition-transform duration-300 hover:scale-105">
                       <img
-                        src={member.image}
+                        src={member.photo}
                         alt={member.name}
-                        className="w-full h-full rounded-xl"
+                        className="w-full h-64 object-cover rounded-xl"
                       />
                       <div className="absolute top-7 left-7 px-2 py-1 rounded-md z-10">
                         <p className="text-sm">{member.name}</p>
-                        <p className="text-sm">{member.position}</p>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                ))}
-                {teamMembers.map((member, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="rounded-md transition-transform duration-300 hover:scale-105">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full rounded-xl"
-                      />
-                      <div className="absolute top-7 left-7 px-2 py-1 rounded-md z-10">
-                        <p className="text-sm">{member.name}</p>
-                        <p className="text-sm">{member.position}</p>
+                        <p className="text-sm">{member.headline}</p>
                       </div>
                     </div>
                   </SwiperSlide>
