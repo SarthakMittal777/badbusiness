@@ -10,7 +10,6 @@ export const Signup = () => {
   const [type, setType] = useState("company");
 
   const accountChange = (account) => {
-    console.log(account);
     setType(account);
   };
 

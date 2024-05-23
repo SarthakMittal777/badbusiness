@@ -7,12 +7,6 @@ export const ServiceDetails = () => {
   const profile = "https://via.placeholder.com/50";
   const ratings = 4.5;
   const views = 1000;
-  // useEffect(async () => {
-  //   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  //   const data = await res.json();
-  //   console.log(data);
-  // },[]);
-
   return (
     <div >
       <Navbar />

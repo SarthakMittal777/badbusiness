@@ -13,7 +13,7 @@ const AuthProvider = ({ children }) => {
       .post("/user/login", { email, password })
       .then((res) => {
         localStorage.setItem("accesstoken", res.data.accessToken);
-        console.log(res.data);
+
         setToken(res.data.accessToken);
         if (res.data.isAdmin === true) {
           console.log("Admin logged in");

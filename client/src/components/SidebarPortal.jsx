@@ -9,15 +9,15 @@ const SidebarPortal = ({ menu, setMenu, setFunctionality }) => {
   const user = useAuth();
   return (
     <div
-      className={` min-w-[15rem] md:flex relative  flex-col gap-2 py-12 bg-gray-300 cursor-pointer min-h-screen ${
+      className={` min-w-[15rem] lg:flex lg:relative fixed right-0 z-[200] flex-col gap-2 py-12 bg-gray-300 cursor-pointer min-h-screen ${
         menu
-          ? "block w-[70vw] absolute top-0 right-0 md:min-w-[15rem] md:relative"
+          ? "block w-[40vw] absolute top-0 right-0 lg:w-[15rem] :relative"
           : "hidden"
       }  border shadow h-full `}
     >
       {menu && (
         <IoCloseSharp
-          className="absolute top-3 md:hidden"
+          className="absolute top-3 lg:hidden"
           size={25}
           onClick={() => setMenu(false)}
         />
@@ -62,6 +62,16 @@ const SidebarPortal = ({ menu, setMenu, setFunctionality }) => {
           }}
         >
           <FaHandshake /> Success Stories
+        </div>
+      </Link>
+      <Link to="/portal/halloffame">
+        <div
+          className="w-full h-8 hover:bg-[#848d8c]  border-[#3c3c3c] rounded flex items-center gap-3 px-2  font-semibold"
+          onClick={() => {
+            setFunctionality(null);
+          }}
+        >
+          <FaHandshake /> Hall of Fame
         </div>
       </Link>
       <div onClick={() => user.logOutFromPortal()}>

@@ -47,7 +47,7 @@ const PortalPortal = () => {
   return (
     <div className="flex w-full h-full ">
       <MdOutlineMenu
-        className="md:hidden block absolute top-9 right-9"
+        className="lg:hidden block absolute top-9 right-9"
         size={25}
         onClick={() => setMenu(!menu)}
       />

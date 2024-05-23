@@ -72,14 +72,14 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
   return (
     <div className="w-full h-full  flex  ">
       <MdOutlineMenu
-        className="md:hidden block absolute top-9 right-9"
+        className="lg:hidden block absolute top-9 right-9"
         size={25}
         onClick={() => setMenu(!menu)}
       />
       <SidebarPortal menu={menu} setMenu={setMenu} />
 
-      <div className="w-[60vw] p-8 flex flex-col shadow-xl  justify-center gap-8 items-center md:items-start py-12 h-screen overflow-scroll">
-        <p className="text-xl font-semibold mb-3 "> {functionality}</p>
+      <div className=" p-8 flex flex-col w-full justify-center gap-8 items-center md:items-start py-12 h-screen overflow-scroll">
+         <p className="text-xl font-semibold mb-3 "> {functionality}</p>
         <form
           method="POST"
           className="w-full overflow-y-auto"
@@ -97,7 +97,7 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
             />
             <input
               id="imageURL"
-              type="text"
+              type="url"
               value={data.url}
               required
               placeholder="Image URL"
@@ -133,7 +133,7 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
             <div className="border rounded-xl py-3 w-full px-4 flex items-center justify-between">
               <input
                 id="github"
-                type="text"
+                type="url"
                 value={data.github}
                 placeholder="GitHub"
                 className="outline-none w-full"
@@ -143,7 +143,7 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
             <div className="border rounded-xl py-3 w-full px-4 flex items-center justify-between">
               <input
                 id="linkedin"
-                type="text"
+                type="url"
                 value={data.linkedin}
                 className="outline-none w-full"
                 placeholder="LinkedIn"
@@ -153,7 +153,7 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
             <div className="border rounded-xl py-3 w-full px-4 flex items-center justify-between">
               <input
                 id="twitter"
-                type="text"
+                type="url"
                 value={data.twitter}
                 placeholder="Twitter"
                 className="outline-none w-full"
@@ -163,7 +163,7 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
             <div className="border rounded-xl py-3 w-full px-4 flex items-center justify-between">
               <input
                 id="behance"
-                type="text"
+                type="url"
                 value={data.behance}
                 placeholder="Behance"
                 className="outline-none w-full"
@@ -174,7 +174,7 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
             <div className="border rounded-xl py-3 w-full px-4 flex items-center justify-between">
               <input
                 id="dribble"
-                type="text"
+                type="url"
                 value={data.dribble}
                 placeholder="Dribble"
                 className="outline-none w-full"

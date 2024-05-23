@@ -3,9 +3,10 @@ import { createStoryData, editStoryData } from "../../api/story";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SidebarPortal from "../../components/SidebarPortal";
+import { MdOutlineMenu } from "react-icons/md";
 const StoryForm = ({ functionality, fetchStoryData }) => {
   const navigate = useNavigate();
-  console.log("fetchStoryData", fetchStoryData);
+  const [menu, setMenu] = useState(false);
   const [data, setData] = useState({
     headline: fetchStoryData?.headline,
     url: fetchStoryData?.url,
@@ -37,7 +38,6 @@ const StoryForm = ({ functionality, fetchStoryData }) => {
         });
     }
     if (functionality === "Edit a story's details") {
-      console.log(fetchStoryData);
       editStoryData(fetchStoryData._id, storyData)
         // eslint-disable-next-line no-unused-vars
         .then((res) => {
@@ -51,8 +51,13 @@ const StoryForm = ({ functionality, fetchStoryData }) => {
   };
   return (
     <div className="w-full h-full  flex ">
-      <SidebarPortal />
-      <div className="w-[60vw] p-8 flex flex-col shadow-xl  justify-center gap-8 items-center md:items-start ">
+      <MdOutlineMenu
+        className="lg:hidden block absolute top-9 right-9"
+        size={25}
+        onClick={() => setMenu(!menu)}
+      />
+      <SidebarPortal menu={menu} setMenu={setMenu} />
+      <div className=" p-8 flex flex-col w-full justify-center gap-8 items-center md:items-start py-12 h-screen overflow-scroll">
         <p className="text-xl font-semibold mb-3 "> {functionality}</p>
         <form
           method="POST"
@@ -84,7 +89,6 @@ const StoryForm = ({ functionality, fetchStoryData }) => {
                 className="outline-none my-4 border-none w-full"
                 onChange={(e) => setData({ ...data, type: e.target.value })}
               >
-             
                 <option value={data.type}>{data.type}</option>
                 <option value="instagram">instagram</option>
                 <option value="facebook">facebook</option>

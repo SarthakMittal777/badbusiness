@@ -2,8 +2,10 @@ import Button from "../../components/Button";
 import { createServiceData, editServiceData } from "../../api/service";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { MdOutlineMenu } from "react-icons/md";
 import SidebarPortal from "../../components/SidebarPortal";
 const ServiceForm = ({ functionality, fetchServiceData }) => {
+  const [menu, setMenu] = useState(false);
   const navigate = useNavigate();
   const [data, setData] = useState({
     image: fetchServiceData?.image,
@@ -50,8 +52,13 @@ const ServiceForm = ({ functionality, fetchServiceData }) => {
   };
   return (
     <div className="w-full h-full  flex ">
-      <SidebarPortal />
-      <div className="w-[60vw] p-8 flex flex-col shadow-xl  justify-center gap-8 items-center md:items-start ">
+      <MdOutlineMenu
+        className="lg:hidden block absolute top-9 right-9"
+        size={25}
+        onClick={() => setMenu(!menu)}
+      />
+      <SidebarPortal menu={menu} setMenu={setMenu} />
+      <div className=" p-8 flex flex-col w-full justify-center gap-8 items-center md:items-start py-12 h-screen overflow-scroll">
         <p className="text-xl font-semibold mb-3 "> {functionality}</p>
         <form
           method="POST"
@@ -72,7 +79,7 @@ const ServiceForm = ({ functionality, fetchServiceData }) => {
             <p className="text-base font-semibold mb-3 ">Image URL :</p>
             <input
               id="imageURL"
-              type="text"
+              type="url"
               value={data.image}
               required
               placeholder="Image URL"

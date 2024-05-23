@@ -11,7 +11,6 @@ const Navbar = () => {
 
   const handleSubmenuClick = (index) => {
     setOpenSubmenu(openSubmenu === index ? null : index);
-    console.log(openSubmenu);
   };
 
   useEffect(() => {

@@ -28,6 +28,9 @@ import Success from "./pages/SuccessStories";
 import { PortalAddStory } from "./pages/story/PortalAddStory";
 import { PortalEditStory } from "./pages/story/PortalEditStory";
 import { StoryPortal } from "./pages/story/portal";
+import { PortalAddHof } from "./pages/HallOfFame/PortalAddHof";
+import { PortalEditHof } from "./pages/HallOfFame/PortalEditHof";
+import HofPortal from "./pages/HallOfFame/portal";
 const App = () => {
   return (
     <BrowserRouter>
@@ -64,9 +67,15 @@ const App = () => {
             <Route path="/portal/team/add" element={<PortalAddMember />} />
             <Route path="/portal/services" element={<ServicesPortal />} />
             <Route path="/portal/partners" element={<PartnersPortal />} />
+            <Route path="/portal/halloffame" element={<HofPortal />} />
+            <Route path="/portal/halloffame/add" element={<PortalAddHof />} />
+            <Route path="/portal/halloffame/edit/:id" element={<PortalEditHof />} />
             <Route path="/portal/story" element={<StoryPortal />} />
             <Route path="/portal/story/:id" element={<StoryPortal />} />
-            <Route path="/portal/story/edit/:id" element={<PortalEditStory />} />
+            <Route
+              path="/portal/story/edit/:id"
+              element={<PortalEditStory />}
+            />
             <Route path="/portal/story/add" element={<PortalAddStory />} />
             <Route
               path="/portal/service/edit/:id"

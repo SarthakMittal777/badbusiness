@@ -1,10 +1,12 @@
 import Button from "../../components/Button";
 import { createPartnerData, editPartnerData } from "../../api/partner";
 import SidebarPortal from "../../components/SidebarPortal";
+import { MdOutlineMenu } from "react-icons/md";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const PartnerForm = ({ functionality, fetchPartnerData }) => {
   const navigate = useNavigate();
+  const [menu, setMenu] = useState(false);
   const [data, setData] = useState({
     name: fetchPartnerData?.partner.name,
     url: fetchPartnerData?.partner.photo,
@@ -57,7 +59,6 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
       editPartnerData(fetchPartnerData.partner._id, partnerData)
         // eslint-disable-next-line no-unused-vars
         .then((res) => {
-          console.log(partnerData);
           window.alert("Data edited successfully");
           navigate("/portal/partners");
         })
@@ -68,7 +69,12 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
   };
   return (
     <div className="w-full h-full  flex  ">
-      <SidebarPortal />
+      <MdOutlineMenu
+        className="lg:hidden block absolute top-9 right-9"
+        size={25}
+        onClick={() => setMenu(!menu)}
+      />
+      <SidebarPortal menu={menu} setMenu={setMenu} />
       <div className=" p-8 flex flex-col w-full justify-center gap-8 items-center md:items-start py-12 h-screen overflow-scroll">
         <p className="text-xl font-semibold mb-3 "> {functionality}</p>
         <form
@@ -87,7 +93,7 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
           />
           <input
             id="imageURL"
-            type="text"
+            type="url"
             value={data.url}
             required
             placeholder="Image URL"
@@ -110,7 +116,7 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
           <div className="border my-2 rounded-xl py-3 w-full px-4 flex items-center justify-between">
             <input
               id="github"
-              type="text"
+              type="url"
               value={data.github}
               placeholder="GitHub"
               className="outline-none w-full"
@@ -120,7 +126,7 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
           <div className="border my-2 rounded-xl py-3 w-full px-4 flex items-center justify-between">
             <input
               id="linkedin"
-              type="text"
+              type="url"
               value={data.linkedin}
               className="outline-none w-full"
               placeholder="LinkedIn"
@@ -130,7 +136,7 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
           <div className="border my-2  rounded-xl py-3 w-full px-4 flex items-center justify-between">
             <input
               id="twitter"
-              type="text"
+              type="url"
               value={data.twitter}
               placeholder="Twitter"
               className="outline-none w-full"
@@ -151,7 +157,7 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
           <div className="border rounded-xl py-3 my-2  w-full px-4 flex items-center justify-between">
             <input
               id="dribble"
-              type="text"
+              type="url"
               value={data.dribble}
               placeholder="Dribble"
               className="outline-none w-full"
