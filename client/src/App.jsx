@@ -31,11 +31,10 @@ import { StoryPortal } from "./pages/story/portal";
 import { PortalAddHof } from "./pages/HallOfFame/PortalAddHof";
 import { PortalEditHof } from "./pages/HallOfFame/PortalEditHof";
 import HofPortal from "./pages/HallOfFame/portal";
-import { Blogs } from "./pages/Blogs/Blogs";
-import { BlogPost } from "./pages/Blogs/BlogPost";
+import Blogs from "./pages/Blogs/Blogs";
+import BlogPost from "./pages/Blogs/BlogPost";
 
 const App = () => {
-
   return (
     <BrowserRouter>
       <AuthProvider>

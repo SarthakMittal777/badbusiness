@@ -1,50 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Footer } from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import { getBlogData } from "../../api/blogs";
 
 const bgImage = "/images/hero/hero-bg.png";
 
-const blogPosts = [
-  {
-    slug: "first-post",
-    title: "First Blog Post",
-    excerpt: "This is a short description of the first blog post.",
-    date: "May 20, 2024",
-    image: "https://via.placeholder.com/300",
-    createdAt: "May 17, 2024",
-    updatedAt: "May 19, 2024",
-  },
-  {
-    slug: "second-post",
-    title: "Second Blog Post",
-    excerpt: "This is a short description of the second blog post.",
-    date: "May 21, 2024",
-    image: "https://via.placeholder.com/300",
-    createdAt: "May 18, 2024",
-    updatedAt: "May 20, 2024",
-  },
-  {
-    slug: "third-post",
-    title: "Third Blog Post",
-    excerpt: "This is a short description of the third blog post.",
-    date: "May 22, 2024",
-    image: "https://via.placeholder.com/300",
-    createdAt: "May 19, 2024",
-    updatedAt: "May 21, 2024",
-  },
-  {
-    slug: "fourth-post",
-    title: "Fourth Blog Post",
-    excerpt: "This is a short description of the fourth blog post.",
-    date: "May 23, 2024",
-    image: "https://via.placeholder.com/300",
-    createdAt: "May 20, 2024",
-    updatedAt: "May 22, 2024",
-  },
-];
+const generateSlug = (title) => {
+  return title
+    .toLowerCase()
+    .replace(/ /g, "-")
+    .replace(/[^\w-]+/g, "");
+};
 
 export const Blogs = () => {
+  const [blogPosts, setBlogPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      const data = await getBlogData();
+      if (data && Array.isArray(data.blogs)) {
+        setBlogPosts(data.blogs);
+      } else {
+        console.error("Fetched data is not an array of blogs", data);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
   return (
     <div className="w-full h-full">
       <Navbar />
@@ -60,28 +44,29 @@ export const Blogs = () => {
       </div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {blogPosts.map((post) => (
-            <Link to={`/blogs/${post.slug}`} key={post.slug}>
-              <div className="bg-white text-black rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="rounded-t-lg w-full h-48 object-cover"
-                />
-                <div className="p-4">
-                  <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-                  <p className="mb-2">{post.excerpt}</p>
-                  <p className="text-gray-500 text-sm mb-2">{post.date}</p>
-                  <Link to={`/blogs/${post.slug}`} className="text-blue-500">
-                    Read more
-                  </Link>
+          {blogPosts.map((post) => {
+            const slug = generateSlug(post.title);
+            return (
+              <Link to={`/blogs/${slug}`} key={post._id}>
+                <div className="bg-white text-black rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                  <img
+                    src={post.banner}
+                    alt={post.title}
+                    className="rounded-t-lg w-full h-48 object-cover"
+                  />
+                  <div className="p-4">
+                    <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+                    <p className="mb-2">{post.headline}</p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </div>
       <Footer />
     </div>
   );
 };
+
+export default Blogs;
