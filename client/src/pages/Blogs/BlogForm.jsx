@@ -82,7 +82,7 @@ const BlogForm = ({ functionality, fetchBlogData }) => {
           />
        
           <input
-            type="text"
+            type="url"
             value={data.banner}
             required
             placeholder="Banner"
