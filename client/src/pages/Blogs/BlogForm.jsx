@@ -11,7 +11,6 @@ const BlogForm = ({ functionality, fetchBlogData }) => {
 
   const [data, setData] = useState({
     title: fetchBlogData?.blog.title || "",
-    headline: fetchBlogData?.blog.headline || "",
     banner: fetchBlogData?.blog.banner || "",
     content: fetchBlogData?.blog.content || [
       { resource: "", type: "paragraph" },
@@ -81,14 +80,7 @@ const BlogForm = ({ functionality, fetchBlogData }) => {
             className="border rounded-xl py-3 w-full px-4 my-2"
             onChange={(e) => setData({ ...data, title: e.target.value })}
           />
-          <input
-            type="text"
-            value={data.headline}
-            required
-            placeholder="Headline"
-            className="border rounded-xl py-3 w-full px-4 my-2"
-            onChange={(e) => setData({ ...data, headline: e.target.value })}
-          />
+       
           <input
             type="text"
             value={data.banner}

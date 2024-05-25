@@ -67,7 +67,7 @@ const BlogPortal = () => {
                   <tr className="bg-gray-200 sticky top-0 z-[100]">
                     <th className="px-4 py-2 sticky top-0 z-[100]">#</th>
                     <th className="px-4 py-2 sticky top-0 z-[100]">Title</th>
-                    <th className="px-4 py-2 sticky top-0 z-[100]">Headline</th>
+                   
                     <th className="px-4 py-2 sticky top-0 z-[100]">Banner</th>
                     <th className="px-4 py-2 sticky top-0 z-[100]">Preview</th>
                     <th className="px-4 py-2 sticky top-0 z-[100]">Edit</th>
@@ -84,18 +84,24 @@ const BlogPortal = () => {
                         <td className="border px-4 py-1 text-center">
                           {blog.title}
                         </td>
+                     
                         <td className="border px-4 py-1 text-center">
-                          {blog.headline}
-                        </td>
-                        <td className="border px-4 py-1 text-center">
-                          {blog.banner}
+                          {blog.banner === "" ? (
+                            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#c7b0ff] mx-auto"></div>
+                          ) : (
+                            <img
+                              src={blog.banner}
+                              alt="banner"
+                              className="w-8 h-8 rounded-full mx-auto object-cover object-center"
+                            />
+                          )}
                         </td>
                         <td className="border px-4 py-1">
                           <ul className="list-disc list-inside">
                             {blog.content.map((content, index) => (
                               <div key={index}>
                                 {content.resource}
-                                <p className=" text-gray-500">Type : {content.type}</p>
+                               
                               </div>
                             ))}
                           </ul>
