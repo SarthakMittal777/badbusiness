@@ -30,7 +30,7 @@ const BlogForm = ({ functionality, fetchBlogData }) => {
           console.log(error);
         });
     }
-    if (functionality === "Edit Blog Data") {
+    if (functionality === "Update Blog") {
       editBlogData(fetchBlogData.blog._id, data)
         .then((res) => {
           window.alert(res.data.message);

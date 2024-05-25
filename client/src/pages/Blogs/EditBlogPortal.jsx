@@ -16,7 +16,7 @@ export const EditBlogPortal = () => {
   return (
     data &&
     data.success && (
-      <BlogForm fetchBlogData={data} functionality="Edit Blog Data" />
+      <BlogForm fetchBlogData={data} functionality="Update Blog" />
     )
   );
 };
