@@ -3,7 +3,6 @@ import serverInstance from "./server";
 export const getBlogData = async () => {
   try {
     const response = await serverInstance.get("/blog");
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);

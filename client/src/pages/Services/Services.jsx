@@ -5,24 +5,24 @@ import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 export const Services = () => {
-  // eslint-disable-next-line 
+  // eslint-disable-next-line
   const [categorizedData, setCategorizedData] = useState({});
+
   useEffect(() => {
     async function fetchData() {
-      const res = await getServiceData();
+      const res = await getServiceData(); 
       const services = res.services;
 
-      // Categorize services
-      const categories = services.reduce((acc, service) => {
-        const category = service.category.trim();
+      const categorized = services.reduce((acc, service) => {
+        const { category, ...rest } = service;
         if (!acc[category]) {
           acc[category] = [];
         }
-        acc[category].push(service);
+        acc[category].push(rest);
         return acc;
       }, {});
 
-      setCategorizedData(categories);
+      setCategorizedData(categorized);
     }
 
     fetchData();
@@ -52,24 +52,36 @@ export const Services = () => {
         </div>
       </div>
       <div className="w-full  text-base flex items-center justify-between my-16 md:mb-24 flex-col md:flex-row ">
-        <p className="mx-24 text-center"> Showing results for {} categories</p>
+        <p className="mx-24 text-center">
+          {" "}
+          Showing results for {Object.keys(categorizedData).length} categories
+        </p>
       </div>
-      <div className="flex w-full xl:justify-around gap-12 mb-32 flex-wrap justify-center sm:justify-normal">
-        <Card
-          image="https://via.placeholder.com/150"
-          category="   Web and App design"
-          title=" I will create modern flat design illustration"
-          profile="https://via.placeholder.com/50"
-          amount="$983"
-        />
-        <Card
-          image="https://via.placeholder.com/150"
-          category="   Web and App design"
-          title=" I will create modern flat design illustration"
-          profile="https://via.placeholder.com/50"
-          amount="$983"
-        />
-        <Card button="View all Tech products" slug="Technology" />
+      <div className="flex w-full xl:justify-normal gap-12 mb-32 flex-wrap justify-center sm:justify-normal">
+        {Object.keys(categorizedData).map((category, index) => (
+          <div key={index} className="flex">
+            {console.log("category", categorizedData[category][0])}
+            <Card
+              image={categorizedData[category][0].image}
+              category={categorizedData[category][0].category}
+              title={categorizedData[category][0].title}
+              profile={categorizedData[category][0].profile}
+              amount=""
+            />
+            {categorizedData[category].length > 1 ? (
+              <Card
+                image={category[1].image}
+                category={category[1].category}
+                title={category[1].title}
+                profile={category[1].profile}
+                amount=""
+              />
+            ) : (
+              ""
+            )}
+            <Card button={`View all ${category} services`} slug={category} />
+          </div>
+        ))}
       </div>
 
       <Footer />

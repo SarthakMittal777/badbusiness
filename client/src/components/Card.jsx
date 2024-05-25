@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+//eslint-disable-next-line
 const Card = ({ image, title, category, profile, amount, button, slug }) => {
   return (
     <div className="flex flex-col w-80 shadow-xl gap-5 justify-center items-center h-96 hover:shadow-[#393948] hover:shadow-lg m-8 ">
@@ -15,7 +16,7 @@ const Card = ({ image, title, category, profile, amount, button, slug }) => {
             ⭐ 4.82
             <div className="mx-4 text-gray-400 ">94 reviews</div>
           </div>
-          <div className="flex  justify-between items-center max-w-full mb-5">
+          {/* <div className="flex  justify-between items-center max-w-full mb-5">
             <img
               src={profile}
               alt="placeholder"
@@ -24,7 +25,7 @@ const Card = ({ image, title, category, profile, amount, button, slug }) => {
             <div className="text-gray-400 ">
               Starting at <span className="text-black">{amount}</span>
             </div>
-          </div>
+          </div> */}
         </div>
       )}
       {button && (

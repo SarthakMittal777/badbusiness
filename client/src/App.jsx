@@ -33,6 +33,9 @@ import { PortalEditHof } from "./pages/HallOfFame/PortalEditHof";
 import HofPortal from "./pages/HallOfFame/portal";
 import Blogs from "./pages/Blogs/Blogs";
 import BlogPost from "./pages/Blogs/BlogPost";
+import { EditBlogPortal } from "./pages/Blogs/EditBlogPortal";
+import BlogPortal from "./pages/Blogs/portal";
+import { AddBlogPortal } from "./pages/Blogs/AddBlogPortal";
 
 const App = () => {
   return (
@@ -99,6 +102,9 @@ const App = () => {
               element={<PortalEditPartner />}
             />
             <Route path="/portal/partner/add" element={<PortalAddPartner />} />
+            <Route path="/portal/blogs" element={<BlogPortal />} />
+            <Route path="/portal/blogs/edit/:id" element={<EditBlogPortal />} />
+            <Route path="/portal/blogs/add" element={<AddBlogPortal />} />
           </Route>
         </Routes>
       </AuthProvider>

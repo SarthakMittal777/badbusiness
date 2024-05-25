@@ -79,7 +79,7 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
       <SidebarPortal menu={menu} setMenu={setMenu} />
 
       <div className=" p-8 flex flex-col w-full justify-center gap-8 items-center md:items-start py-12 h-screen overflow-scroll">
-         <p className="text-xl font-semibold mb-3 "> {functionality}</p>
+        <p className="text-xl font-semibold mb-3 "> {functionality}</p>
         <form
           method="POST"
           className="w-full overflow-y-auto"
@@ -198,8 +198,8 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
                 onChange={(e) =>
                   setData({ ...data, isMVP: e.target.value === "true" })
                 }
+                defaultValue={data.isMVP}
               >
-                <option value="false">Select</option>
                 <option value="true">Yes</option>
                 <option value="false">No</option>
               </select>
