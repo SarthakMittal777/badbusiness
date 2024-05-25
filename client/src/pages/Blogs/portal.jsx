@@ -69,7 +69,7 @@ const BlogPortal = () => {
                     <th className="px-4 py-2 sticky top-0 z-[100]">Title</th>
                     <th className="px-4 py-2 sticky top-0 z-[100]">Headline</th>
                     <th className="px-4 py-2 sticky top-0 z-[100]">Banner</th>
-                    <th className="px-4 py-2 sticky top-0 z-[100]">Content</th>
+                    <th className="px-4 py-2 sticky top-0 z-[100]">Preview</th>
                     <th className="px-4 py-2 sticky top-0 z-[100]">Edit</th>
                     <th className="px-4 py-2 sticky top-0 z-[100]">Delete</th>
                   </tr>
@@ -93,10 +93,10 @@ const BlogPortal = () => {
                         <td className="border px-4 py-1">
                           <ul className="list-disc list-inside">
                             {blog.content.map((content, index) => (
-                              <li key={index}>
+                              <div key={index}>
                                 {content.resource}
                                 <p className=" text-gray-500">Type : {content.type}</p>
-                              </li>
+                              </div>
                             ))}
                           </ul>
                         </td>
