@@ -60,7 +60,7 @@ export const Services = () => {
       <div className="flex w-full xl:justify-normal gap-12 mb-32 flex-wrap justify-center sm:justify-normal">
         {Object.keys(categorizedData).map((category, index) => (
           <div key={index} className="flex">
-            {console.log("category", categorizedData[category][0])}
+        
             <Card
               image={categorizedData[category][0].image}
               category={categorizedData[category][0].category}

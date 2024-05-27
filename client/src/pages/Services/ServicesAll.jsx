@@ -63,16 +63,17 @@ export const ServicesAll = () => {
         <div className="flex justify-center md:justify-start w-full flex-wrap max-w-[80%]">
           {categorizedData && categorizedData[slug] ? (
             categorizedData[slug].map((item, index) => (
-              <Link key={index} to={`/services/${item.title}`}>
-                {" "}
-                <Card
-                  image={item.image}
-                  category={item.category}
-                  title={item.title}
-                  profile={item.profile}
-                  amount={item.amount}
-                />
-              </Link>
+              // <Link key={index} to={`/services/${item.title}`}>
+
+              <Card
+                key={index}
+                image={item.image}
+                category={item.category}
+                title={item.title}
+                profile={item.profile}
+                amount={item.amount}
+              />
+              // </Link>
             ))
           ) : (
             <p>No services found</p>
