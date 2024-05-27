@@ -38,7 +38,7 @@ export const ServicesPortal = () => {
     }
     fetchData();
   }, []);
-
+  console.log(serviceData);
   return (
     <div className="flex w-full h-full ">
       <MdOutlineMenu
