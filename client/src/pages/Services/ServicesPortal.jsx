@@ -18,8 +18,10 @@ export const ServicesPortal = () => {
 
     if (confirmation) {
       try {
+        //eslint-disable-next-line
         const res = await deleteServiceData(id);
-        window.alert(res.data.message);
+        window.alert("deleted successfully");
+
         window.location.reload();
       } catch (error) {
         console.log(error);
