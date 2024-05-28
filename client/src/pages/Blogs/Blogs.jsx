@@ -54,9 +54,13 @@ export const Blogs = () => {
                     alt={post.title}
                     className="rounded-t-lg w-full h-48 object-cover"
                   />
-                  <div className="p-4">
+                  <div className="p-4 h-36 flex flex-col justify-between">
                     <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+
                     <p className="mb-2">{post.headline}</p>
+                    <Link to={`/blogs/${slug}`} key={post._id} className="text-blue-600">
+                      Read More
+                    </Link>
                   </div>
                 </div>
               </Link>
