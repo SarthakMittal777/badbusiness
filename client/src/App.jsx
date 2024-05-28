@@ -36,6 +36,9 @@ import BlogPost from "./pages/Blogs/BlogPost";
 import { EditBlogPortal } from "./pages/Blogs/EditBlogPortal";
 import BlogPortal from "./pages/Blogs/portal";
 import { AddBlogPortal } from "./pages/Blogs/AddBlogPortal";
+import AdminPortal from "./pages/Admin/portal";
+import { EditAdminPortal } from "./pages/Admin/EditAdminPortal";
+import { AddAdminPortal } from "./pages/Admin/AddAdminPortal";
 
 const App = () => {
   return (
@@ -105,6 +108,12 @@ const App = () => {
             <Route path="/portal/blogs" element={<BlogPortal />} />
             <Route path="/portal/blogs/edit/:id" element={<EditBlogPortal />} />
             <Route path="/portal/blogs/add" element={<AddBlogPortal />} />
+            <Route path="/portal/admin" element={<AdminPortal />} />
+            <Route
+              path="/portal/admin/edit/:id"
+              element={<EditAdminPortal />}
+            />
+            <Route path="/portal/admin/add" element={<AddAdminPortal />} />
           </Route>
         </Routes>
       </AuthProvider>

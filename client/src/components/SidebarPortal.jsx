@@ -4,6 +4,7 @@ import { useAuth } from "../auth/auth";
 import { Link } from "react-router-dom";
 import { FaHandshake } from "react-icons/fa";
 import { MdHomeRepairService } from "react-icons/md";
+import { RiAdminFill } from "react-icons/ri";
 import Button from "./Button";
 const SidebarPortal = ({ menu, setMenu, setFunctionality }) => {
   const user = useAuth();
@@ -82,6 +83,17 @@ const SidebarPortal = ({ menu, setMenu, setFunctionality }) => {
           }}
         >
           <FaHandshake /> Blogs
+        </div>
+      </Link>
+      <Link to="/portal/admin">
+        <div
+          className="w-full h-8 hover:bg-[#848d8c] cursor-pointer border-[#3c3c3c] rounded flex items-center gap-3 px-2  font-semibold"
+          onClick={() => {
+            setFunctionality(null);
+          }}
+        >
+          <RiAdminFill />
+          Admin
         </div>
       </Link>
       <div onClick={() => user.logOutFromPortal()}>
