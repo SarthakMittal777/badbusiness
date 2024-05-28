@@ -31,7 +31,7 @@ export const ServicesAll = () => {
   }, []);
   console.log(categorizedData[slug]);
   return (
-    <div className="w-full flex flex-col items-center justify-center mx-auto ">
+    <div className="w-full flex flex-col items-center justify-center  ">
       <Navbar />
       <div className="w-full h-20 text-base flex items-center ">
         <p className="mx-24">
@@ -59,7 +59,7 @@ export const ServicesAll = () => {
           <p className="my-2">This is the content with {slug} services.</p>
         </div>
       </div>
-      <div className="flex flex-wrap gap-4  mx-4 w-full ">
+      <div className="flex flex-wrap gap-4  mx-4 w-full items-center justify-center">
         <div className="flex justify-center md:justify-start w-full flex-wrap max-w-[80%]">
           {categorizedData && categorizedData[slug] ? (
             categorizedData[slug].map((item, index) => (

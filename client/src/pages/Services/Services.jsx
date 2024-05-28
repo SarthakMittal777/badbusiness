@@ -10,7 +10,7 @@ export const Services = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await getServiceData(); 
+      const res = await getServiceData();
       const services = res.services;
 
       const categorized = services.reduce((acc, service) => {
@@ -60,7 +60,6 @@ export const Services = () => {
       <div className="flex w-full xl:justify-normal gap-12 mb-32 flex-wrap justify-center sm:justify-normal">
         {Object.keys(categorizedData).map((category, index) => (
           <div key={index} className="flex">
-        
             <Card
               image={categorizedData[category][0].image}
               category={categorizedData[category][0].category}
@@ -70,10 +69,10 @@ export const Services = () => {
             />
             {categorizedData[category].length > 1 ? (
               <Card
-                image={category[1].image}
-                category={category[1].category}
-                title={category[1].title}
-                profile={category[1].profile}
+                image={categorizedData[category][1].image}
+                category={categorizedData[category][1].category}
+                title={categorizedData[category][1].title}
+                profile={categorizedData[category][1].profile}
                 amount=""
               />
             ) : (

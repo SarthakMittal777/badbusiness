@@ -4,8 +4,8 @@ const Card = ({ image, title, category, profile, amount, button, slug }) => {
   return (
     <div className="flex flex-col w-80 shadow-xl gap-2 justify-center hover:scale-105 transition-all duration-300 items-center h-54 hover:shadow-[#393948] hover:shadow-lg m-8 ">
       {!button && (
-        <div className="h-[50%] w-full ">
-          <img src={image} alt="placeholder" className="h-full w-full" />
+        <div className="h-full max-h-[15rem] w-full">
+          <img src={image} alt="placeholder" className="h-full w-full object-center"  />
         </div>
       )}
       {!button && (
