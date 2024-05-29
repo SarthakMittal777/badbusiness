@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 //eslint-disable-next-line
 const Card = ({ image, title, category, profile, amount, button, slug }) => {
   return (
-    <div className="flex flex-col w-80 shadow-xl gap-2 justify-center bg-gray-100 bg-opacity-40 hover:scale-105 transition-all duration-300 items-center h-54 hover:shadow-[#393948] hover:shadow-lg m-8 rounded-3xl">
+    <div className="flex flex-col w-80 shadow-xl gap-2 justify-center bg-gray-100 min-h-[25rem] bg-opacity-40 hover:scale-105 transition-all duration-300 items-center h-54 hover:shadow-[#393948] hover:shadow-lg m-8 rounded-3xl">
       {!button && (
         <div className="relative h-[90%] max-h-[15rem] w-[90%] mt-4 rounded-3xl overflow-hidden">
           <img
@@ -25,7 +25,7 @@ const Card = ({ image, title, category, profile, amount, button, slug }) => {
         </div>
       )}
       {button && (
-        <div className="bg-[#0f0f43] text-white hover:bg-blue-900 cursor-pointer  rounded-lg px-6 py-3 text-center">
+        <div className="bg-[#0f0f43] text-white hover:bg-blue-900 cursor-pointer  rounded-lg px-6 py-3 text-center ">
           <Link to={`/services/${slug}/all`} className="flex items-center ">
             {" "}
             {button}
