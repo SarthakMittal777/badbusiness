@@ -29,9 +29,8 @@ export const ServicesAll = () => {
 
     fetchData();
   }, []);
-  console.log(categorizedData[slug]);
   return (
-    <div className="w-full flex flex-col items-center justify-center  ">
+    <div className="w-full flex flex-col items-center justify-center  bg-gray-300">
       <Navbar />
       <div className="w-full h-20 text-base flex items-center ">
         <p className="mx-24">
@@ -48,15 +47,25 @@ export const ServicesAll = () => {
         </p>
       </div>
       <div
-        className="w-full h-44  items-center flex mb-12"
+        className="w-full h-[60vh] flex items-center justify-center relative"
         style={{
-          background: "url('/images/header.webp')",
+          background:
+            "url(/images/hero/servicesAll.jpg) no-repeat center center fixed",
           backgroundSize: "cover",
         }}
       >
-        <div className="mx-24">
-          <h1 className="text-4xl font-bold">{slug} </h1>
-          <p className="my-2">This is the content with {slug} services.</p>
+        <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
+        <div className="relative text-center text-white mx-24">
+          {" "}
+          <h1 className="text-4xl py-8 font-bold">{slug}</h1>
+          <p>
+            Discover exceptional solutions with our unrivaled expertise. Merging
+            innovation with excellence, we turn your visions into reality.
+            Whether you need consultancy, or specialized support, our curated
+            offerings are designed to fuel your success and distinguish you from
+            the competition. Partner with us and experience the synergy of your
+            ambitions and our expertise.
+          </p>
         </div>
       </div>
       <div className="flex flex-wrap gap-4  mx-4 w-full items-center justify-center">
@@ -76,7 +85,7 @@ export const ServicesAll = () => {
               // </Link>
             ))
           ) : (
-            <p>No services found</p>
+            <p></p>
           )}
         </div>
       </div>
