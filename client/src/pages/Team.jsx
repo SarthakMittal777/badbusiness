@@ -13,20 +13,27 @@ export const Team = () => {
     fetchData();
   }, []);
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full animate-fade-in">
       <Navbar />
       <div
-        className="w-full h-96  items-center flex justify-center flex-col text-[white] text-center"
+        className="w-full h-[60vh] flex items-center justify-center relative"
         style={{
-          background: "url('/images/hero/hero-bg.png')",
+          background:
+            "url(/images/hero/team.jpg) no-repeat center center fixed",
           backgroundSize: "cover",
         }}
       >
-        <p className="font-bold">OUR TEAM</p>
-        <h1 className="lg:text-4xl sm:text-3xl mbMedSmall:text-xl text-lg font-bold mb-4 ">
-          Meet the Badbusiness Team
-        </h1>
-        <p>Emphasizing a commitment to excellence and empowerment</p>
+        <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
+        <div className="relative text-center text-white mx-24">
+          {" "}
+          <h1 className="text-4xl py-8 font-bold">Meet Our Dynamic Team</h1>
+          <p>
+            Our diverse and talented team is dedicated to excellence and
+            innovation. With a wealth of expertise and a passion for impactful
+            solutions, we work collaboratively to achieve outstanding results
+            and set new standards of excellence.
+          </p>
+        </div>
       </div>
       <p className="w-screen text-center font-semibold italic my-12 text-lg">
         ~ Core Team ~

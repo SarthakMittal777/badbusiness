@@ -63,15 +63,15 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="hidden md:flex flex-grow items-center">
-          <ul className="flex flex-row ml-auto">
+        <div className="hidden md:flex flex-grow items-center w-full justify-end">
+          <ul className="flex flex-row  justify-end">
             <li
               className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
               onClick={() => {
                 setOpenMenu(false);
               }}
             >
-              <Link to="/">Home</Link>
+              <Link to="/careers">Careers</Link>
             </li>
             {/* <Link
               to="about"
@@ -98,6 +98,51 @@ const Navbar = () => {
                 BAD Events
               </Link>
             </li> */}
+
+            <li
+              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <Link to="/services">Services</Link>
+            </li>
+
+            <li
+              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <Link to="/team">Team</Link>
+            </li>
+
+            <li
+              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <Link to="/partners">Partners</Link>
+            </li>
+
+            <li
+              className="duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <Link to="/signin">Login</Link>
+            </li>
+
+            <li
+              className="duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <Link to="/signup">SignUp</Link>
+            </li>
 
             <li
               className="relative group duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer"
@@ -186,55 +231,10 @@ const Navbar = () => {
                 </li> */}
               </ul>
             </li>
-
-            <li
-              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
-              onClick={() => {
-                setOpenMenu(false);
-              }}
-            >
-              <Link to="/services">Services</Link>
-            </li>
-
-            <li
-              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
-              onClick={() => {
-                setOpenMenu(false);
-              }}
-            >
-              <Link to="/team">Team</Link>
-            </li>
-
-            <li
-              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
-              onClick={() => {
-                setOpenMenu(false);
-              }}
-            >
-              <Link to="/partners">Partners</Link>
-            </li>
-
-            <li
-              className="duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
-              onClick={() => {
-                setOpenMenu(false);
-              }}
-            >
-              <Link to="/signin">Login</Link>
-            </li>
-
-            <li
-              className="duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
-              onClick={() => {
-                setOpenMenu(false);
-              }}
-            >
-              <Link to="/signup">SignUp</Link>
-            </li>
           </ul>
         </div>
         {/* Mobile View  */}
-        <div className="relative">
+        <div className="relative md:hidden">
           <div className="flex justify-between items-center h-full w-full px-2 2xl:px-16 text-black overflow-x-hidden">
             {openMenu ? (
               <div onClick={handleClick} className="md:hidden cursor-pointer">

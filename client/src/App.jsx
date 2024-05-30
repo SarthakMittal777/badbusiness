@@ -22,7 +22,7 @@ import WebsiteAuth from "./auth/websiteAuth";
 import { Merchandise } from "./pages/Merchandise";
 import { Courses } from "./pages/Courses";
 import { Form } from "./pages/Form";
-import { Careers } from "./pages/Careers";
+import Careers from "./pages/Careers";
 import HallofFame from "./pages/HallofFame";
 import Success from "./pages/SuccessStories";
 import { PortalAddStory } from "./pages/story/PortalAddStory";
@@ -39,6 +39,7 @@ import { AddBlogPortal } from "./pages/Blogs/AddBlogPortal";
 import AdminPortal from "./pages/Admin/portal";
 import { EditAdminPortal } from "./pages/Admin/EditAdminPortal";
 import { AddAdminPortal } from "./pages/Admin/AddAdminPortal";
+
 
 const App = () => {
   return (

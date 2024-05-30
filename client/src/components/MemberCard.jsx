@@ -13,14 +13,22 @@ const MemberCard = ({ member }) => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <div className="relative ">
+      <div
+        className="relative"
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
         <img
           src={member.photo}
           alt="team"
           className="object-cover w-full h-full inset-0 rounded-lg"
           style={{ width: "20rem", height: "26rem" }}
         />
-        {hover && <div className="absolute inset-0 bg-black opacity-50"></div>}
+        <div
+          className={`absolute inset-0 bg-black transition-opacity duration-500 ease-in-out ${
+            hover ? "opacity-50" : "opacity-0"
+          }`}
+        ></div>
 
         {hover && (
           <section className="flex flex-col gap-4 w-full absolute bottom-3 justify-center text-white px-3">

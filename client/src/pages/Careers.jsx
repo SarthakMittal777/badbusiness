@@ -1,33 +1,44 @@
-import CareerCard from "../components/CareerCard";
 import Navbar from "../components/Navbar";
-import CareerData from "../static/Career.json";
-
-export const Careers = () => {
+import Hero from "../components/Hero";
+import JobData from "../static/JobData.json";
+import JobCard from "../components/JobCards";
+const Careers = () => {
   return (
-    <div className="w-full h-full">
+    <div className="animate-fade-in">
       <Navbar />
-      <div
-        className="w-full h-96  flex justify-center flex-col text-[white] text-left"
-        style={{
-          background: "url('/images/hero/hero-bg.png')",
-          backgroundSize: "cover",
-        }}
-      >
-        <span className="mx-8 flex gap-3 items-center">
-          Home
-          <span className="w-2 h-2 rounded-full bg-[#cb2525] inline-block"></span>
-          Careers
-        </span>
-        <h1 className="lg:text-4xl sm:text-3xl mbMedSmall:text-xl text-lg font-bold mb-4 mx-8">
-          CAREERS
-        </h1>
-        <p className="mx-8">Inspire and Get Inspired by Professional Experts</p>
+      <Hero banner="JOBS" />
+      <div className="bg-black px-4 py-12 md:p-24 flex flex-col w-full">
+        <div className="w-full py-4 flex gap-3 flex-wrap h-fit">
+          <div className="grid place-content-center px-6 py-2 border rounded-3xl border-gray-600  text-white">
+            Location
+          </div>
+          <div className="grid place-content-center px-6 py-2 border rounded-3xl border-gray-600    text-white">
+            Category
+          </div>
+          <div className="grid place-content-center px-6 py-2 border rounded-3xl border-gray-600   text-white">
+            Type
+          </div>
+        </div>
+        <div className="flex justify-center items-center w-full">
+          <div className="flex flex-wrap gap-12 my-8 items-center">
+            {JobData.map((job) => (
+              <JobCard
+                key={job.id}
+                jobTitle={job.jobTitle}
+                logo={job.logo}
+                jobLocation={job.location}
+                jobType={job.jobType}
+                website={job.websiteURL}
+                posted={job.posted}
+                stipend={job.stipend}
+                id={job.id}
+              />
+            ))}
+          </div>
+        </div>
       </div>
-      <section className="flex flex-col gap-12 p-12 ">
-        {CareerData && CareerData.map((career, index) => {
-          return <CareerCard career={career} key={index} />;
-        })}
-      </section>
     </div>
   );
 };
+
+export default Careers;

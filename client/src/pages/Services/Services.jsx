@@ -29,7 +29,7 @@ export const Services = () => {
   }, []);
 
   return (
-    <div className="w-full flex flex-col  items-center justify-center bg-gray-300">
+    <div className="w-full flex flex-col  items-center justify-center bg-gray-300 animate-fade-in">
       <Navbar />
       <div className="w-full h-20 text-base flex items-center ">
         <p className="mx-24">

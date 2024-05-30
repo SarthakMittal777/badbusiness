@@ -1,0 +1,56 @@
+.enquire-us-container {
+  background-color: #892424;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.enquire-us-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 0;
+  transition: left 0.3s ease;
+}
+
+.enquire-us-container:hover::before {
+  left: 0;
+  border: 1px solid #892424;
+  border-radius: 0.75rem;
+}
+
+.enquire-us-container:hover {
+  color: black;
+  border-radius: 0.75rem;
+}
+
+.enquire-us-container:hover p,
+.enquire-us-container:hover svg {
+  z-index: 1;
+  color: white;
+
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.enquire-us-container {
+  animation: bounce 2s infinite;
+}
