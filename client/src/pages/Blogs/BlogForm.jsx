@@ -1,3 +1,5 @@
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 import Button from "../../components/Button";
 import { createBlogData, editBlogData } from "../../api/blogs";
 import SidebarPortal from "../../components/SidebarPortal";
@@ -80,7 +82,7 @@ const BlogForm = ({ functionality, fetchBlogData }) => {
             className="border rounded-xl py-3 w-full px-4 my-2"
             onChange={(e) => setData({ ...data, title: e.target.value })}
           />
-       
+
           <input
             type="url"
             value={data.banner}
@@ -112,15 +114,22 @@ const BlogForm = ({ functionality, fetchBlogData }) => {
                 }));
               }}
             >
-              <input
-                type="text"
+              <ReactQuill
                 value={contentItem.resource}
-                required
-                placeholder="Content Resource"
-                className="border rounded-xl py-3 w-full px-4 my-2"
-                onChange={(e) =>
-                  handleContentChange(index, "resource", e.target.value)
+                onChange={(value) =>
+                  handleContentChange(index, "resource", value)
                 }
+                placeholder="Content Resource"
+                className="w-full"
+                modules={{
+                  toolbar: [
+                    [{ header: [1, 2, false] }],
+                    ["bold", "italic", "underline", "strike"],
+                    [{ list: "ordered" }, { list: "bullet" }],
+                    ["link"],
+                    ["clean"],
+                  ],
+                }}
               />
               <div className="border rounded-xl py-3 w-full px-4 flex flex-col items-center justify-between">
                 <select

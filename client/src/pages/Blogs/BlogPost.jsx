@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { Footer } from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import { getBlogData } from "../../api/blogs";
+import ReactHtmlParser from "react-html-parser";
 
 const bgImage = "/images/hero/hero-bg.png";
 
@@ -64,9 +65,9 @@ const BlogPost = () => {
         />
         <div className="blog-content">
           {post.content.map((contentItem) => (
-            <p key={contentItem._id} className="mb-4 leading-relaxed">
-              {contentItem.resource}
-            </p>
+            <div key={contentItem._id} className="mb-4 leading-relaxed">
+              {ReactHtmlParser(contentItem.resource)}
+            </div>
           ))}
         </div>
         <Link to="/blogs" className="text-blue-500">
