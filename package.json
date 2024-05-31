@@ -9,5 +9,8 @@
   "scripts": {
     "dev": "cd client && npm run dev",
     "build": "cd client && npm run build"
+  },
+  "dependencies": {
+    "react-hot-toast": "^2.4.1"
   }
 }

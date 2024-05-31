@@ -40,7 +40,6 @@ import AdminPortal from "./pages/Admin/portal";
 import { EditAdminPortal } from "./pages/Admin/EditAdminPortal";
 import { AddAdminPortal } from "./pages/Admin/AddAdminPortal";
 
-
 const App = () => {
   return (
     <BrowserRouter>
@@ -65,8 +64,9 @@ const App = () => {
           <Route path="/success-stories" element={<Success />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogPost />} />
+          <Route path="/share-your-business-problem" element={<Form />} />
           <Route element={<WebsiteAuth />}>
-            <Route path="/form" element={<Form />} />
+           
           </Route>
           <Route element={<PrivateRoute />}>
             <Route path="/portal" element={<Portal />} />

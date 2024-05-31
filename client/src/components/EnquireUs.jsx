@@ -5,8 +5,8 @@ const EnquireUs = () => {
 
   if (isPortalRoute) return null;
   return (
-    <a href="/">
-      <div className="enquire-us-container bg-[#892424] min-w-48 rounded-xl w-fit  py-2 flex gap-3 items-center justify-center text-white fixed shadow right-10 bottom-4 animate-bounce ">
+    <a href="/share-your-business-problem">
+      <div className="enquire-us-container bg-[black] bg-opacity-95 min-w-48 rounded-xl w-fit  py-2 flex gap-3 items-center justify-center text-white fixed shadow right-10 bottom-4 animate-bounce ">
         <IoPersonOutline />
         <p> Enquire Us </p>
       

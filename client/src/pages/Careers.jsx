@@ -20,7 +20,7 @@ const Careers = () => {
           </div>
         </div>
         <div className="flex justify-center items-center w-full">
-          <div className="flex flex-wrap gap-12 my-8 items-center">
+          <div className="flex flex-wrap gap-6 my-8 items-start w-full ">
             {JobData.map((job) => (
               <JobCard
                 key={job.id}

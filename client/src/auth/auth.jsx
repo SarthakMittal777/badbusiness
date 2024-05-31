@@ -2,6 +2,7 @@ import { useContext, createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 const AuthContext = createContext();
 import serverInstance from "../api/server";
+import toast from "react-hot-toast";
 const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const [token, setToken] = useState(localStorage.getItem("accesstoken"));
@@ -16,7 +17,7 @@ const AuthProvider = ({ children }) => {
 
         setToken(res.data.accessToken);
         if (res.data.isAdmin === true) {
-          console.log("Admin logged in");
+          toast.success("Admin logged in");
           localStorage.setItem("isAdmin", res.data.isAdmin);
           setIsAdmin(res.data.isAdmin);
           navigate("/portal/teams");
@@ -24,7 +25,7 @@ const AuthProvider = ({ children }) => {
         return res;
       })
       .catch((error) => {
-        console.log(error);
+        toast.error(error.response.data.message);
       });
   };
   const signup = async ({ username, email, password }) => {
@@ -32,20 +33,23 @@ const AuthProvider = ({ children }) => {
       .post("/user/register", { username, email, password })
       .then((res) => {
         console.log(res.data);
+        toast.success("Account created successfully");
         navigate("/");
       })
       .catch((error) => {
+        toast.error(error.response.data.message);
         console.log(error);
       });
   };
   const logOutFromPortal = () => {
     localStorage.removeItem("isAdmin");
+    toast.success("Logged out");
     localStorage.removeItem("accesstoken");
     setIsAdmin(false);
     navigate("/signin");
   };
   const logOut = () => {
-    console.log("logging out...");
+    toast.success("Logged out");
     localStorage.removeItem("isAdmin");
     localStorage.removeItem("accesstoken");
     setToken(null);
