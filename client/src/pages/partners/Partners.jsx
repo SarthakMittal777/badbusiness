@@ -38,7 +38,7 @@ export const Partners = () => {
       </div>
       {/* Card Grid with Margin */}
       <p className="w-screen text-center font-semibold italic my-12 text-lg">
-        ~ Commercial Partners ~
+        ~ Partners ~
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-4 md:mx-auto max-w-6xl mt-8 mb-8">
         {partners
@@ -61,8 +61,28 @@ export const Partners = () => {
           ))}
       </div>
       <p className="w-screen text-center font-semibold italic my-12 text-lg">
-        ~ Educational Partners ~
+        ~ Startups ~
       </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-4 md:mx-auto max-w-6xl mt-8 mb-8">
+        {partners
+          .filter((partner) => !partner.isMVP)
+          .map((partner) => (
+            <div
+              key={partner._id}
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg"
+            >
+              <img
+                src={partner.photo}
+                alt={partner.name}
+                className="w-full h-40 object-cover object-center hover:scale-105 duration-300"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold mb-2">{partner.name}</h3>
+                <p className="text-gray-600">{partner.headline}</p>
+              </div>
+            </div>
+          ))}
+      </div>
       <Footer />
     </div>
   );

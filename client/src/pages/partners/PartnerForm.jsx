@@ -174,7 +174,7 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
               onChange={(e) => setData({ ...data, others: e.target.value })}
             />
           </div>
-          <p className="font-semibold text-sm my-4 mx-2">Is MVP?</p>
+          <p className="font-semibold text-sm my-4 mx-2">Type</p>
           <div className="border rounded-xl py-3 w-full px-4 flex my-2  flex-col items-center justify-between">
             <select
               className="outline-none border-none w-full"
@@ -183,8 +183,8 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
               }
             >
               <option value="false">Select</option>
-              <option value="true">Yes</option>
-              <option value="false">No</option>
+              <option value="true">Partner</option>
+              <option value="false">Startups</option>
             </select>
           </div>
           <Button

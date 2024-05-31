@@ -4,6 +4,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        custom: ["custom", "sans-serif"],
+      },
       screens: {
         mbMini: "290px",
         mbXSmall: "480px",
@@ -18,14 +21,14 @@ export default {
         smDesktop: "1862px",
         lgDesktop: "2400px",
       },
-      "animation": {
-        "moveLeftRight": "moveLeftRight 5s linear infinite"
-      }
+      animation: {
+        moveLeftRight: "moveLeftRight 5s linear infinite",
+      },
     },
-    "variants": {
-      "extend": {
-        "animation": ["responsive", "hover", "focus"]
-      }
+    variants: {
+      extend: {
+        animation: ["responsive", "hover", "focus"],
+      },
     },
   },
 

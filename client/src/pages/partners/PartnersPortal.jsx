@@ -110,7 +110,7 @@ const PortalPortal = () => {
                           {partner.headline}
                         </td>
                         <td className="border px-4 py-1 text-center hover:underline">
-                          {partner.isMVP ? "Yes" : "No"}
+                          {partner.isMVP ? "Partner" : "Startup"}
                         </td>
                         <td className="border px-4 py-1 relative hover:underline">
                           <button
