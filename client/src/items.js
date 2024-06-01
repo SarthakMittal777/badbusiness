@@ -1,41 +1,18 @@
 export const items = [
-    // {   
-    //     id:"0",
-    //     title:"Menu",
-        
-    // },
-    {   id:"1",
+    {   id:"0",
         title:"HOME",
         to: "/"
-        // menuList: [
-        //     {
-        //         lable: "Home V1",
-        //         to: "/"
-        //     },
-        //     {
-        //       lable: "New Page",
-        //       to: "/home" 
-        //     },
-        //   ]
+
+    },
+    {   id:"1",
+        title:"CAREERS",
+        to: "/careers"
+
     },
     {   
         id:"2",
         title:"SERVICES",
         to: "/services",
-        // menuList:[
-        //     {
-        //         lable:"Services",
-        //         to: "/services"
-        //     },
-        //     {
-        //         lable:"Projects",
-        //         to: "/projects"
-        //     },
-        //     {
-        //         lable:"Job View",
-        //         to: "/jobview"
-        //     },
-        // ]
     },
     {   
         id:"3",

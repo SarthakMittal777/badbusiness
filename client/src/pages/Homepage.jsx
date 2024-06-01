@@ -100,7 +100,9 @@ export const Homepage = () => {
               </p>
               <div className="flex gap-4">
                 <Button className="relative bg-teal-900 hover:bg-green-800 text-green-200 font-bold py-4 px-5 rounded-full">
-                  <Link to="/share-your-business-problem">Share Your Business Problem</Link>
+                  <Link to="/share-your-business-problem">
+                    Share Your Business Problem
+                  </Link>
                 </Button>
                 <Button className="relative bg-emerald-200 hover:bg-green-800 text-black font-medium py-4 px-5 rounded-full">
                   <Link to="https://calendly.com/infobadbusiness">
@@ -183,6 +185,131 @@ export const Homepage = () => {
       {/* Service Section  */}
       <ServiceSection services={services} />;{/* Tabs Section  */}
       <Tabs activeTab={activeTab} handleTabClick={handleTabClick} />
+      {/* Careers Section  */}
+      <div className="container mx-auto mt-8 space-y-8">
+        <div className="border rounded-lg shadow-lg p-6 md:w-2/3 mx-auto">
+          <h1 className="text-3xl font-bold mb-4 text-center">
+            Careers at BAD
+          </h1>
+          <div className="flex flex-col md:flex-row justify-center items-center">
+            <div className="w-full md:w-1/2 md:pr-4 mb-4 md:mb-0">
+              <p className="mb-4 text-justify md:text-lg">
+                At BAD Careers, we are committed to creating a vibrant and
+                inclusive work environment where every team member can excel.
+              </p>
+              <p className="mb-4 text-justify md:text-lg">
+                We value innovation, collaboration, and professional growth,
+                ensuring our employees have the support they need to succeed.
+              </p>
+              <Button className="relative bg-emerald-200 hover:bg-green-800 text-black font-medium py-4 px-5 rounded-full">
+                <Link to="/careers">Explore Opportunities</Link>
+              </Button>
+            </div>
+            <div className="w-full md:w-1/4 relative group">
+              <img
+                src="/images/section/career1.jpg"
+                alt="Career Opportunities"
+                className="w-full h-auto object-cover rounded-lg shadow-lg group-hover:opacity-99"
+              />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-900 bg-opacity-30 text-white font-bold text-center rounded-lg">
+                Career Opportunities
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Events Section */}
+        <div className="border rounded-lg shadow-lg p-6 md:w-2/3 mx-auto">
+          <h1 className="text-3xl font-bold mb-4 text-center">Events at BAD</h1>
+          <div className="flex flex-col md:flex-row justify-center items-center">
+            <div className="w-full md:w-1/4 md:pr-4 mb-4 md:mb-0 relative group">
+              <img
+                src="/images/section/events.jpg"
+                alt="Events"
+                className="w-full h-auto object-cover rounded-lg shadow-lg group-hover:opacity-99"
+              />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-900 bg-opacity-30 text-white font-bold text-center rounded-lg">
+                Events
+              </div>
+            </div>
+            <div className="w-full md:w-1/2">
+              <p className="mb-4 text-justify md:text-lg">
+                BAD Events bring together industry leaders, innovators, and
+                professionals to share insights, network, and collaborate.
+              </p>
+              <p className="mb-4 text-justify md:text-lg">
+                Join us at our upcoming events to stay ahead in your career and
+                connect with like-minded individuals.
+              </p>
+              <Button className="relative bg-teal-900 hover:bg-green-800 text-green-200 font-bold py-4 px-5 rounded-full">
+                <Link to="https://events.badbusiness.in/">View Events</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Success Stories Section */}
+        <div className="border rounded-lg shadow-lg p-6 md:w-2/3 mx-auto">
+          <h1 className="text-3xl font-bold mb-4 text-center">
+            Success Stories
+          </h1>
+          <div className="flex flex-col md:flex-row justify-center items-center">
+            <div className="w-full md:w-1/2 md:pr-4 mb-4 md:mb-0">
+              <p className="mb-4 text-justify md:text-lg">
+                Discover the inspiring success stories of our employees and how
+                they have grown their careers with BAD.
+              </p>
+              <p className="mb-4 text-justify md:text-lg">
+                From entry-level positions to leadership roles, read about their
+                journeys and achievements.
+              </p>
+              <Button className="relative bg-emerald-200 hover:bg-green-800 text-black font-medium py-4 px-5 rounded-full">
+                <Link to="/success-stories">Read Stories</Link>
+              </Button>
+            </div>
+            <div className="w-full md:w-1/4 relative group">
+              <img
+                src="/images/section/ss.jpg"
+                alt="Success Stories"
+                className="w-full h-auto object-cover rounded-lg shadow-lg group-hover:opacity-99"
+              />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-900 bg-opacity-30 text-white font-bold text-center rounded-lg">
+                Success Stories
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Blogs Section */}
+        <div className="border rounded-lg shadow-lg p-6 md:w-2/3 mx-auto">
+          <h1 className="text-3xl font-bold mb-4 text-center">BAD Blogs</h1>
+          <div className="flex flex-col md:flex-row justify-center items-center">
+            <div className="w-full md:w-1/4 md:pr-4 mb-4 md:mb-0 relative group">
+              <img
+                src="/images/section/blogs.jpg"
+                alt="Blogs"
+                className="w-full h-auto object-cover rounded-lg shadow-lg group-hover:opacity-99"
+              />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-slate-900 bg-opacity-30 text-white font-bold text-center rounded-lg">
+                Blogs
+              </div>
+            </div>
+            <div className="w-full md:w-1/2">
+              <p className="mb-4 text-justify md:text-lg">
+                Stay updated with the latest industry trends, insights, and
+                stories through the BAD Blogs.
+              </p>
+              <p className="mb-4 text-justify md:text-lg">
+                Our blog features articles from experts and thought leaders in
+                various fields.
+              </p>
+              <Button className="relative bg-teal-900 hover:bg-green-800 text-green-200 font-bold py-4 px-5 rounded-full">
+                <Link to="/blogs">Read Blogs</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* NumberCounter Section  */}
       <NumberCounterSection />
       {/* Team */}

@@ -53,8 +53,8 @@ export const ServicesPortal = () => {
       />
       {functionality == null && (
         <section className="w-[95vw] h-screen overflow-y-auto">
-          <div className="w-full p-12">
-            <div className="w-[96%] flex justify-end mx-12 mb-3">
+          <div className="w-full p-4">
+            <div className="w-[96%] flex lg:justify-end mx-12 mb-3">
               <Link to={`/portal/service/add`}>
                 <Button
                   type=""
