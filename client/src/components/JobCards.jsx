@@ -34,7 +34,7 @@ function JobCards({
   };
 
   return (
-    <div className="border bg-transparent border-gray-600 mx-auto flex flex-col justify-between rounded-3xl gap-4 text-white min-h-54 p-8 w-full lg:min-w-[400px] lg:min-h-[370px] lg:max-w-[400px] transform transition-transform duration-300 hover:scale-105">
+    <div className="border bg-transparent border-gray-600  flex flex-col justify-between rounded-3xl gap-4 text-white min-h-54 p-8 w-full lg:min-w-[400px] lg:min-h-[370px] lg:max-w-[400px] transform transition-transform duration-300 hover:scale-105">
       <div className="w-full flex items-start">
         <img
           src={logo}
@@ -49,13 +49,20 @@ function JobCards({
         <div className="text-sm text-gray-400">Date posted: {posted}</div>
       </div>
       <div className="flex flex-col text-sm text-gray-300">
-        <div className="text-sm border px-4 py-2 mb-3 w-fit rounded-xl">
-          {jobType}
-        </div>
+        <section className="flex gap-2">
+        {jobType.map((job) => (
+          <div
+            key={job}
+            className="text-sm border px-4 py-2 mb-3 w-fit rounded-xl"
+          >
+            {job}
+          </div>
+        ))}
+        </section>
         <div className="text-sm flex w-full justify-between">
           <p>{stipend}</p>
           <p
-            className="text-gray-300 rounded px-2 py-1 w-fit flex gap-2 justify-center items-center border border-gray-600 rounded-xl cursor-pointer hover:bg-gray-600 hover:text-white transition-colors duration-300 ease-in-out"
+            className="text-gray-300  px-2 py-1 w-fit flex gap-2 justify-center items-center border border-gray-600 rounded-xl cursor-pointer hover:bg-gray-600 hover:text-white transition-colors duration-300 ease-in-out"
             onClick={() => handleCopy()}
           >
             <IoMdCopy />

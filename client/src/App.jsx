@@ -23,6 +23,7 @@ import { Merchandise } from "./pages/Merchandise";
 import { Courses } from "./pages/Courses";
 import { Form } from "./pages/Form";
 import Careers from "./pages/Careers";
+import CareerDescription from "./pages/CareerDescription";
 import HallofFame from "./pages/HallofFame";
 import Success from "./pages/SuccessStories";
 import { PortalAddStory } from "./pages/story/PortalAddStory";
@@ -52,7 +53,7 @@ const App = () => {
 
           <Route path="/services" element={<Services />} />
           <Route path="/" element={<Homepage />} />
-          <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/:id" element={<CareerDescription />} />
           <Route path="/hall-of-fame" element={<HallofFame />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetails />} />
@@ -65,9 +66,7 @@ const App = () => {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogPost />} />
           <Route path="/share-your-business-problem" element={<Form />} />
-          <Route element={<WebsiteAuth />}>
-           
-          </Route>
+          <Route element={<WebsiteAuth />}></Route>
           <Route element={<PrivateRoute />}>
             <Route path="/portal" element={<Portal />} />
             <Route path="/portal/teams" element={<Portal />} />

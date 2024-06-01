@@ -1,39 +1,166 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import JobData from "../static/JobData.json";
+import JobType from "../static/JobType.json";
 import JobCard from "../components/JobCards";
+import { countries } from "countries-list";
+import { IoIosArrowUp } from "react-icons/io";
+import { useState, useEffect } from "react";
+import { IoIosArrowDown } from "react-icons/io";
+import JobCategories from "../static/JobCategories.json";
+import { getCareerData } from "../api/career";
+
 const Careers = () => {
+  const [click, setClick] = useState(null);
+  const [query, setQuery] = useState("");
+  const [filteredCategories, setFilteredCategories] = useState(JobCategories);
+  const [filteredLocation, setFilteredLocation] = useState(countries);
+  const [careerData, setCareerData] = useState();
+  const handleLocation = (id) => {
+    if (click === id) setClick(null);
+    else setClick(id);
+  };
+
+  useEffect(() => {
+    getCareerData()
+      .then((data) => {
+        setCareerData(data.careers);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      let value = query;
+      if (event.key === "Backspace") {
+        value = value.slice(0, -1);
+        console.log("backspace");
+      } else if (event.key.length === 1) {
+        value += event.key;
+      }
+      setQuery(value);
+      if (click === "Category") {
+        const filtered = JobCategories.filter((type) =>
+          type.category.toLowerCase().includes(value.toLowerCase())
+        );
+        setFilteredCategories(filtered);
+      }
+    };
+    if (click == "Location") {
+      const filtered = Object.keys(countries).filter((type) =>
+        countries[type].name.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredLocation(filtered);
+    }
+    if (click === "Category" || click === "Location") {
+      document.addEventListener("keydown", handleKeyPress);
+    } else {
+      document.removeEventListener("keydown", handleKeyPress);
+      setQuery("");
+      setFilteredCategories(JobCategories);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [click, query]);
+
   return (
-    <div className="animate-fade-in">
+    <div className="animate-fade-in ">
       <Navbar />
       <Hero banner="JOBS" />
       <div className="bg-black px-4 py-12 md:p-24 flex flex-col w-full">
         <div className="w-full py-4 flex gap-3 flex-wrap h-fit">
-          <div className="grid place-content-center px-6 py-2 border rounded-3xl border-gray-600  text-white">
-            Location
+          <div
+            className=" px-6  flex cursor-default justify-center items-center gap-2 py-2 border relative rounded-3xl border-gray-600  text-white"
+            onClick={() => handleLocation("Location")}
+          >
+            <p>Location</p>
+            {click === "Location" ? (
+              <IoIosArrowUp className="text-white" />
+            ) : (
+              <IoIosArrowDown className="text-white" />
+            )}
+
+            {click === "Location" && (
+              <div className="absolute top-10 left-0 bg-black w-full z-10 h-[400px] overflow-y-scroll border rounded-2xl border-gray-500">
+                {filteredLocation &&
+                  Object.keys(filteredLocation).map((country) => (
+                    <div
+                      className="text-white hover:bg-slate-600 p-2 border-b border-gray-500 "
+                      key={country}
+                    >
+                      {countries[filteredLocation[country]].name}
+                    </div>
+                  ))}
+              </div>
+            )}
           </div>
-          <div className="grid place-content-center px-6 py-2 border rounded-3xl border-gray-600    text-white">
-            Category
+          <div
+            className=" px-6  flex cursor-default justify-center items-center gap-2 py-2 border relative rounded-3xl border-gray-600  text-white"
+            onClick={() => handleLocation("Category")}
+          >
+            <p>Category</p>
+            {click === "Category" ? (
+              <IoIosArrowUp className="text-white" />
+            ) : (
+              <IoIosArrowDown className="text-white" />
+            )}
+
+            {click === "Category" && (
+              <div className="absolute top-10 left-0 bg-black w-full z-10 h-[400px] overflow-y-scroll border rounded-2xl border-gray-500">
+                {filteredCategories.map((category) => (
+                  <div
+                    className="text-white hover:bg-slate-600 p-2 border-b border-gray-500 "
+                    key={category}
+                  >
+                    {category.category}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
-          <div className="grid place-content-center px-6 py-2 border rounded-3xl border-gray-600   text-white">
-            Type
+          <div
+            className=" px-6  flex cursor-default justify-center items-center gap-2 py-2 border relative rounded-3xl border-gray-600  text-white"
+            onClick={() => handleLocation("Type")}
+          >
+            <p>Job Type</p>
+            {click === "Type" ? (
+              <IoIosArrowUp className="text-white" />
+            ) : (
+              <IoIosArrowDown className="text-white" />
+            )}
+
+            {click === "Type" && (
+              <div className="absolute top-10 left-0 bg-black w-full z-10 h-fit overflow-y-scroll border rounded-2xl border-gray-500">
+                {JobType.map((type) => (
+                  <div
+                    className="text-white hover:bg-slate-600 p-2 border-b border-gray-500 "
+                    key={type}
+                  >
+                    {type.jobType}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
         <div className="flex justify-center items-center w-full">
           <div className="flex flex-wrap gap-6 my-8 items-start w-full ">
-            {JobData.map((job) => (
-              <JobCard
-                key={job.id}
-                jobTitle={job.jobTitle}
-                logo={job.logo}
-                jobLocation={job.location}
-                jobType={job.jobType}
-                website={job.websiteURL}
-                posted={job.posted}
-                stipend={job.stipend}
-                id={job.id}
-              />
-            ))}
+            {careerData &&
+              careerData.map((job) => (
+                <JobCard
+                  key={job.id}
+                  jobTitle={job.jobTitle}
+                  logo={job.logo}
+                  jobLocation={job.jobLocation}
+                  jobType={job.jobType}
+                  website={job.websiteURL}
+                  posted={job.posted}
+                  stipend={job.stipend}
+                  id="676jhgjgkj"
+                />
+              ))}
           </div>
         </div>
       </div>

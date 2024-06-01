@@ -1,0 +1,9 @@
+[
+    { "jobType": "Full-time" },
+    { "jobType": "Part-time" },
+    { "jobType": "Contract" },
+    { "jobType": "Urgent" },
+    { "jobType": "Internship" },
+    { "jobType": "Freelance" }
+]
+  
