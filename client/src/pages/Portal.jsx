@@ -60,12 +60,12 @@ export const Portal = () => {
       />
       {functionality == null && (
         <section className="w-[95vw] h-screen ">
-          <div className="w-full p-12">
-            <div className="w-[96%] flex justify-end mx-12 mb-3">
+          <div className="w-full p-4">
+            <div className="w-[96%] flex lg:justify-end mx-12 mb-3">
               <Link to={`/portal/team/add`}>
                 <Button
                   type=""
-                  className="bg-[#5BBB7B] w-36 my-4 hover:bg-green-800 py-3 text-white font-semibold mx-2 "
+                  className="bg-[#5BBB7B] w-36 my-4 hover:bg-green-800 py-3 text-white font-semibold mx-2"
                 >
                   Add New Member
                 </Button>

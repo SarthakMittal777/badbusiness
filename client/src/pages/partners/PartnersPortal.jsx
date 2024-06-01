@@ -58,8 +58,8 @@ const PortalPortal = () => {
       />
       {functionality == null && (
         <section className="w-[95vw] h-screen ">
-          <div className="w-full p-12">
-            <div className="w-[96%] flex justify-end mx-12 mb-3">
+          <div className="w-full p-4">
+            <div className="w-[96%] flex lg:justify-end mx-12 mb-3">
               <Link to={`/portal/partner/add`}>
                 <Button
                   type=""
@@ -86,7 +86,9 @@ const PortalPortal = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {partnerData && partnerData.partners && partnerData.partners.length>0 ? (
+                  {partnerData &&
+                  partnerData.partners &&
+                  partnerData.partners.length > 0 ? (
                     partnerData.partners.map((partner, index) => (
                       <tr key={index} className="hover:bg-gray-100">
                         <td className="border px-4 py-1 mx-auto text-center hover:underline">
@@ -99,7 +101,7 @@ const PortalPortal = () => {
                             <img
                               src={partner.photo}
                               alt={partner.name}
-                              className="w-8 h-8 rounded-full mx-auto object-cover object-center" 
+                              className="w-8 h-8 rounded-full mx-auto object-cover object-center"
                             />
                           )}
                         </td>

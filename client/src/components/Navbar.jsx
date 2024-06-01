@@ -57,50 +57,25 @@ const Navbar = () => {
           </Link>
           <Link
             to="/signup"
-            className="ml-24 md:hidden text-gray-800 font-semibold"
+            className="ml-8 md:hidden text-gray-800 font-semibold"
           >
             Join
           </Link>
         </div>
 
         <div className="hidden md:flex flex-grow items-center w-full justify-end">
-          <ul className="flex flex-row  justify-end">
+          <ul className="flex flex-row justify-end">
             <li
-              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              className="duration-300 text-gray-700 hover:text-black capitalize px-2 cursor-pointer font-semibold"
               onClick={() => {
                 setOpenMenu(false);
               }}
             >
               <Link to="/careers">Careers</Link>
             </li>
-            {/* <Link
-              to="about"
-              spy={true}  
-              smooth={true}
-              offset={-70}
-              duration={500}
-            >
-              <li
-                className="duration-300text-white hover:text-white capitalize px-3 cursor-pointer font-semibold"
-                onClick={() => setOpenMenu(false)}
-              >
-                About
-              </li>
-            </Link> */}
-
-            {/* <li
-              className="duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
-              onClick={() => {
-                setOpenMenu(false);
-              }}
-            >
-              <Link to="https://events.badbusiness.in/" target="_blank">
-                BAD Events
-              </Link>
-            </li> */}
 
             <li
-              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              className="duration-300 text-gray-700 hover:text-black capitalize px-2 cursor-pointer font-semibold"
               onClick={() => {
                 setOpenMenu(false);
               }}
@@ -109,7 +84,7 @@ const Navbar = () => {
             </li>
 
             <li
-              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              className="duration-300 text-gray-700 hover:text-black capitalize px-2 cursor-pointer font-semibold"
               onClick={() => {
                 setOpenMenu(false);
               }}
@@ -118,7 +93,7 @@ const Navbar = () => {
             </li>
 
             <li
-              className="duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer font-semibold"
+              className="duration-300 text-gray-700 hover:text-black capitalize px-2 cursor-pointer font-semibold"
               onClick={() => {
                 setOpenMenu(false);
               }}
@@ -127,25 +102,7 @@ const Navbar = () => {
             </li>
 
             <li
-              className="duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
-              onClick={() => {
-                setOpenMenu(false);
-              }}
-            >
-              <Link to="/signin">Login</Link>
-            </li>
-
-            <li
-              className="duration-300 text-black hover:text-black capitalize px-3 cursor-pointer font-semibold"
-              onClick={() => {
-                setOpenMenu(false);
-              }}
-            >
-              <Link to="/signup">SignUp</Link>
-            </li>
-
-            <li
-              className="relative group duration-300 text-gray-700 hover:text-black capitalize px-3 cursor-pointer"
+              className="relative group duration-300 text-gray-700 hover:text-black capitalize px-2 cursor-pointer"
               onMouseEnter={handleDropdown}
               onMouseLeave={handleDropdown}
             >
@@ -185,54 +142,34 @@ const Navbar = () => {
                   </li>
                 </Link>
 
-                {/* <Link to="/courses">
-                  <li className="py-3 px-6 pr-14 hover:bg-gray-200 font-medium">
-                    BAD Courses
-                  </li>
-                </Link> */}
-
                 <Link to="/blogs">
                   <li className="py-3 px-6 pr-14 hover:bg-gray-200 font-medium">
                     BAD Blogs
                   </li>
                 </Link>
-
-                {/* <Link to="https://events.badbusiness.in/">
-                  <li
-                    className="flex items-center justify-between py-2 px-6 pr-14 hover:bg-gray-200 relative"
-                    onMouseEnter={handleDropdown}
-                    onMouseLeave={handleDropdown}
-                  >
-                    Projects{" "}
-                    <img
-                      src="/images/right.png"
-                      className="w-2 h-2 ml-8"
-                      alt="next"
-                    />
-                    <ul className="dropdown-menu w-30 h-auto hidden absolute top-0 left-[168px] bg-white text-black shadow-md duration-300 border rounded-md">
-                      <li className="block py-2 px-6  hover:bg-gray-200">
-                        <Link to="/">Project V1</Link>
-                      </li>
-                      <li className="block py-2 px-6 pr-14 hover:bg-gray-200">
-                        <Link to="/">Project</Link>
-                      </li>
-                    </ul>
-                  </li>
-                </Link> */}
-
-                {/* <Link to="/merchandise">
-                  <li className="block py-2 px-6 pr-14 hover:bg-gray-200 font-medium">
-                    BAD Merchandise
-                  </li>
-                </Link> */}
-
-                {/* <li className="block py-2 px-6 pr-14 hover:bg-gray-200">
-                  <Link to="/">Job List</Link>
-                </li> */}
               </ul>
+            </li>
+
+            <li
+              className="duration-300 text-black hover:text-black capitalize px-2 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <Link to="/signin">Login</Link>
+            </li>
+
+            <li
+              className="duration-300 text-black hover:text-black capitalize px-2 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <Link to="/signup">SignUp</Link>
             </li>
           </ul>
         </div>
+
         {/* Mobile View  */}
         <div className="relative md:hidden">
           <div className="flex justify-between items-center h-full w-full px-2 2xl:px-16 text-black overflow-x-hidden">

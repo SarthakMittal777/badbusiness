@@ -66,20 +66,6 @@ export const Form = () => {
             <div className="mb-4">
               <label
                 className="block text-white text-sm font-bold mb-2"
-                htmlFor="phone"
-              >
-                Phone
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline"
-                id="phone"
-                type="text"
-                placeholder="Your Phone Number"
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                className="block text-white text-sm font-bold mb-2"
                 htmlFor="problem"
               >
                 What problem you are facing
@@ -123,6 +109,10 @@ export const Form = () => {
               </div>
             </div>
           </form>
+          <div className="text-white mt-6">
+            <p>Phone (US Timing): +1 93156 73513</p>
+            <p>Phone (IST): +91 99999 9999</p>
+          </div>
         </div>
       </div>
       <Footer />

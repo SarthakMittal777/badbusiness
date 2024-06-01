@@ -50,8 +50,8 @@ const BlogPortal = () => {
       />
       {functionality == null && (
         <section className="w-[95vw] h-screen ">
-          <div className="w-full p-12">
-            <div className="w-[96%] flex justify-end mx-12 mb-3">
+          <div className="w-full p-4">
+            <div className="w-[96%] flex lg:justify-end mx-12 mb-3">
               <Link to={`/portal/blogs/add`}>
                 <Button
                   type=""
@@ -67,7 +67,7 @@ const BlogPortal = () => {
                   <tr className="bg-gray-200 sticky top-0 z-[100]">
                     <th className="px-4 py-2 sticky top-0 z-[100]">#</th>
                     <th className="px-4 py-2 sticky top-0 z-[100]">Title</th>
-                   
+
                     <th className="px-4 py-2 sticky top-0 z-[100]">Banner</th>
                     <th className="px-4 py-2 sticky top-0 z-[100]">Preview</th>
                     <th className="px-4 py-2 sticky top-0 z-[100]">Edit</th>
@@ -84,7 +84,7 @@ const BlogPortal = () => {
                         <td className="border px-4 py-1 text-center">
                           {blog.title}
                         </td>
-                     
+
                         <td className="border px-4 py-1 text-center">
                           {blog.banner === "" ? (
                             <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#c7b0ff] mx-auto"></div>
@@ -99,10 +99,7 @@ const BlogPortal = () => {
                         <td className="border px-4 py-1">
                           <ul className="list-disc list-inside">
                             {blog.content.map((content, index) => (
-                              <div key={index}>
-                                {content.resource}
-                               
-                              </div>
+                              <div key={index}>{content.resource}</div>
                             ))}
                           </ul>
                         </td>

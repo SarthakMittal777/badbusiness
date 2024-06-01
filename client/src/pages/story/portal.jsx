@@ -51,8 +51,8 @@ export const StoryPortal = () => {
       />
       {functionality == null && (
         <section className="w-[95vw] h-screen overflow-y-auto">
-          <div className="w-full p-12">
-            <div className="w-[96%] flex justify-end mx-12 mb-3">
+          <div className="w-full p-4">
+            <div className="w-[96%] flex lg:justify-end mx-12 mb-3">
               <Link to={`/portal/story/add`}>
                 <Button
                   type=""
@@ -91,7 +91,10 @@ export const StoryPortal = () => {
                           {story.headline}
                         </td>
                         <td className="border px-4  hover:underline py-1 mx-auto text-center">
-                          <Link to={story.url} target="_blank"> {story.url}</Link>
+                          <Link to={story.url} target="_blank">
+                            {" "}
+                            {story.url}
+                          </Link>
                         </td>
                         <td className="border px-4  hover:underline py-1 mx-auto text-center">
                           {story.type}
