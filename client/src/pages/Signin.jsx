@@ -33,8 +33,8 @@ export const Signin = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="flex-grow w-full flex flex-col items-center justify-center py-24 bg-[#fff0e9] overflow-x-hidden">
-        <h3 className="text-center text-3xl font-bold mt-12">SignIn</h3>
+      <div className="flex-grow w-full flex flex-col items-center justify-center py-12 bg-[#fff0e9] overflow-x-hidden">
+        <h3 className="text-center text-3xl font-bold">SignIn</h3>
         <h6 className="text-center mb-12">
           Join our community and embark on a journey of endless opportunities!
         </h6>

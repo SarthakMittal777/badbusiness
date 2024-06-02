@@ -2,8 +2,10 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import { items } from "../items";
 import { Link } from "react-router-dom";
+import { useAuth } from "../auth/auth";
 
 const Navbar = () => {
+  const { token } = useAuth();
   const [openMenu, setOpenMenu] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
 
@@ -48,11 +50,16 @@ const Navbar = () => {
 
   const [hovered, setHovered] = useState(false);
 
+  const handleReload = () => {
+    history.push("/");
+    window.location.reload();
+  };
+
   return (
     <nav className="w-full h-20 sticky top-0 z-50 mx-auto bg-white">
       <div className="flex justify-between items-center h-full px-5 2xl:px-16 text-white">
         <div className="flex items-center">
-          <Link to="/">
+          <Link to="/" onClick={handleReload}>
             <img src="/images/logo1.png" alt="Logo" className="md:h-16" />
           </Link>
           <Link
@@ -151,7 +158,9 @@ const Navbar = () => {
             </li>
 
             <li
-              className="duration-300 text-black hover:text-black capitalize px-2 cursor-pointer font-semibold"
+              className={`duration-300 text-black hover:text-black capitalize px-2 cursor-pointer font-semibold ${
+                token ? "hidden" : ""
+              }`}
               onClick={() => {
                 setOpenMenu(false);
               }}
@@ -160,12 +169,25 @@ const Navbar = () => {
             </li>
 
             <li
-              className="duration-300 text-black hover:text-black capitalize px-2 cursor-pointer font-semibold"
+              className={`duration-300 text-black hover:text-black capitalize px-2 cursor-pointer font-semibold ${
+                token ? "hidden" : ""
+              }`}
               onClick={() => {
                 setOpenMenu(false);
               }}
             >
               <Link to="/signup">SignUp</Link>
+            </li>
+
+            <li
+              className={`duration-300 text-black hover:text-black capitalize px-2 cursor-pointer font-semibold underline-offset-4 underline ${
+                token ? "" : "hidden"
+              }`}
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <Link to="/portal">Portal</Link>
             </li>
           </ul>
         </div>
@@ -195,30 +217,47 @@ const Navbar = () => {
                 <ul>
                   {items.map((item, index) => (
                     <div className="font-semibold text-sm" key={index}>
-                      <div className="m-7">
-                        <div
-                          className="flex justify-between items-center"
-                          onClick={() => handleSubmenuClick(index)}
-                        >
-                          <div className="flex items-start justify-start">
-                            {item.to ? (
-                              <Link to={item.to}>{item.title}</Link>
-                            ) : (
-                              <span>{item.title}</span>
+                      {(item.title === "LOGIN" || item.title === "SIGN UP") &&
+                      token ? null : item.title === "PORTAL" ? (
+                        token ? (
+                          <div
+                            className="m-7"
+                            onClick={() => navigate("/portal")}
+                          >
+                            <div className="flex items-start justify-start">
+                              {item.to ? (
+                                <Link to={item.to}>{item.title}</Link>
+                              ) : (
+                                <span>{item.title}</span>
+                              )}
+                            </div>
+                          </div>
+                        ) : null
+                      ) : (
+                        // For other items, render normally
+                        <div className="m-7">
+                          <div
+                            className="flex justify-between items-center"
+                            onClick={() => handleSubmenuClick(index)}
+                          >
+                            <div className="flex items-start justify-start">
+                              {item.to ? (
+                                <Link to={item.to}>{item.title}</Link>
+                              ) : (
+                                <span>{item.title}</span>
+                              )}
+                            </div>
+                            {item.menuList && (
+                              <img
+                                src="/images/right.png"
+                                className={`w-3 h-3 transition-transform duration-300 transform ${
+                                  openSubmenu === index ? "rotate-180" : ""
+                                }`}
+                                alt=""
+                              />
                             )}
                           </div>
-                          {item.menuList && ( // Only render arrow if menuList is present
-                            <img
-                              src="/images/right.png"
-                              className={`w-3 h-3 transition-transform duration-300 transform ${
-                                openSubmenu === index ? "rotate-180" : ""
-                              }`}
-                              alt=""
-                            />
-                          )}
-                        </div>
-                        {openSubmenu === index &&
-                          item.menuList && ( // Only render submenu if menuList is present
+                          {openSubmenu === index && item.menuList && (
                             <div className=" h-full w-full m-5">
                               {item.menuList.map((it, idx) => (
                                 <div className=" h-full w-full m-5" key={idx}>
@@ -231,7 +270,8 @@ const Navbar = () => {
                               ))}
                             </div>
                           )}
-                      </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </ul>
