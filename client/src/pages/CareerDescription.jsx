@@ -21,9 +21,6 @@ const CareerDescription = () => {
         toast.error(
           "Job doesn't exist . Redirecting to the main career page..."
         );
-        setTimeout(() => {
-          window.location.href = "/careers";
-        }, 3000);
         console.log(error);
       });
   }, [id]);

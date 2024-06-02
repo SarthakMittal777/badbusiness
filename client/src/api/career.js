@@ -14,8 +14,11 @@ export const getCareerDataById = async (id) => {
     const response = await serverInstance.get(`/career/${id}`);
     return response.data;
   } catch (error) {
-    console.log(error); // Log the error for debugging
-    throw new Error("Failed to fetch career data"); // Throw the error again for the caller to handle
+    console.log(error);
+    setTimeout(() => {
+      window.location.href = "/careers";
+    }, 3000);
+    throw new Error("Failed to fetch career data");
   }
 };
 

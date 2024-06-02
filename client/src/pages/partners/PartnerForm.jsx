@@ -200,7 +200,7 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
               onChange={(e) => setData({ ...data, type: e.target.value })}
             >
               <option value="false">Select</option>
-              <option value="commercial">Commmercial</option>
+              <option value="commercial">Commercial</option>
               <option value="educational">Educational</option>
             </select>
           </div>

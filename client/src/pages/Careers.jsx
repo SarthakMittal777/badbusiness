@@ -153,18 +153,18 @@ const Careers = () => {
             {careerData &&
               careerData.map((job) => (
                 <JobCard
-                  key={job.id}
+                  key={job._id}
+                  job_id={job._id}
                   jobTitle={job.jobTitle}
                   logo={job.logo}
                   jobLocation={job.jobLocation}
                   jobType={job.jobType}
-                  website={job.websiteURL}
+                  website={job.link}
                   posted={new Date(job.datePosted)
                     .toLocaleDateString("en-GB")
                     .split("/")
                     .join("-")}
                   stipend={job.stipend}
-                  id="676jhgjgkj"
                 />
               ))}
           </div>
