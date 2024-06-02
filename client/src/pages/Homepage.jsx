@@ -190,7 +190,7 @@ export const Homepage = () => {
         <h1 className="text-3xl font-bold mb-4 text-center">Careers at BAD</h1>
         <div className="flex flex-col md:flex-row justify-center items-center">
           <div className="w-full md:w-1/2 md:pr-4 mb-4 md:mb-0">
-            <p className="mb-4 text-center md:text-lg font-normal text-gray-600">
+            <p className="mb-4 text-center md:text-lg font-normal text-gray-600 my-4">
               At BAD Careers, we are committed to creating a vibrant and
               inclusive work environment where every team member can excel.
             </p>
@@ -207,7 +207,7 @@ export const Homepage = () => {
           <h1 className="text-3xl font-bold mb-4 text-center">Events at BAD</h1>
           <div className="flex flex-col md:flex-row justify-center items-center">
             <div className="w-full md:w-1/2">
-              <p className="mb-4 text-center md:text-lg font-normal text-gray-600">
+              <p className="mb-4 text-center md:text-lg font-normal text-gray-600 my-4">
                 BAD Events bring together industry leaders, innovators, and
                 professionals to share insights, network, and collaborate.
               </p>
@@ -227,7 +227,7 @@ export const Homepage = () => {
           </h1>
           <div className="flex flex-col md:flex-row justify-center items-center">
             <div className="w-full md:w-1/2 md:pr-4 mb-4 md:mb-0">
-              <p className="mb-4 text-center md:text-lg font-normal text-gray-600">
+              <p className="mb-4 text-center md:text-lg font-normal text-gray-600 my-4">
                 Discover the inspiring success stories of our employees and how
                 they have grown their careers with BAD.
               </p>
@@ -245,7 +245,7 @@ export const Homepage = () => {
           <h1 className="text-3xl font-bold mb-4 text-center">BAD Blogs</h1>
           <div className="flex flex-col md:flex-row justify-center items-center">
             <div className="w-full md:w-1/2">
-              <p className="mb-4 text-center md:text-lg font-normal text-gray-600">
+              <p className="mb-4 text-center md:text-lg font-normal text-gray-600 my-4">
                 Stay updated with the latest industry trends, insights, and
                 stories through the BAD Blogs.
               </p>
