@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const [showUsdDropdown, setShowUsdDropdown] = useState(false);
@@ -28,34 +29,27 @@ export const Footer = () => {
           <div className="flex items-center space-x-4 md:ml-4">
             <h4 className="font-bold mr-4">Follow us</h4>
             <div className="flex items-center space-x-4">
-              <a href="#">
-                <img
-                  src="/images/facebook.png"
-                  alt="Facebook"
-                  className="w-4 h-4 filter invert hover:bg-gray-100 rounded-full"
-                />
-              </a>
-              <a href="#">
+              <Link to="">
                 <img
                   src="/images/twitter.png"
                   alt="Twitter"
                   className="w-4 h-4 filter invert hover:bg-gray-100 rounded-full"
                 />
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="">
                 <img
                   src="/images/instagram.png"
                   alt="Instagram"
                   className="w-4 h-4 filter invert hover:bg-gray-100"
                 />
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="https://www.linkedin.com/company/badbusiness/">
                 <img
                   src="/images/linkedin.png"
                   alt="LinkedIn"
                   className="w-4 h-4 filter invert hover:bg-gray-100 rounded-full"
                 />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -147,7 +141,7 @@ export const Footer = () => {
                   <input
                     type="email"
                     placeholder="Your email address"
-                    className="border border-transparent py-3 px-6 placeholder-gray-400 bg-zinc-700 text-white"
+                    className="border border-transparent py-3 px-6 placeholder-gray-400 bg-zinc-700 text-white outline-none"
                   />
                   <button className="bg-zinc-700 hover:bg-zinc-600 text-white py-3 px-5 border border-transparent">
                     Send
@@ -155,7 +149,7 @@ export const Footer = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col space-y-4 ml-3 md:ml-0">
+              {/* <div className="flex flex-col space-y-4 ml-3 md:ml-0">
                 <h4 className="font-bold text-white">Apps</h4>
                 <div className="mr-4 flex items-center">
                   <img
@@ -173,7 +167,7 @@ export const Footer = () => {
                   />
                   <p className="ml-2 hover:text-white">Android App</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -185,7 +179,7 @@ export const Footer = () => {
           © Bad Business. 2024 MentorMenti. All rights reserved.
         </p>
         <div className="flex md:flex-row md:items-center justify-evenly">
-          <div className="relative" ref={usdDropdownRef}>
+          {/* <div className="relative" ref={usdDropdownRef}>
             <button
               className="bg-zinc-700 text-white border border-zinc-700 px-4 py-2 rounded-md focus:outline-none"
               onClick={() => {
@@ -217,7 +211,7 @@ export const Footer = () => {
                 ))}
               </div>
             )}
-          </div>
+          </div> */}
           <div className="relative ml-4" ref={languageDropdownRef}>
             <button
               className="bg-zinc-700 text-white border border-zinc-700 px-4 py-2 rounded-md focus:outline-none"
