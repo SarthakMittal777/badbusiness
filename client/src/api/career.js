@@ -19,6 +19,7 @@ export const getCareerDataById = async (id) => {
       window.location.href = "/careers";
     }, 3000);
     throw new Error("Failed to fetch career data");
+    
   }
 };
 
