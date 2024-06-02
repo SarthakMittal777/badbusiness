@@ -69,7 +69,7 @@ export const ServicesAll = () => {
         </div>
       </div>
       <div className="flex flex-wrap gap-4  mx-4 w-full items-center justify-center">
-        <div className="flex justify-center lg:justify-start w-full flex-wrap max-w-[80%]">
+        <div className="flex justify-center lg:justify-start w-full flex-wrap max-w-[90%] items-center">
           {categorizedData && categorizedData[slug] ? (
             categorizedData[slug].map((item, index) => (
               // <Link key={index} to={`/services/${item.title}`}>
