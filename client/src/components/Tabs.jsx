@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import Slider from "react-slick";
 import { getServiceData } from "../api/service";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Tabs = () => {
   const [services, setServices] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [activeTab, setActiveTab] = useState("");
 
   useEffect(() => {
     const fetchServiceData = async () => {
@@ -15,7 +17,6 @@ const Tabs = () => {
           ...new Set(data.services.map((service) => service.category.trim())),
         ];
         setCategories(uniqueCategories);
-        setActiveTab(uniqueCategories[0] || "");
       } catch (error) {
         console.error("Error fetching services data:", error);
       }
@@ -24,8 +25,31 @@ const Tabs = () => {
     fetchServiceData();
   }, []);
 
-  const handleTabClick = (category) => {
-    setActiveTab(category);
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 10000,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -39,55 +63,22 @@ const Tabs = () => {
             </p>
           </div>
         </div>
-        {/* Tab Content */}
-        <ul
-          className="flex justify-center flex-wrap gap-2 md:gap-6 lg:gap-8 mt-4 lg:mt-6 xl:mt-8"
-          role="tablist"
-        >
-          {categories.map((category) => (
-            <li
-              key={category}
-              className={`rounded-3xl px-4 py-2 cursor-pointer ${
-                activeTab === category
-                  ? "bg-[#212A32] text-white border-black border"
-                  : "text-black border-black border hover:bg-gray-200"
-              }`}
-              onClick={() => handleTabClick(category)}
-            >
-              {category}
-            </li>
-          ))}
-        </ul>
 
-        <div className="tab-content lg:mt-16 md:mt-4 mx-auto w-full md:w-4/5">
-          {categories.map(
-            (category) =>
-              activeTab === category && (
-                <div
-                  key={category}
-                  className="tab-pane fade show active"
-                  id={`tab-${category}`}
-                  role="tabpanel"
-                >
-                  <div className="flex flex-col flex-wrap md:flex-row gap-8 justify-center lg:my-12 mt-6">
-                    {services
-                      .filter((service) => service.category.trim() === category)
-                      .map((service) => (
-                        <div
-                          key={service._id}
-                          className="hover:shadow-lg hover-box-shadow rounded-lg overflow-hidden border w-full sm:w-80 lg:w-96"
-                        >
-                          <div className="p-4 flex justify-center">
-                            <h5 className="font-semibold mb-2">
-                              <h2>{service.title}</h2>
-                            </h5>
-                          </div>
-                        </div>
-                      ))}
-                  </div>
+        <div className="lg:mt-16 md:mt-4 mx-auto w-full md:w-4/5 mt-8">
+          <Slider {...settings}>
+            {services.map((service) => (
+              <div
+                key={service._id}
+                className="hover:shadow-lg hover-box-shadow rounded-full overflow-hidden border w-full sm:w-80 lg:w-96 p-4"
+              >
+                <div className="flex justify-center">
+                  <h5 className="font-semibold mb-2">
+                    <h2>{service.title}</h2>
+                  </h5>
                 </div>
-              )
-          )}
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
     </section>

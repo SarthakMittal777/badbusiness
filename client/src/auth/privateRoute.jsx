@@ -5,7 +5,7 @@ const PrivateRoute = () => {
   const user = useAuth();
   
   if (!user.isAdmin) {
-    alert("You are not authorized to view this page.");
+    alert("You are not authorized to view this page. Reload the Page!");
     return <Navigate to="/" />;
   }
   return <Outlet />;

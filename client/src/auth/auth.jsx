@@ -9,6 +9,7 @@ const AuthProvider = ({ children }) => {
   const [isAdmin, setIsAdmin] = useState(
     localStorage.getItem("isAdmin") === "true"
   );
+
   const login = async ({ email, password }) => {
     console.log(email, password);
     serverInstance
@@ -21,7 +22,8 @@ const AuthProvider = ({ children }) => {
           toast.success("Admin logged in");
           localStorage.setItem("isAdmin", res.data.isAdmin);
           setIsAdmin(res.data.isAdmin);
-          navigate("/portal/teams");
+          // navigate("/portal/teams");
+          navigate("/");
         } else navigate("/");
         return res;
       })
@@ -47,14 +49,16 @@ const AuthProvider = ({ children }) => {
     toast.success("Logged out");
     localStorage.removeItem("accesstoken");
     setIsAdmin(false);
-    navigate("/signin");
+    navigate("/");
+    window.location.reload();
   };
   const logOut = () => {
     toast.success("Logged out");
     localStorage.removeItem("isAdmin");
     localStorage.removeItem("accesstoken");
     setToken(null);
-    navigate("/signin");
+    navigate("/");
+    window.location.reload();
   };
 
   return (

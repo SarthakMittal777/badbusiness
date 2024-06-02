@@ -17,8 +17,8 @@ export const Signup = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div className="w-full flex flex-col items-center justify-center py-24 min-h-screen overflow-x-hidden bg-[#fff0e9] ">
-        <h3 className="text-center text-3xl font-bold mt-12">SignUp</h3>
+      <div className="w-full flex flex-col items-center justify-center py-12 min-h-screen overflow-x-hidden bg-[#fff0e9] ">
+        <h3 className="text-center text-3xl font-bold mt-4">SignUp</h3>
         <h6 className="text-center mb-12">
           Join our community and embark on a journey of endless opportunities!
         </h6>
