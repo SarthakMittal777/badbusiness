@@ -85,14 +85,17 @@ const Careers = () => {
             {click === "Location" && (
               <div className="absolute top-10 left-0 bg-black w-full z-10 h-[400px] overflow-y-scroll border rounded-2xl border-gray-500">
                 {filteredLocation &&
-                  Object.keys(filteredLocation).map((country) => (
-                    <div
-                      className="text-white hover:bg-slate-600 p-2 border-b border-gray-500 "
-                      key={country}
-                    >
-                      {countries[filteredLocation[country]].name}
-                    </div>
-                  ))}
+                  Object.keys(filteredLocation).map(
+                    (country) =>
+                      countries[filteredLocation[country]] && (
+                        <div
+                          className="text-white hover:bg-slate-600 p-2 border-b border-gray-500 "
+                          key={country}
+                        >
+                          {countries[filteredLocation[country]].name}
+                        </div>
+                      )
+                  )}
               </div>
             )}
           </div>
@@ -156,7 +159,10 @@ const Careers = () => {
                   jobLocation={job.jobLocation}
                   jobType={job.jobType}
                   website={job.websiteURL}
-                  posted={job.posted}
+                  posted={new Date(job.datePosted)
+                    .toLocaleDateString("en-GB")
+                    .split("/")
+                    .join("-")}
                   stipend={job.stipend}
                   id="676jhgjgkj"
                 />

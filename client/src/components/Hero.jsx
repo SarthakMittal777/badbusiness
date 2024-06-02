@@ -6,13 +6,13 @@ function Hero({ banner }) {
       <div className="flex flex-col justify-start items-start">
         <section className="flex gap-5 text-sm mx-4">
           <div className="text-black border-black rounded-3xl py-2 font-bold">
-            {banner}
+            SCROLL DOWN
           </div>
           <div className="text-black border-black rounded-3xl px-4 py-2 font-bold">
-            {banner}
+            TO FIND
           </div>
           <div className="text-black border-black rounded-3xl px-4 py-2 font-bold">
-            {banner}
+            YOUR DREAM JOB
           </div>
         </section>
 

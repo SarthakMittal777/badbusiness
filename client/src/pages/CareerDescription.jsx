@@ -6,6 +6,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import JobDescription from "../static/JobDescription.json";
 import { useParams } from "react-router-dom";
 import { getCareerDataById } from "../api/career";
+import toast from "react-hot-toast";
 const CareerDescription = () => {
   const { id } = useParams();
   console.log("id", id);
@@ -17,7 +18,12 @@ const CareerDescription = () => {
         setJobData(data.career);
       })
       .catch((error) => {
-        window.location.href = "/careers";
+        toast.error(
+          "Job doesn't exist . Redirecting to the main career page..."
+        );
+        setTimeout(() => {
+          window.location.href = "/careers";
+        }, 3000);
         console.log(error);
       });
   }, [id]);

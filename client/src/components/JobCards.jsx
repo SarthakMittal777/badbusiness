@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoMdCopy } from "react-icons/io";
 import { GoArrowUpRight } from "react-icons/go";
-
+import { CiShare2 } from "react-icons/ci";
+import toast from "react-hot-toast";
 function JobCards({
   jobTitle,
   jobLocation,
@@ -33,6 +34,25 @@ function JobCards({
       });
   };
 
+  const handleShare = () => {
+    navigator.clipboard
+      .writeText(
+        `{We are excited to announce a new job opportunity at Bad Business. If you are a driven professional seeking a dynamic and challenging role, we encourage you to explore the position and consider applying.
+  
+      For more details and to submit your application, please visit: https://badbusiness.in/careers/${id}.
+      
+      We look forward to potentially welcoming you to our team.
+      
+      #JobOpening #CareerOpportunity #ProfessionalGrowth}`
+      )
+      .then(() => {
+        toast.success("Job details copied!");
+      })
+      .catch((err) => {
+        console.error("Failed to copy text: ", err);
+      });
+  };
+
   return (
     <div className="border bg-transparent border-gray-600  flex flex-col justify-between rounded-3xl gap-4 text-white min-h-54 p-8 w-full lg:min-w-[400px] lg:min-h-[370px] lg:max-w-[400px] transform transition-transform duration-300 hover:scale-105">
       <div className="w-full flex items-start">
@@ -50,14 +70,14 @@ function JobCards({
       </div>
       <div className="flex flex-col text-sm text-gray-300">
         <section className="flex gap-2">
-        {jobType.map((job) => (
-          <div
-            key={job}
-            className="text-sm border px-4 py-2 mb-3 w-fit rounded-xl"
-          >
-            {job}
-          </div>
-        ))}
+          {jobType.map((job) => (
+            <div
+              key={job}
+              className="text-sm border px-4 py-2 mb-3 w-fit rounded-xl"
+            >
+              {job}
+            </div>
+          ))}
         </section>
         <div className="text-sm flex w-full justify-between">
           <p>{stipend}</p>
@@ -72,7 +92,9 @@ function JobCards({
       </div>
       <div className="flex w-full justify-between text-sm mt-auto">
         <div className="text-gray-400">{jobLocation}</div>
-        <Link to={website}>
+
+        <Link to={website} className="flex gap-2">
+          <CiShare2 size={20} onClick={() => handleShare()} />
           <div
             className="flex gap-3 items-center"
             onMouseEnter={handleHover}
