@@ -20,7 +20,7 @@ export const Portal = () => {
       setShowLinks(teamId);
     }
   };
-
+  
   const deleteTeamMember = async (id) => {
     const confirmation = window.confirm(
       "Are you sure you want to delete this team member?"
