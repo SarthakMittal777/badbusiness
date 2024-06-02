@@ -36,6 +36,8 @@ const ServiceForm = ({ functionality, fetchServiceData }) => {
         })
         .catch((error) => {
           console.log(error);
+          window.alert("Data not added");
+          navigate("/portal/services");
         });
     }
     if (functionality === "Edit a service's details") {
@@ -47,6 +49,8 @@ const ServiceForm = ({ functionality, fetchServiceData }) => {
         })
         .catch((error) => {
           console.log(error);
+          window.alert("Data not updated");
+          navigate("/portal/services");
         });
     }
   };

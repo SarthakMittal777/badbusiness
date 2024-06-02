@@ -6,6 +6,7 @@ export const getTeamData = async () => {
     return response.data;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
 export const getTeamDataById = async (id) => {
@@ -14,6 +15,7 @@ export const getTeamDataById = async (id) => {
     return response.data;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
 export const createData = async (data) => {
@@ -27,6 +29,7 @@ export const createData = async (data) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
 export const editTeamData = async (id, data) => {
@@ -40,6 +43,7 @@ export const editTeamData = async (id, data) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
 
@@ -54,5 +58,6 @@ export const deleteTeamData = async (id) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };

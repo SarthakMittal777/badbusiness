@@ -30,6 +30,7 @@ export const createCareerData = async (data) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
 export const editCareerData = async (id, data) => {
@@ -43,6 +44,7 @@ export const editCareerData = async (id, data) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
 
@@ -57,5 +59,6 @@ export const deleteCareerData = async (id) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };

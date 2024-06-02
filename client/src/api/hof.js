@@ -27,6 +27,7 @@ export const createHofData = async (data) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
 export const editHofData = async (id, data) => {
@@ -40,6 +41,7 @@ export const editHofData = async (id, data) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
 
@@ -54,5 +56,6 @@ export const deleteHofData = async (id) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };

@@ -27,6 +27,8 @@ const HOfForm = ({ functionality, fetchHofData }) => {
         })
         .catch((error) => {
           console.log(error);
+          window.alert("Data Not Added ");
+          navigate("/portal/halloffame");
         });
     }
     if (functionality === "Edit Hall of Fame Data") {
@@ -37,6 +39,9 @@ const HOfForm = ({ functionality, fetchHofData }) => {
           navigate("/portal/halloffame");
         })
         .catch((error) => {
+          console.log(error);
+          window.alert("Data Not Editted ");
+          navigate("/portal/halloffame");
           console.log(error);
         });
     }

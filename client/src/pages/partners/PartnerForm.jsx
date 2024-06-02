@@ -12,6 +12,7 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
     url: fetchPartnerData?.partner.photo,
     headline: fetchPartnerData?.partner.headline,
     domain: fetchPartnerData?.partner.domain,
+    type: fetchPartnerData?.partner.type,
     isMVP: fetchPartnerData?.partner.isMVP || false,
     github: fetchPartnerData?.partner.links[0]?.url,
     linkedin: fetchPartnerData?.partner.links[1]?.url,
@@ -43,6 +44,7 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
       isMVP: data.isMVP,
       photo: data.url,
       links: links,
+      type: data.type,
     };
     if (functionality === "Add a new Partner") {
       createPartnerData(partnerData)
@@ -52,6 +54,8 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
           navigate("/portal/partners");
         })
         .catch((error) => {
+          window.alert("Data Not Added ");
+          navigate("/portal/partners");
           console.log(error);
         });
     }
@@ -63,6 +67,8 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
           navigate("/portal/partners");
         })
         .catch((error) => {
+          window.alert("Data Not Editted ");
+          navigate("/portal/partners");
           console.log(error);
         });
     }
@@ -174,7 +180,7 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
               onChange={(e) => setData({ ...data, others: e.target.value })}
             />
           </div>
-          <p className="font-semibold text-sm my-4 mx-2">Type</p>
+          <p className="font-semibold text-sm my-4 mx-2">Startup / Partner</p>
           <div className="border rounded-xl py-3 w-full px-4 flex my-2  flex-col items-center justify-between">
             <select
               className="outline-none border-none w-full"
@@ -185,6 +191,17 @@ const PartnerForm = ({ functionality, fetchPartnerData }) => {
               <option value="false">Select</option>
               <option value="true">Partner</option>
               <option value="false">Startups</option>
+            </select>
+          </div>
+          <p className="font-semibold text-sm my-4 mx-2">Type</p>
+          <div className="border rounded-xl py-3 w-full px-4 flex my-2  flex-col items-center justify-between">
+            <select
+              className="outline-none border-none w-full"
+              onChange={(e) => setData({ ...data, type: e.target.value })}
+            >
+              <option value="false">Select</option>
+              <option value="commercial">Commmercial</option>
+              <option value="educational">Educational</option>
             </select>
           </div>
           <Button

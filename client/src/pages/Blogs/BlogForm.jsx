@@ -29,6 +29,8 @@ const BlogForm = ({ functionality, fetchBlogData }) => {
         })
         .catch((error) => {
           console.log(error);
+          window.alert("Data not added");
+          navigate("/portal/blogs");
         });
     }
     if (functionality === "Update Blog") {
@@ -39,6 +41,8 @@ const BlogForm = ({ functionality, fetchBlogData }) => {
         })
         .catch((error) => {
           console.log(error);
+          window.alert("Data not updated");
+          navigate("/portal/blogs");
         });
     }
   };

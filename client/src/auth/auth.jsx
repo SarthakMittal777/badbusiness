@@ -10,6 +10,7 @@ const AuthProvider = ({ children }) => {
     localStorage.getItem("isAdmin") === "true"
   );
   const login = async ({ email, password }) => {
+    console.log(email, password);
     serverInstance
       .post("/user/login", { email, password })
       .then((res) => {

@@ -27,6 +27,7 @@ export const createPartnerData = async (data) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error; 
   }
 };
 export const editPartnerData = async (id, data) => {
@@ -40,6 +41,7 @@ export const editPartnerData = async (id, data) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error; 
   }
 };
 
@@ -54,5 +56,6 @@ export const deletePartnerData = async (id) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error; 
   }
 };

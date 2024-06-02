@@ -80,6 +80,7 @@ const PortalPortal = () => {
                       Headline
                     </th>
                     <th className="px-4 py-2  sticky top-0 z-[100]">Is MVP</th>
+                    <th className="px-4 py-2  sticky top-0 z-[100]">Type</th>
                     <th className="px-4 py-2   sticky top-0 z-[100]">Links</th>
                     <th className="px-4 py-2  sticky top-0 z-[100]">Edit</th>
                     <th className="px-4 py-2  sticky top-0 z-[100]">Delete</th>
@@ -113,6 +114,9 @@ const PortalPortal = () => {
                         </td>
                         <td className="border px-4 py-1 text-center hover:underline">
                           {partner.isMVP ? "Partner" : "Startup"}
+                        </td>
+                        <td className="border px-4 py-1 text-center hover:underline">
+                          {partner.type}
                         </td>
                         <td className="border px-4 py-1 relative hover:underline">
                           <button

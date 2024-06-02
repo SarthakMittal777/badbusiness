@@ -55,6 +55,8 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
         })
         .catch((error) => {
           console.log(error);
+          window.alert("Data not added");
+          navigate("/portal/teams");
         });
     }
     if (functionality === "Edit a team member details") {
@@ -66,6 +68,8 @@ const TeamForm = ({ functionality, fetchMemberData }) => {
         })
         .catch((error) => {
           console.log(error);
+          window.alert("Data not updated");
+          navigate("/portal/teams");
         });
     }
   };

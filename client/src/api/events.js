@@ -27,6 +27,7 @@ export const createEventData = async (data) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
 export const editEventData = async (id, data) => {
@@ -40,6 +41,7 @@ export const editEventData = async (id, data) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
 
@@ -54,5 +56,6 @@ export const deleteEventData = async (id) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };

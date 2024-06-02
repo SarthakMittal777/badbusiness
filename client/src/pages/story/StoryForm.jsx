@@ -35,6 +35,8 @@ const StoryForm = ({ functionality, fetchStoryData }) => {
         })
         .catch((error) => {
           console.log(error);
+          window.alert("Data not added");
+          navigate("/portal/story");
         });
     }
     if (functionality === "Edit a story's details") {
@@ -46,6 +48,8 @@ const StoryForm = ({ functionality, fetchStoryData }) => {
         })
         .catch((error) => {
           console.log(error);
+          window.alert("Data not editted");
+          navigate("/portal/story");
         });
     }
   };
