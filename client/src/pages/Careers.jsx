@@ -22,7 +22,7 @@ const Careers = () => {
   };
 
   const filterJobData = (data, click, query) => {
-    console.log("Original Data:", data);
+  
 
     const lowerQuery = query.toLowerCase();
     const filtered = data.filter((job) => {
@@ -39,7 +39,7 @@ const Careers = () => {
       }
     });
 
-    console.log("Filtered Data:", filtered);
+
     setCareerData(filtered);
   };
 
@@ -57,7 +57,7 @@ const Careers = () => {
       let value = query;
       if (event.key === "Backspace") {
         value = value.slice(0, -1);
-        console.log("backspace");
+      
       } else if (event.key.length === 1) {
         value += event.key;
       }

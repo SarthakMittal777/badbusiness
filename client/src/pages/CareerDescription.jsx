@@ -3,13 +3,11 @@ import Hero from "../components/Hero";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { GoArrowUpRight } from "react-icons/go";
-import JobDescription from "../static/JobDescription.json";
 import { useParams } from "react-router-dom";
 import { getCareerDataById } from "../api/career";
 import toast from "react-hot-toast";
 const CareerDescription = () => {
   const { id } = useParams();
-  console.log("id", id);
   const [JobData, setJobData] = useState();
 
   useEffect(() => {

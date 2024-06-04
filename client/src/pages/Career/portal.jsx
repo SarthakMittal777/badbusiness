@@ -52,7 +52,7 @@ const JobPortal = () => {
         <section className="w-[95vw] h-screen ">
           <div className="w-full p-4">
             <div className="w-[96%] flex lg:justify-end mx-12 mb-3">
-              <Link to={`/portal/blogs/add`}>
+              <Link to={`/portal/careers/add`}>
                 <Button
                   type=""
                   className="bg-[#5BBB7B] w-52 my-4 hover:bg-green-800 py-3 text-white font-semibold mx-2 "
@@ -121,7 +121,9 @@ const JobPortal = () => {
                           {job.jobTitle}
                         </td>
                         <td className="border px-4 py-1 text-center">
-                          {(job.jobDescription)?job.jobDescription.description :"No description available"}
+                          {job.jobDescription
+                            ? job.jobDescription.description
+                            : "No description available"}
                         </td>
                         <td className="border px-4 py-1">
                           <ul className="list-disc list-inside">
@@ -131,10 +133,10 @@ const JobPortal = () => {
                           </ul>
                         </td>
                         <td className="border px-4 py-1 text-center">
-                            {job.stipend}
+                          {job.stipend}
                         </td>
                         <td className="border px-4 py-1 text-center">
-                            {job.link}
+                          {job.link}
                         </td>
                         <td className="border px-4 py-1 text-center">
                           <Link to={`/portal/careers/edit/${job._id}`}>

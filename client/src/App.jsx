@@ -41,6 +41,7 @@ import AdminPortal from "./pages/Admin/portal";
 import { EditAdminPortal } from "./pages/Admin/EditAdminPortal";
 import { AddAdminPortal } from "./pages/Admin/AddAdminPortal";
 import JobPortal from "./pages/Career/portal";
+import { AddJobPortal } from "./pages/Career/AddJob";
 import { PortalEditCareer } from "./pages/Career/EditJob";
 const App = () => {
   return (
@@ -123,6 +124,7 @@ const App = () => {
               path="/portal/careers/edit:id"
               element={<PortalEditCareer />}
             />
+            <Route path="/portal/careers/add" element={<AddJobPortal />} />
             <Route path="/portal/admin/add" element={<AddAdminPortal />} />
           </Route>
         </Routes>

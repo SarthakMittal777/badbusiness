@@ -1,11 +1,10 @@
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
 import Button from "../../components/Button";
 import { createCareerData, editCareerData } from "../../api/career";
 import SidebarPortal from "../../components/SidebarPortal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MdOutlineMenu } from "react-icons/md";
+import { MdDeleteOutline } from "react-icons/md";
 import JobCategories from "../../static/JobCategories.json";
 import JobType from "../../static/JobType.json";
 import { countries } from "countries-list";
@@ -32,9 +31,14 @@ const CareerForm = ({ functionality, fetchCareerData }) => {
     stipend: stipend,
     datePosted: datePosted,
     applications: applications,
-    jobDescription: jobDescription,
+    jobDescription: {
+      description: jobDescription?.description || "",
+      key_responsibilities: jobDescription?.key_responsibilities || "",
+      req_qualifications: jobDescription?.req_qualifications || "",
+      preferred_qualifications: jobDescription?.preferred_qualifications || "",
+    },
   });
-  console.log(data);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (functionality === "Add a new Job") {
@@ -63,20 +67,12 @@ const CareerForm = ({ functionality, fetchCareerData }) => {
     }
   };
 
-  const handleAddType = () => {
-    setData((prevData) => ({
-      ...prevData,
-      jobType: [...prevData.jobType, ""],
-    }));
-  };
-
-  const handleContentChange = (index, field, value) => {
-    const newContent = [...data.content];
-    newContent[index][field] = value;
-    setData((prevData) => ({
-      ...prevData,
-      content: newContent,
-    }));
+  const formatDate = (isoDate) => {
+    const date = new Date(isoDate);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // Add leading zero
+    const day = String(date.getDate()).padStart(2, "0"); // Add leading zero
+    return `${year}-${month}-${day}`;
   };
 
   return (
@@ -102,70 +98,201 @@ const CareerForm = ({ functionality, fetchCareerData }) => {
             className="border rounded-xl py-3 w-full px-4 my-2"
             onChange={(e) => setData({ ...data, jobTitle: e.target.value })}
           />
-
           <input
             type="url"
+            value={data.link}
+            required
+            placeholder="Application Link"
+            className="border rounded-xl py-3 w-full px-4 my-2"
+            onChange={(e) => setData({ ...data, link: e.target.value })}
+          />
+          <input
+            type="url"
+            value={data.logo}
+            required
+            placeholder="Company Logo"
+            className="border rounded-xl py-3 w-full px-4 my-2"
+            onChange={(e) => setData({ ...data, logo: e.target.value })}
+          />
+          <input
+            type="test"
             value={data.jobLocation}
             required
-            placeholder="Banner"
+            placeholder="Location"
             className="border rounded-xl py-3 w-full px-4 my-2"
             onChange={(e) => setData({ ...data, jobLocation: e.target.value })}
           />
+          <select
+            className="border rounded-xl py-3 w-full px-4 my-2"
+            onChange={(e) => {
+              const newCountry = e.target.value;
+              const jobLocation =
+                data.jobLocation.split(" ").slice(0, -1).join(" ") +
+                " " +
+                newCountry;
+              setData({ ...data, jobLocation });
+            }}
+          >
+            {data.jobLocation.split(" ").slice(0, -1).join(" ") !== "" ? (
+              <option value="" className="disabled">
+                {data.jobLocation.trim().split(" ").pop()}
+              </option>
+            ) : (
+              <option value="" className="disabled">
+                Select Country
+              </option>
+            )}
+            {countries &&
+              Object.keys(countries).map((country, index) => (
+                <option key={index} value={country}>
+                  {countries[country].name}
+                </option>
+              ))}
+          </select>
+          <p className="mx-2 font-semibold">Description :</p>
+
+          <input
+            type="text"
+            value={data.jobDescription.description}
+            required
+            placeholder="Job Description"
+            className="border rounded-xl py-3 w-full px-4 my-2"
+            onChange={(e) =>
+              setData({
+                ...data,
+                jobDescription: {
+                  ...data.jobDescription,
+                  description: e.target.value,
+                },
+              })
+            }
+          />
+
+          <input
+            type="text"
+            value={data.jobDescription.key_responsibilities}
+            required
+            placeholder="Key Responsibilities"
+            className="border rounded-xl py-3 w-full px-4 my-2"
+            onChange={(e) =>
+              setData({
+                ...data,
+                jobDescription: {
+                  ...data.jobDescription,
+                  key_responsibilities: e.target.value,
+                },
+              })
+            }
+          />
+          <input
+            type="text"
+            value={data.jobDescription.req_qualifications}
+            required
+            placeholder="Required Qualifications"
+            className="border rounded-xl py-3 w-full px-4 my-2"
+            onChange={(e) =>
+              setData({
+                ...data,
+                jobDescription: {
+                  ...data.jobDescription,
+                  req_qualifications: e.target.value,
+                },
+              })
+            }
+          />
+          <input
+            type="text"
+            value={data.jobDescription.preferred_qualifications}
+            required
+            placeholder="Preferred Qualifications"
+            className="border rounded-xl py-3 w-full px-4 my-2"
+            onChange={(e) =>
+              setData({
+                ...data,
+                jobDescription: {
+                  ...data.jobDescription,
+                  preferred_qualifications: e.target.value,
+                },
+              })
+            }
+          />
+
+          <input
+            type="date"
+            value={formatDate(data.datePosted)}
+            required
+            placeholder="Date Posted"
+            className="border rounded-xl py-3 w-full px-4 my-2"
+            onChange={(e) => setData({ ...data, datePosted: e.target.value })}
+          />
+
           <div className="mx-2 my-4 flex justify-between">
             {data.jobType.length > 0 && (
               <section className="flex gap-4 w-full">
                 {data.jobType.map((type, index) => (
-                  <div className="px-5 py-2 rounded border shadow h-12 grid place-content-center" key={index}>
-                    {type}
+                  <div
+                    className="px-5 py-2 rounded border shadow h-12 grid place-content-center relative"
+                    key={index}
+                  >
+                    <p>{type}</p>
+                    <MdDeleteOutline
+                      className="absolute -top-2 -right-3 cursor-pointer hover:text-red-600"
+                      size={25}
+                      onClick={() =>
+                        setData({
+                          ...data,
+                          jobType: data.jobType.filter((job) => job !== type),
+                        })
+                      }
+                    />
                   </div>
                 ))}
               </section>
             )}
-            {/* <div
-              className="bg-[#5BBB7B] hover:bg-green-800 p-3 text-white font-semibold rounded-3xl flex items-center justify-center w-48"
-              onClick={handleAddType}
-            >
-              Add More Job Type
-            </div> */}
             <select
               className="border rounded-xl py-3 w-1/2 px-4 my-2"
-              onChange={(e) => setData({ ...data, jobType: e.target.value })}
+              onChange={(e) => {
+                const selectedValue = e.target.value;
+                const updatedJobType = data.jobType.includes(selectedValue)
+                  ? data.jobType.filter((job) => job !== selectedValue)
+                  : [...data.jobType, selectedValue];
+                setData({ ...data, jobType: updatedJobType });
+              }}
             >
               <option value="" className="disabled">
                 Select Job Type
               </option>
               {JobType.map((type, index) => (
-                <option key={index} value={type}>
+                <option key={index} value={type.jobType}>
                   {type.jobType}
                 </option>
               ))}
             </select>
           </div>
 
-          {/* <div className="w-full flex flex-col gap-4">
-            {data.jobType.map((type, index) => (
-              <input
-                key={index}
-                type="text"
-                value={type}
-                required
-                placeholder="Job Type"
-                className="border rounded-xl py-3 w-full px-4 my-2"
-                onChange={(e) =>
-                  handleContentChange(index, "jobType", e.target.value)
-                }
-              />
-            ))}
-          </div> */}
+          <input
+            type="text"
+            value={data.stipend}
+            required
+            placeholder="Stipend"
+            className="border rounded-xl py-3 w-full px-4 my-2"
+            onChange={(e) => setData({ ...data, stipend: e.target.value })}
+          />
           <select
             className="border rounded-xl py-3 w-full px-4 my-2"
             onChange={(e) => setData({ ...data, category: e.target.value })}
           >
-            <option value="" className="disabled">
-              Select Category
-            </option>
+            {data.category ? (
+              <option value="" className="disabled">
+                {data.category}
+              </option>
+            ) : (
+              <option value="" className="disabled">
+                Select Job Category
+              </option>
+            )}
             {JobCategories.map((category, index) => (
-              <option key={index} value={category}>
+              <option key={index} value={category.category}>
                 {category.category}
               </option>
             ))}
