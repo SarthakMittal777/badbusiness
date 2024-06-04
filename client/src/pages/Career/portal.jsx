@@ -13,7 +13,7 @@ const JobPortal = () => {
 
   const deletePartner = async (id) => {
     const confirmation = window.confirm(
-      "Are you sure you want to delete this blog data?"
+      "Are you sure you want to delete this  data?"
     );
 
     if (confirmation) {
@@ -49,7 +49,7 @@ const JobPortal = () => {
         setFunctionality={setFunctionality}
       />
       {functionality == null && (
-        <section className="w-[95vw] h-screen ">
+        <section className="w-[95vw] h-screen overflw-auto">
           <div className="w-full p-4">
             <div className="w-[96%] flex lg:justify-end mx-12 mb-3">
               <Link to={`/portal/careers/add`}>
