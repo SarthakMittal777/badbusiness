@@ -80,6 +80,14 @@ const Navbar = () => {
             >
               <Link to="/careers">Careers</Link>
             </li>
+            <li
+              className="duration-300 text-gray-700 hover:text-black capitalize px-2 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
+              <Link to="https://community.badbusiness.in/" target="_blank">Community</Link>
+            </li>
 
             <li
               className="duration-300 text-gray-700 hover:text-black capitalize px-2 cursor-pointer font-semibold"
