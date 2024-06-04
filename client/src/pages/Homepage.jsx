@@ -99,12 +99,12 @@ export const Homepage = () => {
                 We Solve Your Business Problem Using BAD Framework
               </p>
               <div className="flex gap-4">
-                <Button className="relative bg-teal-900 hover:bg-green-800 text-green-200 font-bold py-4 px-5 rounded-full">
+                <Button className="relative bg-teal-900 hover:bg-green-800 text-green-200 font-bold lg:px-5 lg:py-4 px-2 py-3 rounded-full">
                   <Link to="/share-your-business-problem">
                     Share Your Business Problem
                   </Link>
                 </Button>
-                <Button className="relative bg-emerald-200 hover:bg-green-800 text-black font-medium py-4 px-5 rounded-full">
+                <Button className="relative bg-emerald-200 hover:bg-green-800 text-black font-medium lg:px-5 lg:py-4 px-2 py-3 rounded-full">
                   <Link to="https://calendly.com/infobadbusiness">
                     Partner With Us
                   </Link>

@@ -1,11 +1,11 @@
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState, useEffect } from "react";
 import { items } from "../items";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/auth";
 
 const Navbar = () => {
-  const { token } = useAuth();
+  const { token, refreshToken, logOut } = useAuth();
   const [openMenu, setOpenMenu] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
 
@@ -14,6 +14,8 @@ const Navbar = () => {
   const handleSubmenuClick = (index) => {
     setOpenSubmenu(openSubmenu === index ? null : index);
   };
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,6 +57,18 @@ const Navbar = () => {
     window.location.reload();
   };
 
+  useEffect(() => {
+    if (token) {
+      const interval = setInterval(() => {
+        refreshToken().catch(() => {
+          logOut();
+        });
+      }, 15 * 60 * 1000); // Refresh token every 15 minutes
+
+      return () => clearInterval(interval);
+    }
+  }, [token, refreshToken, logOut]);
+
   return (
     <nav className="w-full h-20 sticky top-0 z-50 mx-auto bg-white">
       <div className="flex justify-between items-center h-full px-5 2xl:px-16 text-white">
@@ -86,7 +100,9 @@ const Navbar = () => {
                 setOpenMenu(false);
               }}
             >
-              <Link to="https://community.badbusiness.in/" target="_blank">Community</Link>
+              <Link to="https://community.badbusiness.in/" target="_blank">
+                Community
+              </Link>
             </li>
 
             <li
@@ -165,38 +181,38 @@ const Navbar = () => {
               </ul>
             </li>
 
-            <li
-              className={`duration-300 text-black hover:text-black capitalize px-2 cursor-pointer font-semibold ${
-                token ? "hidden" : ""
-              }`}
-              onClick={() => {
-                setOpenMenu(false);
-              }}
-            >
-              <Link to="/signin">Login</Link>
-            </li>
+            {!token && (
+              <>
+                <li
+                  className="duration-300 text-black hover:text-black capitalize px-2 cursor-pointer font-semibold"
+                  onClick={() => {
+                    setOpenMenu(false);
+                  }}
+                >
+                  <Link to="/signin">Login</Link>
+                </li>
 
-            <li
-              className={`duration-300 text-black hover:text-black capitalize px-2 cursor-pointer font-semibold ${
-                token ? "hidden" : ""
-              }`}
-              onClick={() => {
-                setOpenMenu(false);
-              }}
-            >
-              <Link to="/signup">SignUp</Link>
-            </li>
+                <li
+                  className="duration-300 text-black hover:text-black capitalize px-2 cursor-pointer font-semibold"
+                  onClick={() => {
+                    setOpenMenu(false);
+                  }}
+                >
+                  <Link to="/signup">SignUp</Link>
+                </li>
+              </>
+            )}
 
-            <li
-              className={`duration-300 text-black hover:text-black capitalize px-2 cursor-pointer font-semibold underline-offset-4 underline ${
-                token ? "" : "hidden"
-              }`}
-              onClick={() => {
-                setOpenMenu(false);
-              }}
-            >
-              <Link to="/portal">Portal</Link>
-            </li>
+            {token && (
+              <li
+                className="duration-300 text-black hover:text-black capitalize px-2 cursor-pointer font-semibold underline-offset-4 underline"
+                onClick={() => {
+                  setOpenMenu(false);
+                }}
+              >
+                <Link to="/portal">Portal</Link>
+              </li>
+            )}
           </ul>
         </div>
 
