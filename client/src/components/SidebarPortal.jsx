@@ -94,6 +94,16 @@ const SidebarPortal = ({ menu, setMenu, setFunctionality }) => {
           <RiAdminFill /> Admin
         </div>
       </Link>
+      {/* <Link to="/portal/careers">
+        <div
+          className="w-full h-8 hover:bg-[#848d8c] cursor-pointer border-[#3c3c3c] rounded flex items-center gap-3 px-2 font-semibold"
+          onClick={() => {
+            setFunctionality(null);
+          }}
+        >
+          <RiTeamFill /> Careers
+        </div>
+      </Link> */}
       <div onClick={() => user.logOutFromPortal()}>
         <Button
           type=""

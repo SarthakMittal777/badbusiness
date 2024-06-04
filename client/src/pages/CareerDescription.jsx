@@ -24,7 +24,6 @@ const CareerDescription = () => {
         console.log(error);
       });
   }, [id]);
-
   const [isHovered, setIsHovered] = useState(false);
 
   const handleHover = () => {
@@ -59,7 +58,7 @@ const CareerDescription = () => {
           <p className="border bold px-3 py-1 w-fit rounded">
             Stipend:{JobData.stipend}
           </p>
-          <p>{JobDescription.description}</p>
+          <p>{JobData.jobDescription.description}</p>
           <section className="flex gap-3">
             {JobData.jobType.map((type, index) => (
               <p key={index} className="border bold px-3 py-1 w-fit rounded">
@@ -71,18 +70,18 @@ const CareerDescription = () => {
           <h1 className="text-xl text-white font-semibold font-custom">
             Responsibilities
           </h1>
-          <p>{JobDescription.responsibilities}</p>
+          <p>{JobData.jobDescription.key_responsibilities}</p>
 
           <h1 className="text-xl text-white font-semibold font-custom">
             Required Qualifications
           </h1>
-          <p>{JobDescription.req_qualifications}</p>
+          <p>{JobData.jobDescription.req_qualifications}</p>
           <h1 className="text-xl text-white font-semibold font-custom">
             Preferred Qualifications
           </h1>
-          <p>{JobDescription.preferred_qualifications}</p>
+          <p>{JobData.jobDescription.preferred_qualifications}</p>
 
-          <Link to={JobData.website}>
+          <Link to={JobData.link} target="_blank">
             <div
               className="flex gap-3 items-center border w-fit px-6 py-2 rounded"
               onMouseEnter={handleHover}

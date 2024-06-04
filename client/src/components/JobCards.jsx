@@ -52,7 +52,6 @@ function JobCards({
         console.error("Failed to copy text: ", err);
       });
   };
-  console.log(website);
   return (
     <div className="border bg-transparent border-gray-600  flex flex-col justify-between rounded-3xl gap-4 text-white min-h-54 p-8 w-full lg:min-w-[400px] lg:min-h-[370px] lg:max-w-[400px] transform transition-transform duration-300 hover:scale-105">
       <div className="w-full flex items-start">

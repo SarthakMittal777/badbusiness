@@ -3,7 +3,7 @@ import serverInstance from "./server";
 export const getCareerData = async () => {
   try {
     const response = await serverInstance.get("/career");
-    console.log(response.data, "career data");
+  
     return response.data;
   } catch (error) {
     console.log(error);

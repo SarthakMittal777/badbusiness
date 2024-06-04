@@ -40,7 +40,8 @@ import { AddBlogPortal } from "./pages/Blogs/AddBlogPortal";
 import AdminPortal from "./pages/Admin/portal";
 import { EditAdminPortal } from "./pages/Admin/EditAdminPortal";
 import { AddAdminPortal } from "./pages/Admin/AddAdminPortal";
-
+import JobPortal from "./pages/Career/portal";
+import { PortalEditCareer } from "./pages/Career/EditJob";
 const App = () => {
   return (
     <BrowserRouter>
@@ -104,14 +105,23 @@ const App = () => {
               path="/portal/partner/edit/:id"
               element={<PortalEditPartner />}
             />
+            <Route path="/portal/careers" element={<JobPortal />} />
             <Route path="/portal/partner/add" element={<PortalAddPartner />} />
             <Route path="/portal/blogs" element={<BlogPortal />} />
             <Route path="/portal/blogs/edit/:id" element={<EditBlogPortal />} />
+            <Route
+              path="/portal/careers/edit/:id"
+              element={<PortalEditCareer />}
+            />
             <Route path="/portal/blogs/add" element={<AddBlogPortal />} />
             <Route path="/portal/admin" element={<AdminPortal />} />
             <Route
               path="/portal/admin/edit/:id"
               element={<EditAdminPortal />}
+            />
+            <Route
+              path="/portal/careers/edit:id"
+              element={<PortalEditCareer />}
             />
             <Route path="/portal/admin/add" element={<AddAdminPortal />} />
           </Route>

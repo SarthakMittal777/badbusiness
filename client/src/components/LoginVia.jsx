@@ -5,7 +5,7 @@ import { FaGoogle } from "react-icons/fa";
 const LoginVia = () => {
   return (
     <div className="flex flex-wrap w-full gap-3 justify-center ">
-      <Button className="border border-[#3A77EA] w-[14em]  py-3  gap-2 text-[#3A77EA]">
+      {/* <Button className="border border-[#3A77EA] w-[14em]  py-3  gap-2 text-[#3A77EA]">
         <FaFacebookF />
         Continue FaceBook
       </Button>
@@ -16,7 +16,7 @@ const LoginVia = () => {
       <Button className="border border-[black] w-[14em]  py-3 gap-2 text-[black]">
         <FaApple />
         Continue Apple
-      </Button>
+      </Button> */}
     </div>
   );
 };

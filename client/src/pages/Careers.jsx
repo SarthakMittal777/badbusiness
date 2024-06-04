@@ -15,9 +15,32 @@ const Careers = () => {
   const [filteredCategories, setFilteredCategories] = useState(JobCategories);
   const [filteredLocation, setFilteredLocation] = useState(countries);
   const [careerData, setCareerData] = useState();
+
   const handleLocation = (id) => {
     if (click === id) setClick(null);
     else setClick(id);
+  };
+
+  const filterJobData = (data, click, query) => {
+    console.log("Original Data:", data);
+
+    const lowerQuery = query.toLowerCase();
+    const filtered = data.filter((job) => {
+      if (click === "Category") {
+        return job.category.toLowerCase().includes(lowerQuery);
+      } else if (click === "Location") {
+        return job.jobLocation.toLowerCase().includes(lowerQuery);
+      } else if (click === "Type") {
+        return job.jobType.some((type) =>
+          type.toLowerCase().includes(lowerQuery)
+        );
+      } else {
+        return true;
+      }
+    });
+
+    console.log("Filtered Data:", filtered);
+    setCareerData(filtered);
   };
 
   useEffect(() => {
@@ -91,6 +114,13 @@ const Careers = () => {
                         <div
                           className="text-white hover:bg-slate-600 p-2 border-b border-gray-500 "
                           key={country}
+                          onClick={() =>
+                            filterJobData(
+                              careerData,
+                              "Location",
+                              countries[filteredLocation[country]].name
+                            )
+                          }
                         >
                           {countries[filteredLocation[country]].name}
                         </div>
@@ -116,6 +146,9 @@ const Careers = () => {
                   <div
                     className="text-white hover:bg-slate-600 p-2 border-b border-gray-500 "
                     key={category}
+                    onClick={() =>
+                      filterJobData(careerData, "Category", category.category)
+                    }
                   >
                     {category.category}
                   </div>
@@ -140,6 +173,9 @@ const Careers = () => {
                   <div
                     className="text-white hover:bg-slate-600 p-2 border-b border-gray-500 "
                     key={type}
+                    onClick={() =>
+                      filterJobData(careerData, "Type", type.jobType)
+                    }
                   >
                     {type.jobType}
                   </div>
