@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import Card from "../../components/Card";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import { getServiceData } from "../../api/service";
 import { useState, useEffect } from "react";
@@ -32,7 +32,7 @@ export const ServicesAll = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center  bg-gray-300">
       <Navbar />
-      <div className="w-full h-20 text-base flex items-center ">
+      {/* <div className="w-full h-20 text-base flex items-center ">
         <p className="mx-24">
           <Link to="/" className="text-gray-500">
             {" "}
@@ -45,7 +45,7 @@ export const ServicesAll = () => {
           </Link>{" "}
           /{slug}{" "}
         </p>
-      </div>
+      </div> */}
       <div
         className="w-full h-[60vh] flex items-center justify-center relative"
         style={{

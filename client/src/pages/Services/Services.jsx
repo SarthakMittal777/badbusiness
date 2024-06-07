@@ -1,7 +1,7 @@
 import Card from "../../components/Card";
 import { useEffect, useState } from "react";
 import { getServiceData } from "../../api/service";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 export const Services = () => {
@@ -31,25 +31,24 @@ export const Services = () => {
   return (
     <div className="w-full flex flex-col  items-center justify-center bg-gray-300 animate-fade-in">
       <Navbar />
-      <div className="w-full h-20 text-base flex items-center ">
+      {/* <div className="w-full h-20 text-base flex items-center ">
         <p className="mx-24">
           <Link to="/" className="text-gray-500">
             Home
           </Link>{" "}
           / Categories
         </p>
-      </div>
+      </div> */}
       <div
-        className="w-full h-[60vh] flex items-center justify-center relative"
+        className="w-auto h-[60vh] flex items-center justify-center relative"
         style={{
           background:
             "url(/images/hero/serviceHero.jpg) no-repeat center center fixed",
           backgroundSize: "cover",
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative text-center text-white mx-24">
-          {" "}
           <h1 className="text-4xl py-8 font-bold">Expertise and Solutions</h1>
           <p>
             Unlock the extraordinary with our unparalleled services. At the
@@ -70,7 +69,10 @@ export const Services = () => {
       </div>
       <div className="flex w-full xl:justify-normal gap-12 mb-32 flex-wrap justify-center sm:justify-normal ">
         {Object.keys(categorizedData).map((category, index) => (
-          <div key={index} className="flex flex-wrap justify-center items-center lg:justify-normal ">
+          <div
+            key={index}
+            className="flex flex-wrap justify-center items-center lg:justify-normal "
+          >
             <Card
               image={categorizedData[category][0].image}
               category={categorizedData[category][0].category}
