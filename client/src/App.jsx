@@ -42,7 +42,10 @@ import { EditAdminPortal } from "./pages/Admin/EditAdminPortal";
 import { AddAdminPortal } from "./pages/Admin/AddAdminPortal";
 import JobPortal from "./pages/Career/portal";
 import { AddJobPortal } from "./pages/Career/AddJob";
+import EventPortal from "./pages/Events/portal";
 import { PortalEditCareer } from "./pages/Career/EditJob";
+import { EditEventPortal } from "./pages/Events/EditEventsPortal";
+import AddEventsPortal from "./pages/Events/AddEventsPortal";
 const App = () => {
   return (
     <BrowserRouter>
@@ -126,6 +129,12 @@ const App = () => {
             />
             <Route path="/portal/careers/add" element={<AddJobPortal />} />
             <Route path="/portal/admin/add" element={<AddAdminPortal />} />
+            <Route path="/portal/events" element={<EventPortal />} />
+            <Route
+              path="/portal/event/edit/:id"
+              element={<EditEventPortal />}
+            />
+            <Route path="/portal/event/add" element={<AddEventsPortal />} />
           </Route>
         </Routes>
       </AuthProvider>

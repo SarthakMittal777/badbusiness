@@ -5,10 +5,10 @@ import { MdOutlineMenu } from "react-icons/md";
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import SidebarPortal from "../../components/SidebarPortal";
-import { getEventData,deleteEventData } from "../../api/events";
-const HofPortal = () => {
+import { getEventData, deleteEventData } from "../../api/events";
+const EventPortal = () => {
   const [menu, setMenu] = useState(false);
-  const [hofData, setHofData] = useState({ hallOfFame: [] });
+  const [eventData, setEventData] = useState({ events: [] });
   const [functionality, setFunctionality] = useState(null);
 
   const deletePartner = async (id) => {
@@ -32,11 +32,11 @@ const HofPortal = () => {
   useEffect(() => {
     async function fetchData() {
       const res = await getEventData();
-      setHofData(res);
+      setEventData(res);
     }
     fetchData();
   }, []);
-
+  console.log(eventData);
   return (
     <div className="flex w-full h-full ">
       <MdOutlineMenu
@@ -53,12 +53,12 @@ const HofPortal = () => {
         <section className="w-[95vw] h-screen ">
           <div className="w-full p-12">
             <div className="w-[96%] flex justify-end mx-12 mb-3">
-              <Link to={`/portal/halloffame/add`}>
+              <Link to={`/portal/event/add`}>
                 <Button
                   type=""
                   className="bg-[#5BBB7B] w-52 my-4 hover:bg-green-800 py-3 text-white font-semibold mx-2 "
                 >
-                  Add Hall of Fame Data
+                  Add Event
                 </Button>
               </Link>
             </div>
@@ -67,44 +67,71 @@ const HofPortal = () => {
                 <thead className="relative">
                   <tr className="bg-gray-200  sticky top-0 z-[100]">
                     <th className="px-4 py-2  sticky top-0 z-[100]">#</th>
+                    <th className="px-4 py-2  sticky top-0 z-[100]">Banner</th>
+
+                    <th className="px-4 py-2  sticky top-0 z-[100]">Title</th>
                     <th className="px-4 py-2  sticky top-0 z-[100]">
-                      Business Name
+                      Description
+                    </th>
+                    <th className="px-4 py-2  sticky top-0 z-[100]">Date</th>
+                    <th className="px-4 py-2  sticky top-0 z-[100]">Time</th>
+                    <th className="px-4 py-2  sticky top-0 z-[100]">Type</th>
+                    <th className="px-4 py-2  sticky top-0 z-[100]">
+                      ListedBy
                     </th>
                     <th className="px-4 py-2  sticky top-0 z-[100]">
-                      Solution Name
+                      Created By
                     </th>
-                    <th className="px-4 py-2  sticky top-0 z-[100]">
-                      Implementation
-                    </th>
-                    <th className="px-4 py-2  sticky top-0 z-[100]">Result</th>
+
                     <th className="px-4 py-2  sticky top-0 z-[100]">Edit</th>
                     <th className="px-4 py-2  sticky top-0 z-[100]">Delete</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {hofData &&
-                  hofData.hallOfFame &&
-                  hofData.hallOfFame.length > 0 ? (
-                    hofData.hallOfFame.map((hof, index) => (
+                  {eventData &&
+                  eventData.events &&
+                  eventData.events.length > 0 ? (
+                    eventData.events.map((event, index) => (
                       <tr key={index} className="hover:bg-gray-100">
                         <td className="border px-4 py-1 mx-auto text-center hover:underline">
                           {index + 1}
                         </td>
-                        <td className="border px-4 py-1 mx-auto text-center hover:underline">
-                          {hof.businessName}
+                        <td className="border px-4 py-2 rounded-full">
+                          {event.banner === "" ? (
+                            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-[#c7b0ff] mx-auto"></div>
+                          ) : (
+                            <img
+                              src={event.banner}
+                              alt={event.title}
+                              className="w-8 h-8 rounded-full mx-auto object-cover object-center"
+                            />
+                          )}
                         </td>
                         <td className="border px-4 py-1 mx-auto text-center hover:underline">
-                          {hof.solution.solutionName}
+                          {event.title}
                         </td>
                         <td className="border px-4 py-1 mx-auto text-center hover:underline">
-                          {hof.solution.implementation}
+                          {event.description}
+                        </td>
+                        <td className="border px-4 py-1 mx-auto hover:underline">
+                         {new Date(event.date).toISOString().split('T')[0]}
+                        </td>
+                        <td className="border px-4 py-1  hover:underline">
+                          {event.time}
                         </td>
                         <td className="border px-4 py-1 text-center hover:underline">
-                          {hof.result}
+                          {event.type}
                         </td>
-
+                        <td className="border px-4 py-1 text-center hover:underline">
+                          {event.listedBy}
+                        </td>
+                        
+                        <td className="border px-4 py-1  hover:underline">
+                          Name : {event.createdBy.username} <br />
+                          Email : {event.createdBy.email}
+                        </td>
                         <td className="border px-4 py-1 ">
-                          <Link to={`/portal/halloffame/edit/${hof._id}`}>
+                          <Link to={`/portal/event/edit/${event._id}`}>
                             <MdEdit size={25} className="mx-auto" />
                           </Link>
                         </td>
@@ -112,7 +139,7 @@ const HofPortal = () => {
                           <MdDelete
                             size={25}
                             className="mx-auto"
-                            onClick={() => deletePartner(hof._id)}
+                            onClick={() => deletePartner(event._id)}
                           />
                         </td>
                       </tr>
@@ -137,4 +164,4 @@ const HofPortal = () => {
   );
 };
 
-export default HofPortal;
+export default EventPortal;
