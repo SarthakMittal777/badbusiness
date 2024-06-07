@@ -88,9 +88,10 @@ const Careers = () => {
   return (
     <div className="animate-fade-in ">
       <Navbar />
-      <Hero banner="JOBS" />
+
       <div className="bg-black px-4 py-12 md:p-24 flex flex-col w-full">
-       
+        <h1 className="text-3xl text-white mb-4"> Careers</h1>
+        <p className="text-white text-sm">At badbusiness we&apos;re your areer catalysts,specializing in HR consultancy and seemless connections with top-tier companies</p>
         <div className="w-full py-4 flex gap-3 flex-wrap h-fit">
           <div
             className=" px-6  flex cursor-default justify-center items-center gap-2 py-2 border relative rounded-3xl border-gray-600  text-white"
@@ -204,7 +205,7 @@ const Careers = () => {
           </div>
         </div>
       </div>
-  
+
       <Footer />
     </div>
   );
