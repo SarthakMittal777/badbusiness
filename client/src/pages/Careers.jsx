@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import JobCategories from "../static/JobCategories.json";
 import { getCareerData } from "../api/career";
+import { Footer } from "../components/Footer";
 
 const Careers = () => {
   const [click, setClick] = useState(null);
@@ -22,8 +23,6 @@ const Careers = () => {
   };
 
   const filterJobData = (data, click, query) => {
-  
-
     const lowerQuery = query.toLowerCase();
     const filtered = data.filter((job) => {
       if (click === "Category") {
@@ -38,7 +37,6 @@ const Careers = () => {
         return true;
       }
     });
-
 
     setCareerData(filtered);
   };
@@ -57,7 +55,6 @@ const Careers = () => {
       let value = query;
       if (event.key === "Backspace") {
         value = value.slice(0, -1);
-      
       } else if (event.key.length === 1) {
         value += event.key;
       }
@@ -91,8 +88,10 @@ const Careers = () => {
   return (
     <div className="animate-fade-in ">
       <Navbar />
-      <Hero banner="JOBS" />
       <div className="bg-black px-4 py-12 md:p-24 flex flex-col w-full">
+        <h1 className="text-white text-3xl flex justify-center font-semibold">
+          CAREERS
+        </h1>
         <div className="w-full py-4 flex gap-3 flex-wrap h-fit">
           <div
             className=" px-6  flex cursor-default justify-center items-center gap-2 py-2 border relative rounded-3xl border-gray-600  text-white"
@@ -206,6 +205,8 @@ const Careers = () => {
           </div>
         </div>
       </div>
+      <Hero banner="JOBS" />
+      <Footer />
     </div>
   );
 };
