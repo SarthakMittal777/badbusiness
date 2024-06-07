@@ -21,7 +21,7 @@ const CareerDescription = () => {
         );
         console.log(error);
       });
-  }, [id]);
+  }, []);
   const [isHovered, setIsHovered] = useState(false);
 
   const handleHover = () => {
@@ -34,8 +34,10 @@ const CareerDescription = () => {
   return (
     <div className="animate-fade-in ">
       <Navbar />
-      <Hero banner="JOBS" />
+     
       {JobData && (
+        <>
+         <Hero banner="JOBS" />
         <div className="bg-black px-4 py-12 md:p-12 flex flex-col w-full text-white gap-6">
           <div className="rounded-full w-32 h-32">
             <img
@@ -99,6 +101,7 @@ const CareerDescription = () => {
             </div>
           </Link>
         </div>
+        </>
       )}
     </div>
   );

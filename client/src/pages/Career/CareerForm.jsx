@@ -41,6 +41,7 @@ const CareerForm = ({ functionality, fetchCareerData }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (functionality === "Add a new Job") {
       createCareerData(data)
         .then((res) => {
@@ -117,7 +118,6 @@ const CareerForm = ({ functionality, fetchCareerData }) => {
           <input
             type="test"
             value={data.jobLocation}
-            required
             placeholder="Location"
             className="border rounded-xl py-3 w-full px-4 my-2"
             onChange={(e) => setData({ ...data, jobLocation: e.target.value })}
@@ -126,11 +126,8 @@ const CareerForm = ({ functionality, fetchCareerData }) => {
             className="border rounded-xl py-3 w-full px-4 my-2"
             onChange={(e) => {
               const newCountry = e.target.value;
-              const jobLocation =
-                data.jobLocation.split(" ").slice(0, -1).join(" ") +
-                " " +
-                newCountry;
-              setData({ ...data, jobLocation });
+              const updatedJobLocation = data.jobLocation + " " + newCountry;
+              setData({ ...data, jobLocation: updatedJobLocation });
             }}
           >
             {data.jobLocation.split(" ").slice(0, -1).join(" ") !== "" ? (
@@ -144,7 +141,7 @@ const CareerForm = ({ functionality, fetchCareerData }) => {
             )}
             {countries &&
               Object.keys(countries).map((country, index) => (
-                <option key={index} value={country}>
+                <option key={index} value={countries[country].name}>
                   {countries[country].name}
                 </option>
               ))}

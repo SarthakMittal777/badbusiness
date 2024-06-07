@@ -37,13 +37,13 @@ function JobCards({
   const handleShare = () => {
     navigator.clipboard
       .writeText(
-        `{We are excited to announce a new job opportunity at Bad Business. If you are a driven professional seeking a dynamic and challenging role, we encourage you to explore the position and consider applying.
+        `We are excited to announce a new job opportunity at Bad Business. If you are a driven professional seeking a dynamic and challenging role, we encourage you to explore the position and consider applying.
   
-      For more details and to submit your application, please visit: https://badbusiness.in/careers/${job_id}.
-      
-      We look forward to potentially welcoming you to our team.
-      
-      #JobOpening #CareerOpportunity #ProfessionalGrowth}`
+For more details and to submit your application, please visit: https://badbusiness.in/careers/${job_id}.
+  
+We look forward to potentially welcoming you to our team.
+  
+#JobOpening #CareerOpportunity #ProfessionalGrowth`
       )
       .then(() => {
         toast.success("Job details copied!");
@@ -52,6 +52,7 @@ function JobCards({
         console.error("Failed to copy text: ", err);
       });
   };
+
   return (
     <div className="border bg-transparent border-gray-600  flex flex-col justify-between rounded-3xl gap-4 text-white min-h-54 p-8 w-full lg:min-w-[400px] lg:min-h-[370px] lg:max-w-[400px] transform transition-transform duration-300 hover:scale-105">
       <div className="w-full flex items-start">
