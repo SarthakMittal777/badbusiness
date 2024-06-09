@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { getHofDataById } from "../../api/hof";
 import HOfForm from "./HofForm";
 import { useParams } from "react-router-dom";
-export const PortalEditHof = () => {
+
+const PortalEditHof = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -19,3 +20,5 @@ export const PortalEditHof = () => {
     )
   );
 };
+
+export default PortalEditHof;

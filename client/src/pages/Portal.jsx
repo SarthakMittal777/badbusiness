@@ -8,7 +8,7 @@ import Button from "../components/Button";
 import { Link } from "react-router-dom";
 import { deleteTeamData, getTeamData } from "../api/team";
 
-export const Portal = () => {
+const Portal = () => {
   const [showLinks, setShowLinks] = useState(null);
   const [menu, setMenu] = useState(false);
   const [TeamData, setTeamData] = useState({ teams: [] });
@@ -20,7 +20,7 @@ export const Portal = () => {
       setShowLinks(teamId);
     }
   };
-  
+
   const deleteTeamMember = async (id) => {
     const confirmation = window.confirm(
       "Are you sure you want to delete this team member?"
@@ -183,3 +183,5 @@ export const Portal = () => {
     </div>
   );
 };
+
+export default Portal;

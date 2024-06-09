@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { getCareerDataById } from "../../api/career";
 import { useParams } from "react-router-dom";
 import CareerForm from "./CareerForm";
-export const PortalEditCareer = () => {
+
+const PortalEditCareer = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -20,3 +21,5 @@ export const PortalEditCareer = () => {
     )
   );
 };
+
+export default PortalEditCareer;

@@ -6,7 +6,8 @@ import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import SidebarPortal from "../../components/SidebarPortal";
 import { getStoryData, deleteStoryData } from "../../api/story";
-export const StoryPortal = () => {
+
+const StoryPortal = () => {
   const [menu, setMenu] = useState(false);
   const [storyData, setStoryData] = useState({});
   const [functionality, setFunctionality] = useState(null);

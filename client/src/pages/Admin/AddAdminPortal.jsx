@@ -1,6 +1,6 @@
 import AdminForm from "./AdminForm";
 
-export const AddAdminPortal = () => {
+const AddAdminPortal = () => {
   return <AdminForm functionality="Add a new Admin" />;
 };
 

@@ -1,24 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import loadable from "@loadable/component";
+
 import { Homepage } from "./pages/Homepage";
 import { Signin } from "./pages/Signin";
 import { Signup } from "./pages/Signup";
 import { Services } from "./pages/Services/Services";
 import { ServicesAll } from "./pages/Services/ServicesAll";
 import { ServiceDetails } from "./pages/Services/ServiceDetails";
-import { Portal } from "./pages/Portal";
 import { Team } from "./pages/Team";
-import { PortalAddMember } from "./pages/PortalAddMember";
-import { PortalEditMember } from "./pages/PortalEditMember";
-import { PortalEditService } from "./pages/Services/PortalEditService";
-import { PortalAddService } from "./pages/Services/PortalAddService";
-import { PortalAddPartner } from "./pages/partners/PortalAddPartner";
-import { PortalEditPartner } from "./pages/partners/PortalEditPartner";
-import AuthProvider from "./auth/auth";
-import PrivateRoute from "./auth/privateRoute";
-import ServicesPortal from "./pages/Services/ServicesPortal";
-import PartnersPortal from "./pages/partners/PartnersPortal";
 import { Partners } from "./pages/partners/Partners";
-import WebsiteAuth from "./auth/websiteAuth";
 import { Merchandise } from "./pages/Merchandise";
 import { Courses } from "./pages/Courses";
 import { Form } from "./pages/Form";
@@ -26,26 +16,59 @@ import Careers from "./pages/Careers";
 import CareerDescription from "./pages/CareerDescription";
 import HallofFame from "./pages/HallofFame";
 import Success from "./pages/SuccessStories";
-import { PortalAddStory } from "./pages/story/PortalAddStory";
-import { PortalEditStory } from "./pages/story/PortalEditStory";
-import { StoryPortal } from "./pages/story/portal";
-import { PortalAddHof } from "./pages/HallOfFame/PortalAddHof";
-import { PortalEditHof } from "./pages/HallOfFame/PortalEditHof";
-import HofPortal from "./pages/HallOfFame/portal";
 import Blogs from "./pages/Blogs/Blogs";
 import BlogPost from "./pages/Blogs/BlogPost";
-import { EditBlogPortal } from "./pages/Blogs/EditBlogPortal";
-import BlogPortal from "./pages/Blogs/portal";
-import { AddBlogPortal } from "./pages/Blogs/AddBlogPortal";
-import AdminPortal from "./pages/Admin/portal";
-import { EditAdminPortal } from "./pages/Admin/EditAdminPortal";
-import { AddAdminPortal } from "./pages/Admin/AddAdminPortal";
-import JobPortal from "./pages/Career/portal";
-import { AddJobPortal } from "./pages/Career/AddJob";
-import EventPortal from "./pages/Events/portal";
-import { PortalEditCareer } from "./pages/Career/EditJob";
-import { EditEventPortal } from "./pages/Events/EditEventsPortal";
-import AddEventsPortal from "./pages/Events/AddEventsPortal";
+
+const WebsiteAuth = loadable(() => import("./auth/websiteAuth"));
+const Portal = loadable(() => import("./pages/Portal"));
+const PortalAddMember = loadable(() => import("./pages/PortalAddMember"));
+const PortalEditMember = loadable(() => import("./pages/PortalEditMember"));
+const PortalEditService = loadable(() =>
+  import("./pages/Services/PortalEditService")
+);
+const PortalEditCareer = loadable(() => import("./pages/Career/EditJob"));
+
+const PortalAddService = loadable(() =>
+  import("./pages/Services/PortalAddService")
+);
+const PortalAddPartner = loadable(() =>
+  import("./pages/partners/PortalAddPartner")
+);
+const PortalEditPartner = loadable(() =>
+  import("./pages/partners/PortalEditPartner")
+);
+const AuthProvider = loadable(() => import("./auth/auth"));
+const PrivateRoute = loadable(() => import("./auth/privateRoute"));
+const ServicesPortal = loadable(() =>
+  import("./pages/Services/ServicesPortal")
+);
+const PartnersPortal = loadable(() =>
+  import("./pages/partners/PartnersPortal")
+);
+const HofPortal = loadable(() => import("./pages/HallOfFame/portal"));
+const PortalAddHof = loadable(() => import("./pages/HallOfFame/PortalAddHof"));
+const PortalEditHof = loadable(() =>
+  import("./pages/HallOfFame/PortalEditHof")
+);
+const StoryPortal = loadable(() => import("./pages/story/portal"));
+const PortalAddStory = loadable(() => import("./pages/story/PortalAddStory"));
+const PortalEditStory = loadable(() => import("./pages/story/PortalEditStory"));
+const BlogPortal = loadable(() => import("./pages/Blogs/portal"));
+const EditBlogPortal = loadable(() => import("./pages/Blogs/EditBlogPortal"));
+const AddBlogPortal = loadable(() => import("./pages/Blogs/AddBlogPortal"));
+const AdminPortal = loadable(() => import("./pages/Admin/portal"));
+const EditAdminPortal = loadable(() => import("./pages/Admin/EditAdminPortal"));
+const AddAdminPortal = loadable(() => import("./pages/Admin/AddAdminPortal"));
+const JobPortal = loadable(() => import("./pages/Career/portal"));
+const AddJobPortal = loadable(() => import("./pages/Career/AddJob"));
+const EventPortal = loadable(() => import("./pages/Events/portal"));
+const AddEventsPortal = loadable(() =>
+  import("./pages/Events/AddEventsPortal")
+);
+const EditEventPortal = loadable(() =>
+  import("./pages/Events/EditEventsPortal")
+);
+
 const App = () => {
   return (
     <BrowserRouter>

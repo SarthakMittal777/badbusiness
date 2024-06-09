@@ -6,6 +6,7 @@ import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import SidebarPortal from "../../components/SidebarPortal";
 import { deleteHofData, getHofData } from "../../api/hof";
+
 const HofPortal = () => {
   const [menu, setMenu] = useState(false);
   const [hofData, setHofData] = useState({ hallOfFame: [] });
