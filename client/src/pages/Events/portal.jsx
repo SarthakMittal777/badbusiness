@@ -13,7 +13,7 @@ const EventPortal = () => {
 
   const deletePartner = async (id) => {
     const confirmation = window.confirm(
-      "Are you sure you want to delete this Hall of Fame data?"
+      "Are you sure you want to delete this Event?"
     );
 
     if (confirmation) {
@@ -76,12 +76,7 @@ const EventPortal = () => {
                     <th className="px-4 py-2  sticky top-0 z-[100]">Date</th>
                     <th className="px-4 py-2  sticky top-0 z-[100]">Time</th>
                     <th className="px-4 py-2  sticky top-0 z-[100]">Type</th>
-                    <th className="px-4 py-2  sticky top-0 z-[100]">
-                      ListedBy
-                    </th>
-                    <th className="px-4 py-2  sticky top-0 z-[100]">
-                      Created By
-                    </th>
+                   
 
                     <th className="px-4 py-2  sticky top-0 z-[100]">Edit</th>
                     <th className="px-4 py-2  sticky top-0 z-[100]">Delete</th>
@@ -113,9 +108,9 @@ const EventPortal = () => {
                         <td className="border px-4 py-1 mx-auto text-center hover:underline">
                           {event.description}
                         </td>
-                        <td className="border px-4 py-1 mx-auto hover:underline">
+                        {/* <td className="border px-4 py-1 mx-auto hover:underline">
                          {new Date(event.date).toISOString().split('T')[0]}
-                        </td>
+                        </td> */}
                         <td className="border px-4 py-1  hover:underline">
                           {event.time}
                         </td>
@@ -125,11 +120,7 @@ const EventPortal = () => {
                         <td className="border px-4 py-1 text-center hover:underline">
                           {event.listedBy}
                         </td>
-                        
-                        <td className="border px-4 py-1  hover:underline">
-                          Name : {event.createdBy.username} <br />
-                          Email : {event.createdBy.email}
-                        </td>
+
                         <td className="border px-4 py-1 ">
                           <Link to={`/portal/event/edit/${event._id}`}>
                             <MdEdit size={25} className="mx-auto" />

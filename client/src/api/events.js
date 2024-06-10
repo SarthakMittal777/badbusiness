@@ -2,7 +2,7 @@ import serverInstance from "./server";
 
 export const getEventData = async () => {
   try {
-    const response = await serverInstance.get("/event");
+    const response = await serverInstance.get("/event/all");
     return response.data;
   } catch (error) {
     console.log(error);
