@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { getBlogDataById } from "../../api/blogs";
 import BlogForm from "./BlogForm";
 import { useParams } from "react-router-dom";
-export const EditBlogPortal = () => {
+
+const EditBlogPortal = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -20,3 +21,5 @@ export const EditBlogPortal = () => {
     )
   );
 };
+
+export default EditBlogPortal;

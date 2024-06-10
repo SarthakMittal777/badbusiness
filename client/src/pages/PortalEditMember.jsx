@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import TeamForm from "../components/TeamForm";
 import { useParams } from "react-router-dom";
 import { getTeamDataById } from "../api/team";
-export const PortalEditMember = () => {
+
+const PortalEditMember = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -23,3 +24,5 @@ export const PortalEditMember = () => {
     )
   );
 };
+
+export default PortalEditMember;

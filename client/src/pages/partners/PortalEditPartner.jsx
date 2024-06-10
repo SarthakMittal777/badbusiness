@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { getPartnerDataById } from "../../api/partner";
 import PartnerForm from "./PartnerForm";
 import { useParams } from "react-router-dom";
-export const PortalEditPartner = () => {
+
+const PortalEditPartner = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -23,3 +24,5 @@ export const PortalEditPartner = () => {
     )
   );
 };
+
+export default PortalEditPartner;

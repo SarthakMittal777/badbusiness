@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { getEventDataById } from "../../api/events";
 import EventForm from "./EventForm";
 import { useParams } from "react-router-dom";
-export const EditEventPortal = () => {
+
+const EditEventPortal = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -20,3 +21,5 @@ export const EditEventPortal = () => {
     )
   );
 };
+
+export default EditEventPortal;

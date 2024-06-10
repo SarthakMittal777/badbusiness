@@ -3,7 +3,8 @@ import StoryForm from "./StoryForm";
 import { useEffect, useState } from "react";
 import { getStoryDataById } from "../../api/story";
 import { useParams } from "react-router-dom";
-export function PortalEditStory() {
+
+function PortalEditStory() {
   const { id } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -16,7 +17,12 @@ export function PortalEditStory() {
 
   return (
     data && (
-      <StoryForm functionality="Edit a story's details" fetchStoryData={data.story} />
+      <StoryForm
+        functionality="Edit a story's details"
+        fetchStoryData={data.story}
+      />
     )
   );
 }
+
+export default PortalEditStory;

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getAdminData } from "../../api/admin";
 import AdminForm from "./AdminForm";
 
-export const EditAdminPortal = () => {
+const EditAdminPortal = () => {
   const { email } = useParams();
   const [data, setData] = useState(null);
 

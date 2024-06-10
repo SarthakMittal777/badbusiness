@@ -1,7 +1,5 @@
 import Navbar from "../components/Navbar";
 import NumberCounterSection from "../components/NumberCounterSection";
-import ServiceSection from "../components/ServiceSection";
-import Tabs from "../components/Tabs";
 const bgImage = "/images/hero/hero-bg.png";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,9 +7,16 @@ import "swiper/css";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
 import { getTeamData } from "../api/team";
+import { FaArrowUp } from "react-icons/fa";
+import loadable from "@loadable/component";
+
+const ServiceSection = loadable(() => import("../components/ServiceSection"));
+const Tabs = loadable(() => import("../components/Tabs"));
 
 export const Homepage = () => {
   const [activeTab, setActiveTab] = useState("Development");
+
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
@@ -78,8 +83,31 @@ export const Homepage = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <div className="contain-content mx-auto animate-fade-in">
+    <div className="contain-content mx-auto animate-fade-in overflow-y-auto">
       {/* Whole Section*/}
       <div className="sticky top-0 z-50 shadow-md">
         <Navbar />
@@ -183,7 +211,8 @@ export const Homepage = () => {
         </div>
       </div>
       {/* Service Section  */}
-      <ServiceSection services={services} />;{/* Tabs Section  */}
+      <ServiceSection services={services} />
+      {/* Tabs Section  */}
       <Tabs activeTab={activeTab} handleTabClick={handleTabClick} />
       {/* Careers Section  */}
       <div className="container mx-auto mt-16 text-wrap">
@@ -195,9 +224,9 @@ export const Homepage = () => {
               inclusive work environment where every team member can excel.
             </p>
             <div className="flex justify-center">
-              <Button className="relative bg-teal-900 hover:bg-green-800 text-green-200 font-bold py-4 px-5 rounded-full">
+              <button className="relative bg-black text-white font-bold py-4 px-5 rounded-full border border-red-500 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-red-500/50">
                 <Link to="/careers">Explore Opportunities</Link>
-              </Button>
+              </button>
             </div>
           </div>
         </div>
@@ -212,9 +241,9 @@ export const Homepage = () => {
                 professionals to share insights, network, and collaborate.
               </p>
               <div className="flex justify-center">
-                <Button className="relative bg-emerald-200 hover:bg-green-800 text-black font-medium py-4 px-5 rounded-full">
+                <button className="relative bg-black text-white font-bold py-4 px-5 rounded-full border border-red-500 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-red-500/50">
                   <Link to="https://events.badbusiness.in/">View Events</Link>
-                </Button>
+                </button>
               </div>
             </div>
           </div>
@@ -232,9 +261,9 @@ export const Homepage = () => {
                 they have grown their careers with BAD.
               </p>
               <div className="flex justify-center">
-                <Button className="relative bg-teal-900 hover:bg-green-800 text-green-200 font-bold py-4 px-5 rounded-full">
+                <button className="relative bg-black text-white font-bold py-4 px-5 rounded-full border border-red-500 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-red-500/50">
                   <Link to="/success-stories">Read Stories</Link>
-                </Button>
+                </button>
               </div>
             </div>
           </div>
@@ -250,9 +279,9 @@ export const Homepage = () => {
                 stories through the BAD Blogs.
               </p>
               <div className="flex justify-center">
-                <Button className="relative bg-emerald-200 hover:bg-green-800 text-black font-medium py-4 px-5 rounded-full">
+                <button className="relative bg-black text-white font-bold py-4 px-5 rounded-full border border-red-500 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:shadow-red-500/50">
                   <Link to="/blogs">Read Blogs</Link>
-                </Button>
+                </button>
               </div>
             </div>
           </div>
@@ -331,6 +360,16 @@ export const Homepage = () => {
             © Bad Business. 2024 MentorMenti. All rights reserved.
           </p>
         </div>
+      </div>
+      <div className="fixed bottom-16 right-10">
+        {isVisible && (
+          <button
+            onClick={scrollToTop}
+            className="bg-black text-white p-3 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-red-500/50"
+          >
+            <FaArrowUp />
+          </button>
+        )}
       </div>
     </div>
   );

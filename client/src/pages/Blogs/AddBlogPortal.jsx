@@ -1,5 +1,7 @@
 import BlogForm from "./BlogForm";
 
-export function AddBlogPortal() {
+function AddBlogPortal() {
   return <BlogForm functionality="Add a new Blog Data" />;
 }
+
+export default AddBlogPortal;

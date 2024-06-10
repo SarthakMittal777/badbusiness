@@ -1,5 +1,7 @@
 import StoryForm from "./StoryForm";
 
-export function PortalAddStory() {
+function PortalAddStory() {
   return <StoryForm functionality="Add a new Story" />;
 }
+
+export default PortalAddStory;

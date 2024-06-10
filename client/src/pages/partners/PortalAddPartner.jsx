@@ -1,5 +1,7 @@
 import PartnerForm from "./PartnerForm";
 
-export function PortalAddPartner() {
+function PortalAddPartner() {
   return <PartnerForm functionality="Add a new Partner" />;
 }
+
+export default PortalAddPartner;

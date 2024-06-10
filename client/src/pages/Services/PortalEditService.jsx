@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import ServiceForm from "./ServiceForm";
 import { useParams } from "react-router-dom";
 import { getServiceDataById } from "../../api/service";
-export const PortalEditService = () => {
+
+const PortalEditService = () => {
   const { id } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -21,3 +22,5 @@ export const PortalEditService = () => {
     )
   );
 };
+
+export default PortalEditService;
