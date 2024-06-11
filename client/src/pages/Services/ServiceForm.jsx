@@ -17,6 +17,7 @@ const ServiceForm = ({ functionality, fetchServiceData }) => {
       image: fetchServiceData?.image,
       category: fetchServiceData?.category,
       title: fetchServiceData?.title,
+      description: fetchServiceData?.description,
     });
   }, [fetchServiceData]);
   const handleSubmit = (e) => {
@@ -26,6 +27,7 @@ const ServiceForm = ({ functionality, fetchServiceData }) => {
       category: data.category,
       title: data.title,
       profile: data.profile,
+      description: data.description,
     };
     if (functionality === "Add a new Service") {
       createServiceData(serviceData)
@@ -100,6 +102,20 @@ const ServiceForm = ({ functionality, fetchServiceData }) => {
                 placeholder="title"
                 className="outline-none w-full"
                 onChange={(e) => setData({ ...data, title: e.target.value })}
+              />
+            </div>
+            <p className="text-base font-semibold mb-3 ">Description </p>
+            <div className="border rounded-xl py-3 w-full px-4 flex items-center justify-between">
+              <input
+                id="title"
+                type="text"
+                value={data.description}
+                required
+                placeholder="description"
+                className="outline-none w-full"
+                onChange={(e) =>
+                  setData({ ...data, description: e.target.value })
+                }
               />
             </div>
             <Button
