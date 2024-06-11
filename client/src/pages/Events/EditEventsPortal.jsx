@@ -10,6 +10,7 @@ const EditEventPortal = () => {
     async function fetchData() {
       const res = await getEventDataById(id);
       setData(res);
+
     }
     fetchData();
   }, [id]);

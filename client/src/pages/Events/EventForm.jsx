@@ -14,7 +14,7 @@ const EventForm = ({ functionality, fetchEventData }) => {
     title: fetchEventData?.event.title || "",
     banner: fetchEventData?.event.banner || "",
     time: fetchEventData?.event.time || "",
-    date: fetchEventData?.date || "",
+    date: fetchEventData?.event.date || "",
     type: fetchEventData?.event.type || "",
     listedBy: fetchEventData?.event.listedBy || "",
     description: fetchEventData?.event.description || "",
@@ -34,7 +34,6 @@ const EventForm = ({ functionality, fetchEventData }) => {
     createdBy: fetchEventData?.event.createdBy || [{ username: "", email: "" }],
   });
 
-  // console.log(data.date?.split("T")[0]);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (functionality === "Add a new Event") {
@@ -58,7 +57,7 @@ const EventForm = ({ functionality, fetchEventData }) => {
 
           window.alert(res.data.message);
 
-          // navigate("/portal/events");
+          navigate("/portal/events");
         })
         .catch((error) => {
           console.log(error);
