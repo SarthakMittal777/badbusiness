@@ -14,7 +14,7 @@ const EventForm = ({ functionality, fetchEventData }) => {
     title: fetchEventData?.event.title || "",
     banner: fetchEventData?.event.banner || "",
     time: fetchEventData?.event.time || "",
-    date: fetchEventData?.date?.split("T")[0] || "",
+    date: fetchEventData?.date || "",
     type: fetchEventData?.event.type || "",
     listedBy: fetchEventData?.event.listedBy || "",
     description: fetchEventData?.event.description || "",
@@ -33,15 +33,13 @@ const EventForm = ({ functionality, fetchEventData }) => {
 
     createdBy: fetchEventData?.event.createdBy || [{ username: "", email: "" }],
   });
-  
+
+  console.log(data);
+  console.log(data.date?.split("T")[0]);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (functionality === "Add a new Event") {
-      const eventData = {
-        ...data,
-        date: new Date(data.date).toISOString(), 
-      };
-      createEventData(eventData)
+      createEventData(data)
         .then((res) => {
           console.log(data);
           window.alert(res.data.message);
@@ -55,13 +53,9 @@ const EventForm = ({ functionality, fetchEventData }) => {
         });
     }
     if (functionality === "Update Event") {
-      const eventData = {
-        ...data,
-        date: new Date(data.date),
-      };
-      editEventData(fetchEventData.event._id, eventData)
+      editEventData(fetchEventData.event._id, data)
         .then((res) => {
-          console.log(eventData);
+          console.log("edited", data);
 
           window.alert(res.data.message);
 
