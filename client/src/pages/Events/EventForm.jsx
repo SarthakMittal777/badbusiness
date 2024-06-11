@@ -34,8 +34,7 @@ const EventForm = ({ functionality, fetchEventData }) => {
     createdBy: fetchEventData?.event.createdBy || [{ username: "", email: "" }],
   });
 
-  console.log(data);
-  console.log(data.date?.split("T")[0]);
+  // console.log(data.date?.split("T")[0]);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (functionality === "Add a new Event") {
@@ -151,6 +150,7 @@ const EventForm = ({ functionality, fetchEventData }) => {
           <input
             type="date"
             value={data.date}
+   
             required
             placeholder="Date"
             className="border rounded-xl py-3 w-full px-4 my-2"
