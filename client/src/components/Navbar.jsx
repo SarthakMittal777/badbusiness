@@ -100,7 +100,7 @@ const Navbar = () => {
                 setOpenMenu(false);
               }}
             >
-              <Link to="https://community.badbusiness.in/" target="_blank">
+              <Link to="/login" target="_blank">
                 Community
               </Link>
             </li>

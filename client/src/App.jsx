@@ -18,6 +18,10 @@ import HallofFame from "./pages/HallofFame";
 import Success from "./pages/SuccessStories";
 import Blogs from "./pages/Blogs/Blogs";
 import BlogPost from "./pages/Blogs/BlogPost";
+import Home from "./pages/Home";
+import CategoryPage from "./pages/Category";
+import Post from "./pages/Post";
+import Login from "./components/Login";
 
 const WebsiteAuth = loadable(() => import("./auth/websiteAuth"));
 const Portal = loadable(() => import("./pages/Portal"));
@@ -93,7 +97,10 @@ const App = () => {
           <Route path="/success-stories" element={<Success />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogPost />} />
-          <Route path="/share-your-business-problem" element={<Form />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/post/:id" element={<Post />} />
+          <Route path="/category/:id" element={<CategoryPage />} />
           <Route element={<WebsiteAuth />}></Route>
           <Route element={<PrivateRoute />}>
             <Route path="/portal" element={<Portal />} />
