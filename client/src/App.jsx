@@ -22,11 +22,8 @@ import Home from "./pages/Home";
 import CategoryPage from "./pages/Category";
 import Post from "./pages/Post";
 import Login from "./components/Login";
-
 import { FindMentors } from "./features";
-import MentorApplication from "./components/MentorApplication";
 import Mentor from "./components/Mentor";
-import BookForm from "./components/BookForm";
 import ThankYou from "./pages/ThankYou";
 import AuthProvider from "./auth/auth";
 
@@ -111,8 +108,6 @@ const App = () => {
           <Route path="/category/:id" element={<CategoryPage />} />
           <Route path="/mentors" element={<FindMentors />} />
           <Route path="/join-as-mentor" element={<Mentor />} />
-          <Route path="/join-as-mentor/apply" element={<MentorApplication />} />
-          <Route path="/session" element={<BookForm />} />
           <Route path="/session/thank-you" element={<ThankYou />} />
           <Route element={<WebsiteAuth />}></Route>
           <Route element={<PrivateRoute />}>

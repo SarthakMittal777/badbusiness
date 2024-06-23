@@ -40,16 +40,6 @@ const HeroSection = ({ mentors }) => {
           </button>
         </div>
       </div>
-
-      <div className=" flex flex-row sm:justify-between justify-center gap-4 flex-wrap mt-8">
-        <h1 className="text-4xl ">{mentors?.length} Mentors found</h1>
-        <Link
-          className="max-w-max max-h-max font-bold sm:text-xl text-base px-3 py-3 bg-[#4a7999] text-white duration-300 ease-in-out rounded-full sm:px-5  border-2"
-          to={user ? "/session" : "/login"}
-        >
-          Book session
-        </Link>
-      </div>
     </div>
   );
 };

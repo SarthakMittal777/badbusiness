@@ -100,9 +100,7 @@ const Navbar = () => {
                 setOpenMenu(false);
               }}
             >
-              <Link to="/login" target="_blank">
-                Community
-              </Link>
+              <Link to="/login">Community</Link>
             </li>
 
             <li

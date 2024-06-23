@@ -1,9 +1,9 @@
-import Rating from "@mui/material/Rating";
+import { FaRegStar } from "react-icons/fa";
 
 export default function BasicRating({ rating }) {
   return (
     <>
-      <Rating name="read-only" precision={0.5} value={rating} readOnly />
+      <FaRegStar value={rating} readOnly />
     </>
   );
 }

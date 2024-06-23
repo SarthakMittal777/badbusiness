@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { WorkOutline } from "@mui/icons-material/";
+import { MdOutlineWorkOutline } from "react-icons/md";
 import Data from "../../data/MentorShipCategories";
 import { mentorsContext } from "./context";
 import "./checkbox.css";
@@ -134,7 +134,10 @@ const Mentors = ({ setfilterCategory, filterCategory = [], mentors }) => {
                         </h5>
                         {_.category ? (
                           <p className="mt-2 text-sm font-semibold text-gray-700 ">
-                            <WorkOutline sx={{ marginBottom: "5px" }} /> &nbsp;
+                            <MdOutlineWorkOutline
+                              sx={{ marginBottom: "5px" }}
+                            />{" "}
+                            &nbsp;
                             {_.category.map((cat, catKey) => (
                               <span key={catKey}>
                                 {cat ? cat.toUpperCase() : "N/A"},&nbsp;{" "}

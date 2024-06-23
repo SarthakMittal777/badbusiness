@@ -1,40 +1,8 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import { pro1, pro2, pro4, pro5, pro6, mentor } from "../assets";
+import mentor from "/static/assets/mentor.jpg";
 import { Link } from "react-router-dom";
-const data = [
-  {
-    image: pro1,
-    title: "Choose how you want to mentor",
-    line: "Set your own schedule, choose what types of mentees  you want to work with, and get paid for your time.",
-  },
-  {
-    image: pro2,
-    title: "We'll handle the details, you focus on mentoring",
-    line: "We'll connect you with mentees , manage the scheduling process, and deal with the boring stuff, so you can focus on mentoring!",
-  },
-  // {
-  //   image: pro3,
-  //   title: "No curriculum or tasks",
-  //   line: "There's no structured curriculum at MentorHeal, so you don't have to keep up with courses or complete cookie-cutter tasks.",
-  // },
-  {
-    image: pro4,
-    title: "Flexibility to mentor how you want",
-    line: "As a MentorHeal mentor, you're free to teach in your own style and customize your approach based on your mentees ' goals.",
-  },
-  {
-    image: pro5,
-    title: "Structure to make mentoring easy",
-    line: "We provide shared workspaces, frameworks, and projects that you and your mentees  can use (but only if you want to).",
-  },
-  {
-    image: pro6,
-    title: "An amazing mentor community",
-    line: "You'll be part of or private mentor community where you can connect with other mentors to share resources and mentoring tips.",
-  },
-];
 
 const Mentor = () => {
   const location = useLocation();
