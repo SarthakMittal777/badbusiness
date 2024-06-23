@@ -100,7 +100,7 @@ function Modal(props) {
                 ? false
                 : true
             }
-            className="px-4 py-1.5 bg-primary disabled:bg-opacity-80 text-white rounded-md shadow-blue-300 shadow-md"
+            className="px-4 py-1.5 bg-primary disabled:bg-opacity-80 text-black rounded-md shadow-blue-300 shadow-md"
           >
             Create Post
           </button>

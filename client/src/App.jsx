@@ -23,6 +23,13 @@ import CategoryPage from "./pages/Category";
 import Post from "./pages/Post";
 import Login from "./components/Login";
 
+import { FindMentors } from "./features";
+import MentorApplication from "./components/MentorApplication";
+import Mentor from "./components/Mentor";
+import BookForm from "./components/BookForm";
+import ThankYou from "./pages/ThankYou";
+import AuthProvider from "./auth/auth";
+
 const WebsiteAuth = loadable(() => import("./auth/websiteAuth"));
 const Portal = loadable(() => import("./pages/Portal"));
 const PortalAddMember = loadable(() => import("./pages/PortalAddMember"));
@@ -41,7 +48,7 @@ const PortalAddPartner = loadable(() =>
 const PortalEditPartner = loadable(() =>
   import("./pages/partners/PortalEditPartner")
 );
-const AuthProvider = loadable(() => import("./auth/auth"));
+// const AuthProvider = loadable(() => import("./auth/auth"));
 const PrivateRoute = loadable(() => import("./auth/privateRoute"));
 const ServicesPortal = loadable(() =>
   import("./pages/Services/ServicesPortal")
@@ -97,10 +104,16 @@ const App = () => {
           <Route path="/success-stories" element={<Success />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blogs/:slug" element={<BlogPost />} />
+          <Route path="/share-your-business-problem" element={<Form />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/post/:id" element={<Post />} />
           <Route path="/category/:id" element={<CategoryPage />} />
+          <Route path="/mentors" element={<FindMentors />} />
+          <Route path="/join-as-mentor" element={<Mentor />} />
+          <Route path="/join-as-mentor/apply" element={<MentorApplication />} />
+          <Route path="/session" element={<BookForm />} />
+          <Route path="/session/thank-you" element={<ThankYou />} />
           <Route element={<WebsiteAuth />}></Route>
           <Route element={<PrivateRoute />}>
             <Route path="/portal" element={<Portal />} />

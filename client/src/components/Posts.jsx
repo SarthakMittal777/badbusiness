@@ -329,7 +329,7 @@ const Posts = (props) => {
         />
         <button
           onClick={togglePop}
-          className="bg-primary text-white border h-full min-w-20 rounded-md"
+          className="bg-primary text-black border h-full min-w-20 rounded-md"
         >
           Ask
         </button>
@@ -423,9 +423,9 @@ const Posts = (props) => {
 
               <Link
                 to={`/post/${post.id}`}
-                className=" bg-primary bg-opacity-95 hover:bg-opacity-100 text-white py-1 text-center flex gap-1 justify-center items-center w-20 rounded-md font-semibold drop-shadow-md"
+                className=" bg-primary bg-opacity-95 hover:bg-opacity-100 text-black py-1 text-center flex gap-1 justify-center items-center w-20 rounded-md font-semibold drop-shadow-md"
               >
-                <FaReply color="white" size={14} />
+                <FaReply color="black" size={14} />
                 <span className="ml-1">Reply</span>
               </Link>
             </div>

@@ -111,6 +111,15 @@ const Navbar = () => {
                 setOpenMenu(false);
               }}
             >
+              <Link to="/mentors">Mentors</Link>
+            </li>
+
+            <li
+              className="duration-300 text-gray-700 hover:text-black capitalize px-2 cursor-pointer font-semibold"
+              onClick={() => {
+                setOpenMenu(false);
+              }}
+            >
               <Link to="/services">Services</Link>
             </li>
 

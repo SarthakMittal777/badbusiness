@@ -307,7 +307,7 @@ const Post = () => {
           <button
             type="submit"
             disabled={newComment.length < 1 ? true : false}
-            className="rounded-md px-4 py-1.5 w-fit bg-primary drop-shadow-lg disabled:bg-opacity-90 text-white ml-auto"
+            className="rounded-md px-4 py-1.5 w-fit bg-primary drop-shadow-lg disabled:bg-opacity-90 text-black ml-auto"
           >
             Add a Reply
           </button>

@@ -9,6 +9,16 @@ export const items = [
         to: "/careers"
 
     },
+    {   id:"9",
+        title:"COMMUNITY",
+        to: "/login"
+
+    },
+    {   id:"10",
+        title:"MENTORS",
+        to: "/mentors"
+
+    },
     {   
         id:"2",
         title:"SERVICES",
