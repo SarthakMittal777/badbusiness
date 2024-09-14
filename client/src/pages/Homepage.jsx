@@ -121,7 +121,7 @@ export const Homepage = () => {
           <div className="container mx-auto px-4 lg:max-w-screen-smDesktop max-w-screen-2xl flex flex-col lg:flex-row items-center relative">
             <div className="flex-1 lg:p-16 lg:px-48 lg:pt-12 animate-fade-in">
               <h1 className="text-2xl lg:text-5xl font-bold mb-6 text-white text-start lg:text-balance mt-8 lg:leading-snug">
-                Are You Facing A Business Problem?
+                Business Ruined?
               </h1>
               <p className="mb-8 text-mb text-white text-justify font-normal">
                 We Solve Your Business Problem Using BAD Framework
